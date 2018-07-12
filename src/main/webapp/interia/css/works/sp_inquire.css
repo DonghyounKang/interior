@@ -30,7 +30,7 @@ select {
     -webkit-appearance: none; 
     -moz-appearance: none;    
     appearance: none;
-    background: url("../images/product/select_arrow.png") no-repeat 95% 50%; /* 화살표 아이콘 추가 */       
+    background: url("../../images/works/works_detail/select_arrow.png") no-repeat 95% 50%; /* 화살표 아이콘 추가 */       
 }
 textarea {
 	border-radius: 0;
