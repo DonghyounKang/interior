@@ -10,25 +10,25 @@
 </head>
 <body>
 <header>
-	<div class="header_bg">
-		<div class="header_logo">
-			<a href="#"><img src="./images/header/logo.png"></a>
-		</div>
-		<div class="header_nav1">
-			<a href="#">로그인</a>
-			<a href="#">회원가입</a>
-		</div>
-		<div class="header_nav2">
-			<a href="#">소개</a>
-			<a href="#">판매작품</a>
-			<a href="#">공방</a>
-			<a href="#">자랑하기</a>
-		</div>
-		<div class="header_search">
-			<input type="text" name="searchkeyword" placeholder="검색">
-			<button><img src="./images/header/header_serach.png"></button>
-		</div>
-	</div>
+    <div class="header_bg">
+        <div class="header_logo">
+            <a href="#"><img src="./images/header/logo.png"></a>
+        </div>
+        <div class="header_nav1">
+            <a href="#">로그인</a>
+            <a href="#">회원가입</a>
+        </div>
+        <div class="header_nav2">
+            <a href="#">소개</a>
+            <a href="#">판매작품</a>
+            <a href="#">공방</a>
+            <a href="#">자랑하기</a>
+        </div>
+        <div class="header_search">
+            <input type="text" name="searchkeyword" placeholder="검색">
+            <button><img src="./images/header/header_serach.png"></button>
+        </div>
+    </div>
 </header>
 <section>
 
@@ -116,7 +116,7 @@
     </div>
 </div>
 <footer>
-	<div class="bt-footer">
+    <div class="bt-footer">
       <div class="bt-ft-content">
         <p class="bt-ft-service"><a href="#">서비스소개</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">회사소개</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">채용정보</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">이용약관</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">개인정보취급방침</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">고객의소리</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">제휴/광고문의</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">판매자신청</a></p>
         <address class="bt-ft-address">
@@ -156,17 +156,13 @@
 
 </script>
 <script>
-
 var trTemplateSrc=$('#tr-template').html();
-
 //위에서 준비한 템플릿 데이터를 가지고 HTML을 생성할 템플릿 엔진 준비
 var templateFn = Handlebars.compile(trTemplateSrc)
-
 $.getJSON("../../json/works/list", (data) => {
-	console.log(data);
-	$(productlist).html(templateFn({list:data}))
+    console.log(data);
+    $(productlist).html(templateFn({list:data}))
 });
-
 </script>
 </body>
 </html>
