@@ -3,7 +3,7 @@
 <head>
     <title>판매작품</title>
     <meta charset="utf-8">
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../css/works/sp_works_list.css">
     <link rel="stylesheet" type="text/css" href="../../css/common.css">
@@ -105,13 +105,14 @@
     </footer>
     
     <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
 	<script id ="tr-template" type="text/x-handlebars-template">
 {{#each list}}
 <div class="card">
                 <div class="sp-card-img">
-                    <img src="images/product_list/{{path}}">
+                    <img src="../../images/works/works_list/{{path}}">
                 </div>
                 <div class="sp-card-content">
                     <div class="sp-cc1">
