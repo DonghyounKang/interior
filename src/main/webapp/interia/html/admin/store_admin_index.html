@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>공방관리자</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../css/admin/store_admin_common.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../favicon.ico">
+</head>
+<body>
+
+<div class="ad-navbar" id="ad-mainnav">
+    <a class="ad-navbar-brand"><b>INTERIA</b></a>
+    <div class="ad-navbar-collapse">
+        <div class="ad-navbar-side">
+            <div class="ad-navbar-storename">
+                <div class="ad-navbar-img">
+                    <img src="">
+                    
+                </div>
+                <a>
+                    StoreName
+                </a>
+            </div>
+            <ul class="ad-navbar-itemlist">
+                <li class="ad-nav-item">
+                    <a class="ad-nav-link" href="store_admin_index.html" style="color: #ffc001">
+                        <i class="fas fa-home">
+                        <span class="ad-nav-link-text">
+                        main
+                        </span></i>
+                    </a>
+                </li>
+                <li class="ad-nav-item">
+                    <a class="ad-nav-link" href="store_adimin_workshop.html">
+                        <i class="fas fa-sitemap">
+                        <span class="ad-nav-link-text">
+                        공방관리
+                        </span></i>
+<!--                        <i class="fas fa-angle-down"></i>-->
+                    </a>
+<!--
+                    <ul class="ad-nav-second">
+                        <li>
+                        <a href="#">메인화면 관리</a>
+                        </li> 
+                        <li>
+                        <a href="#">페이지 관리</a>
+                        </li>
+                    </ul>
+-->
+                </li>
+                 <li class="ad-nav-item">
+                    <a class="ad-nav-link" href="store_adimin_works.html">
+                        <i class="fas fa-boxes">
+                        <span class="ad-nav-link-text">
+                        작품관리
+                        </span></i>
+                    </a>
+                </li>
+                 <li class="ad-nav-item">
+                    <a class="ad-nav-link">
+                        <i class="fas fa-shopping-cart">
+                        <span class="ad-nav-link-text">
+                        판매관리
+                        </span>&ensp;
+                        <i class="fas fa-angle-down"></i></i>
+                    </a>
+                    <ul class="ad-nav-second">
+                        <li>
+                        <a href="store_adimin_order.html">주문관리</a>
+                        </li>
+                        <li>
+                        <a href="store_adimin_return.html">반품관리</a>
+                        </li>  
+                        <li>
+                        <a href="store_adimin_cancel.html">취소관리</a>
+                        </li>
+                        <li>
+                        <a href="store_adimin_exchange.html">교환관리</a>
+                        </li>
+                     </ul>
+                </li>
+<!--
+                 <li class="ad-nav-item">
+                    <a class="ad-nav-link" href="#">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="ad-nav-link-text">
+                        통계
+                        </span>
+                    </a>
+                </li>
+-->
+                 <li class="ad-nav-item">
+                    <a class="ad-nav-link" href="store_adimin_commission.html">
+                        <i class="fas fa-toolbox">
+                        <span class="ad-nav-link-text">
+                        제작의뢰관리
+                        </span></i>
+                    </a>
+                </li>
+                 <li class="ad-nav-item">
+                    <a class="ad-nav-link" href="store_adimin_class.html">
+                        <i class="fas fa-chalkboard-teacher">
+                        <span class="ad-nav-link-text">
+                        체험관리
+                        </span></i>
+                    </a>
+                </li>
+            </ul>
+        </div> 
+        <ul class="ad-navbar-menu">
+            <li class="ad-navbar-menuitem ad-navbar-select">
+                <a href="">글쓰기</a>&ensp;|&ensp;
+                <a href="">장바구니</a>&ensp;|&ensp;
+                <a href="">알림</a>&ensp;|&ensp;
+                <a href="">로그아웃</a>&ensp;|&ensp;
+                <a href="">username</a>
+            </li>
+            <li class="ad-navbar-menuitem ad-navbar-home">
+                <i class="fas fa-bars">
+                </i>
+            </li>
+        </ul>
+    
+    </div>
+</div>
+
+<div class="ad-main-wrapper">
+    <div class="ad-main-content">
+        <!-- ad-breadcrumb -->
+        <ol class="ad-breadcrumb">
+            <li class="ad-breadcrumb-item">
+                <a href="#">관리자</a>
+            </li>
+            <li class="ad-breadcrumb-item active">
+                main
+            </li>
+        </ol>
+        
+        <!-- card contents(ad-row)-->
+        <div class="ad-row">
+            <div class="ad-card-wrapper">
+                <div class="ad-card ad-card-default ad-main-color1">
+                    <div class="ad-card-body">
+                        <div class="ad-card-body-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div> 
+                        <div class="ad-card-content">
+                            주문현황
+                        </div>
+                        <div class="ad-card-data">
+                            <div class="ad-card-data-value">
+                            <p>오늘주문</p>
+                            </div>
+                            <div class="ad-card-data-value">
+                            <p>주간주문</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-card-wrapper">
+                <div class="ad-card ad-card-default ad-main-color2">
+                    <div class="ad-card-body">
+                        <div class="ad-card-body-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div> 
+                        <div class="ad-card-content">
+                            취소 / 교환 / 환불
+                        </div>
+                        <div class="ad-card-data">
+                            <div class="ad-card-data-value">
+                                <p>취소</p>
+                            </div>
+                            <div class="ad-card-data-value">
+                                <p>교환</p>
+                            </div>
+                            <div class="ad-card-data-value">
+                                <p>환불</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-card-wrapper">
+                <div class="ad-card ad-card-default ad-main-color3">
+                    <div class="ad-card-body">
+                        <div class="ad-card-body-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div> 
+                        <div class="ad-card-content">
+                            상품 현황
+                        </div>
+                        <div class="ad-card-data">
+                            <div class="ad-card-data-value">
+                            <p>판매중</p>
+                            </div>
+                            <div class="ad-card-data-value">
+                            <p>품절</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-card-wrapper">
+                <div class="ad-card ad-card-default ad-main-color4">
+                    <div class="ad-card-body">
+                        <div class="ad-card-body-icon">
+                            <i class="fas fa-store"></i>
+                        </div> 
+                        <div class="ad-card-content">
+                            스토어 현황
+                        </div>
+                        <div class="ad-card-data">
+                            <div class="ad-card-data-value">
+                            <p>방문자 수(어제)</p>
+                            </div>
+                            <div class="ad-card-data-value">
+                            <p>방문자 수(오늘)</p>
+                            </div>
+                            <div class="ad-card-data-value">
+                            <p>팔로워 수</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ad-card-default">
+            <div class="ad-card-header">
+              <i class="fas fa-chart-area"></i> 현황그래프</div>
+                <div class="ad-card-body">
+                    <div class="ad-chart-dist">
+                    </div>
+<!--
+                    <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                        <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                            <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                        </div>
+                        <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                            <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                        </div>
+                    </div>
+
+                  <canvas id="myAreaChart" width="1581" height="474" class="chartjs-render-monitor" style="display: block; width: 1581px; height: 474px;">
+                </canvas>
+-->
+            </div>
+        </div>
+    </div><!-- ad-main-content-->
+</div><!--ad-main-wrapper-->
+
+    
+    
+<script>
+    $(document).ready(function(){
+        $(".ad-nav-item>a").click(function(){
+            var submenu = $(this).next("ul");
+            if (submenu.is(":visible")) {
+                submenu.slideUp();
+            } else {
+                submenu.slideDown();
+            }
+        });
+    });
+</script>
+</body>
+</html>
