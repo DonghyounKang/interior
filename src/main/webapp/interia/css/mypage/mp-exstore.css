@@ -87,14 +87,32 @@ p{margin: 0;}
     filter: alpha(opacity=60);*/
 }
 
-.black_overlay p {
-	color: white;
-	font-size: 1.5em;
+.black_overlay>button {
+	font-size: 1.3em;
 	font-weight: bold;
 	text-align: center;
-	line-height: 2em;
 	width: 180px;
-	border-radius: 5px;
-	background: rgba(0,0,0,0.5);
 	cursor: pointer;
+}
+
+.reservbtn {
+	background: rgb(52, 56, 85);
+	color: #fff;
+	width: 140px;
+}
+
+.modal {
+	z-index: 10001;
+}
+
+.modal-backdrop {
+	z-index: 10000;
+}
+
+.modal-footer {
+	justify-content: center;
+}
+
+.modal-body>p {
+	text-align: center;
 }
