@@ -1,19 +1,34 @@
-
 /**** 메인 고정부분 ****/
 .mp-main {
-   padding-top: 7.5em;
+   padding-top: 7.7em;
+}
+
+
+/**** 팔로잉/팔로워 모달 ****/
+#followerModal, #followingModal {
+    margin: 5em auto;
+    pointer-events: none;
+}
+#postWriteModal {
+    margin: 4em auto;
+}
+.modal {
+    z-index: 100001;
+}
+.modal-backdrop {
+    z-index: 100000;
 }
 
 
 /**** 커버 ****/
 .mp-banner {
-   background-image: url("url");
+    background-image: url("../images/banner_img.PNG");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-   background: #ffc001;
-   height: 200px;
-   transition: box-shadow 0.5s ease;
+    background: #ffc001;
+    height: 200px;
+    transition: box-shadow 0.5s ease;
     box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.25);
 }
 .mp-banner:hover {
@@ -23,27 +38,27 @@
    /*width: 170px;*/
 }
 .mp-banner:hover .mp-banner-cbox>a>.fas{
-   font-size: 1.75em;
-   padding: 0.23em 0.4em 0 0;
+    font-size: 1.75em;
+    padding: 0.23em 0.4em 0 0;
 }
 .mp-banner:hover .mp-pic-box{
-   opacity: 1;
-   width: 164px;
+    opacity: 1;
+    width: 164px;
 }
 .mp-banner>.mp-banner-cbox>a>.fas {
-   position: absolute;
-   font-size: 2.25em;
-   color: white;
+    position: absolute;
+    font-size: 2.25em;
+    color: white;
     top: 20px;
     right: 6px;
     transition: all .3s ease-out, padding .5s ease;
 }
 .mp-banner > a {
-   position: relative;
-   cursor: pointer;
-   display: block;
-   float: right;
-   right: 19%;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    float: right;
+    right: 19%;
     top: 10%;
     width: 50px;
     transition: width .3s ease-out;
@@ -59,7 +74,7 @@
 
 .mp-pic-text { /*span*/
    /*-webkit-font-smoothing: antialiased;*/
-   position: relative;
+    position: relative;
     padding-right: 0.56em;
     font-weight: bold;
     color: white;
@@ -121,7 +136,7 @@
     transition: box-shadow 0.5s ease;
 }
 .mp-profile-setting:hover {
-   box-shadow: inset 0 0 0 4px #1c2036;
+    box-shadow: inset 0 0 0 4px #1c2036;
 }
 
 .mp-profile-setting > a {
@@ -136,8 +151,8 @@
     text-decoration: none;
 } 
 .mp-profile-div {
-    /*position: absolute;*/
-    /*left: 83px; top: 93px;*/
+    position: absolute;
+    left: 83px; top: 93px;
     color: #fff;
     font-size: 1.125em;
     font-weight: bold;
@@ -170,23 +185,21 @@
 
 /**** 네비게이션 ****/
 .mp-nav {
-   position: relative;
-   height: 60px;
-   /*text-align: center; */
+    position: relative;
+    height: 60px;
+    /*text-align: center; */
 }
 .mp-nav>ul {
     list-style: none;
     height: 60px;
     /*width: 1200px;*/
     display: inline-block;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     margin: 0 auto;
 }
-
 .mp-nav>ul>li {
     width: 100px;
     height: inherit;
@@ -196,6 +209,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.mp-nav>ul>li>p {
+	padding-top: 1.2em;
 }
 
 
