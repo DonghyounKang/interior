@@ -7,7 +7,6 @@
 /**** 팔로잉/팔로워 모달 ****/
 #followerModal, #followingModal {
     margin: 5em auto;
-    pointer-events: none;
 }
 #postWriteModal {
     margin: 4em auto;
