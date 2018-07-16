@@ -31,7 +31,7 @@
 					<label>아이디(이메일) *</label>
 				</div>
 				<div class="form_mainForm_Id01">
-					<input type="text" placeholder="아이디를 입력하세요">
+					<input type="text" id="fId" placeholder="아이디를 입력하세요">
 				</div>
 			</div>
 			<div>
@@ -39,7 +39,7 @@
 					<label>비밀번호 *</label>
 				</div>
 				<div class="form_mainForm_Id01">
-					<input type="password" placeholder="비밀번호를 입력하세요">
+					<input type="password" id="fPassword" placeholder="비밀번호를 입력하세요">
 				</div>
 			</div>
 			<div>
@@ -47,23 +47,23 @@
 					<label>이름 *</label>
 				</div>
 				<div class="form_mainForm_Id01">
-					<input type="text" placeholder="이름을 입력하세요">
+					<input type="text" id="fName" placeholder="이름을 입력하세요">
 				</div>
 			</div>
 			<div>
 				<div class="form_mainForm_Id00">
 					<label>전화번호 *</label>
 				</div>
-				<div class="form_mainForm_Id02">
-					<select>
+				<div class="form_mainForm_Id02" id="fPhoneNumber">
+					<select id="fFirstNumber">
 						<option selected>010</option>
-						<option>000</option>
-						<option>000</option>
-						<option>000</option>
-						<option>000</option>
+						<option>011</option>
+						<option>016</option>
+						<option>017</option>
+						<option>018</option>
 					</select>
-					<input type="text" style="width: 100px;">
-					<input type="text" style="width: 100px;">
+					<input type="text" id="fSecondNumber" style="width: 100px;">
+					<input type="text" id="fThirdNumber" style="width: 100px;">
 				</div>
 			</div>
 			<div>
@@ -71,24 +71,30 @@
 					<label>닉네임 *</label>
 				</div>
 				<div class="form_mainForm_Id01">
-					<input type="text" placeholder="별명을 입력하세요">
+					<input type="text" id="fNickname" placeholder="별명을 입력하세요">
+				</div>
+			</div>
+			
+			<!-- 항상 폼 안에 둘것! 데이터 넣을 때 -->
+			<div class="form_mainButton">
+				<div class="form_mainButton01">
+					<button id="addBtn" type="button" style="margin-top:3.125em">가입하기</button>
+					<button id="" type="button" style="margin-top:3.125em" onClick="history.back()">취소하기</button>
 				</div>
 			</div>
 		</form>
 	</div>
-	<div class="form_mainButton">
-		<div class="form_mainButton01">
-			<button type="button" onClick="location.href='./login.html'">가입하기</button>
-			<button type="button" onClick="location.href='./index.html'">취소하기</button>
-		</div>
-	</div>
+	
+	
+	
 </section>
 
 
 
-
 <footer id="footer">
+    <script src="../../js/common.js"></script>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../js/sign-up-form.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
 </footer>

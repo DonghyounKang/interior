@@ -5,11 +5,71 @@ import java.io.Serializable;
 public class Member implements Serializable {
     private static final long serialVersionUID = 1L;
     
+    private int no;
     private String id;
-    private String email;
     private String password;
+    private String name;
+    private String nickname;
+    private String phoneNumber;
+    private String zipCode;
+    private String baseAdd;
+    private String detailAdd;
     
     
+    public int getNo() {
+        return no;
+    }
+    public void setNo(int no) {
+        this.no = no;
+    }
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getNickname() {
+        return nickname;
+    }
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    public String getZipCode() {
+        return zipCode;
+    }
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+    public String getBaseAdd() {
+        return baseAdd;
+    }
+    public void setBaseAdd(String baseAdd) {
+        this.baseAdd = baseAdd;
+    }
+    public String getDetailAdd() {
+        return detailAdd;
+    }
+    public void setDetailAdd(String detailAdd) {
+        this.detailAdd = detailAdd;
+    }
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -33,38 +93,20 @@ public class Member implements Serializable {
             return false;
         return true;
     }
-    public String getId() {
-        return id;
-    }
-    public Member setId(String id) {
-        this.id = id;
-        return this;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public Member setEmail(String email) {
-        this.email = email;
-        return this;
-    }
-    public String getPassword() {
-        return password;
-    }
-    public Member setPassword(String password) {
-        this.password = password;
-        return this;
-    }
     
     @Override
     public String toString() {
-        return "Member [id=" + id + ", email=" + email + ", password=" + password + "]";
+        return "Member [no=" + no + ", id=" + id + ", password=" + password
+                + ", name=" + name + ", nickname=" + nickname + ", phoneNumber="
+                + phoneNumber + ", zipCode=" + zipCode + ", baseAdd=" + baseAdd
+                + ", detailAdd=" + detailAdd + "]";
     }
+    
     
     
 }
 
-//ver 31 - 생성자 제거
-//ver 27 - java.io.Serializable 인터페이스 구현
-//ver 24 - 생성자 추가
-//ver 17 - toString() 재정의.
-//ver 16 - 캡슐화 적용. 겟터, 셋터 추가.
+
+
+
+

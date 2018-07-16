@@ -3,54 +3,73 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!-- MemberDao.class 파일에서 불러온다! -->
 <mapper namespace="bitcamp.java106.pms.dao.MemberDao">
 
+<!-- 여기는 DB 컬럼을 Java에서 지정한 함수명을 저장하는 것 -->
+<!-- Member 클래스 -->
   <resultMap type="Member" id="MemberMap">
-    <id column="mid" property="id"/>
-    <result column="email" property="email"/>
+    <id column="memno" property="no"/>
+    <result column="id" property="id"/>
     <result column="pwd" property="password"/>
+    <result column="name" property="name"/>
+    <result column="nknm" property="nickname"/>
+    <result column="phno" property="phoneNumber"/>
+    <result column="zcode" property="zipCode"/>
+    <result column="baddr" property="baseAdd"/>
+    <result column="daddr" property="detailAdd"/>
   </resultMap>
   
+  <!--  -->
   <select id="selectList" 
           resultMap="MemberMap" parameterType="map">
-    select mid, email, pwd 
-    from pms2_member
-    order by mid asc
+    select *
+    from INTR_MEMBER
+    order by memno asc
     limit #{startRowNo}, #{pageSize}
   </select>
   
+  <!-- 회원가입 폼에서 작업을 하기 위한 문법 -->
   <insert id="insert" parameterType="Member">
-    insert into pms2_member(mid,email,pwd) 
-    values(#{id},#{email},password(#{password}))
+    insert into INTR_MEMBER(id, pwd, name, nknm, phno) 
+    values(#{id}, password(#{password}), 
+           #{name}, #{nickname}, #{phoneNumber})
   </insert>
   
   <select id="selectOne" parameterType="String" resultMap="MemberMap">
-    select mid, email 
-    from pms2_member 
-    where mid=#{value}
-  </select> 
+    select *
+    from INTR_MEMBER 
+    where memno=#{no}
+  </select>
   
+  <!-- 아이디와 비밀번호 둘다 일치하면 로그인! -->
   <select id="selectOneWithPassword" parameterType="map" resultMap="MemberMap">
-    select mid, email 
-    from pms2_member 
-    where mid=#{id} and pwd=password(#{password})
+    select memno, id, pwd
+    from INTR_MEMBER 
+    where memno=#{no} id=#{id} and pwd=password(#{password})
   </select>
-
+  
+  <!-- count : 아이디와 비밀번호가 일치성 검사 : 여기선  로그인 및 회원가입을 확인한다. -->
   <select id="count" parameterType="map" resultType="int">
-    select count(*)
-    from pms2_member 
-    where mid=#{id} and pwd=password(#{password})
+    select count(*) 
+    from INTR_MEMBER 
+    where memno=#{no} and id=#{id} and pwd=password(#{password})
   </select>
-
+  
   <update id="update" parameterType="Member">
-    update pms2_member set 
-        email=#{email}, 
-        pwd=password(#{password}) 
-    where mid=#{id}
+    update INTR_MEMBER set 
+        pwd=#{password}, 
+        name=#{name},
+        nknm=#{nickName},
+        phno=#{phoneNumber},
+        zcode=#{zipCode},
+        baddr=#{baseAdd},
+        daddr=#{detailAdd}
+    where memno=#{no}
   </update>
   
   <delete id="delete" parameterType="String">
-    delete from pms2_member where mid=#{value}
+    delete from INTR_MEMBER where memno=#{value}
   </delete>
 </mapper>
 

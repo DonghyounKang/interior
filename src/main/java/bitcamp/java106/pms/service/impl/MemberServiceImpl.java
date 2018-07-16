@@ -29,13 +29,14 @@ public class MemberServiceImpl implements MemberService {
     }
     
     @Override
-    public Member get(String id) {
-        return memberDao.selectOne(id);
+    public Member get(int no) {
+        return memberDao.selectOne(no);
     }
     
     @Override
-    public boolean isExist(String id, String password) {
+    public boolean isExist(int no, String id, String password) {
         HashMap<String,Object> params = new HashMap<>();
+        params.put("no", no);
         params.put("id", id);
         params.put("password", password);
         
@@ -53,8 +54,8 @@ public class MemberServiceImpl implements MemberService {
     }
     
     @Override
-    public int delete(String id) {
-        return memberDao.delete(id);
+    public int delete(int no) {
+        return memberDao.delete(no);
     }
 }
 
