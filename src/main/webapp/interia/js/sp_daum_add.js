@@ -43,7 +43,9 @@
                     },
                     width : '100%',
                     height : '100%',
-                    maxSuggestItems : 5
+                    maxSuggestItems : 5,
+                    theme: themeObj
+
                 }).embed(element_layer);
 
                 // iframe을 넣은 element를 보이게 한다.
@@ -58,8 +60,8 @@
             // 직접 element_layer의 top,left값을 수정해 주시면 됩니다.
             function initLayerPosition(){
                 var width = 400; //우편번호서비스가 들어갈 element의 width
-                var height = 450; //우편번호서비스가 들어갈 element의 height
-                var borderWidth = 5; //샘플에서 사용하는 border의 두께
+                var height = 500; //우편번호서비스가 들어갈 element의 height
+                var borderWidth = 1; //샘플에서 사용하는 border의 두께
 
                 // 위에서 선언한 값들을 실제 element에 넣는다.
                 element_layer.style.width = width + 'px';
@@ -69,3 +71,19 @@
                 element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
                 element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
             }
+            
+          //아래 코드처럼 테마 객체를 생성합니다.(color값은 #F00, #FF0000 형식으로 입력하세요.)
+          //변경되지 않는 색상의 경우 주석 또는 제거하시거나 값을 공백으로 하시면 됩니다.
+          var themeObj = {
+             //bgColor: "", //바탕 배경색
+             searchBgColor: "#FFC001", //검색창 배경색
+             //contentBgColor: "", //본문 배경색(검색결과,결과없음,첫화면,검색서제스트)
+             pageBgColor: "#FFFFFF", //페이지 배경색
+             //textColor: "", //기본 글자색
+             queryTextColor: "#000000", //검색창 글자색
+             postcodeTextColor: "#000000", //우편번호 글자색
+             emphTextColor: "#FFC001", //강조 글자색
+             outlineColor: "#CCCCCC" //테두리
+          };
+          
+          
