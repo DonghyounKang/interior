@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/header_move.css">
-    <link rel="stylesheet" href="../../css/works/sp_works_detail.css">
+    
     <link rel="stylesheet" href="../../css/works/sp_review_write.css">
     <link rel="stylesheet" href="../../css/works/sp_review_detail.css">
     <link rel="stylesheet" href="../../css/works/sp_inquire.css">
@@ -16,7 +16,10 @@
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     
     <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../node_modules/bxslider/dist/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="../../node_modules/bxslider/dist/jquery.bxslider.min.css">
     <script type="text/javascript" src="../../js/sp_include.js"></script>
+    <link rel="stylesheet" href="../../css/works/sp_works_detail.css">
 </head>
 
 <body>
@@ -119,10 +122,10 @@
         <!-- ib-pd-btbox -->
 
         <ul class="ib-pd-tab row sticky-top">
-            <li class="col ib-pd-tab-line"><a onclick="fnMove('1')">상품정보</a></li>
-            <li class="col ib-pd-tab-box"><a onclick="fnMove('2')">리뷰(365)</a></li>
-            <li class="col ib-pd-tab-box"><a onclick="fnMove('3')">문의(35)</a></li>
-            <li class="col ib-pd-tab-box"><a onclick="fnMove('4')">배송/교환/환불</a></li>
+            <li class="col ib-pd-tab-line" onclick="fnMove('1')"><a>상품정보</a></li>
+            <li class="col ib-pd-tab-box" onclick="fnMove('2')"><a>리뷰(365)</a></li>
+            <li class="col ib-pd-tab-box" onclick="fnMove('3')"><a>문의(35)</a></li>
+            <li class="col ib-pd-tab-box" onclick="fnMove('4')"><a>배송/교환/환불</a></li>
         </ul>
         <!-- ib-pd-tab -->
 
@@ -130,7 +133,7 @@
             <div class="ib-pd-detail">
                 <h4>제품 사용기</h4>
                 <div class="ib-pd-detail-box">
-                    <div class="ib-pd-detail-slider">
+                    <div class="pro_bxslider">
                         <div class="ib-pd-detail-cont">
                             <img src="../../images/works/works_detail/product.jpg" width="100%">
                             <div class="ib-pd-detail-contbar">
@@ -141,6 +144,7 @@
                                 <p><span>1</span>/335</p>
                             </div>
                         </div>
+
                         <div class="ib-pd-detail-cont">
                             <img src="../../images/works/works_detail/product.jpg" width="100%">
                             <div class="ib-pd-detail-contbar">
@@ -151,6 +155,7 @@
                                 <p><span>1</span>/335</p>
                             </div>
                         </div>
+
                         <div class="ib-pd-detail-cont">
                             <img src="../../images/works/works_detail/product.jpg" width="100%">
                             <div class="ib-pd-detail-contbar">
@@ -161,11 +166,57 @@
                                 <p><span>1</span>/335</p>
                             </div>
                         </div>
+
+                        <div class="ib-pd-detail-cont">
+                            <img src="../../images/works/works_detail/product.jpg" width="100%">
+                            <div class="ib-pd-detail-contbar">
+                                <div class="ib-pd-detail-probox">
+                                    <div class="ib-pd-detail-pro"></div>
+                                    <p>비트짱</p>
+                                </div>
+                                <p><span>1</span>/335</p>
+                            </div>
+                        </div>
+
+                        <div class="ib-pd-detail-cont">
+                            <img src="../../images/works/works_detail/product.jpg" width="100%">
+                            <div class="ib-pd-detail-contbar">
+                                <div class="ib-pd-detail-probox">
+                                    <div class="ib-pd-detail-pro"></div>
+                                    <p>비트짱</p>
+                                </div>
+                                <p><span>1</span>/335</p>
+                            </div>
+                        </div>
+
+                        <div class="ib-pd-detail-cont">
+                            <img src="../../images/works/works_detail/product.jpg" width="100%">
+                            <div class="ib-pd-detail-contbar">
+                                <div class="ib-pd-detail-probox">
+                                    <div class="ib-pd-detail-pro"></div>
+                                    <p>비트짱</p>
+                                </div>
+                                <p><span>1</span>/335</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
         <!-- ib-pd-detail -->
+
+        <!-- bxsilder -->
+        <script>
+        $(function(){
+          $('.pro_bxslider').bxSlider({
+            mode: 'horizontal',
+            moveSlides: 1,
+            slideWidth: 400,
+            pager: false
+          });
+        });
+        </script>
 
         <section>
             <section id="produ2">
@@ -415,54 +466,121 @@
             <br><br>
 
             <section class="sp-pdt-recomm">
-                <br>
-                <div>
+                <div class="sp-pdt-header">
                     <h4>같이 보면 좋은 상품</h4>
-                    <div class="sp-btn-arrow">
-                        <img src="../../images/works/works_detail/arrow_left_non.png">
-                        <img src="../../images/works/works_detail/arrow_right.png">
-                    </div>
                 </div>
-                <br>
-                <div class="sp-products">
-                    <div>
-                        <div class="sp-pdt-img"><img src="../../images/works/works_detail/img2.PNG"></div>
-                        <div>
-                            <div>IVOLV 커피 테이블 2종_7colors</div>
-                            <div><b>19,900 원</b></div>
+
+                <div class="sp-products pdt_bxslider">
+                    <a href="#">
+                        <div class="sp-pdt-cont">
+                            <div class="sp-pdt-cimg">
+                                <img src="../../images/works/works_detail/img2.PNG">
+                            </div>
+                            <div class="sp-pdt-ctext">
+                                <p>IVOLV 커피 테이블 2종_7colors</p>
+                                <p><span>19,900</span> 원</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="sp-pdt-img"><img src="../../images/works/works_detail/img2.PNG"></div>
-                        <div>
-                            <div>IVOLV 커피 테이블 2종_7colors</div>
-                            <div><b>19,900 원</b></div>
+                    </a>
+
+                    <a href="#">
+                        <div class="sp-pdt-cont">
+                            <div class="sp-pdt-cimg">
+                                <img src="../../images/works/works_detail/img2.PNG">
+                            </div>
+                            <div class="sp-pdt-ctext">
+                                <p>IVOLV 커피 테이블 2종_7colors</p>
+                                <p><span>19,900</span> 원</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="sp-pdt-img"><img src="../../images/works/works_detail/img2.PNG"></div>
-                        <div>
-                            <div>IVOLV 커피 테이블 2종_7colors</div>
-                            <div><b>19,900 원</b></div>
+                    </a>
+
+                    <a href="#">
+                        <div class="sp-pdt-cont">
+                            <div class="sp-pdt-cimg">
+                                <img src="../../images/works/works_detail/img2.PNG">
+                            </div>
+                            <div class="sp-pdt-ctext">
+                                <p>IVOLV 커피 테이블 2종_7colors</p>
+                                <p><span>19,900</span> 원</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="sp-pdt-img"><img src="../../images/works/works_detail/img2.PNG"></div>
-                        <div>
-                            <div>IVOLV 커피 테이블 2종_7colors</div>
-                            <div><b>19,900 원</b></div>
+                    </a>
+
+                    <a href="#">
+                        <div class="sp-pdt-cont">
+                            <div class="sp-pdt-cimg">
+                                <img src="../../images/works/works_detail/img2.PNG">
+                            </div>
+                            <div class="sp-pdt-ctext">
+                                <p>IVOLV 커피 테이블 2종_7colors</p>
+                                <p><span>19,900</span> 원</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="sp-pdt-img"><img src="../../images/works/works_detail/img2.PNG"></div>
-                        <div>
-                            <div>IVOLV 커피 테이블 2종_7colors</div>
-                            <div><b>19,900 원</b></div>
+                    </a>
+
+                    <a href="#">
+                        <div class="sp-pdt-cont">
+                            <div class="sp-pdt-cimg">
+                                <img src="../../images/works/works_detail/img2.PNG">
+                            </div>
+                            <div class="sp-pdt-ctext">
+                                <p>IVOLV 커피 테이블 2종_7colors</p>
+                                <p><span>19,900</span> 원</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="sp-pdt-cont">
+                            <div class="sp-pdt-cimg">
+                                <img src="../../images/works/works_detail/img2.PNG">
+                            </div>
+                            <div class="sp-pdt-ctext">
+                                <p>IVOLV 커피 테이블 2종_7colors</p>
+                                <p><span>19,900</span> 원</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="sp-pdt-cont">
+                            <div class="sp-pdt-cimg">
+                                <img src="../../images/works/works_detail/img2.PNG">
+                            </div>
+                            <div class="sp-pdt-ctext">
+                                <p>IVOLV 커피 테이블 2종_7colors</p>
+                                <p><span>19,900</span> 원</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="sp-pdt-cont">
+                            <div class="sp-pdt-cimg">
+                                <img src="../../images/works/works_detail/img2.PNG">
+                            </div>
+                            <div class="sp-pdt-ctext">
+                                <p>IVOLV 커피 테이블 2종_7colors</p>
+                                <p><span>19,900</span> 원</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </section>
         </section>
+
+        <!-- bxsilder -->
+        <script>
+        $(function(){
+          $('.pdt_bxslider').bxSlider({
+            mode: 'horizontal',
+            moveSlides: 1,
+            slideWidth: 230,
+            pager: false
+          });
+        });
+        </script>
 
         <!-- 리뷰 Modal -->
         <div class="modal fade" id="revModalLong" tabindex="-1" role="dialog" aria-labelledby="revModalLongTitle" aria-hidden="true">
