@@ -7,6 +7,9 @@ h5 {font-weight: bold;}
 .ib-mp-pnum {
 	color: #ffc001;
 }
+.mp-nav>ul>li>p {
+    margin: 0;
+}
 
 
 /**** 게시물 전체 ****/

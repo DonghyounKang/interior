@@ -17,6 +17,10 @@ h3 {font-weight: bold;}
 .ib-mp-dbox {
 	margin-bottom: 3.125em;
 }
+.mp-nav>ul>li>p {
+    margin: 0;
+}
+
 
 /**** 리뷰 모달 ****/
 .ib-rev-cont-modal {

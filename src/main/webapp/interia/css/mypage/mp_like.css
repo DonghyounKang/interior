@@ -1,5 +1,7 @@
 h5 {font-weight: bold;}
-
+.mp-nav>ul>li>p {
+    margin: 0;
+}
 
 /**** 제목 ***/
 .ib-mp-titl {
