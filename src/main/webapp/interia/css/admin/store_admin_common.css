@@ -8,6 +8,11 @@ li{
     display: list-item;
     list-style: none;
 }
+input {
+    border-radius: 5px;
+
+}
+
 /************Header***************/
 /*** header ***/
 .ad-navbar {
@@ -185,6 +190,23 @@ li{
 /************Header End***************/
 
 /************Main Content***************/
+/***** modal *****/
+.modal-body {
+    padding-left: 40px;
+}
+.ad-modal-contentgap {
+    padding-bottom: 20px;
+    margin-right: 15px;
+}
+.ad-modal-contentgap span {
+    font-size: 14px;
+}
+.ad-modal-content-collapse {
+    display: flex;
+    justify-content:flex-start;
+}
+
+/***** modal End *****/
 /***** 공통 *****/
 .ad-card{
     overflow: hidden !important;
@@ -564,15 +586,6 @@ th label {
 
 
 
-
-
-
-
-
-
-
-
-
 .ad-btn-sm {
     border: 1px solid transparent;
     user-select: none;
@@ -791,6 +804,45 @@ input:checked + .ad-slider:before {
 .ad-status-content p:first-child{
     font-weight: 900;
 }
+.ad-works-modal-content {
+    margin-left: 15px;
+}
+.ad-works-modal-inputlg{
+    width: 600px;
+    border-radius: 5px;
+}
+.ad-works-modal-inputsm{
+    width: 200px;
+    border-radius: 5px;
+}
+.ad-works-options {
+    display: none;
+}
+.ad-works-commission {
+    display: none;
+    padding-top: 20px;
+}
+textarea {
+    resize: none;
+}
+.ad-works-opt-wrapper{
+    padding:10px;
+    margin-left:15px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    width:50%
+}
+.ad-works-opt{
+    margin-bottom: 10px;
+
+}
+.ad-works-opt-add {
+    font-size: 14px;
+}
+.ad-works-opt-add i{
+    margin-right: 5px;
+}
+
 /***** 작품관리 End*****/
 
 /***** 판매관리 *****/
@@ -814,6 +866,28 @@ input:checked + .ad-slider:before {
     font-size: 18px;
     font-weight: bold;
     color: gray;
+}
+.ad-modal-orderinfo {
+    padding: 10px;
+    text-align: center;
+}
+.ad-modal-orderinfo input {
+    
+}
+.ad-orderDetail {
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.ad-orderDetail-menu {
+    background-color: #ffc001;
+    color:#1c2036;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.ad-modal-info-data {
+    margin-right: 10px;
 }
 /***** 판매관리 End *****/
 
@@ -862,6 +936,10 @@ input:checked + .ad-slider:before {
     justify-content: space-around;
     flex-grow: 1;
 }
+.ad-class-num {
+    width: 100px;
+}
+
 /***** 체험관리 End *****/
 /************Main Content End***************/
 
