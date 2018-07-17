@@ -4,133 +4,20 @@
 <head>
     <title>공방관리자</title>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../css/admin/store_admin_common.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="shortcut icon" href="../favicon.ico">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../js/ad_header.js"></script>
 </head>
 
 <body>
+    <div id="ad-header">
 
-    <div class="ad-navbar" id="ad-mainnav">
-        <a class="ad-navbar-brand"><b>INTERIA</b></a>
-        <div class="ad-navbar-collapse">
-            <div class="ad-navbar-side">
-                <div class="ad-navbar-storename">
-                    <div class="ad-navbar-img">
-                        <img src="">
-
-                    </div>
-                    <a>
-                    StoreName
-                </a>
-                </div>
-                <ul class="ad-navbar-itemlist">
-                    <li class="ad-nav-item">
-                        <a class="ad-nav-link" href="store_admin_index.html">
-                        <i class="fas fa-home">
-                        <span class="ad-nav-link-text">
-                        main
-                        </span></i>
-                    </a>
-                    </li>
-                    <li class="ad-nav-item">
-                        <a class="ad-nav-link" href="store_adimin_workshop.html">
-                        <i class="fas fa-sitemap">
-                        <span class="ad-nav-link-text">
-                        공방관리
-                        </span></i>
-<!--                        <i class="fas fa-angle-down"></i>-->
-                    </a>
-                        <!--
-                    <ul class="ad-nav-second">
-                        <li>
-                        <a href="#">메인화면 관리</a>
-                        </li> 
-                        <li>
-                        <a href="#">페이지 관리</a>
-                        </li>
-                    </ul>
--->
-                    </li>
-                    <li class="ad-nav-item">
-                        <a class="ad-nav-link" href="store_adimin_works.html">
-                        <i class="fas fa-boxes">
-                        <span class="ad-nav-link-text">
-                        작품관리
-                        </span></i>
-                    </a>
-                    </li>
-                    <li class="ad-nav-item">
-                        <a class="ad-nav-link" href="#">
-                        <i class="fas fa-shopping-cart">
-                        <span class="ad-nav-link-text">
-                        판매관리
-                        </span>
-                        <i class="fas fa-angle-down"></i></i>
-                    </a>
-                        <ul class="ad-nav-second">
-                            <li>
-                                <a href="store_adimin_order.html">주문관리</a>
-                            </li>
-                            <li>
-                                <a href="store_adimin_return.html" style="color: #ffc001">반품관리</a>
-                            </li>
-                            <li>
-                                <a href="store_adimin_cancel.html">취소관리</a>
-                            </li>
-                            <li>
-                                <a href="store_adimin_exchange.html">교환관리</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!--
-                 <li class="ad-nav-item">
-                    <a class="ad-nav-link" href="#">
-                        <i class="fas fa-chart-line"></i>
-                        <span class="ad-nav-link-text">
-                        통계
-                        </span>
-                    </a>
-                </li>
--->
-                    <li class="ad-nav-item">
-                        <a class="ad-nav-link" href="store_adimin_commission.html">
-                        <i class="fas fa-toolbox">
-                        <span class="ad-nav-link-text">
-                        제작의뢰관리
-                        </span></i>
-                    </a>
-                    </li>
-                    <li class="ad-nav-item">
-                        <a class="ad-nav-link" href="store_adimin_class.html">
-                        <i class="fas fa-chalkboard-teacher">
-                        <span class="ad-nav-link-text">
-                        체험관리
-                        </span></i>
-                    </a>
-                    </li>
-                </ul>
-            </div>
-            <ul class="ad-navbar-menu">
-                <li class="ad-navbar-menuitem ad-navbar-select">
-                    <a href="">글쓰기</a>&ensp;|&ensp;
-                    <a href="">장바구니</a>&ensp;|&ensp;
-                    <a href="">알림</a>&ensp;|&ensp;
-                    <a href="">로그아웃</a>&ensp;|&ensp;
-                    <a href="">username</a>
-                </li>
-                <li class="ad-navbar-menuitem ad-navbar-home">
-                    <i class="fas fa-bars">
-                </i>
-                </li>
-            </ul>
-
-        </div>
     </div>
 
     <div class="ad-main-wrapper">
@@ -141,24 +28,24 @@
                     <a href="#">관리자</a>
                 </li>
                 <li class="ad-breadcrumb-item active">
-                    판매관리&ensp;/&ensp;반품관리
+                    제작의뢰관리
                 </li>
             </ol>
 
             <div class="ad-card-default">
                 <div class="ad-card-header">
-                    <i class="fas fa-search"></i> 반품검색
+                    <i class="fas fa-search"></i> 의뢰검색
                 </div>
                 <div class="ad-card-body">
                     <div class="ad-claim">
                         <div class="ad-claim-status ad-claim-request">
-                            <p>반품요청&ensp;<span>N</span>&ensp;건</p>
+                            <p>의뢰요청&ensp;<span>N</span>&ensp;건</p>
                         </div>
                         <div class="ad-claim-status ad-claim-finish">
-                            <p>반품완료&ensp;<span>N</span>&ensp;건</p>
+                            <p>의뢰완료&ensp;<span>N</span>&ensp;건</p>
                         </div>
                         <div class="ad-claim-status ad-claim-withdraw">
-                            <p>반품철회&ensp;<span>N</span>&ensp;건</p>
+                            <p>의뢰철회&ensp;<span>N</span>&ensp;건</p>
                         </div>
                     </div>
                     <form class="ad-searchForm ad-searchForm-collapse">
@@ -234,22 +121,22 @@
                 </div>
                 <div class="ad-card-body">
                     <div class="ad-table-btn">
-                        <span style="font-size: 18px; font-weight: bold;">반품처리 &ensp;|  &ensp;</span>
-                        <button type="button" class="ad-btn ad-btn-color1">반품완료</button>
-                        <button type="button" class="ad-btn ad-btn-color2" data-toggle="modal" data-target="#returnRejectModal">반품철회</button>
-                        <button type="button" class="ad-btn ad-btn-color1">교환으로변경</button>
+                        <span style="font-size: 18px; font-weight: bold;">의뢰처리 &ensp;|  &ensp;</span>
+                        <button type="button" class="ad-btn ad-btn-color1">의뢰완료</button>
+                        <button type="button" class="ad-btn ad-btn-color2" data-toggle="modal" data-target="#CommissionRejectModal">의뢰철회</button>
                     </div>
                     <table cellspacing="0" border="1" summary="명단관리  리스트" class="frt_tbl_type" style="min-width:900px;padding-right:15px;">
                         <caption>명단관리 리스트</caption>
                         <colgroup>
-                            <col width="30" />
-                            <col width="*" />
-                            <col width="*" />
-                            <col width="*" />
-                            <col width="*" />
-                            <col width="*" />
-                            <col width="*" />
-
+                            <col width="50" />
+                            <col width="130" />
+                            <col width="130" />
+                            <col width="130" />
+                            <col width="80" />
+                            <col width="80" />
+                            <col width="130" />
+                            <col width="80" />
+                            <col width="80" />
                         </colgroup>
                         <thead>
                             <tr>
@@ -270,19 +157,20 @@
                         <table cellspacing="0" border="1" summary="명단관리 리스트" class="frt_tbl_type" style="border-top:0px;">
                             <caption>명단관리 리스트</caption>
                             <colgroup>
-                                <col width="30" />
-                                <col width="*" />
-                                <col width="*" />
-                                <col width="*" />
-                                <col width="*" />
-                                <col width="*" />
-                                <col width="*" />
-
+                                <col width="50" />
+                                <col width="130" />
+                                <col width="130" />
+                                <col width="130" />
+                                <col width="80" />
+                                <col width="80" />
+                                <col width="130" />
+                                <col width="80" />
+                                <col width="80" />
                             </colgroup>
                             <tbody>
                                 <tr>
                                     <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
-                                    <td class="num " data-toggle="modal" data-target="#orderDetailModal"><a href="#">12345678</a></td>
+                                    <td class="num " data-toggle="modal" data-target="#commissioninfoModal"><a href="#">12345678</a></td>
                                     <td class="title">홍길동</td>
                                     <td class="date">참가</td>
                                     <td class="writer">청구</td>
@@ -569,113 +457,15 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
 
-            <!-- returnRejectModal -->
-            <div class="modal fade" id="returnRejectModal" tabindex="-1" role="dialog" aria-labelledby="returnRejectModalTitle" aria-hidden="true" style="z-index: 10800;">
-                <div class="modal-dialog modal-dialog-centered " role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="returnRejectModalTitle"><b>반품철회</b></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-                        </div>
-                        <form>
-                            <div class="modal-body">
-                                <div class="ad-modal-contentgap">
-                                    <b>상품주문 선택</b><span>(주문번호: XXXXXX)</span>
-                                </div>
-                                <table cellspacing="0" border="1" summary="명단관리  리스트" class="frt_tbl_type" style="padding-right:15px;">
-                                    <caption>명단관리 리스트</caption>
-                                    <colgroup>
-                                        <col width="30" />
-                                        <col width="*" />
-                                        <col width="*" />
-                                        <col width="*" />
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col"><input type="checkbox" name="" id='chk_all' value="" onclick="CtlExecutor.doCheckAll();" /><label for="chk_all">선택</label></th>
-                                            <th scope="cols">상품주문번호</th>
-                                            <th scope="cols">상품명</th>
-                                            <th scope="cols">가격</th>
-                                        </tr>
-                                    </thead>
-                                </table>
-
-                                <div style="max-height:100px; margin-bottom: 20px; overflow-x:hidden; overflow-y:scroll;">
-                                    <table cellspacing="0" border="1" summary="명단관리 리스트" class="frt_tbl_type" style="border-top:0px;">
-                                        <caption>명단관리 리스트</caption>
-                                        <colgroup>
-                                            <col width="30" />
-                                            <col width="*" />
-                                            <col width="*" />
-                                            <col width="*" />
-                                        </colgroup>
-                                        <tbody>
-                                            <tr>
-                                                <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
-                                                <td class="num"><a href="#">1</a></td>
-                                                <td class="title">홍길동</td>
-                                                <td class="date">참가</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
-                                                <td class="num"><a href="#">1</a></td>
-                                                <td class="title">홍길동</td>
-                                                <td class="date">참가</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
-                                                <td class="num"><a href="#">1</a></td>
-                                                <td class="title">홍길동</td>
-                                                <td class="date">참가</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
-                                                <td class="num"><a href="#">1</a></td>
-                                                <td class="title">홍길동</td>
-                                                <td class="date">참가</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
-                                                <td class="num"><a href="#">1</a></td>
-                                                <td class="title">홍길동</td>
-                                                <td class="date">참가</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
-                                                <td class="num"><a href="#">1</a></td>
-                                                <td class="title">홍길동</td>
-                                                <td class="date">참가</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="ad-modal-contentgap">
-                                    <b>반품 철회 사유 상세</b>
-                                </div>
-                                <textarea cols="50" rows="8"></textarea>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-                                <button type="button" class="ad-btn ad-btn-color1">반품철회</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            
-                       <!-- orderDetailModal -->
-            <div class="modal fade" id="orderDetailModal" tabindex="-1" role="dialog" aria-labelledby="orderDetailModalTitle" aria-hidden="true" style="z-index: 10800;">
+            <!-- Commission info Modal -->
+            <div class="modal fade" id="commissioninfoModal" tabindex="-1" role="dialog" aria-labelledby="commissioninfoModalTitle" aria-hidden="true" style="z-index: 10800;">
                 <div class="modal-dialog modal-lg " role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="orderDetailModalTitle"><b>상품주문정보조회</b></h5>
+                            <h5 class="modal-title" id="commissioninfoModalTitle"><b>의뢰정보조회</b></h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -683,75 +473,36 @@
                         <form>
                             <div class="modal-body">
                                 <div class="ad-modal-contentgap">
-                                    <b>주문상세정보</b>
+                                    <b>의뢰상세정보</b>
                                     <div class="ad-modal-content-collapse ad-orderDetail">
                                         <div class="ad-orderDetail-menu">
                                             <div class="ad-modal-orderinfo">
-                                                상품주문번호
+                                                의뢰번호
                                             </div>
                                             <div class="ad-modal-orderinfo">
-                                                상품주문상태
+                                                의뢰자ID
                                             </div>
                                             <div class="ad-modal-orderinfo">
-                                                구매자명
+                                                처리상태
                                             </div>
                                             <div class="ad-modal-orderinfo">
-                                                주문수량
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                옵션정보
+                                                의뢰내용
                                             </div>
                                         </div>
                                         <div class="ad-modal-info-data">
                                             <div class="ad-modal-orderinfo">
-                                                상품주문번호 data
+                                                의뢰번호 data
                                             </div>
                                             <div class="ad-modal-orderinfo">
-                                                <select>
-                                                    <option>입금대기중</option>
-                                                    <option>결제완료</option>
-                                                    <option>배송준비중</option>
-                                                    <option>배송중</option>
-                                                    <option>배송완료</option>
-                                                </select>
+                                                의뢰자ID data
                                             </div>
                                             <div class="ad-modal-orderinfo">
-                                                구매자명 data
+                                                처리상태 data
                                             </div>
                                             <div class="ad-modal-orderinfo">
-                                                주문수량 data
+                                                의뢰내용 data
                                             </div>
-                                            <div class="ad-modal-orderinfo">
-                                                옵션정보 data
-                                            </div>
-                                        </div>
-                                        <div class="ad-orderDetail-menu">
-                                            <div class="ad-modal-orderinfo">
-                                                상품명
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                클레임
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                구매자ID
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                금액
-                                            </div>
-                                        </div>
-                                        <div class="ad-modal-info-data">
-                                            <div class="ad-modal-orderinfo">
-                                                상품명 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                클레임 data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                구매자ID data
-                                            </div>
-                                            <div class="ad-modal-orderinfo">
-                                                금액 data
-                                            </div>
+
                                         </div>
                                     </div>
 
@@ -823,7 +574,7 @@
                                             </div>
                                         </div>
 
-  
+
                                     </div>
                                 </div>
 
@@ -836,6 +587,39 @@
                     </div>
                 </div>
             </div>
+
+            <!-- commissionRejectModal -->
+            <div class="modal fade" id="CommissionRejectModal" tabindex="-1" role="dialog" aria-labelledby="CommissionRejectModalTitle" aria-hidden="true" style="z-index: 10800;">
+                <div class="modal-dialog modal-dialog-centered " role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="CommissionRejectModalitle"><b>의뢰철회</b></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <div class="ad-modal-contentgap">
+                                    <b>상품주문번호(XXXXXX)</b>
+                                </div>
+
+                                <div class="ad-modal-contentgap">
+                                    <b>의뢰 철회 사유 상세</b>
+                                </div>
+                                <textarea cols="50" rows="8"></textarea>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                                <button type="button" class="ad-btn ad-btn-color1">의뢰철회</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
 
         </div>
         <!-- ad-main-content-->
@@ -904,19 +688,7 @@
             }
         }
         document.addEventListener("click", closeAllSelect);
-    </script>
 
-    <script>
-        $(document).ready(function() {
-            $(".ad-nav-item>a").click(function() {
-                var submenu = $(this).next("ul");
-                if (submenu.is(":visible")) {
-                    submenu.slideUp();
-                } else {
-                    submenu.slideDown();
-                }
-            });
-        });
     </script>
 </body>
 
