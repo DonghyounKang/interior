@@ -55,7 +55,6 @@ public class AuthController {
         
         HashMap<String, Object> result = new HashMap<>();
         
-        
         if (memberService.isExist(id, password)) { // 로그인 성공!
             session.setAttribute("loginUser", memberService.get(id));
             result.put("state", "success");
@@ -74,4 +73,3 @@ public class AuthController {
     }
 }
 
-//ver 55 - JSON 데이터를 출력하는 페이지 컨트롤러 생성
