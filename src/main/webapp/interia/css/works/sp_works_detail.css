@@ -18,6 +18,10 @@ a:hover {text-decoration: none; color: #333;}
     justify-content: space-between;
 }
 
+.bx-wrapper .bx-controls-direction a {
+    z-index: 9;
+}
+
 .ib-pd-img {
     /*height: 600px;*/
     display: grid;
@@ -187,6 +191,10 @@ a:hover {text-decoration: none; color: #333;}
 
 .ib-pd-detail h4 {
     letter-spacing: -0.1em;
+}
+
+.ib-pd-detail-box .bx-wrapper {
+    box-shadow: none;
 }
 
 .ib-pd-detail-box .bx-wrapper .bx-next {
@@ -505,6 +513,10 @@ ol > li {font-size: 0.8125em;}
 .sp-pdt-recomm {
     padding-bottom: 2em;
     border-top: solid #BDBDBD 1px;
+}
+
+.sp-pdt-recomm .bx-wrapper {
+    box-shadow: none;
 }
 
 .sp-pdt-header {
