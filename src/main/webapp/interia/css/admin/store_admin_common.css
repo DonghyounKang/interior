@@ -15,6 +15,9 @@ input {
 
 /************Header***************/
 /*** header ***/
+.ad-selected {
+	color : #ffc001;
+}
 .ad-navbar {
     position: fixed;
     top: 0;
