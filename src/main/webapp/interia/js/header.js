@@ -11,7 +11,6 @@ $.get(serverRoot + "/interia/html/header.html", (data) => {
 function loadLoginUser() {
 	$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 		
-		document.getElementById("nav-link-1").innerHTML = "글쓰기";
 		$("#nav-link-1").text("글쓰기");
 		$("#nav-link-2").text("장바구니");
 		$("#nav-link-3").text("알림");
