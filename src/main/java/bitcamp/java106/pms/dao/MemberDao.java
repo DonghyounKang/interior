@@ -10,7 +10,7 @@ public interface MemberDao {
     List<Member> selectList(Map<String,Object> params);
     int insert(Member member);
     int update(Member member);
-    Member selectOne(int no);
+    Member selectOne(String id);
     Member selectOneWithPassword(Map<String,Object> params);
     int count(Map<String,Object> params);
 }
