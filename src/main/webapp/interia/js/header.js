@@ -15,8 +15,7 @@ function loadLoginUser() {
 		$("#nav-link-2").text("장바구니");
 		$("#nav-link-3").text("알림");
 		$("#nav-link-4").text("로그아웃");
-		$("#nav-link-5").text(data.id);
-		
+		$("#nav-link-5").text(data.nickname);
 		// 글쓰기 관련 이벤트 구현
 		$("#nav-link-1").click(e => {
 			e.preventDefault();
