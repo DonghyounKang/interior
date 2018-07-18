@@ -74,6 +74,13 @@
     delete from INTR_MEMBER where memno=#{value}
   </delete>
   
+  <!-- 아이디 찾기 검색 -->
+  <select id="selectSearchOne" parameterType="map" resultType="String">
+    select id
+    from INTR_MEMBER 
+    where name=#{name} and phno=#{phoneNumber}
+  </select>
+  
 </mapper>
 
 
