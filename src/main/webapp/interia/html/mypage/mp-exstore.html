@@ -93,33 +93,8 @@
 		</div><!-- 참여수업 타이틀 -->
 
 		<section>
-			<div class="ib-mp-st">
-				<div class="ib-mp-st-imgbox">
-					<img src="../../images/mypage/img2.PNG" width="100%">
-				</div>
-				<div class="ib-mp-st-contbox">
-					<h5>[업체명] 나만의 실버 주얼리 만들기</h5>
-					<div>
-						<i class="far fa-calendar"></i>
-						<p>2018-06-20</p>
-					</div>
-					<div>
-						<i class="far fa-clock"></i>
-						<p>10:00 ~ 13:00 예정</p>
-					</div>
-					<div>
-						<i class="fas fa-map-marker-alt"></i>
-						<p>대한민국 서울 특별시 역삼동 822-7 목화밀라트 1609호</p>
-					</div>
-				</div>
-				<div class="ib-mp-st-totalbox">
-					<p>50,000 원</p>
-					<p>(1인)</p>
-					<p>예약 완료</p>
-				</div>
-				<div id="black-fade" class="black_overlay">
-					<button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#reservCBtn">예약 취소</button>
-				</div>
+			<div id="exstorelist">
+				
 			</div>
 
 			<!-- 예약 Modal -->
@@ -156,5 +131,45 @@
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
     <script src="../../js/mp_pfHead.js"></script>
+    <script>
+        $.getJSON("../../../json/wsav/list", (data) => {
+            for (var item of data) {
+                var tsp = item.actdt;
+                var acDate = new Date(tsp);
+                var year = acDate.getFullYear();
+                var month = acDate.getMonth() + 1;
+                var date = acDate.getDate();
+                $("<div>")
+                    .html("<div class='ib-mp-st'>" + 
+                    "<div class='ib-mp-st-imgbox'>" +
+                        "<img src='../../images/mypage/" + item.path + "' width='100%'>" +
+                    "</div>" +
+                    "<div class='ib-mp-st-contbox'>" +
+                        "<h5>[" + item.wsnm + "] " + item.acnm + "</h5>" +
+                        "<div>" +
+                            "<i class='far fa-calendar'></i>" +
+                            "<p>"+ year +"년 "+ month +"월 "+ date +"일"+"</p>" +
+                        "</div>" +
+                        "<div>" +
+                            "<i class='far fa-clock'></i>" +
+                            "<p>10:00 ~ 13:00 예정</p>" +
+                        "</div>" +
+                        "<div>" +
+                            "<i class='fas fa-map-marker-alt'></i>" +
+                            "<p>" + item.acplc + "</p>" +
+                        "</div>" +
+                    "</div>" +
+                    "<div class='ib-mp-st-totalbox'>" +
+                        "<p>" + item.apric + " 원</p>" +
+                        "<p>(1인)</p>" +
+                        "<p>예약 완료</p>" +
+                    "</div>" +
+                    "<div id='black-fade' class='black_overlay'>" +
+                        "<button type='button' class='btn btn-light btn-sm' data-toggle='modal' data-target='#reservCBtn'>예약 취소</button>" +
+                    "</div>" +
+                "</div>").appendTo("#exstorelist");
+            }
+        });
+    </script>
 </body>
 </html>
