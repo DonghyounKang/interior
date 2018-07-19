@@ -3,17 +3,6 @@ html {font-size: 16px}
 body {font-family: 'Nanum Gothic'}
 a {color: #333;}
 /***************** header css ***********************/
-/* header {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 100%;
-	height: 120px;
-	background-color: #fff;
-	border-bottom: 1px solid #ffc001;
-	box-sizing: border-box;
-	z-index: 9999;
-} */
 .ib-container {
     width:1200px;
     margin: 0 auto;
@@ -44,6 +33,7 @@ a {color: #333;}
 	width: 1010px;
 	height: 30px;
 	float: left;
+   transition: height 0.5s;
 }
 .header_nav1 a {
 	margin-left: 0.625em; 
@@ -58,6 +48,7 @@ a {color: #333;}
 	height: 90px;
 	float: left;
 	padding-bottom: 0.3125em;
+   transition: height 0.5s;
 }
 .header_nav2 a {
 	font-size: 1.125rem;
