@@ -23,7 +23,7 @@ a {color: #333;}
 	display: flex;
 	align-items: flex-end;
 	width: 190px;
-/*	height: 120px;*/
+	height: 110px;
 	float: left;
 }
 .header_nav1 {
@@ -45,7 +45,7 @@ a {color: #333;}
 	align-items: flex-end;
 	justify-content: space-between;
 	width: 600px;
-	height: 90px;
+	height: 80px;
 	float: left;
 	padding-bottom: 0.3125em;
    transition: height 0.5s;
@@ -60,7 +60,7 @@ a {color: #333;}
 	align-items: flex-end;
 	justify-content: space-between;
 	width: 210px;
-	height: 90px;
+	height: 80px;
 	float: right;
 	padding-bottom: 0.3125em;
 }
