@@ -14,6 +14,8 @@ public interface MemberDao {
     Member selectOneWithPassword(Map<String,Object> params); // 아이디와 비밀번호가 일치시 로그인 하는 메소드(service에서 isExist용으로 사용)
     int count(Map<String,Object> params); // 여기서 selectOneWithPassword에서 도움 주는 메서드 (service에서 isExist용으로 사용)
     String selectSearchOne(Map<String,Object> params); // 아이디 찾기 데이터 베이스 실행
+    int selectSearchPassword(String id); // 여기는 아이디 검색이 일치하면 값 증가
+    int updatePassword(Map<String, Object> params); // 비밀번호 변경 버튼 클릭
 }
 
 
