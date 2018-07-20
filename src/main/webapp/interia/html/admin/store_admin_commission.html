@@ -4,15 +4,24 @@
 <head>
     <title>공방관리자</title>
     <meta charset="utf-8">
-
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../css/admin/store_admin_common.css">
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload.css">
+	<link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload-ui.css">
     <link rel="shortcut icon" href="../favicon.ico">
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+	<script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
+	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>  
     <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../js/ad_header.js"></script>
+    <script src="../../js/ad_admin.js"></script>
 </head>
 
 <body>
@@ -141,7 +150,7 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th scope="col"><input type="checkbox" name="" id='chk_all' value="" onclick="CtlExecutor.doCheckAll();" /><label for="chk_all">선택</label></th>
+                                <th scope="col"><input type="checkbox" name="" id='chk_all' value="" onclick="" /><label for="chk_all">선택</label></th>
                                 <th scope="cols">상품주문번호</th>
                                 <th scope="cols">주문번호</th>
                                 <th scope="cols">주문일시</th>

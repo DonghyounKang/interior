@@ -788,7 +788,7 @@ position: relative;
 	display: none;
 }
 .ad-adImgs {
-	width: 200px;
+	width: 150px;
 }
 .ad-adImgs-wrapper:hover .ad-adImgs-cover {
 	display: block;
