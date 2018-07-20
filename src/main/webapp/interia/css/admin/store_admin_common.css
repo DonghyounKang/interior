@@ -751,6 +751,49 @@ th label {
     background-color: #1c2036;
 }
 
+/* //fileUpload */
+
+
+#ad-images-div {
+padding: 10px;
+height: 380px;
+border: 1px solid gray;
+border-radius: 5px;
+display: flex;
+}
+.ad-adImgs-wrapper {
+position: relative;
+
+}
+.ad-adImgs-content {
+	width: 150px;
+	height: 150px;
+	margin: 5px;
+	border-radius: 5px;
+	
+}
+.ad-adImgs-cover {
+	position: absolute;
+	left:0;
+	top:0;
+	width:150px;
+	height: 150px;
+	margin: 5px;
+	background : black url("../../images/admin/Grey_close_x.png");
+ 	background-size: 100px;
+ 	background-position: center center;
+ 	background-repeat:no-repeat; 
+	border-radius: 5px;
+	opacity: 0.7;
+	display: none;
+}
+.ad-adImgs {
+	width: 200px;
+}
+.ad-adImgs-wrapper:hover .ad-adImgs-cover {
+	display: block;
+}
+
 /***** 공통 End*****/
 
 /***** 관리자 메인 *****/

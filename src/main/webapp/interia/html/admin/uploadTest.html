@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    
+     <link rel="stylesheet" href="../../node_modules/fine-uploader/fine-uploader/fine-uploader-new.css">  
+     <link rel="stylesheet" href="../../node_modules/fine-uploader/fine-uploader/templates/simple-thumbnails.html">
+    <link rel="shortcut icon" href="../favicon.ico">
+<!--     <link rel="stylesheet" href="../../node_modules/fine-uploader/fine-uploader/loading.gif">
+     <link rel="stylesheet" href="../../node_modules/fine-uploader/fine-uploader/pause.gif">
+     <link rel="stylesheet" href="../../node_modules/fine-uploader/fine-uploader/processing.gif">
+     <link rel="stylesheet" href="../../node_modules/fine-uploader/fine-uploader/retry.gif">
+     <link rel="stylesheet" href="../../node_modules/fine-uploader/fine-uploader/trash.gif">
+     <link rel="stylesheet" href="../../node_modules/fine-uploader/fine-uploader/placeholders/not_available-generic.png">
+     <link rel="stylesheet" href="../../node_modules/fine-uploader/fine-uploader/placeholders/waiting-generic.png">-->
+    
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../node_modules/fine-uploader/fine-uploader/fine-uploader.core.min.js"></script>
+    <script src="../../node_modules/fine-uploader/fine-uploader/fine-uploader.min.js"></script>
+    <script src="../../node_modules/fine-uploader/fine-uploader/templates/gallery.html"></script>
+    <!-- Fine Uploader Thumbnails template w/ customization
+    ====================================================================== -->
+    
+    <style>
+       
+    </style>
+
+</head>
+
+<body>
+ <!-- Fine Uploader DOM Element
+    ====================================================================== -->
+    <div id="galleryr"></div>
+
+    <!-- Your code to create an instance of Fine Uploader and bind to the DOM/template
+    ====================================================================== -->
+    <script>
+        var manualUploader = new qq.FineUploader({
+            element: document.getElementById('gallery'),
+            template: 'gallery',
+            request: {
+                endpoint: '/server/uploads'
+            },
+            thumbnails: {
+                placeholders: {
+                    waitingPath: '/source/placeholders/waiting-generic.png',
+                    notAvailablePath: '/source/placeholders/not_available-generic.png'
+                }
+            },
+            autoUpload: false,
+            debug: true
+        });
+
+        qq(document.getElementById("trigger-upload")).attach("click", function() {
+            manualUploader.uploadStoredFiles();
+        });
+    </script>
+</body>
+
+</html>
