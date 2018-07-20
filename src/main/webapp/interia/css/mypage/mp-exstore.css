@@ -89,6 +89,10 @@ a,a:hover {color: #000; text-decoration: none}
     filter: alpha(opacity=60);*/
 }
 
+.ib-mp-st:hover .black_overlay{
+    display: flex;
+}
+
 .black_overlay>button {
     font-size: 1.3em;
     font-weight: bold;
