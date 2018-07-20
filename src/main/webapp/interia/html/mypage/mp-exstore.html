@@ -133,44 +133,75 @@
     <script src="../../js/mp_pfHead.js"></script>
     <!-- <script src="../../js/mp_exstore.js"></script> -->
     <script>
-        $.getJSON("../../../json/wsav/list", (data) => {
-            for (var item of data) {
-                var tsp = item.actdt;
+        $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+            console.log(data);
+            console.log(data.no);
+            var uno = data.no;
+            $.getJSON("../../../json/wsav/list",{"no": uno}, (data) => {
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                var tsp = data[i].actdt;
                 var acDate = new Date(tsp);
                 var year = acDate.getFullYear();
                 var month = acDate.getMonth() + 1;
                 var date = acDate.getDate();
-                $("<div>")
+                $("<div/>")
                     .html("<div class='ib-mp-st'>" + 
                     "<div class='ib-mp-st-imgbox'>" +
-                        "<img src='../../images/mypage/" + item.path + "' width='100%'>" +
+                        "<img src='../../images/mypage/" + data[i].path + "' width='100%'>" +
                     "</div>" +
                     "<div class='ib-mp-st-contbox'>" +
-                        "<h5>[" + item.wsnm + "] " + item.acnm + "</h5>" +
+                        "<h5>[" + data[i].wsnm + "] " + data[i].acnm + "</h5>" +
                         "<div>" +
                             "<i class='far fa-calendar'></i>" +
                             "<p>"+ year +"년 "+ month +"월 "+ date +"일"+"</p>" +
                         "</div>" +
                         "<div>" +
                             "<i class='far fa-clock'></i>" +
-                            "<p>"+ item.avst +" ~ "+ item.avet +" 예정</p>" +
+                            "<p>"+ data[i].avst +" ~ "+ data[i].avet +" 예정</p>" +
                         "</div>" +
                         "<div>" +
                             "<i class='fas fa-map-marker-alt'></i>" +
-                            "<p>" + item.acplc + "</p>" +
+                            "<p>" + data[i].acplc + "</p>" +
                         "</div>" +
                     "</div>" +
                     "<div class='ib-mp-st-totalbox'>" +
-                        "<p>" + item.apric + " 원</p>" +
-                        "<p>("+ item.acpt +"인)</p>" +
+                        "<p>" + data[i].apric + " 원</p>" +
+                        "<p>("+ data[i].acpt +"인)</p>" +
                         "<p>예약 완료</p>" +
                     "</div>" +
                     "<div id='black-fade' class='black_overlay'>" +
-                        "<button type='button' class='btn btn-light btn-sm' data-toggle='modal' data-target='#reservCBtn'>예약 취소</button>" +
+                        "<button type='button' class='btn btn-light btn-sm' data-toggle='modal' data-target='#reservCBtn"+ i +"'>예약 취소</button>" +
                     "</div>" +
+                "</div>"+
+
+                "<div class='modal fade' id='reservCBtn"+ i +"' tabindex='-1' role='dialog' aria-hidden='true'>" +
+                  "<div class='modal-dialog modal-dialog-centered' role='document'>" +
+                    "<div class='modal-content'>" +
+                      "<div class='modal-header'>" +
+                        "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>" +
+                          "<span aria-hidden='true'>&times;</span>" +
+                        "</button>" +
+                      "</div>" +
+                      "<div class='modal-body'>" +
+                        "<p>예약을 취소하면 예약금을 돌려 받을 수 없습니다.</p>" +
+                        "<p>정말 취소하시겠습니까?</p>" +
+                      "</div>" +
+                      "<div class='modal-footer'>" +
+                        "<button type='button' id='reserDelbtn' class='btn reservbtn'>예약 취소</button>" +
+                      "</div>" +
+                    "</div>" +
+                  "</div>" +
                 "</div>").appendTo("#exstorelist");
             }
+            });
         });
+
+    // $("#reserDelbtn").click(() => {
+ //        $.get("../../../json/wsav/delete", {"no": no}, () => {
+ //            location.href = "mp-exstore.html";
+ //        });
+ //    });
     </script>
 </body>
 </html>

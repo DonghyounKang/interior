@@ -19,8 +19,8 @@ public class WsavServiceImpl implements WsavService {
     }
     
     @Override
-    public List<Wsav> list() {
-        return wsavDao.selectList();
+    public List<Wsav> list(int no) {
+        return wsavDao.selectList(no);
     }
     
     @Override

@@ -6,7 +6,7 @@ import bitcamp.java106.pms.domain.Wsav;
 
 public interface WsavDao {
     int delete(int no) ;
-    List<Wsav> selectList();
+    List<Wsav> selectList(int no);
     int insert(Wsav wsav);
     int update(Wsav wsav);
     Wsav selectOne(int no);

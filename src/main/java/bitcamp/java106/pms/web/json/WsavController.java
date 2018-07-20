@@ -33,8 +33,8 @@ public class WsavController {
     }
     
     @RequestMapping("list")
-    public Object list() {        
-        return wsavService.list();
+    public Object list(int no) {        
+        return wsavService.list(no);
     }
     
     @RequestMapping("update")
