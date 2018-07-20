@@ -1,7 +1,7 @@
-*.class
 *.project
 *.classpath
-*log
+*.class
+*.log
 **/.gradle/
 **/.settings/
 **/bin
@@ -13,4 +13,4 @@
 **/package-lock.json
 **/aws.properties
 
-!.build.gradle
+!build.gradle
