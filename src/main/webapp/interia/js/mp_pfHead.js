@@ -14,10 +14,10 @@ $(window).scroll(function () {
   
   console.log(scrollValue);
   console.log(offset.top);
-  if (scrollValue < 280) {
+  if (scrollValue < 260) {
     $("#mp_underBar").css("display", "none");
   }
-  if (scrollValue > 320 && scrollValue < offset.top + 200) {
+  if (scrollValue > 260 && scrollValue < offset.top + 200) {
     $("#mp_underBar").css("display", "block");
   }
   if (scrollValue > offset.top + 200) {

@@ -321,6 +321,10 @@ a:hover {
     z-index: 11;
 }
 
+#mp_underBar p {
+    margin: 0;
+}
+
 .ib_mp_conBar {
     /*width: 1200px;
     margin: 0 auto;*/
