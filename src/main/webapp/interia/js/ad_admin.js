@@ -11,12 +11,19 @@ $(document).ready(function(){
 
 });
 
+$(document).ready(function(){
+	$('.modal').on('hidden.bs.modal', function (e) { 
+		$(this).find('form')[0].reset() 
+	});
+});
+
 /* works modal option */
 function openOption(className, obj) {
     var $input = $(obj);
     if ($input.prop('checked')) $(className).show();
     else $(className).hide();
 }
+
 
 $(document).ready(function(){
 	ClassicEditor
@@ -28,3 +35,4 @@ $(document).ready(function(){
 	    console.error( error );
 	} );
 });
+
