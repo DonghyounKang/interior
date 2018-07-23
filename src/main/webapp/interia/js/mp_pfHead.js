@@ -1,10 +1,10 @@
-$.get("/test/interia/html/mp_pfHead.html", (data) => {
+$.get("/interior/interia/html/mp_pfHead.html", (data) => {
     $(".mp-banner").html(data);
 });
 
 
 /* scroller_underBar */
-$.get("/test/interia/html/mp_underBar.html", (data) => {
+$.get("/interior/interia/html/mp_underBar.html", (data) => {
     $("#mp_underBar").html(data);
 });
 
