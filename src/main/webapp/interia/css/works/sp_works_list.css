@@ -2,6 +2,7 @@ h1,h2,h3,h4,h5,h6,p {margin: 0;padding: 0;}
 a {color:#333;text-decoration:none}
 a:active, a:hover {text-decoration:none;}
 
+
 option {
     color: black;
 }
@@ -116,8 +117,8 @@ option {
 }
 
 .sp-card-img {
-    width: auto;
-    height: 230px;
+    width: 228px;
+    height: 228px;
 }
 
 .sp-card-content {

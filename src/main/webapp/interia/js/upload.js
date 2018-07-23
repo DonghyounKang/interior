@@ -1,5 +1,6 @@
 /*// fileUpload*/
 "use strict"
+var imgFiles;
 
 $(document).ready(function(){
 	$('#fileupload').fileupload({
@@ -16,15 +17,25 @@ $(document).ready(function(){
 	  processalways: function(e, data) {
 	      console.log('fileuploadprocessalways()...');
 	      console.log(data.files);
+	      imgFiles = data.files;
 	      var imagesDiv = $('#ad-images-div');
 	      imagesDiv.html("");
 	      for (var i = 0; i < data.files.length; i++) {
 	        try {
 	          if (data.files[i].preview.toDataURL) {
-	        	var imgWrapper = $('<div>').addClass('ad-adImgs-wrapper').appendTo(imagesDiv);
-	       	  	var imgContent = $('<div>').addClass('ad-adImgs-content').appendTo(imgWrapper);
-	       	  	var imgCover = $('<div>').addClass('ad-adImg-opt' + i + ' ad-adImgs-cover').appendTo(imgWrapper);
+	        	var imgWrapper = $('<div>')
+	        						.attr("data-file-index", i)
+	        						.addClass('ad-adImgs-wrapper')
+	        						.click(delImg)
+	        						.appendTo(imagesDiv);
+	       	  	var imgContent = $('<div>')
+	       	  					.addClass('ad-adImgs-content')
+	       	  					.appendTo(imgWrapper);
+	       	  	var imgCover = $('<div>')
+	       	  					.addClass('ad-adImgs-cover')
+	       	  					.appendTo(imgWrapper);
 	            $("<img/>").attr('src', data.files[i].preview.toDataURL()).appendTo(imgContent).addClass('ad-adImgs');
+	          
 	          }
 	        } catch (err) {}
 	      }
@@ -32,6 +43,8 @@ $(document).ready(function(){
 	      $('#upload-btn').click(function() {
 	          data.submit();
 	      });
+	      
+
 	  }, 
 	  submit: function (e, data) { // 서버에 전송하기 직전에 호출된다.
 	    console.log('submit()...');
@@ -46,5 +59,11 @@ $(document).ready(function(){
 	});
 });
 
+function delImg(event){
+	var wrapperDiv = $(event.currentTarget);
+	wrapperDiv.remove();
+    var fileIndex =wrapperDiv.attr('data-file-index');
+    imgFiles.splice(fileIndex, 1);
+}
 
 

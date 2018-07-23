@@ -8,7 +8,12 @@ $(document).ready(function(){
 			$('.frt_tbl_type input[type=checkbox]').prop('checked',false);
 		}
 	});
-	
+
 });
 
-
+/* works modal option*/
+function openOption(className, obj) {
+    var $input = $(obj);
+    if ($input.prop('checked')) $(className).show();
+    else $(className).hide();
+}
