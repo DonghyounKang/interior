@@ -879,12 +879,18 @@ dl,ul,ol,menu,li {list-style:none}
     height: 1000px;
     float: right;
 }
-.sellerSite_ex_detail_mainImg {
+.testtesttest {
     width: 750px;
     height: 400px;
     float: left;
+    max-width: 750px;
 }
-.sellerSite_ex_detail_subImg {
+.sellerSite_ex_detail_mainImg {
+    width: 100%;
+    height: 400px;
+    float: left;
+}
+#sellerSite_ex_detail_subImg {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -901,24 +907,25 @@ dl,ul,ol,menu,li {list-style:none}
     width: 100%;
     height: 95px;
     background-color: #000;
+    opacity: 0.5;
 }
 .sellerSite_ex_detail_subImg01_bg {
     width: 100%;
     height: 95px;
     background-color: #000;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 .sellerSite_ex_detail_subImg02_bg {
     width: 100%;
     height: 95px;
     background-color: #000;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 .sellerSite_ex_detail_subImg03_bg {
     width: 100%;
     height: 95px;
     background-color: #000;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 .sellerSite_ex_detail_subImg01 {
     width: 100%;

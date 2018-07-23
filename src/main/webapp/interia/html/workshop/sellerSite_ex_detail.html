@@ -9,7 +9,9 @@
     <link rel="stylesheet" type="text/css" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/header_move.css">
     <link rel="stylesheet" type="text/css" href="../../css/workshop/workshop_sellerSite.css">
+    <link rel="stylesheet" href="../../node_modules/bxslider/dist/jquery.bxslider.min.css">
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bxslider/dist/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=PbgSjAwHcLlAqc14BbYS&submodules=geocoder"></script>
 </head>    
 
@@ -85,31 +87,33 @@
 	        </div>
 	        <div class="workshop_sellerSite_content">
 	            <div class="sellerSite_ex_detail_bg">
+                    <div class="testtesttest">
 	                <div class="sellerSite_ex_detail_mainImg">
-	                    <img class="detail_mainImg00" src="../../images/workshop/seller_ex_detail_main.png">
-	                    <img class="detail_mainImg01" src="../../images/workshop/seller_ex_detail_main01.png" style="display: none;">
-	                    <img class="detail_mainImg02" src="../../images/workshop/seller_ex_detail_main02.png" style="display: none;">
-	                    <img class="detail_mainImg03" src="../../images/workshop/seller_ex_detail_main03.png" style="display: none;">
+                        <img src="../../images/workshop/seller_ex_detail_main.png">
+                        <img src="../../images/workshop/seller_ex_detail_main01.png">
+	                    <img src="../../images/workshop/seller_ex_detail_main02.png">
+	                    <img src="../../images/workshop/seller_ex_detail_main03.png">
 	                </div>
-	                <div class="sellerSite_ex_detail_subImg">
+                    </div>
+	                <div id="sellerSite_ex_detail_subImg">
 	                    <div class="sellerSite_ex_detail_subImg00">
 	                        <div class="sellerSite_ex_detail_subImg00_bg">
-	                            <a href="javascript:viewExDetailBtn(1);"><img src="../../images/workshop/seller_ex_detail_sub00.png"></a>
+	                            <a data-slide-index="0" href=""><img src="../../images/workshop/seller_ex_detail_sub00.png"></a>
 	                        </div>
 	                    </div>
 	                    <div class="sellerSite_ex_detail_subImg01">
 	                        <div class="sellerSite_ex_detail_subImg01_bg">
-	                            <a href="javascript:viewExDetailBtn(2);"><img src="../../images/workshop/seller_ex_detail_sub01.png"></a>
+	                            <a data-slide-index="1" href=""><img src="../../images/workshop/seller_ex_detail_sub01.png"></a>
 	                        </div>
 	                    </div>
 	                    <div class="sellerSite_ex_detail_subImg02">
 	                        <div class="sellerSite_ex_detail_subImg02_bg">
-	                            <a href="javascript:viewExDetailBtn(3);"><img src="../../images/workshop/seller_ex_detail_sub02.png"></a>
+	                            <a data-slide-index="2" href=""><img src="../../images/workshop/seller_ex_detail_sub02.png"></a>
 	                        </div>
 	                    </div>
 	                    <div class="sellerSite_ex_detail_subImg03">
 	                        <div class="sellerSite_ex_detail_subImg03_bg">
-	                            <a href="javascript:viewExDetailBtn(4);"><img src="../../images/workshop/seller_ex_detail_sub03.png"></a>
+	                            <a data-slide-index="3" href=""><img src="../../images/workshop/seller_ex_detail_sub03.png"></a>
 	                        </div>
 	                    </div>
 	                </div>
@@ -175,7 +179,6 @@
 	</section>
     <footer id="footer">
     </footer>
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../js/common.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
