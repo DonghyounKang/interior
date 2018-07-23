@@ -1,6 +1,32 @@
-$.get("/interior/interia/html/mp_pfHead.html", (data) => {
+$.get("/test/interia/html/mp_pfHead.html", (data) => {
     $(".mp-banner").html(data);
 });
+
+
+/* scroller_underBar */
+$.get("/test/interia/html/mp_underBar.html", (data) => {
+    $("#mp_underBar").html(data);
+});
+
+var offset = $("#footer").offset();
+$(window).scroll(function () { 
+  var scrollValue = $(document).scrollTop(); 
+  
+  console.log(scrollValue);
+  console.log(offset.top);
+  if (scrollValue < 280) {
+    $("#mp_underBar").css("display", "none");
+  }
+  if (scrollValue > 320 && scrollValue < offset.top + 200) {
+    $("#mp_underBar").css("display", "block");
+  }
+  if (scrollValue > offset.top + 200) {
+    $("#mp_underBar").css("display", "none");
+  }
+});
+
+
+
 
 
 // 팔로우 버튼 자신의 마이페이지에서만 안보이도록 

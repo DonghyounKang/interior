@@ -288,6 +288,67 @@ a:hover {
 }
 
 .ib-conbox {
-    padding-top: 2em;
-    width: 1040px;
+    /*margin: 0 auto;*/
+    float: right;
+    width: 1040px !important;
+
+}
+
+.mp_side {
+    padding-top: 4em;
+    position: relative;
+}
+
+.mp_side:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+
+
+
+/* scrollerbar_underMenu */
+#mp_underBar {
+    display: none;
+    width: 150px;
+    padding: 0 1em 1em 1em;
+    background: #fff;
+    border: 1px solid #cccc;
+    border-radius: 5px;
+    position: fixed;
+    top: 18%;
+    z-index: 11;
+}
+
+.ib_mp_conBar {
+    /*width: 1200px;
+    margin: 0 auto;*/
+}
+
+.mp_underLine {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+}
+
+.mp_under_title {
+    display: flex;
+    /*justify-content: space-between;*/
+    font-weight: bold;
+    line-height: 2rem;
+}
+
+.mp_under_title>p {
+    padding-left: 0.7em;
+}
+
+.mp_under_subTitle p {
+    font-size: 0.75rem;
+    padding: 0.3em 0 0.3em 0.5em;
+}
+
+.mp_under_subTitle p a:hover {
+    color: rgb(230, 126, 34);
+    font-weight: bold;
 }
