@@ -11,9 +11,20 @@ $(document).ready(function(){
 
 });
 
-/* works modal option*/
+/* works modal option */
 function openOption(className, obj) {
     var $input = $(obj);
     if ($input.prop('checked')) $(className).show();
     else $(className).hide();
 }
+
+$(document).ready(function(){
+	ClassicEditor
+	.create( document.querySelector( '#editor' ) )
+	.then( editor => {
+	    console.log( editor );
+	} )
+	.catch( error => {
+	    console.error( error );
+	} );
+});
