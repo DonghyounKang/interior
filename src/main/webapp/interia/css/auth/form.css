@@ -14,7 +14,7 @@ a:active, a:hover {text-decoration:none;}
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-end;
-	width: 960px;
+	width: 1200px;
 	height: 120px;
 	margin: 0 auto;
 }
@@ -31,7 +31,7 @@ a:active, a:hover {text-decoration:none;}
 .form_subText {
 	display: flex;
 	align-items: flex-end;
-	width: 960px;
+	width: 1200px;
 	height: 80px;
 	margin: 0 auto;
 }
@@ -46,7 +46,7 @@ a:active, a:hover {text-decoration:none;}
 }
 
 .form_mainForm{
-	width: 960px;
+	width: 1200px;
 	height: 340px;
 	margin: 0 auto;
 	border-top: 2px solid #999;
@@ -69,7 +69,7 @@ a:active, a:hover {text-decoration:none;}
 	padding-left: 1.25em;
 }
 .form_mainForm_Id01{
-	width: 760px;
+	width: 1000px;
 	height: 60px;
 	float: left;
 	background-color: #fff;
@@ -78,7 +78,7 @@ a:active, a:hover {text-decoration:none;}
 	box-sizing: border-box;
 }
 .form_mainForm_Id02{
-	width: 760px;
+	width: 1000px;
 	height: 60px;
 	float: left;
 	background-color: #fff;
@@ -108,7 +108,7 @@ a:active, a:hover {text-decoration:none;}
 	margin-left: 1.5em;
 }
 .form_mainButton {
-	width: 960px;
+	width: 1200px;
 	height: 100px;
 	margin:0 auto;
 }
