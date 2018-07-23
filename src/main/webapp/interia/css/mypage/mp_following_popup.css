@@ -1,5 +1,5 @@
 /**** 전체 팝업 ****/
-.mp-following-popup {
+.mp-follow-popup {
 	border: solid #D5D5D5 0.5px;
 	overflow: hidden;
 	width: 100%;
@@ -11,34 +11,34 @@
 
 
 /**** 팝업 내부 ****/
-.mp-following-popup > p {
+.mp-follow-popup > p {
 	padding: 0.9375em 0 0.625em 0.9375em;
 	border-bottom: #BDBDBD solid 0.5px;
 	margin: 0;
 }
-.mp-following-box1 {
+.mp-follow-box1 {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	height: 450px;
 }
-.mp-following-box1 > ul {
+.mp-follow-box1 > ul {
 	/*-webkit-padding-start: 0;   크롬,사파리 user agent style sheet 제거*/
 	/*-moz-padding-start: 0;   파이어폭스 user agent style sheet 제거*/
 	padding-left: 0;
 }
-.mp-following-list {
+.mp-follow-list {
 	list-style: none; height: 100%;
 	padding: 0.125em;
 	margin: 0 0.9375em;
 	border-bottom: 0.1px solid #E7E7E7;
 }
-.mp-following-list > div {
+.mp-follow-list > div {
 	position: relative;
 }
-.mp-following-list > div > div {
+.mp-follow-list > div > div {
 	display: inline-block;
 }
-.mp-following-img {
+.mp-follow-img {
 	position: relative;
 	top: 5px;
 	overflow: hidden;
@@ -46,12 +46,12 @@
 	width: 40px;
 	height: 40px;
 }
-.mp-following-img img {
+.mp-follow-img img {
 	cursor: pointer;
 	width: 100%;
 	height: 100%;
 }
-.mp-following-name {
+.mp-follow-name {
 	position: relative;
 	left: 10px; bottom: 11px;
 	font-size: 0.8125em;
@@ -62,12 +62,14 @@
 	left: 285px;
 	bottom: 11px;
 }
-.mp-following-btn .btn-sm {
-	background: #343855;
-	border: #343855 solid 1px; 
-	padding: .125em .5rem;
+.mp-follower-btn .btn {
+    padding: .125em .5rem;
 }
-.mp-following-btn .btn-sm:hover {
+.mp-following-btn .btn-primary {
 	background: #343855;
 	border: #343855 solid 1px; 
+}
+.mp-follower-btn .btn-outline-dark:hover {
+    background: white;
+    color: black;
 }

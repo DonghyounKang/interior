@@ -23,7 +23,7 @@ a:hover {
     background-position: center;
     background-size: cover;
     background: #ffc001;
-    height: 200px;
+    height: 150px;
     transition: box-shadow 0.5s ease;
     box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.25);
 }
@@ -39,14 +39,14 @@ a:hover {
 }
 .mp-banner:hover .mp-pic-box{
     opacity: 1;
-    width: 164px;
+    width: 155px;
 }
 .mp-banner>.mp-banner-cbox>a>.fas {
     position: absolute;
-    font-size: 2.25em;
+    font-size: 2.1em;
     color: white;
-    top: 20px;
-    right: 6px;
+    top: 11%;
+    right: .5%;
     transition: all .3s ease-out, padding .5s ease;
 }
 .mp-banner > a {
@@ -71,22 +71,22 @@ a:hover {
 .mp-pic-text { /*span*/
    /*-webkit-font-smoothing: antialiased;*/
     position: relative;
-    padding-right: 0.56em;
     font-weight: bold;
     color: white;
+    font-size: .95em;
 }
 .mp-pic-box { /*div*/ 
     position: absolute;
-    border: 3px solid white;
+    border: 2px solid white;
     border-radius: 2px;
     box-sizing: border-box;
     color: white;
     display: inline-block;
     opacity: 0;
     overflow: hidden;
-    padding: 0.4em 0.8em;
-    top: 20px;
-    right: 6px;
+    padding: 0.3em 0.6em;
+    top: 12%;
+    right: .5%;
     transition: opacity .3s ease-out, width .3s ease-out;
     white-space: nowrap;
     width: 34px;
@@ -123,8 +123,8 @@ a:hover {
     background: #ffc001;
     border-radius: 50%;
     border: 6px solid white;
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     position: absolute;
     top: 4%;
     left: 5%;
@@ -137,26 +137,27 @@ a:hover {
 
 .mp-profile-setting > a {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
-    /* width: 235px; */
     border-radius: 50%;
     z-index: 4;
     text-decoration: none;
 } 
 .mp-profile-div {
     position: absolute;
-    left: 83px; top: 93px;
+    left: 59px; top: 70px;
     color: #fff;
-    font-size: 1.125em;
+    font-size: 1.1em;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mp-profile-div p {
+	white-space: nowrap;
 }
 .mp-profile-div .fas {
-    font-size: 2.25em;
+    font-size: 2em;
     color: white;
-    margin-left: 0.4em;
 }
 
 
@@ -164,8 +165,8 @@ a:hover {
 .mp-user-info {
     position: absolute;
     color: #343855;
-    top: 42%;
-    left: 28%;
+    top: 35%;
+    left: 24%;
     font-weight: bold;
     font-size: 0.8125em;
     z-index: 3;
@@ -173,8 +174,11 @@ a:hover {
 .mp-user-info > p {
     margin-bottom: 0;
 }
+.mp-user-follow {
+	font-size: .9em;
+}
 .mp-user-name {
-    font-size: 1.7692307692307692em;
+    font-size: 1.5em;
     margin-bottom: 0.23em;
 }
 .mp-user-follow > a {
@@ -183,18 +187,19 @@ a:hover {
 .btn-outline-light {
    border-width: 2px; 
    margin-top: 0.6em;
+   padding: .1em .4em;
 }
 
 
 /**** 네비게이션 ****/
 .mp-nav {
     position: relative;
-    height: 60px;
+    height: 50px;
     /*text-align: center; */
 }
 .mp-nav>ul {
     list-style: none;
-    height: 60px;
+    height: 50px;
     /*width: 1200px;*/
     display: inline-block;
     display: flex;
@@ -208,7 +213,6 @@ a:hover {
     height: inherit;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.0625em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -248,7 +252,7 @@ a:hover {
 }
 
 .mp-bar3>ul {
-    height: 60px;
+    height: 50px;
     width: 1200px;
     margin: 0 auto;
     list-style: none;
@@ -273,7 +277,7 @@ a:hover {
 #submenus {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 0;
     width: 100%;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
@@ -284,5 +288,6 @@ a:hover {
 }
 
 .ib-conbox {
-    padding-top: 4em;
+    padding-top: 2em;
+    width: 1040px;
 }
