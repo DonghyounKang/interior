@@ -316,9 +316,10 @@ a:hover {
     background: #fff;
     border: 1px solid #cccc;
     border-radius: 5px;
-    position: fixed;
-    top: 18%;
     z-index: 11;
+    position: sticky;
+    top: 12%;
+    margin-bottom: 1em; 
 }
 
 #mp_underBar p {

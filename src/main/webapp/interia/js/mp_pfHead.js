@@ -10,22 +10,26 @@ $.get("/interior/interia/html/mp_underBar.html", (data) => {
 
 var offset = $("#footer").offset();
 $(window).scroll(function () { 
-  var scrollValue = $(document).scrollTop(); 
-  
-  console.log(scrollValue);
+  var scrollValue = $(document).scrollTop();
+  var underBar = $("#mp_underBar").height() + $("#mp_underBar").offset().top + 50;
+  var theight = $("html").height() - $("#footer").height();
+  console.log("underBar="+underBar);
+  console.log("theight="+theight);
   console.log(offset.top);
-  if (scrollValue < 260) {
+  if (scrollValue < 210) {
     $("#mp_underBar").css("display", "none");
   }
-  if (scrollValue > 260 && scrollValue < offset.top + 200) {
+  if (scrollValue > 210 && underBar < theight) {
     $("#mp_underBar").css("display", "block");
-  }
-  if (scrollValue > offset.top + 200) {
-    $("#mp_underBar").css("display", "none");
-  }
+    // $("#mp_underBar").addClass('mp_position1');
+    // $("#mp_underBar").removeClass('mp_position2');
+  } 
+  // else {
+  //   // $("#mp_underBar").addClass('mp_position2');
+  //   // $("#mp_underBar").removeClass('mp_position1');
+  //   $("#mp_underBar").css("display", "none");
+  // }
 });
-
-
 
 
 
