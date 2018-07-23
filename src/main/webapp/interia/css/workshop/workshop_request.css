@@ -66,7 +66,7 @@ a:active, a:hover {text-decoration:none;}
     display: flex;
     justify-content: center;
 	width: 100%;
-	height: 500px;
+	height: 400px;
     max-width: 1920px;
 	margin: 0 auto;
 }
@@ -81,7 +81,7 @@ a:active, a:hover {text-decoration:none;}
 .workshop_request_storyImg00 {
 	position: relative;
     width: 400px;
-	height: 500px;
+	height: 400px;
 	float: left;
 }
 .workshop_request_storyImg00_text {
@@ -118,19 +118,20 @@ a:active, a:hover {text-decoration:none;}
     margin-left: 20em;
 }
 .request_click_box p:nth-child(2){
-    font-size: 1rem;
-    margin-top: 2em;
+    font-size: 0.825rem;
+    margin-top: 1.5em;
+    font-weight: normal;
 }
 .request_click_box p:nth-child(3){
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 .request_click_box p:nth-child(4){
-    font-size: 0.925rem;
+    font-size: 0.7rem;
     margin-top: 1em;
 }
 .request_click_box img:nth-child(5){
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 
@@ -138,7 +139,7 @@ a:active, a:hover {text-decoration:none;}
 .workshop_request_storyImg01 {
 	position: relative;
     width: 400px;
-	height: 500px;
+	height: 400px;
 	float: left;
 }
 .workshop_request_storyImg01_text {
@@ -175,19 +176,20 @@ a:active, a:hover {text-decoration:none;}
     margin-left: 20em;
 }
 .request_click_box01 p:nth-child(2){
-    font-size: 1rem;
-    margin-top: 2em;
+    font-size: 0.825rem;
+    margin-top: 1.5em;
+    font-weight: normal;
 }
 .request_click_box01 p:nth-child(3){
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 .request_click_box01 p:nth-child(4){
-    font-size: 0.925rem;
+    font-size: 0.7rem;
     margin-top: 1em;
 }
 .request_click_box01 img:nth-child(5){
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 
@@ -196,7 +198,7 @@ a:active, a:hover {text-decoration:none;}
 .workshop_request_storyImg02 {
 	position: relative;
     width: 400px;
-	height: 500px;
+	height: 400px;
 	float: left;
 }
 .workshop_request_storyImg02_text {
@@ -233,19 +235,20 @@ a:active, a:hover {text-decoration:none;}
     margin-left: 20em;
 }
 .request_click_box02 p:nth-child(2){
-    font-size: 1rem;
-    margin-top: 2em;
+    font-size: 0.825rem;
+    margin-top: 1.5em;
+    font-weight: normal;
 }
 .request_click_box02 p:nth-child(3){
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 .request_click_box02 p:nth-child(4){
-    font-size: 0.925rem;
+    font-size: 0.7rem;
     margin-top: 1em;
 }
 .request_click_box02 img:nth-child(5){
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 
@@ -253,7 +256,7 @@ a:active, a:hover {text-decoration:none;}
 .workshop_request_storyImg03 {
 	position: relative;
     width: 400px;
-	height: 500px;
+	height: 400px;
 	float: left;
 }
 .workshop_request_storyImg03_text {
@@ -290,26 +293,27 @@ a:active, a:hover {text-decoration:none;}
     margin-left: 20em;
 }
 .request_click_box03 p:nth-child(2){
-    font-size: 1rem;
-    margin-top: 2em;
+    font-size: 0.825rem;
+    margin-top: 1.5em;
+    font-weight: normal;
 }
 .request_click_box03 p:nth-child(3){
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 .request_click_box03 p:nth-child(4){
-    font-size: 0.925rem;
+    font-size: 0.7rem;
     margin-top: 1em;
 }
 .request_click_box03 img:nth-child(5){
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 /* img 04 */
 .workshop_request_storyImg04 {
 	position: relative;
     width: 400px;
-	height: 500px;
+	height: 400px;
 	float: left;
 }
 .workshop_request_storyImg04_text {
@@ -346,19 +350,20 @@ a:active, a:hover {text-decoration:none;}
     margin-left: 20em;
 }
 .request_click_box04 p:nth-child(2){
-    font-size: 1rem;
-    margin-top: 2em;
+    font-size: 0.825rem;
+    margin-top: 1.5em;
+    font-weight: normal;
 }
 .request_click_box04 p:nth-child(3){
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 .request_click_box04 p:nth-child(4){
-    font-size: 0.925rem;
+    font-size: 0.7rem;
     margin-top: 1em;
 }
 .request_click_box04 img:nth-child(5){
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 

@@ -5,6 +5,7 @@ $('#request_test').bxSlider({
 	slideWidth: 400,
 	slideMargin: 0,
 	auto: true,
+    speed: 500,
 	controls: false,
 	pager: false
 });
