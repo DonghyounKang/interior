@@ -36,8 +36,8 @@ a:hover {
 }
 
 .sl-bucket {
-    width: 250px;
-    margin-left: 2.5em;
+    width: 200px;
+    margin-left: 2em;
     margin-bottom: 1.25em;
     flex: none;
     flex-flow : column wrap;
@@ -67,7 +67,7 @@ a:hover {
 }
 
 .sl-btn-common-category {
-    width:295px;
+    width:297px;
     border-radius: 0;
     height:70px;
     vertical-align: middle;
@@ -99,4 +99,9 @@ a:hover {
 .sl-price {
     font-size:0.875rem; 
     text-align:right;
+}
+
+.sl-form-style {
+    border:3px solid #e6e6e6;
+    margin-bottom:5.5em;
 }
