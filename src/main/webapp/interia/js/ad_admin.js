@@ -1,4 +1,3 @@
-/*// fileUpload*/
 "use strict"
 
 $(document).ready(function(){
