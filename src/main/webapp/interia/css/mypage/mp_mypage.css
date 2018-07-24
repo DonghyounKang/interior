@@ -326,6 +326,12 @@ a:hover {
     margin-bottom: 1em; 
 }
 
+.mp_position1 {
+    position: sticky;
+    top: 12%;
+    margin-bottom: 1em; 
+}
+
 #mp_underBar p {
     margin: 0;
 }
