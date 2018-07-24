@@ -57,19 +57,19 @@
 	font-size: 0.8125em;
 	cursor: pointer;
 }
-.mp-following-btn {
+.mp-follow-btn {
 	position: relative;
 	left: 285px;
 	bottom: 11px;
 }
-.mp-follower-btn .btn {
+.mp-follow-btn .btn {
     padding: .125em .5rem;
 }
-.mp-following-btn .btn-primary {
+.mp-follow-btn .btn-primary {
 	background: #343855;
 	border: #343855 solid 1px; 
 }
-.mp-follower-btn .btn-outline-dark:hover {
+.mp-follow-btn .btn-outline-dark:hover {
     background: white;
     color: black;
 }

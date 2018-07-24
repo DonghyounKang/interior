@@ -46,7 +46,7 @@ function loadLoginUser() {
 		// 마이페이지 관련 기능 구현
 		$("#nav-link-5").click(e => {
 			e.preventDefault();
-			location.href = serverRoot + "/interia/html/mypage/mp_mypage.html";
+			location.href = serverRoot + "/interia/html/mypage/mp_post.html";
 		});
 
 		
