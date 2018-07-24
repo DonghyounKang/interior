@@ -33,7 +33,7 @@
 					<i class="fas fa-chalkboard-teacher"></i> 체험목록
 				</div>
 				<div class="ad-card-body">
-					<div style="" data-toggle="modal" data-target="#classUpdateModal">
+					<div class="ad-class-enroll" data-toggle="modal" data-target="#classUpdateModal">
 						<i class="far fa-plus-square"></i> 체험 등록하기
 					</div>
 					<div class="ad-class-wrapper">
@@ -116,7 +116,9 @@
 									</div>
 								</div>
 								<div class="ad-modal-contentgap">
-									<b>사진첨부</b> <input id="fileupload" type="file" name="files"
+									<b>사진첨부</b> 
+		                        	<button class="ad-btn ad-btn-color3" id='imgUpload' type='button'>파일첨부</button>
+									<input id="fileupload" type="file" name="files"
 										multiple>
 									<div id="ad-images-div"></div>
 									<button id='upload-btn' type='button'>등록</button>
@@ -159,7 +161,24 @@
 							<div class="modal-body">
 								<div class="ad-modal-contentgap">
 									<b>체험명</b>
-
+									<div class="ad-apList-wrapper">
+										<div class="ad-apList-header">
+											<div class="ad-apList-left">신청자 닉네임</div>
+											<div class="ad-apList-right">신청 인원</div>
+										</div>
+										<div class="ad-apList-row">
+											<div class="ad-apList-left">신청자 닉네임 data</div>
+											<div class="ad-apList-right">신청 인원 data</div>
+										</div>
+										<div class="ad-apList-row">
+											<div class="ad-apList-left">신청자 닉네임 data</div>
+											<div class="ad-apList-right">신청 인원 data</div>
+										</div>
+										<div class="ad-apList-row">
+											<div class="ad-apList-left">신청자 닉네임 data</div>
+											<div class="ad-apList-right">신청 인원 data</div>
+										</div>										
+									</div>
 								</div>
 							</div>
 							<div class="modal-footer">
@@ -197,6 +216,7 @@
 		src="../../node_modules/@ckeditor/ckeditor5-build-classic/build/translations/ko.js"></script>
 	<script src="../../js/ad_header.js"></script>
 	<script src="../../js/ad_admin.js"></script>
+	<script src="../../js/ad_editor.js"></script>
 	<script src="../../js/upload.js"></script>
 </body>
 </html>

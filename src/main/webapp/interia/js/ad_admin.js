@@ -11,13 +11,16 @@ $(document).ready(function(){
 
 });
 
+/*모달 초기화*/
 $(document).ready(function(){
 	$('.modal').on('hidden.bs.modal', function (e) { 
 		$(this).find('form')[0].reset() 
+		/*첨부파일 및 체크박스 옵션, 에디터 초기화 코드 삽입하기*/
 	});
 });
 
-/* works modal option */
+
+/* works modal chk option */
 function openOption(className, obj) {
     var $input = $(obj);
     if ($input.prop('checked')) $(className).show();
@@ -25,14 +28,7 @@ function openOption(className, obj) {
 }
 
 
-$(document).ready(function(){
-	ClassicEditor
-	.create( document.querySelector( '#editor' ) )
-	.then( editor => {
-	    console.log( editor );
-	} )
-	.catch( error => {
-	    console.error( error );
-	} );
-});
+
+
+
 
