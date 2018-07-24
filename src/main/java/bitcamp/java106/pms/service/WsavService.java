@@ -12,7 +12,7 @@ public interface WsavService {
     Wsav get(int no);
     int add(Wsav wsav);
     int update(Wsav wsav);
-    int delete(int no);
+    int delete(int no, int wsano);
 }
 
 //ver 53 - 인터페이스 추가

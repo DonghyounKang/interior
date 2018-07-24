@@ -28,8 +28,9 @@ public class WsavController {
     
     @RequestMapping("delete")
     //@ResponseStatus(HttpStatus.OK) // 응답 상태 코드 값의 기본은 "200(OK)" 이다.
-    public void delete(@RequestParam("no") int no) throws Exception {
-        wsavService.delete(no);
+    public void delete(@RequestParam("no") int no,
+                       @RequestParam("wsano") int wsano) throws Exception {
+        wsavService.delete(no, wsano);
     }
     
     @RequestMapping("list")

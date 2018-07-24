@@ -4,18 +4,14 @@ $.get("/interior/interia/html/mp_pfHead.html", (data) => {
 
 
 /* scroller_underBar */
-$.get("/interior/interia/html/mp_underBar.html", (data) => {
+$.get("/test/interia/html/mp_underBar.html", (data) => {
     $("#mp_underBar").html(data);
 });
 
-var offset = $("#footer").offset();
 $(window).scroll(function () { 
   var scrollValue = $(document).scrollTop();
   var underBar = $("#mp_underBar").height() + $("#mp_underBar").offset().top + 50;
   var theight = $("html").height() - $("#footer").height();
-  console.log("underBar="+underBar);
-  console.log("theight="+theight);
-  console.log(offset.top);
   if (scrollValue < 210) {
     $("#mp_underBar").css("display", "none");
   }

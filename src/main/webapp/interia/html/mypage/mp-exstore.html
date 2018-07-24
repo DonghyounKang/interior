@@ -11,7 +11,8 @@
 
     <link rel="stylesheet" type="text/css" href="../../css/mypage/mp_mypage.css">
     <link rel="stylesheet" type="text/css" href="../../css/mypage/mp-exstore.css">
-    <link rel="stylesheet" href="../../css/mypage/mp_follow_popup.css">
+    <link rel="stylesheet" href="../../css/mypage/mp_following_popup.css">
+    <link rel="stylesheet" href="../../css/mypage/mp_follower_popup.css">
 
     
 </head>
@@ -77,7 +78,7 @@
     <div class="ib-container mp_side">
         <div class="ib-conbox">
         <div class="ib-mp-hbox">
-            <h4>내가 참여한 수업</h4>
+            <h3>내가 참여한 수업</h3>
             <div>
                 <select class="form-control form-control-sm">
                     <option>전체</option>
@@ -191,7 +192,7 @@
                         "<p>정말 취소하시겠습니까?</p>" +
                       "</div>" +
                       "<div class='modal-footer'>" +
-                        "<button type='button' id='reserDelbtn' class='btn reservbtn'>예약 취소</button>" +
+                        "<button type='button' id='reserDelbtn' class='btn reservbtn' onclick='listDel("+ data[i].wsano +")'>예약 취소</button>" +
                       "</div>" +
                     "</div>" +
                   "</div>" +
@@ -200,11 +201,17 @@
             });
         });
 
-    // $("#reserDelbtn").click(() => {
- //        $.get("../../../json/wsav/delete", {"no": no}, () => {
- //            location.href = "mp-exstore.html";
- //        });
- //    });
+            function listDel(ino) {
+                $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+                    var uno = data.no;
+                    $.getJSON("../../../json/wsav/delete",{"no": uno, "wsano": ino}, (data) => {
+                        
+                    });
+                });
+                location.reload();
+            }
     </script>
 </body>
 </html>
+
+

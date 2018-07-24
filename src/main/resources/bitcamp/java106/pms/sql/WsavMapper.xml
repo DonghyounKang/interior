@@ -65,8 +65,8 @@ WHERE mem.MEMNO = #{value}
     where bno=#{no} -->
   </update>
   
-  <delete id="delete" parameterType="int">
-<!--     delete from pms2_board where bno=#{value} -->
+  <delete id="delete" parameterType="map">
+    delete from INTR_ACRGTT WHERE memno=#{memno} and wsano=#{wsano}
   </delete>
 </mapper>
 
