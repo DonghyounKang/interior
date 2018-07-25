@@ -4,7 +4,7 @@ package bitcamp.java106.pms.service.impl;
 import org.springframework.stereotype.Service;
 
 import bitcamp.java106.pms.dao.WorkshopDao;
-import bitcamp.java106.pms.domain.Member;
+import bitcamp.java106.pms.domain.Workshop;
 import bitcamp.java106.pms.service.WorkshopService;
 
 @Service
@@ -18,8 +18,8 @@ public class WorkshopServiceImpl implements WorkshopService {
 
     // 판매자 추가 관련 메소드
     @Override
-    public int add(Member member) {
-        return 0;
+    public int add(Workshop workshop) {
+        return workshopDao.insert(workshop);
     }
 
     // 판매자 등록 되어있는지 검사!
