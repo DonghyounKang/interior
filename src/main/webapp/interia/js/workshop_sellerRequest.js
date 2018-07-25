@@ -30,19 +30,22 @@ $("#btnApplyWorks").click(()=> {
 	} else if (!$("#checkbox_comfime").is(":checked")) {
 		window.alert("개인정보 동의를 체크하세요");
 	} else {
-		$.post(serverRoot + "/json/workshop/add", {
-			wno : location.href.split("?")[1],
-			bno : $("#fBno1").val() + $("#fBno2").val() + $("#fBno3").val(),
-			mutual : $("#fMutual").val(),
-			rpstName : $("#fRpstName").val(),
-			industry : $("#fIndustry").val(),
-			items : $("#fItems").val(),
-			zcode : $("#fZcode").val(),
-			baddr : $("#fBaddr").val(),
-			daddr : $("#fDaddr").val()
-		}, () => {
-			location.href='./workshop_sellerSite.html'
+		$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+			$.post(serverRoot + "/json/workshop/add", {
+				wno : data.no,
+				bno : $("#fBno1").val() + $("#fBno2").val() + $("#fBno3").val(),
+				mutual : $("#fMutual").val(),
+				rpstName : $("#fRpstName").val(),
+				industry : $("#fIndustry").val(),
+				items : $("#fItems").val(),
+				zcode : $("#fZcode").val(),
+				baddr : $("#fBaddr").val(),
+				daddr : $("#fDaddr").val()
+			}, () => {
+				location.href='./workshop_sellerSite.html'
+			});
 		});
+		
 	}
 	
 });
