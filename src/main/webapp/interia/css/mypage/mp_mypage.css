@@ -30,10 +30,7 @@ a:hover {
 .mp-banner:hover {
    box-shadow: inset 0 0 0 4px #1c2036;
 }
-.mp-banner:hover a {
-   /*width: 170px;*/
-}
-.mp-banner:hover .mp-banner-cbox>a>.fas{
+.mp-banner:hover .mp-banner-cbox>.fas{
     font-size: 1.5em;
     padding: 0.23em 0.4em 0 0;
 }
@@ -41,33 +38,27 @@ a:hover {
     opacity: 1;
     width: 145px;
 }
-.mp-banner>.mp-banner-cbox>a>.fas {
+.mp-banner>.mp-banner-cbox>.fas {
     position: absolute;
     font-size: 2.1em;
     color: white;
-    top: 11.5%;
+    top: 8%;
     right: .5%;
-    transition: all .3s ease-out, padding .3s ease;
+    transition: all .2s ease-out, padding .2s ease;
 }
-.mp-banner > a {
-    position: relative;
-    cursor: pointer;
-    display: block;
-    float: right;
-    right: 19%;
-    top: 10%;
-    width: 50px;
-    transition: width .3s ease-out;
-    overflow: hidden;
-}
-
 .mp-banner-cbox {
     width: 1200px;
     height: 100%;
     margin: 0 auto;
     position: relative;
 }
-
+.mp-pic-focus {
+    position: absolute;
+    top: 8%;
+    right: .5%; 
+    height: 35px; 
+    width: 145px; 
+}
 .mp-pic-text { /*span*/
    /*-webkit-font-smoothing: antialiased;*/
     position: relative;
@@ -77,7 +68,7 @@ a:hover {
 }
 .mp-pic-box { /*div*/ 
     position: absolute;
-    border: 2px solid white;
+    border: 2px solid white; margin: 0;
     border-radius: 2px;
     box-sizing: border-box;
     color: white;
@@ -85,11 +76,9 @@ a:hover {
     opacity: 0;
     overflow: hidden;
     padding: 0.2em 0.5em;
-    top: 12%;
-    right: .5%;
-    transition: opacity .3s ease-out, width .3s ease-out;
+    transition: opacity .2s ease-out, width .2s ease-out;
     white-space: nowrap;
-    width: 34px;
+    width: 145px;
 }
 /*.mp-banner::before { 페이스북
     border: 1px solid rgba(0, 0, 0, .1);
@@ -366,4 +355,48 @@ a:hover {
 .mp_under_subTitle p a:hover {
     color: rgb(230, 126, 34);
     font-weight: bold;
+}
+
+
+/**** 커버사진 올리기 ****/
+.mp-cover-popup {    
+    display: inline-block;
+    float: right;
+    margin-top: 3.1em;
+    font-size: .8em;
+    display: none;
+    z-index: 100;
+}
+.mp-inner-ul {
+    white-space: nowrap;
+    list-style: none;
+    margin-bottom: 0;
+    padding: .3em 0;
+    background: white;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 1px 1px #D5D5D5;
+}
+.mp-triangle { 
+    margin-left: 5.7em;
+    width: 8px; height: 8px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+}
+.mp-popup-list {
+    padding: .35em 3.8em;
+    cursor: pointer;
+}
+.mp-popup-list:hover > a{
+    color: white;
+}
+.mp-popup-list:hover {
+    background: #343855;
+    color: white;
+}
+.mp-popup-list:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }

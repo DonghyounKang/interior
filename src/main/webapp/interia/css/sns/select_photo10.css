@@ -189,6 +189,7 @@
 }
 .comment-userId {
   font-weight: 600;
+  padding-right: 5px;
 }
 .comment-content {
   font-size: 0.8125rem;
@@ -254,6 +255,7 @@ pre.pt-content-pre {
       margin: 0;
       word-break: break-all;
       word-wrap: break-word;
+      white-space:pre-wrap;
       background-color: #fff;
       border: none;
       border-radius: 4px;

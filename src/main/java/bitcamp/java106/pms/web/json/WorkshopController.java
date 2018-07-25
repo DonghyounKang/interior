@@ -2,11 +2,12 @@ package bitcamp.java106.pms.web.json;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import bitcamp.java106.pms.domain.Member;
+import bitcamp.java106.pms.domain.Workshop;
 import bitcamp.java106.pms.service.MemberService;
 import bitcamp.java106.pms.service.WorkshopService;
 
@@ -24,8 +25,8 @@ public class WorkshopController {
     
     @RequestMapping("add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void add(Member member) throws Exception {
-        
+    public void add(Workshop workshop) throws Exception {
+        workshopService.add(workshop);
     }
     
     @RequestMapping("isExist/{isExistNo}") 

@@ -5,22 +5,21 @@ import java.io.Serializable;
 public class Workshop implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    int wno; // 공방번호(pk키와 연계)
-    int bno; // 판매자 번호
-    int mutual; // 상호
-    int rpstName; // 대표자명
-    int industry; // 업태
-    int items; // 종목
-    int zcode; // 우편번호
-    int baddr; // 기본 주소
-    int daddr; // 상세 주소
-    int studioName; // 공방명
-    int introduction; // 소개글
-    int wsContent; // 공방 소개 내용
-    int facebook; // 페이스북
-    int twitter; // 트위터
-    int instagram; // 인스타그램
-    
+    private int wno; // 공방번호(pk키와 연계)
+    private int bno; // 판매자 번호
+    private String mutual; // 상호
+    private String rpstName; // 대표자명
+    private String industry; // 업태
+    private String items; // 종목
+    private String zcode; // 우편번호
+    private String baddr; // 기본 주소
+    private String daddr; // 상세 주소
+    private String studioName; // 공방명
+    private String introduction; // 소개글
+    private String wsContent; // 공방 소개 내용
+    private String facebook; // 페이스북
+    private String twitter; // 트위터
+    private String instagram; // 인스타그램
     
     
     public int getWno() {
@@ -35,84 +34,83 @@ public class Workshop implements Serializable {
     public void setBno(int bno) {
         this.bno = bno;
     }
-    public int getMutual() {
+    public String getMutual() {
         return mutual;
     }
-    public void setMutual(int mutual) {
+    public void setMutual(String mutual) {
         this.mutual = mutual;
     }
-    public int getRpstName() {
+    public String getRpstName() {
         return rpstName;
     }
-    public void setRpstName(int rpstName) {
+    public void setRpstName(String rpstName) {
         this.rpstName = rpstName;
     }
-    public int getIndustry() {
+    public String getIndustry() {
         return industry;
     }
-    public void setIndustry(int industry) {
+    public void setIndustry(String industry) {
         this.industry = industry;
     }
-    public int getItems() {
+    public String getItems() {
         return items;
     }
-    public void setItems(int items) {
+    public void setItems(String items) {
         this.items = items;
     }
-    public int getZcode() {
+    public String getZcode() {
         return zcode;
     }
-    public void setZcode(int zcode) {
+    public void setZcode(String zcode) {
         this.zcode = zcode;
     }
-    public int getBaddr() {
+    public String getBaddr() {
         return baddr;
     }
-    public void setBaddr(int baddr) {
+    public void setBaddr(String baddr) {
         this.baddr = baddr;
     }
-    public int getDaddr() {
+    public String getDaddr() {
         return daddr;
     }
-    public void setDaddr(int daddr) {
+    public void setDaddr(String daddr) {
         this.daddr = daddr;
     }
-    public int getStudioName() {
+    public String getStudioName() {
         return studioName;
     }
-    public void setStudioName(int studioName) {
+    public void setStudioName(String studioName) {
         this.studioName = studioName;
     }
-    public int getIntroduction() {
+    public String getIntroduction() {
         return introduction;
     }
-    public void setIntroduction(int introduction) {
+    public void setIntroduction(String introduction) {
         this.introduction = introduction;
     }
-    public int getWsContent() {
+    public String getWsContent() {
         return wsContent;
     }
-    public void setWsContent(int wsContent) {
+    public void setWsContent(String wsContent) {
         this.wsContent = wsContent;
     }
-    public int getFacebook() {
+    public String getFacebook() {
         return facebook;
     }
-    public void setFacebook(int facebook) {
+    public void setFacebook(String facebook) {
         this.facebook = facebook;
     }
-    public int getTwitter() {
+    public String getTwitter() {
         return twitter;
     }
-    public void setTwitter(int twitter) {
+    public void setTwitter(String twitter) {
         this.twitter = twitter;
     }
-    public int getInstagram() {
+    public String getInstagram() {
         return instagram;
     }
-    public void setInstagram(int instagram) {
+    public void setInstagram(String instagram) {
         this.instagram = instagram;
     }
-    
     
 }
