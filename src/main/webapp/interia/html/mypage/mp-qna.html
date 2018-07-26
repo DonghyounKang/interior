@@ -102,71 +102,7 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
-			      <th scope="row"><a href="#">3246756453</a></th>
-			      <td>
-			      	<a href="#" class="ib-ta-product">
-			      		<div class="ib-ta-imgbox">
-			      			<img src="../../images/mypage/img2.PNG" width="100%">
-			      		</div>
-			      		<ul>
-			      			<li>브루노 대형 전신거울_4colors</li>
-			      			<li>제품: 대형 전신거울 1700X400  /  색상: 화이트</li>
-			      			<li>판매자</li>
-			      		</ul>
-			      	</a>
-			      </td>
-			      <td>
-			      	<i class="fab fa-quora"></i>
-			      	<a href="#">블랙, 화이트 두개를 시켰는데 블랙두개 왔어요.</a>
-			      </td>
-			      <td>2018-06-18</td>
-			      <td class="ib-ta-orange">미답변</td>
-			    </tr>
-
-			    <tr>
-			      <th scope="row"><a href="#">3246756453</a></th>
-			      <td>
-			      	<a href="#" class="ib-ta-product">
-			      		<div class="ib-ta-imgbox">
-			      			<img src="../../images/mypage/img2.PNG" width="100%">
-			      		</div>
-			      		<ul>
-			      			<li>브루노 대형 전신거울_4colors</li>
-			      			<li>제품: 대형 전신거울 1700X400  /  색상: 화이트</li>
-			      			<li>판매자</li>
-			      		</ul>
-			      	</a>
-			      </td>
-			      <td>
-			      	<i class="fab fa-quora"></i>
-			      	<a href="#">블랙, 화이트 두개를 시켰는데 블랙두개 왔어요.</a>
-			      </td>
-			      <td>2018-06-18</td>
-			      <td class="ib-ta-orange">미답변</td>
-			    </tr>
-
-			    <tr>
-			      <th scope="row"><a href="#">3246756453</a></th>
-			      <td>
-			      	<a href="#" class="ib-ta-product">
-			      		<div class="ib-ta-imgbox">
-			      			<img src="../../images/mypage/img2.PNG" width="100%">
-			      		</div>
-			      		<ul>
-			      			<li>브루노 대형 전신거울_4colors</li>
-			      			<li>제품: 대형 전신거울 1700X400  /  색상: 화이트</li>
-			      			<li>판매자</li>
-			      		</ul>
-			      	</a>
-			      </td>
-			      <td>
-			      	<i class="fab fa-quora"></i>
-			      	<a href="#">블랙, 화이트 두개를 시켰는데 블랙두개 왔어요.</a>
-			      </td>
-			      <td>2018-06-18</td>
-			      <td class="ib-ta-orange">미답변</td>
-			    </tr>
+			    
 			  </tbody>
 			</table>
 		</section>
@@ -185,5 +121,46 @@
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
     <script src="../../js/mp_pfHead.js"></script>
+    <script>
+        $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+            var uno = data.no;
+            $.getJSON("../../../json/qna/list",{"no": uno}, (data) => {
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    var tsp = data[i].qrtdt;
+                    var qnDate = new Date(tsp);
+                    var year = qnDate.getFullYear();
+                    var month = qnDate.getMonth() + 1;
+                    var date = qnDate.getDate();
+                    if (data[i].awqt != null) {
+                        var qask = "답변완료";
+                    } else if (data[i].awqt == null) {
+                        var qask = "미답변";
+                    }
+                    $("<tr>" +
+                          "<th scope='row'><a href='#'>"+ data[i].qno +"</a></th>" +
+                          "<td>" +
+                            "<a href='#' class='ib-ta-product'>" +
+                                "<div class='ib-ta-imgbox'>" +
+                                    "<img src='../../images/works/works_list/"+ data[i].path +"' width='100%'>" +
+                                "</div>" +
+                                "<ul>" +
+                                    "<li>"+ data[i].wtitl +"</li>" +
+                                    "<li>"+ data[i].abnm +":"+ data[i].abvl +"</li>" +
+                                    "<li>"+ data[i].wsnm +"</li>" +
+                                "</ul>" +
+                            "</a>" +
+                          "</td>" +
+                          "<td>" +
+                            "<i class='fab fa-quora'></i>" +
+                            "<a href='#'>"+ data[i].iqct +"</a>" +
+                          "</td>" +
+                          "<td>"+ year +"-"+ month + "-" + date +"</td>" +
+                          "<td class='ib-ta-orange'>"+ qask +"</td>" +
+                    "</tr>").appendTo('tbody');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
