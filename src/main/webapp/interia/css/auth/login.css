@@ -107,14 +107,26 @@ a:active, a:hover {text-decoration:none;}
 	height: 190px;
 	margin: 0 auto;
 }
-.login_sns_login button {
+.login_sns_login div {
 	width: 300px;
-	height: 50px;
+	height: 40px;
 	margin: 0 auto;
 	margin-bottom: 0.5em;
 	border: 0;
 	background-color: #ffc001;
 }
+
+/* 여기서는 버튼 이미지 구현하기 위한 css 적용론 */
+/* 카카오 톡 */
+#btn-kakao-login {
+}
+
+/* 구글 */
+#btn-google-login {
+}
+
+/* 버튼 이미지 구현 끝 */
+
 .login_submenu {
 	width: 500px;
 	height: 300px;

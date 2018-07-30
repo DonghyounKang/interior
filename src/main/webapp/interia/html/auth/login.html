@@ -42,11 +42,16 @@
 		</div>
 	</div>
 	
-	<div class="login_sns_login">
-			<button>sns버튼</button>
-			<button>sns버튼</button>
-			<button>sns버튼</button>
-	</div>
+    <div class="login_sns_login">
+        <div id="btn-kakao-login">카카오 로그인 버튼</div>
+        <div class="fb-login-button" data-width="300" data-max-rows="1" 
+             data-size="large" data-button-type="continue_with" data-show-faces="false"
+             data-auto-logout-link="false" data-use-continue-as="false" data-onlogin="checkLoginState();"></div>
+        <div id="btno-google-login">구글 로그인 버튼</div>
+    </div>
+    <!-- 페이스북 로그인용  -->
+    <div id="fb-root"></div>
+	
 	<div class="login_submenu">
 		<div class="login_submenu01">
 			<p>아직 회원이 아니신가요?</p>
@@ -67,6 +72,7 @@
     <script src="../../js/common.js"></script>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../js/login.js"></script>
+    <script src="../../js/facebook_login.js"></script> <!-- 여기는 직접 facebook.js 에서 만든 것을 따온것 -->
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
 </body>

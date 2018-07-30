@@ -47,9 +47,18 @@ public class MemberController {
         memberService.update(member);
     }
     
-    @RequestMapping("{id}")
+    // 해당 회원번호로 이용하여 모든 회원정보 출력
+    @RequestMapping("{no}")
     public Member view(@PathVariable int no) throws Exception {
+        System.out.println(no);
         return memberService.get(no);
+    }
+    
+    // 페이스북 로그인시 아이디 값으로 회원번호 찾기용도로 쓰인다.
+    @RequestMapping("searchNoOfId/{id}")
+    public int searchNoOfId(@PathVariable String id) throws Exception {
+        System.out.println(id);
+        return memberService.memberNumber(id);
     }
     
 }
