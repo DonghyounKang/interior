@@ -27,7 +27,7 @@ public class WrkshpServiceImpl implements WrkshpService {
     @Override
     public List<Wrkshp> listtwo(int pageNo, int pageSize) {
         HashMap<String,Object> params = new HashMap<>();
-        params.put("startRowNo", (pageNo - 1) * pageSize);
+        params.put("startRowNo", pageNo);
         params.put("pageSize", pageSize);
         
         return wrkshpDao.selectListtwo(params);

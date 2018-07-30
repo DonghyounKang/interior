@@ -20,57 +20,57 @@
     </header>
     <section>
         <div class="main_visual0">
-	        <ul class="workshop_visual_bg">
-	            <li><img src="../../images/workshop/visual01.png"></li>
-	            <li><img src="../../images/workshop/visual02.png"></li>
-	            <li><img src="../../images/workshop/visual03.png"></li>
-	        </ul>
-	    </div>
-	    
+            <ul class="workshop_visual_bg">
+                <li><img src="../../images/workshop/visual01.png"></li>
+                <li><img src="../../images/workshop/visual02.png"></li>
+                <li><img src="../../images/workshop/visual03.png"></li>
+            </ul>
+        </div>
+        
         <div class="fc_category_grid">
-	        <div class="fc_category_grid00">
-	            <a href="javascript:viewWorkshopBtn(1);">
+            <div class="fc_category_grid00">
+                <a href="javascript:viewWorkshopBtn(1);">
                     <div class="fc_category_article1">
-	                   <p class="fc_category_article1_p" style="color: #fff;">전체</p>
-	                </div>
+                       <p class="fc_category_article1_p" style="color: #fff;">전체</p>
+                    </div>
                 </a>
                 <a href="javascript:viewWorkshopBtn(2);">
-	               <div class="fc_category_article2">
-	                   <p class="fc_category_article2_p">가구</p>
-	               </div>
+                   <div class="fc_category_article2">
+                       <p class="fc_category_article2_p">가구</p>
+                   </div>
                 </a>
                 <a href="javascript:viewWorkshopBtn(3);">
-	                <div class="fc_category_article3">
-	                   <p class="fc_category_article3_p">패브릭</p>
-	                </div>
+                    <div class="fc_category_article3">
+                       <p class="fc_category_article3_p">패브릭</p>
+                    </div>
                 </a>
                 <a href="javascript:viewWorkshopBtn(4);">
-	                <div class="fc_category_article4">
-	                    <p class="fc_category_article4_p">데코/조명</p>
-	                </div>
+                    <div class="fc_category_article4">
+                        <p class="fc_category_article4_p">데코/조명</p>
+                    </div>
                 </a>
                 <a href="javascript:viewWorkshopBtn(5);">
-	                <div class="fc_category_article5">
-	                    <p class="fc_category_article5_p">가전</p>
-	                </div>
+                    <div class="fc_category_article5">
+                        <p class="fc_category_article5_p">가전</p>
+                    </div>
                 </a>
                 <a href="javascript:viewWorkshopBtn(6);">
-	                <div class="fc_category_article6">
-	                    <p class="fc_category_article6_p">생활</p>
-	                </div>
+                    <div class="fc_category_article6">
+                        <p class="fc_category_article6_p">생활</p>
+                    </div>
                 </a>
                 <a href="javascript:viewWorkshopBtn(7);">
-	                <div class="fc_category_article7">
-	                    <p class="fc_category_article7_p">주방</p>
-	                </div>
+                    <div class="fc_category_article7">
+                        <p class="fc_category_article7_p">주방</p>
+                    </div>
                 </a>
                 <a href="javascript:viewWorkshopBtn(8);">
-	                <div class="fc_category_article8">
-	                    <p class="fc_category_article8_p">욕실</p>
-	                </div>
+                    <div class="fc_category_article8">
+                        <p class="fc_category_article8_p">욕실</p>
+                    </div>
                 </a>
-	        </div>
-	    </div>
+            </div>
+        </div>
 
         
     <!--    전체 버튼    -->
@@ -1060,13 +1060,13 @@
         </div>
     </div>
 
-        <div class="fc_category_storeList_view" onclick="fnAdd()">
-	        <a class="viewBtn" >더보기</a>
-	    </div>
-	    <div class="fc_storeSubmit">
-	        <h1>온라인에서 만드는 나만의 가게<br>INTERIA 스토어</h1>
-	        <button type="button" onClick="location.href='./workshop_request.html'">신청하기</button>
-	    </div>
+        <div class="fc_category_storeList_view more_link" onclick="fnAdd()">
+            <a class="viewBtn" >더보기</a>
+        </div>
+        <div class="fc_storeSubmit">
+            <h1>온라인에서 만드는 나만의 가게<br>INTERIA 스토어</h1>
+            <button type="button" onClick="location.href='./workshop_request.html'">신청하기</button>
+        </div>
     </section>
 
 
@@ -1082,16 +1082,15 @@
     <script src="../../js/workshop_main_slider.js"></script>
     <script>
         $.getJSON("../../../json/wrkshp/list",{"no":7}, (data) => {
-        	console.log(data);
-        		for (var i = 0; i < data.length; i++) {
-                    $("<div/>").html(
-                        "<div class='fc_category_storeList00_1_bg'>" +
+            console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    $("<div class='fc_category_storeList00_1_bg'>" +
                             "<div class='fc_category_storeList00_1'>" +
                                 "<div class='fc_category_storeList00_2'>" +
                                     "<img src='../../images/workshop/" + data[i].path + "' style='width: 100%;'>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_circle'>" +
-                                    "<a href='#'><img src='../../images/workshop/" + data[i].wpath + "'></a>" +
+                                    "<a href='#'><img src='../../images/workshop/" + data[i].lpath + "'></a>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_title'>" +
                                     "<h1>" + data[i].wsnm + "</h1>" +
@@ -1108,23 +1107,22 @@
                 }
         });
         
-        /*
+        
         var addNo = 7;
+        var addPage = 4;
         function fnAdd() {
-        	addNo += 4;
-        	$.getJSON("../../../json/wrkshp/list",{"no":addNo}, (data) => {
-        		console.log(data);
-        		$(".fc_category_storeList_bg00").animate({
+            $.getJSON("../../../json/wrkshp/listtwo",{"pageNo":addNo, "pageSize":addPage}, (data) => {
+                console.log(data);
+                $(".fc_category_storeList_bg00").animate({
                     height: '+=400px'}, 400, "linear");
-        		for (var i = 0; i < data.length; i++) {
-                    $("<div/>").html(
-                        "<div class='fc_category_storeList00_1_bg'>" +
+                for (var i = 0; i < data.length; i++) {
+                    $("<div class='fc_category_storeList00_1_bg'>" +
                             "<div class='fc_category_storeList00_1'>" +
                                 "<div class='fc_category_storeList00_2'>" +
                                     "<img src='../../images/workshop/" + data[i].path + "' style='width: 100%;'>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_circle'>" +
-                                    "<a href='#'><img src='../../images/workshop/" + data[i].wpath + "'></a>" +
+                                    "<a href='#'><img src='../../images/workshop/" + data[i].lpath + "'></a>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_title'>" +
                                     "<h1>" + data[i].wsnm + "</h1>" +
@@ -1139,9 +1137,10 @@
                             "</div>" +
                         "</div>").appendTo(".fc_category_storeList_bg00");
                 }
-        	});
+                addNo = addNo + 4; 
+            });
         }
-        */
+        
         
         
         

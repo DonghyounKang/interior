@@ -1,7 +1,6 @@
 package bitcamp.java106.pms.web.json;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,10 +37,10 @@ public class WrkshpController {
         return wrkshpService.list(no);
     }
     
-    @RequestMapping("listtwo{page}")
+    @RequestMapping("listtwo")
     public Object listtwo(
-            @MatrixVariable(defaultValue="1") int pageNo,
-            @MatrixVariable(defaultValue="7") int pageSize) {        
+            @RequestParam("pageNo") int pageNo,
+            @RequestParam("pageSize") int pageSize) {        
         return wrkshpService.listtwo(pageNo, pageSize);
     }
     
