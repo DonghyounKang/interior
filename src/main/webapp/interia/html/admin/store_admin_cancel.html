@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../css/admin/store_admin_common.css">
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload.css">
+	<link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload-ui.css">
     <link rel="shortcut icon" href="../favicon.ico">
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../js/ad_header.js"></script>
-    <script src="../../js/ad_admin.js"></script>
+
 </head>
 
 <body>
@@ -139,7 +137,7 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th scope="col"><input type="checkbox" name="" id='chk_all' value="" onclick="CtlExecutor.doCheckAll();" /><label for="chk_all">선택</label></th>
+                                <th scope="col"><input type="checkbox" name="" id='chk_all' value="" onclick="" /><label for="chk_all">선택</label></th>
                                 <th scope="cols">상품주문번호</th>
                                 <th scope="cols">주문번호</th>
                                 <th scope="cols">주문일시</th>
@@ -459,6 +457,7 @@
 
                 </div>
             </div>
+            
             <!-- cancelRejectModal -->
             <div class="modal fade" id="cancelRejectModal" tabindex="-1" role="dialog" aria-labelledby="cancelRejectModalTitle" aria-hidden="true" style="z-index: 10800;">
                 <div class="modal-dialog modal-dialog-centered " role="document">
@@ -682,7 +681,12 @@
         <!-- ad-main-content-->
     </div>
     <!--ad-main-wrapper-->
-
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+       <script src="../../js/common.js"></script>
+    <script src="../../js/ad_header.js"></script>
+    <script src="../../js/ad_admin.js"></script>
 
 
 

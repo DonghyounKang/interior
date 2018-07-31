@@ -15,13 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import net.coobird.thumbnailator.Thumbnails;
+
 @RestController 
 @RequestMapping("/adfile") 
 public class AdminUpload {
     @Autowired ServletContext sc;
     
     @PostMapping("upload")
-    public Object upload02(
+    public Object upload(
             MultipartFile[] files) {
         
         String filesDir = sc.getRealPath("/files");
@@ -39,6 +41,17 @@ public class AdminUpload {
                 System.out.println(path);
                 files[i].transferTo(path);
                 jsonDataList.add(jsonData);
+                
+                Thumbnails.of(path)
+                .size(50, 50)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_50x50");
+                
+                Thumbnails.of(path)
+                .size(100, 100)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_100x100");
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }

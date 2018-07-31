@@ -1,5 +1,16 @@
-/*// fileUpload*/
+
 "use strict"
+
+//button 클릭시 파일 첨부	
+$(function () {
+	$('#imgUpload').click(function (e) {
+		e.preventDefault();
+		$('#fileupload').click();
+	});
+});
+
+
+/*// fileUpload*/
 var imgFiles;
 
 $(document).ready(function(){
@@ -24,18 +35,17 @@ $(document).ready(function(){
 				try {
 					if (data.files[i].preview.toDataURL) {
 						var imgWrapper = $('<div>')
-						.attr("data-file-index", i)
-						.addClass('ad-adImgs-wrapper')
-						.click(delImg)
-						.appendTo(imagesDiv);
+							.attr("data-file-index", i)
+							.addClass('ad-adImgs-wrapper')
+							.click(delImg)
+							.appendTo(imagesDiv);
 						var imgContent = $('<div>')
-						.addClass('ad-adImgs-content')
-						.appendTo(imgWrapper);
+							.addClass('ad-adImgs-content')
+							.appendTo(imgWrapper);
 						var imgCover = $('<div>')
-						.addClass('ad-adImgs-cover')
-						.appendTo(imgWrapper);
+							.addClass('ad-adImgs-cover')
+							.appendTo(imgWrapper);
 						$("<img/>").attr('src', data.files[i].preview.toDataURL()).appendTo(imgContent).addClass('ad-adImgs');
-
 					}
 				} catch (err) {}
 			}
@@ -43,8 +53,6 @@ $(document).ready(function(){
 			$('#upload-btn').click(function() {
 				data.submit();
 			});
-
-
 		}, 
 		submit: function (e, data) { // 서버에 전송하기 직전에 호출된다.
 			console.log('submit()...');
@@ -59,6 +67,7 @@ $(document).ready(function(){
 	});
 });
 
+/* 미리보기 클릭시 데이터 삭제*/
 function delImg(event){
 
 	var wrapperDiv = $(event.currentTarget);
@@ -67,13 +76,7 @@ function delImg(event){
 	imgFiles.splice(fileIndex, 1);
 }
 
-/*div 클릭시 파일 첨부*/	
-$(function () {
-	$('#imgUpload').click(function (e) {
-		e.preventDefault();
-		$('#fileupload').click();
-	});
-});
+
 
 
 

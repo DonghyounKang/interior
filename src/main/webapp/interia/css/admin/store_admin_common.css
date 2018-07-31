@@ -35,14 +35,12 @@ li {
     list-style: none;
 }
 
-input[type="text"] {
-	border-radius:5px;
-	box-shadow:  none ;
-}
 input[type="date"] {
     -webkit-appearance: menulist !important;
-    border-radius:5px;
-    box-shadow:  none ;
+    height:30px;
+}  
+input[type="time"] {
+    -webkit-appearance: menulist !important;
     height:30px;
 }  
 
@@ -1159,6 +1157,7 @@ textarea {
     display: inline-block;
     cursor: pointer;
 }
+
 
 /***** 체험관리 End *****/
 

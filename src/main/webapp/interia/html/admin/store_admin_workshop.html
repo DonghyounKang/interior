@@ -10,18 +10,6 @@
     <link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload.css">
 	<link rel="stylesheet" href="../../node_modules/blueimp-file-upload/css/jquery.fileupload-ui.css">
     <link rel="shortcut icon" href="../favicon.ico">
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
-	<script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
-	<script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
-	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
-	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
-	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>  
-    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../js/ad_header.js"></script>
-    <script src="../../js/ad_admin.js"></script>
 
 </head>
 
@@ -97,8 +85,9 @@
 
                         <div class="ad-card-body">
           	                <input id="fileupload" type="file" name="files" multiple>
-							<div id='ad-images-div'></div>
-							<button id='upload-btn' type='button'>등록</button>
+							<div id="ad-images-div"></div>
+                        	<button class="ad-btn ad-btn-color3" id='imgUpload' type='button'>파일첨부</button>
+							<button class="ad-btn ad-btn-color1" id='upload-btn' type='button'>등록</button>
                         </div>
                     </div>
                 </div>
@@ -160,7 +149,22 @@
         <!-- ad-main-content-->
     </div>
     <!--ad-main-wrapper-->
-    
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+	<script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
+	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>  
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/ad_header.js"></script>
+    <script src="../../js/upload.js"></script>
+    <script>
+
+    </script>
 </body>
 
 </html>

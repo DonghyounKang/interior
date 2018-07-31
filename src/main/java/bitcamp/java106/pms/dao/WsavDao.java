@@ -8,9 +8,11 @@ import bitcamp.java106.pms.domain.Wsav;
 public interface WsavDao {
     int delete(Map<String,Object> params) ;
     List<Wsav> selectList(int no);
+    List<Wsav> selectAdminList(int no);
     int insert(Wsav wsav);
     int update(Wsav wsav);
     Wsav selectOne(int no);
+    Wsav selectRecent();
 }
 
 //ver 52 - 페이지 단위로 데이터 가져오기
