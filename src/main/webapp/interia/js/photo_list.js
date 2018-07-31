@@ -14,6 +14,32 @@ $(window).scroll(function(){
     }
 });
 
+$.getJSON("../../../json/board/list",{"pageNo":1, "pageSize":60},(data) => {
+	for (var item of data) {
+		var divs = $('<div class="grid-item">' +
+				'<a  class="grid-photo-a" onclick="mkmodal('+ item.no +')" href="#myModal" data-toggle="modal">'+
+				'<div class="grid-photo">'+
+				'<img  src="../../images/sns/'+ item.path +'" alt="">'+
+				'</div>'+
+				'</a>'+
+				'<div class="grid-photo-cont">'+
+				'<a class="grid-photo-like likeoff'+ i +'" id="like_off" onclick=\"likeon('+ i +')\">'+ 
+				'<i class="material-icons">favorite_border</i>'+
+				'<span>'+ item.count +'</span>'+
+				'</a>' +
+				'<a class="grid-photo-like likeon'+ i +'" id="like_on" onclick=\"likeoff('+ i +')\" style="display:none">'+ 
+				'<i class="material-icons" >favorite</i>'+
+				'<span>'+ item.count +'</span>'+
+				'</a>' +
+				'</div>'+
+		'</div>').appendTo(grid);
+		i++;
+		var $divs = $(divs);
+		$grid.append(divs).masonry("appended", divs, true).masonry("layout");
+	}
+});
+
+
 var i = 1;
 var grid = $(".grid");
 var $grid = $(grid).masonry({
@@ -23,8 +49,8 @@ var $grid = $(grid).masonry({
 	gutter: 20
 });
 
-var addNo = 1;
-var addPage = 10;
+var addNo = 3;
+var addPage = 30;
 var isEnd = false;
 
 function snslist() {
