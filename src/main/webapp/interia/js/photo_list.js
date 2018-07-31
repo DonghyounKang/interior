@@ -14,7 +14,7 @@ $(window).scroll(function(){
     }
 });
 
-$.getJSON("../../../json/board/list",{"pageNo":1, "pageSize":60},(data) => {
+$.getJSON("../../../json/board/list",{"pageNo":1, "pageSize":40},(data) => {
 	for (var item of data) {
 		var divs = $('<div class="grid-item">' +
 				'<a  class="grid-photo-a" onclick="mkmodal('+ item.no +')" href="#myModal" data-toggle="modal">'+
@@ -35,7 +35,7 @@ $.getJSON("../../../json/board/list",{"pageNo":1, "pageSize":60},(data) => {
 		'</div>').appendTo(grid);
 		i++;
 		var $divs = $(divs);
-		$grid.append(divs).masonry("appended", divs, true).masonry("layout");
+		$grid.append($divs).masonry("appended", $divs, true).masonry("layout");
 	}
 });
 
@@ -45,12 +45,12 @@ var grid = $(".grid");
 var $grid = $(grid).masonry({
 	itemSelector: '.grid-item',
 	columnWidth: 224,
-	horizontalOrder: true,
+/*	horizontalOrder: true,*/
 	gutter: 20
 });
 
 var addNo = 3;
-var addPage = 30;
+var addPage = 20;
 var isEnd = false;
 
 function snslist() {
@@ -79,7 +79,7 @@ $.getJSON("../../../json/board/list",{"pageNo":addNo, "pageSize":addPage},(data)
 		'</div>').appendTo(grid);
 		i++;
 		var $divs = $(divs);
-		$grid.append(divs).masonry("appended", divs, true).masonry("layout");
+		$grid.append($divs).masonry("appended", $divs, true).masonry("layout");
 	}
 	
 	console.log("data.length: "+data.length);
