@@ -1,13 +1,11 @@
 
 /* ---- grid ---- */
-.grid-wrap {
-  margin-top: 170px;
-}
 .grid {
   max-width: 1200px;
-  min-height: 1000px;
+  min-height: 800px;
   counter-reset: grid-item;
   margin: 0 auto;
+  margin-top: 170px;
 }
 
 /* clearfix */
@@ -48,9 +46,9 @@
   width: inherit;
   overflow: hidden;
   font-size: 0.875rem;
-  padding: 0.3125rem;
+  padding: 0.3125rem 0.625rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   height: 40px;
   color:#fff;
 }
@@ -80,9 +78,6 @@
 .grid-photo-view {
   margin-top:0.3125em;
 }
-.grid-photo-view-count {
-  padding-left: 1.25em;
-}
 .grid-photo-view span {
-  padding-right: 0.625em;
+  padding-left: 0.625em;
 }
