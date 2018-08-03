@@ -14,8 +14,9 @@ public interface WsavService {
     List<Wsav> adminList(int no);
     Wsav get(int no);
     void add(Wsav wsav, ArrayList<Wkacp> activityPhotos);
-    int update(Wsav wsav);
+    int update(Wsav wsav, ArrayList<Wkacp> activityPhotosv);
     int delete(int no, int wsano);
+    int adminDelete(int wsano);
 }
 
 //ver 53 - 인터페이스 추가

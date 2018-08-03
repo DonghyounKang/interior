@@ -1,11 +1,13 @@
 // 업무로직 구현체 - 고객사 마다 다른 구현을 할 수 있다.
 package bitcamp.java106.pms.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import bitcamp.java106.pms.dao.WorksDao;
+import bitcamp.java106.pms.domain.WorkOption;
 import bitcamp.java106.pms.domain.Works;
 import bitcamp.java106.pms.service.WorksService;
 
@@ -43,9 +45,14 @@ public class WorksServiceImpl implements WorksService {
     public int delete(int no) {
         return worksDao.delete(no);
     }
+    
+    @Override
+    public WorkOption OptionValue(int no) {
+        System.out.println("worksService() 정상처리");
+        return worksDao.optionName(no);
+    }
 }
 
-//ver 53 - 클래스 추가
 
 
 

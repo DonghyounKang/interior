@@ -27,11 +27,6 @@ function openOption(className, obj) {
     else $(className).hide();
 }
 
-function writable(className, obj) {
-	var $input = $(obj);
-	if($input.prop('checked')) $(className).attr('readonly',false);
-	else $(className).attr('readonly',true);
-}
 
 
 

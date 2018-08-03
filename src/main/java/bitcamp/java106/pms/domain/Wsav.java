@@ -5,6 +5,8 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 public class Wsav implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -14,11 +16,11 @@ public class Wsav implements Serializable {
     private String title; // 체험명
     private int minPerson; // 최소인원
     private int maxPerson; //최대인원
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date experDate; //체험일
     private String startTime; //시작일
     private String endTime; //종료일
     
-    private boolean prepareYn; //준비물 유무
     private String prepareCont; //준비물 
     private int price; //체험료
     private String content; //내용
@@ -29,7 +31,7 @@ public class Wsav implements Serializable {
     public String toString() {
         return "Wsav [no=" + no + ", workshopNo=" + workshopNo + ", title=" + title + ", minPerson=" + minPerson
                 + ", maxPerson=" + maxPerson + ", experDate=" + experDate + ", startTime=" + startTime + ", endTime="
-                + endTime + ", prepareYn=" + prepareYn + ", prepareCont=" + prepareCont + ", price=" + price
+                + endTime + ", prepareCont=" + prepareCont + ", price=" + price
                 + ", content=" + content + ", workshopPhoto=" + workshopPhoto + "]";
     }
 
@@ -95,14 +97,6 @@ public class Wsav implements Serializable {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
-    }
-
-    public boolean isPrepareYn() {
-        return prepareYn;
-    }
-
-    public void setPrepareYn(boolean prepareYn) {
-        this.prepareYn = prepareYn;
     }
 
     public String getPrepareCont() {

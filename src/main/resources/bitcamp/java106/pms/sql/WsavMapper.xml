@@ -61,12 +61,12 @@ GROUP BY wp.WSANO
   <insert id="insert" parameterType="Wsav"
           useGeneratedKeys="true" keyColumn="wsano" keyProperty="no">
 		insert into INTR_WSAV(memno,acnm,minno,
-						maxno,actdt,avst,avet,mtcse,mtrls,apric,accnt) 
+						maxno,actdt,avst,avet,mtrls,apric,accnt) 
 	    values(#{workshopNo},
 	    		#{title},#{minPerson},
 				#{maxPerson},#{experDate},
 				#{startTime},#{endTime},
-				#{prepareYn},#{prepareCont},
+				#{prepareCont},
 				#{price},#{content});
   </insert>
   
@@ -74,9 +74,9 @@ GROUP BY wp.WSANO
        값을 꺼낼 때 프로퍼티 이름을 마음대로 해도 된다.
   -->
   <select id="selectOne" parameterType="int" resultMap="WsavMap">
-<!--     select bno,titl,cont,cdt 
-    from pms2_board 
-    where bno=#{value} -->
+ 	select * 
+ 	from INTR_WSAV 
+ 	where wsano=#{value}
   </select>
   
   <select id="selectRecent" resultMap="WsavMap">
@@ -85,15 +85,26 @@ GROUP BY wp.WSANO
   </select>
   
   <update id="update" parameterType="Wsav">
-<!--     update pms2_board set 
-        titl=#{title}, 
-        cont=#{content}, 
-        cdt=now()
-    where bno=#{no} -->
+  	update INTR_WSAV set
+  		memno = #{workshopNo},
+  		acnm = #{title},
+  		minno = #{minPerson},
+		maxno = #{maxPerson},
+		actdt = #{experDate},
+		avst = #{startTime},
+		avet = #{endTime},
+		mtrls = #{prepareCont},
+		apric = #{price},
+		accnt =#{content}
+	where wsano=#{no}
   </update>
   
   <delete id="delete" parameterType="map">
     delete from INTR_ACRGTT WHERE memno=#{memno} and wsano=#{wsano}
+  </delete>
+  
+  <delete id="adminDelete" parameterType="int">
+    delete from INTR_WSAV WHERE wsano=#{no}
   </delete>
 </mapper>
 
