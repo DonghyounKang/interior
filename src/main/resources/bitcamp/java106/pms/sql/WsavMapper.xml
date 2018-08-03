@@ -36,7 +36,7 @@
   <select id="selectList" 
           resultType="Map" 
           parameterType="map">
-select wsnm, actt.wsano, acnm, actdt, avst, avet, apric, path, name, acpt
+select wsnm, actt.wsano, acnm, actdt, ws.baddr, avst, avet, apric, path, name, acpt
 from INTR_MEMBER mem
 inner join INTR_ACRGTT actt on mem.memno = actt.memno
 inner join INTR_WSAV wsa on actt.wsano = wsa.wsano
