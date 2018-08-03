@@ -72,7 +72,6 @@ public class OdnwkController {
             
             // 써네일 이미지 생성
             String thumbnailPath = path.getCanonicalPath() + "_200x200";
-            System.out.println(thumbnailPath);
             Thumbnails.of(path)
                       .size(200, 200)
                       .outputFormat("jpg")
