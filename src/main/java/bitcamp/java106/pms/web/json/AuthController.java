@@ -23,10 +23,7 @@ import bitcamp.java106.pms.domain.Member;
 import bitcamp.java106.pms.service.FacebookService;
 import bitcamp.java106.pms.service.KakaoService;
 import bitcamp.java106.pms.service.MemberService;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/DonghyounKang/interior.git
 //import bitcamp.java106.pms.service.NaverService;
 
 @RestController
@@ -36,10 +33,7 @@ public class AuthController {
     MemberService memberService;
     @Autowired FacebookService facebookService;
     @Autowired KakaoService kakaoService;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/DonghyounKang/interior.git
     //@Autowired NaverService naverService;
     
     public AuthController(MemberService memberService) {
@@ -145,11 +139,7 @@ public class AuthController {
             return result;
         }
     }
-    
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/DonghyounKang/interior.git
     /*
     @RequestMapping(value="naverLogin")
     public Object naverLogin(

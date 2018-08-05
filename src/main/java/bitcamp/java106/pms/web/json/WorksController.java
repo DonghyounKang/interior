@@ -60,12 +60,12 @@ public class WorksController {
     }
     
     // 옵션보기
-    @RequestMapping("option/{no}")
+/*    @RequestMapping("option/{no}")
     public WorkOption viewOption(
             @PathVariable int no) {
         System.out.println("worksControllor() 정상처리");
         return worksService.OptionValue(no);
-    }
+    }*/
 
 }
 
