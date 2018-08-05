@@ -134,7 +134,7 @@
 				<div class="ad-card-body">
 					<div class="ad-table-btn">
 						<button type="button" class="ad-btn ad-btn-color2">선택삭제</button>
-						<button type="button" class="ad-btn ad-btn-color1"
+						<button type="button" class="ad-btn ad-btn-color1 ad-works-enroll"
 							data-toggle="modal" data-target="#worksModal">새작품등록</button>
 					</div>
 					<table cellspacing="0" border="1" summary="명단관리  리스트"
@@ -187,7 +187,7 @@
 								<col width="120" />
 								<col width="100" />
 							</colgroup>
-							<tbody>
+							<tbody class="ad-works-data">
 								<tr>
 									<td class="frm"><input type="checkbox" id="chk" name="chk"
 										value="" /></td>
@@ -263,15 +263,14 @@
 										multiple>
 									<div id="ad-images-div"></div>
 								</div>
-								<div class="ad-modal-contentgap">
+<!--  								<div class="ad-modal-contentgap">
 									<b>제작의뢰 서비스</b> <input type="checkbox"
 										class="ad-works-modal-content"
 										onclick="openOption('.ad-works-commission', this)"><span>사용하기</span>
 									<div class="ad-works-commission">
 										<textarea cols="80" placeholder="제작시 필요한 항목을 작성하세요"></textarea>
 									</div>
-
-								</div>
+								</div> -->
 								<div class="ad-modal-contentgap">
 									<b>옵션</b> <input type="checkbox" class="ad-works-modal-content"
 										onclick="openOption('.ad-works-options', this)"><span>사용하기</span>
@@ -298,7 +297,7 @@
 									</div>
 								</div>
 								<b>제품상세</b>
-								<textarea name="content" id="editor">
+								<textarea name="content">
 								    <p>Here goes the initial content of the editor.</p>
 								</textarea>
 							</div>
@@ -341,8 +340,7 @@
     <script src="../../js/common.js"></script>
 	<script src="../../js/ad_header.js"></script>
 	<script src="../../js/ad_admin.js"></script>
-	<script src="../../js/ad_editor.js"></script>
-	<script src="../../js/upload.js"></script>
+	<script src="../../js/ad_works.js"></script>
 
 
 

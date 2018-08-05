@@ -22,8 +22,6 @@ public class BoardController {
     public Object list(
             @RequestParam(value="pageNo", defaultValue="1") int pageNo,
             @RequestParam(value="pageSize", defaultValue="5") int pageSize) {
-        System.out.println(pageNo);
-        System.out.println(pageSize);
         
         return boardService.list(pageNo, pageSize);
     }

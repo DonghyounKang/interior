@@ -35,6 +35,12 @@ public class WorksController {
         worksService.delete(no);
     }
     
+    //관리자 페이지 작품 list
+    @RequestMapping("adList")
+    public Object adList() {       
+        return worksService.list();
+    }
+    
     // 여기는 제품 리스틀 간단히 보여주는걸 의미
     @RequestMapping("list")
     public Object list() {       
