@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -23,7 +23,7 @@ import bitcamp.java106.pms.domain.Member;
 import bitcamp.java106.pms.service.FacebookService;
 import bitcamp.java106.pms.service.KakaoService;
 import bitcamp.java106.pms.service.MemberService;
-import bitcamp.java106.pms.service.NaverService;
+//import bitcamp.java106.pms.service.NaverService;
 
 @RestController
 @RequestMapping("/auth")
@@ -32,7 +32,7 @@ public class AuthController {
     MemberService memberService;
     @Autowired FacebookService facebookService;
     @Autowired KakaoService kakaoService;
-    @Autowired NaverService naverService;
+    //@Autowired NaverService naverService;
     
     public AuthController(MemberService memberService) {
         this.memberService = memberService;
@@ -138,7 +138,7 @@ public class AuthController {
         }
     }
     
-    
+    /*
     @RequestMapping(value="naverLogin")
     public Object naverLogin(
             @RequestParam("accessToken") String accessToken,
@@ -185,7 +185,7 @@ public class AuthController {
             return result;
         }
     }
-    
+    */
     
     
     
