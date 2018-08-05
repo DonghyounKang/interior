@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import bitcamp.java106.pms.dao.BoardDao;
+import bitcamp.java106.pms.dao.MainDao;
 import bitcamp.java106.pms.domain.Board;
 import bitcamp.java106.pms.service.BoardService;
 
@@ -13,9 +14,11 @@ import bitcamp.java106.pms.service.BoardService;
 public class BoardServiceImpl implements BoardService {
 
     BoardDao boardDao;
+    MainDao mainDao;
     
-    public BoardServiceImpl(BoardDao boardDao) {
+    public BoardServiceImpl(BoardDao boardDao, MainDao mainDao) {
         this.boardDao = boardDao;
+        this.mainDao = mainDao;
     }
     
     @Override
@@ -43,6 +46,12 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public List<Board> hashtagList(int no) {
         return boardDao.hashtagList(no);
+    }
+
+    @Override
+    public List<Board> selectListInMain() {
+        System.out.println("Service.selectListInMain");
+        return mainDao.selectListInMain();
     }
     
 }
