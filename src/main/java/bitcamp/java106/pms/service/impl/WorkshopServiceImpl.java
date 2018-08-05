@@ -1,6 +1,7 @@
 // 업무로직 구현체 - 고객사 마다 다른 구현을 할 수 있다.
 package bitcamp.java106.pms.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -38,7 +39,34 @@ public class WorkshopServiceImpl implements WorkshopService {
         return mainDao.selectPopularList();
     }
     
+    @Override
+    public List<Workshop> list(int no) {
+        return workshopDao.selectList(no);
+    }
     
+    @Override
+    public List<Workshop> listtwo(int pageNo, int pageSize) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("startRowNo", pageNo);
+        params.put("pageSize", pageSize);
+        
+        return workshopDao.selectListtwo(params);
+    }
+    
+    @Override
+    public Workshop get(int no) {
+        return workshopDao.selectOne(no);
+    }
+    
+    @Override
+    public int update(Workshop workshop) {
+        return workshopDao.update(workshop);
+    }
+    
+    @Override
+    public int delete(int no) {
+        return workshopDao.delete(no);
+    }
 }
 
 

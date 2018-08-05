@@ -40,6 +40,25 @@
           #{zcode}, #{baddr}, #{daddr})
   </insert>
   
+  <select id="selectList" 
+          resultType="Map" 
+          parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    order by wrk.WSNM desc
+    limit 1, #{value}
+  </select>
+  
+  <select id="selectListtwo" 
+          resultType="Map" 
+          parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    order by wrk.WSNM desc
+    limit #{startRowNo}, #{pageSize}
+  </select>
   <!-- 회원 전체 리스트 출력 -->
  <!--  <select id="selectList" 
           resultMap="MemberMap" parameterType="map">

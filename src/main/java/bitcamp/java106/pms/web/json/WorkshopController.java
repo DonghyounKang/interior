@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,6 +34,37 @@ public class WorkshopController {
     public boolean isExist(@PathVariable int isExistNo) throws Exception {
         return workshopService.isExist(isExistNo); // 판매자 신청을 완료한 경우
     }
+    
+    @RequestMapping("delete")
+    //@ResponseStatus(HttpStatus.OK) // 응답 상태 코드 값의 기본은 "200(OK)" 이다.
+    public void delete(@RequestParam("no") int no) throws Exception {
+        workshopService.delete(no);
+    }
+    
+    @RequestMapping("list")
+    public Object list(int no) {        
+        return workshopService.list(no);
+    }
+    
+    @RequestMapping("listtwo")
+    public Object listtwo(
+            @RequestParam("pageNo") int pageNo,
+            @RequestParam("pageSize") int pageSize) {        
+        return workshopService.listtwo(pageNo, pageSize);
+    }
+    
+    @RequestMapping("update")
+    @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
+    public void update(Workshop workshop) throws Exception {
+        workshopService.update(workshop);
+    }
+    
+    @RequestMapping("{no}")
+    public Workshop view(@PathVariable int no) throws Exception {
+        return workshopService.get(no);
+    }
+    
+    
     
 //    @RequestMapping("delete")
 //    public void delete(@RequestParam("no") int no) throws Exception {
