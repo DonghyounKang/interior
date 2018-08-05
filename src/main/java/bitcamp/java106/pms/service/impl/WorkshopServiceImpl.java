@@ -1,8 +1,12 @@
 // 업무로직 구현체 - 고객사 마다 다른 구현을 할 수 있다.
 package bitcamp.java106.pms.service.impl;
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import bitcamp.java106.pms.dao.MainDao;
 import bitcamp.java106.pms.dao.WorkshopDao;
 import bitcamp.java106.pms.domain.Workshop;
 import bitcamp.java106.pms.service.WorkshopService;
@@ -11,9 +15,11 @@ import bitcamp.java106.pms.service.WorkshopService;
 public class WorkshopServiceImpl implements WorkshopService {
     // 해당 메소드의 대해 알고 싶으면 자세한건 인터페이스 참조
     WorkshopDao workshopDao;
+    MainDao mainDao;
     
-    public WorkshopServiceImpl(WorkshopDao workshopDao) {
+    public WorkshopServiceImpl(WorkshopDao workshopDao, MainDao mainDao) {
         this.workshopDao = workshopDao;
+        this.mainDao = mainDao;
     }
 
     // 판매자 추가 관련 메소드
@@ -27,8 +33,40 @@ public class WorkshopServiceImpl implements WorkshopService {
     public boolean isExist(int no) {
         return workshopDao.selectOneNumber(no) > 0 ? true : false;
     }
+
+    @Override
+    public List<Workshop> selectPopularList() {
+        return mainDao.selectPopularList();
+    }
     
+    @Override
+    public List<Workshop> list(int no) {
+        return workshopDao.selectList(no);
+    }
     
+    @Override
+    public List<Workshop> listtwo(int pageNo, int pageSize) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("startRowNo", pageNo);
+        params.put("pageSize", pageSize);
+        
+        return workshopDao.selectListtwo(params);
+    }
+    
+    @Override
+    public Workshop get(int no) {
+        return workshopDao.selectOne(no);
+    }
+    
+    @Override
+    public int update(Workshop workshop) {
+        return workshopDao.update(workshop);
+    }
+    
+    @Override
+    public int delete(int no) {
+        return workshopDao.delete(no);
+    }
 }
 
 

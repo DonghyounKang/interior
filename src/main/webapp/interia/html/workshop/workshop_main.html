@@ -1151,7 +1151,7 @@
     <script src="../../js/workshop_main.js"></script>
     <script src="../../js/workshop_main_slider.js"></script>
     <script>
-        $.getJSON("../../../json/wrkshp/list",{"no":7}, (data) => {
+        $.getJSON("../../../json/workshop/list",{"no":7}, (data) => {
             console.log(data);
                 for (var i = 0; i < data.length; i++) {
                     $("<div class='fc_category_storeList00_1_bg'>" +
@@ -1180,7 +1180,7 @@
         var addNo = 7;
         var addPage = 4;
         function fnAdd() {
-            $.getJSON("../../../json/wrkshp/listtwo",{"pageNo":addNo, "pageSize":addPage}, (data) => {
+            $.getJSON("../../../json/workshop/listtwo",{"pageNo":addNo, "pageSize":addPage}, (data) => {
                 console.log(data);
                 if (data.length == 0) {
                     console.log("test");

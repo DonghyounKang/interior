@@ -21,7 +21,13 @@ public class Workshop implements Serializable {
     private String twitter; // 트위터
     private String instagram; // 인스타그램
     
-    
+    @Override
+    public String toString() {
+        return "Workshop [wno=" + wno + ", bno=" + bno + ", mutual=" + mutual + ", rpstName=" + rpstName + ", industry="
+                + industry + ", items=" + items + ", zcode=" + zcode + ", baddr=" + baddr + ", daddr=" + daddr
+                + ", studioName=" + studioName + ", introduction=" + introduction + ", wsContent=" + wsContent
+                + ", facebook=" + facebook + ", twitter=" + twitter + ", instagram=" + instagram + "]";
+    }
     public int getWno() {
         return wno;
     }

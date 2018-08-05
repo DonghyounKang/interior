@@ -8,5 +8,6 @@ public interface BoardService {
     List<Board> list(int pageNo, int pageSize);
     Board get(int no);
     List<Board> commentList(int no);
-    List<Board> hashtagList(int no); 
+    List<Board> hashtagList(int no);
+    List<Board> selectListInMain();
 }

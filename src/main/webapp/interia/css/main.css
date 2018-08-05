@@ -436,6 +436,7 @@ a.bt-key-hashtag-click {
 /* bt-photo-sns */
 .bt-photo-slider-wrap {
   overflow: hidden;
+  padding-bottom: 50px;
   width:100%;
 }
 .bt-photo-sns-box {
@@ -455,13 +456,20 @@ a.bt-key-hashtag-click {
   box-shadow: 0 1px 1px 2px #ccc;
 }
 .sns-img-piece {
-  display: block;
+    height: 224px;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    overflow: hidden;
+    background:#e6e6e6;
+}
+.sns-img-piece img{
+  height:100%;
 }
 .sns-cont-piece {
   padding: 10px;
   height: 110px;
   font-size: 14px;
-
 }
 .bt-sns-text {
   display: block;
