@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import bitcamp.java106.pms.domain.WorkOption;
+import bitcamp.java106.pms.domain.WorksOption;
 import bitcamp.java106.pms.domain.Works;
 import bitcamp.java106.pms.service.WorksService;
 
@@ -35,12 +35,6 @@ public class WorksController {
         worksService.delete(no);
     }
     
-    //관리자 페이지 작품 list
-    @RequestMapping("adList")
-    public Object adList() {       
-        return worksService.list();
-    }
-    
     // 여기는 제품 리스틀 간단히 보여주는걸 의미
     @RequestMapping("list")
     public Object list() {       
@@ -55,17 +49,17 @@ public class WorksController {
     
     // 여기는 상세 보기용
     @RequestMapping("{no}")
-    public Works view(@PathVariable int no) throws Exception {
-        return worksService.get(no);
+    public Object view(@PathVariable int no) throws Exception {
+        return worksService.getWorksPhotoOption(no);
     }
     
     // 옵션보기
-/*    @RequestMapping("option/{no}")
-    public WorkOption viewOption(
-            @PathVariable int no) {
-        System.out.println("worksControllor() 정상처리");
-        return worksService.OptionValue(no);
-    }*/
+//    @RequestMapping("option/{no}")
+//    public WorkOption viewOption(
+//            @PathVariable int no) {
+//        System.out.println("worksControllor() 정상처리");
+//        return worksService.OptionValue(no);
+//    }
 
 }
 
