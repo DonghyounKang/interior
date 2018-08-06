@@ -29,6 +29,11 @@ public class OdnwkServiceImpl implements OdnwkService {
     }
     
     @Override
+    public List<Odnwk> revList(int no) {
+        return odnwkDao.selectRevList(no);
+    }
+    
+    @Override
     public Odnwk get(int no) {
         return odnwkDao.selectOne(no);
     }
@@ -36,6 +41,11 @@ public class OdnwkServiceImpl implements OdnwkService {
     @Override
     public List<Odnwk> revGet(int no) {
         return odnwkDao.selectRevOne(no);
+    }
+    
+    @Override
+    public List<Odnwk> revGetList(int no) {
+        return odnwkDao.selectRevListOne(no);
     }
     
     @Override
@@ -49,6 +59,19 @@ public class OdnwkServiceImpl implements OdnwkService {
         Rvpho rvphos = new Rvpho();
         int no = odnwk.getNo();
         
+        rvphos.setRevPhoto(rvpho);
+        rvphos.setOdnwkNo(no);
+        rvphoDao.insert(rvphos);
+        
+        return odnwkDao.update(odnwk);
+    }
+    
+    @Override
+    public int updateMod(Odnwk odnwk, String rvpho) {
+        
+        int no = odnwk.getNo();
+        rvphoDao.delete(no);
+        Rvpho rvphos = new Rvpho();
         rvphos.setRevPhoto(rvpho);
         rvphos.setOdnwkNo(no);
         rvphoDao.insert(rvphos);

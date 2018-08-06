@@ -34,7 +34,7 @@
   <select id="selectList" 
           resultType="Map" 
           parameterType="map">
-SELECT wono, qctt, odr.odno, odr.memno, wtitl, abnm, abvl, path FROM INTR_ODNWK onk
+SELECT onk.wono, qctt, odr.odno, odr.memno, wtitl, abnm, abvl, path FROM INTR_ODNWK onk
 inner join INTR_WORKS wks on onk.wno = wks.wno
 inner join INTR_WKOT wkt on wks.wno = wkt.wno
 inner join INTR_WPHO wpho on wks.wno = wpho.wno
@@ -42,14 +42,38 @@ inner join INTR_ORDER odr on onk.odno = odr.odno
 where odr.memno = #{value}
   </select>
   
+  <select id="selectRevList" 
+          resultType="Map" 
+          parameterType="map">
+SELECT onk.wono, qctt, odr.odno, odr.memno, wtitl, abnm, abvl, path, repath FROM INTR_ODNWK onk
+inner join INTR_WORKS wks on onk.wno = wks.wno
+inner join INTR_WKOT wkt on wks.wno = wkt.wno
+inner join INTR_WPHO wpho on wks.wno = wpho.wno
+inner join INTR_ORDER odr on onk.odno = odr.odno
+inner join INTR_RVPHO rpho on onk.wono = rpho.wono
+where odr.memno = #{value}
+  </select>
+  
   <select id="selectRevOne"
           resultType="Map" 
           parameterType="map">
-select wtitl, mutua, path from INTR_ODNWK onk
+select wtitl, mutua, path, qctt from INTR_ODNWK onk
 inner join INTR_WORKS wks on onk.wno = wks.wno
 inner join INTR_WRKSHP wkp on wks.memno = wkp.memno
 inner join INTR_WPHO wpho on wks.wno = wpho.wno
 inner join INTR_ORDER odr on onk.odno = odr.odno
+where onk.wono = #{value}
+  </select>
+  
+  <select id="selectRevListOne"
+          resultType="Map" 
+          parameterType="map">
+select wtitl, mutua, path, qctt, repath from INTR_ODNWK onk
+inner join INTR_WORKS wks on onk.wno = wks.wno
+inner join INTR_WRKSHP wkp on wks.memno = wkp.memno
+inner join INTR_WPHO wpho on wks.wno = wpho.wno
+inner join INTR_ORDER odr on onk.odno = odr.odno
+inner join INTR_RVPHO rpho on onk.wono = rpho.wono
 where onk.wono = #{value}
   </select>
   
@@ -69,11 +93,10 @@ where onk.wono = #{value}
   </select>
   
   <update id="update" parameterType="Odnwk">
-<!--     update pms2_board set 
-        titl=#{title}, 
-        cont=#{content}, 
-        cdt=now()
-    where bno=#{no} -->
+    update `INTR_ODNWK` set `qctt`= #{purchEpilo} WHERE `wono` = #{no}
+  </update>
+  
+    <update id="updateMod" parameterType="Odnwk">
     update `INTR_ODNWK` set `qctt`= #{purchEpilo} WHERE `wono` = #{no}
   </update>
   
