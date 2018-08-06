@@ -26,70 +26,40 @@ public class Works implements Serializable {
 
     @Override
     public String toString() {
-<<<<<<< HEAD
         return "Works [worksNumber=" + worksNumber + ", workshopNumber=" + workshopNumber + ", title=" + title
                 + ", price=" + price + ", registeredDate=" + registeredDate + ", modifiedDate=" + modifiedDate
                 + ", capacity=" + capacity + ", salesStatus=" + salesStatus + ", productDetail=" + productDetail
                 + ", deliveryPrice=" + deliveryPrice + ", photo=" + photo + ", option=" + option + "]";
     }
     
-    
+  
 
     public int getWorksNumber() {
         return worksNumber;
-=======
-        return "Works [worksNumber=" + worksNumber + ", workshopNumber="
-                + workshopNumber + ", title=" + title + ", price=" + price
-                + ", registeredDate=" + registeredDate + ", capacity="
-                + capacity + ", salesStatus=" + salesStatus + ", productDetail="
-                + productDetail + ", deliveryPrice=" + deliveryPrice
-                + ", requestDetail=" + requestDetail + ", photo=" + photo
-                + ", option=" + option + "]";
->>>>>>> branch 'master' of https://github.com/DonghyounKang/interior.git
     }
 
 
 
-<<<<<<< HEAD
     public void setWorksNumber(int worksNumber) {
         this.worksNumber = worksNumber;
-=======
-    public int getWorksNumber() {
-        return worksNumber;
->>>>>>> branch 'master' of https://github.com/DonghyounKang/interior.git
     }
 
 
 
-<<<<<<< HEAD
     public int getWorkshopNumber() {
         return workshopNumber;
-=======
-    public void setWorkNumber(int worksNumber) {
-        this.worksNumber = worksNumber;
->>>>>>> branch 'master' of https://github.com/DonghyounKang/interior.git
     }
 
 
 
-<<<<<<< HEAD
     public void setWorkshopNumber(int workshopNumber) {
         this.workshopNumber = workshopNumber;
-=======
-    public int getWorkshopNumber() {
-        return workshopNumber;
->>>>>>> branch 'master' of https://github.com/DonghyounKang/interior.git
     }
 
 
 
-<<<<<<< HEAD
     public String getDeliveryPrice() {
         return deliveryPrice;
-=======
-    public void setWorkshopNumber(int workshopNumber) {
-        this.workshopNumber = workshopNumber;
->>>>>>> branch 'master' of https://github.com/DonghyounKang/interior.git
     }
 
 
