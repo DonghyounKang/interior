@@ -75,8 +75,8 @@ public class WorksServiceImpl implements WorksService {
         // hash를 이용하여 값을 저장
         HashMap<String, Object> params = new HashMap<>();
         
-        params.put("no", works.getWorksNumber());
-        params.put("wno", works.getWorkshopNumber());
+        params.put("worksNumber", works.getWorksNumber());
+        params.put("workshopNumber", works.getWorkshopNumber());
         params.put("title", works.getTitle());
         params.put("works", works.getPrice());
         params.put("registeredDate", works.getRegisteredDate());
