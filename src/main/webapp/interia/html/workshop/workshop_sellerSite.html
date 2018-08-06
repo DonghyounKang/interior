@@ -26,11 +26,11 @@
 	                <button type="button" onClick="location.href='./workshop_profileChange.html'">Edit</button>
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_img">
-	                <img src="../../images/workshop/storeLogo02.png">
+	                
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_imgtext">
-	                <a href="../admin/store_admin_index.html"><h1>공방명</h1></a>
-	                <p>업체 소개 글입니다.<br>최대 한글 기준 50자 까지 가능합니다.</p>
+	                
+	                
 	            </div>
 	            <div class="workshop_sellerSite_sidemenu_snsbtn">
 	                <div class="workshop_sellerSite_sidemenu_snsbtn_bg">
@@ -89,6 +89,7 @@
 	
 	        <div class="workshop_sellerSite_content">
 	            <div class="workshop_sellerSite_content_visual">
+	                
 	            </div>
 	            <div class="workshop_sellerSite_content_subContent">
 	                <div class="workshop_sellerSite_content_subContent_banner">
@@ -278,6 +279,23 @@
     <script src="../../js/footer.js"></script>
     <script src="../../js/workshop_sellerSite_slider.js"></script>
     <script src="../../js/workshop_sellerSite_Map.js"></script>
+    <script>
+    $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+    	$.getJSON(serverRoot + "/json/workshop/listSellerSite", (data) => {
+    		console.log(data);
+    		console.log(data[0].lpath);
+    		  $("<img src='../../../files/" + data[0].lpath + "'>"
+                ).appendTo(".workshop_sellerSite_sidemenu_img");
+    		  $("<a href='../admin/store_admin_index.html'>" +
+    				"<h1>" + data[0].wsnm + "</h1>" +
+    			"</a>" +
+    			"<p>" + data[0].itrod + "</p>"
+    			).appendTo(".workshop_sellerSite_sidemenu_imgtext");
+    		  $("<img src='../../../files/" + data[0].path + "'>"
+              ).appendTo(".workshop_sellerSite_content_visual");
+    	});
+    });
+    </script>
 </body>
 
 </html>

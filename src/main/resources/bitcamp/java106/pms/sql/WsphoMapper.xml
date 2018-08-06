@@ -24,7 +24,7 @@
   
   <insert id="insert" parameterType="Wspho">
     insert into INTR_WSPHO(wspno, memno, pclsf, path, lpath)
-    values(#{wsno}, #{wno}, 'profile', #{filename}, #{filenametwo});
+    values(#{wsno}, #{wno}, 'profile', #{filenametwo}, #{filename});
   </insert>
   
 </mapper>

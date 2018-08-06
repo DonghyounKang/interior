@@ -11,6 +11,7 @@ public interface WorkshopDao {
     int delete(int no) ;
     List<Workshop> selectList(int no);
     List<Workshop> selectListtwo(Map<String,Object> params);
+    List<Workshop> selectListSellerSite();
     int update(Workshop workshop);
     Workshop selectOne(int no);
 

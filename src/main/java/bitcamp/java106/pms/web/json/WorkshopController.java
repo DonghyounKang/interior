@@ -81,6 +81,7 @@ public class WorkshopController {
         workshopService.delete(no);
     }
     
+    
     @RequestMapping("list")
     public Object list(int no) {        
         return workshopService.list(no);
@@ -91,6 +92,11 @@ public class WorkshopController {
             @RequestParam("pageNo") int pageNo,
             @RequestParam("pageSize") int pageSize) {        
         return workshopService.listtwo(pageNo, pageSize);
+    }
+    
+    @RequestMapping("listSellerSite")
+    public Object listSellerSite() {        
+        return workshopService.listSellerSite();
     }
     
     @RequestMapping("update")

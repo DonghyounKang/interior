@@ -60,6 +60,13 @@
     limit #{startRowNo}, #{pageSize}
   </select>
   
+  <select id="selectListSellerSite" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'profile'
+  </select>
+  
   <update id="update" parameterType="Workshop">
     update INTR_WRKSHP set 
         wsnm=#{studioName}, 

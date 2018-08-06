@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import bitcamp.java106.pms.dao.MainDao;
 import bitcamp.java106.pms.dao.WorkshopDao;
 import bitcamp.java106.pms.dao.WsphoDao;
+import bitcamp.java106.pms.domain.Works;
 import bitcamp.java106.pms.domain.Workshop;
 import bitcamp.java106.pms.domain.Wspho;
 import bitcamp.java106.pms.service.WorkshopService;
@@ -60,6 +61,11 @@ public class WorkshopServiceImpl implements WorkshopService {
         params.put("pageSize", pageSize);
         
         return workshopDao.selectListtwo(params);
+    }
+    
+    @Override
+    public List<Workshop> listSellerSite() {
+        return workshopDao.selectListSellerSite();
     }
     
     @Override

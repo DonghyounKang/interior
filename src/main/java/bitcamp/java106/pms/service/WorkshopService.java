@@ -12,6 +12,7 @@ public interface WorkshopService {
     List<Workshop> selectPopularList();
     List<Workshop> list(int no);
     List<Workshop> listtwo(int pageNo, int pageSize);
+    List<Workshop> listSellerSite();
     Workshop get(int no);
     int update(Workshop workshop);
     int delete(int no);

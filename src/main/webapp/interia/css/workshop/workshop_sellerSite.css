@@ -146,7 +146,6 @@ dl,ul,ol,menu,li {list-style:none}
 .workshop_sellerSite_content_visual {
     width: 100%;
     height: 300px;
-    background: url('../../images/workshop/sellerSiteVisual.png') no-repeat 50% 50%;
 }
 .workshop_sellerSite_content_subContent {
     width: 880px;
@@ -504,6 +503,8 @@ dl,ul,ol,menu,li {list-style:none}
 
 /* sellerSite_introduceChange*/
 .sellerSite_intro_title{
+	display: flex;
+	justify-content: space-between;
     width: 880px;
     height: 40px;
     float: right;
@@ -512,23 +513,37 @@ dl,ul,ol,menu,li {list-style:none}
     font-weight: bold;
     margin-top: 2em;
 }
+.sellerSite_intro_title a{
+    font-weight: normal;
+    font-size: 0.825rem;
+    margin-top: 0.4em;
+    color: #666;
+}
 .sellerSite_intro_Change {
     width: 880px;
     height: 600px;
     float: right;
     margin-top: 1.5em;
 }
-.sellerSite_intro_Change_box1 {
+.sellerSite_intro_box1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 430px;
+    height: 800px;
+    float: left;
+}
+#sellerSite_intro_Change_box1 {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 430px;
     height: 600px;
     float: left;
-    border: 1px solid #a9a9a9
-        ;
+    border: 1px solid #a9a9a9;
     box-sizing: border-box;
 }
+/*
 .sellerSite_intro_Change_box1 label { 
     padding: 0.5em 2em; 
     color: #fff; 
@@ -542,6 +557,12 @@ dl,ul,ol,menu,li {list-style:none}
     margin: -1px; 
     overflow: hidden; 
     border: 0; 
+}
+*/
+.sellerSite_intro_box2 {
+    width: 430px;
+    height: 800px;
+    float: right;
 }
 .sellerSite_intro_Change_box2 {
     width: 430px;
@@ -1243,3 +1264,5 @@ dl,ul,ol,menu,li {list-style:none}
     font-weight: bold;
     font-size: 0.825rem;
 }
+
+
