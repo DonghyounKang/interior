@@ -48,14 +48,20 @@ public class WorksController {
     }
     
     // 여기는 상세 보기용
-    @RequestMapping("{no}")
-    public Object view(@PathVariable int no) throws Exception {
-        return worksService.getWorksPhotoOption(no);
+    @RequestMapping("{worksNumber}")
+    public Object view(@PathVariable int worksNumber) throws Exception {
+        return worksService.getWorksPhotoOption(worksNumber);
     }
     
+    //관리자 판매작품List
     @RequestMapping("adminList") 
     public Object adminList(int no) {
         return worksService.adminList(no);
+    }
+    
+    @RequestMapping("currentState") 
+    public Object getCurrentState(@RequestParam("no") int no) {
+        return worksService.getCurrentState(no);
     }
     
     // 옵션보기

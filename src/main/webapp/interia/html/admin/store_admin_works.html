@@ -35,7 +35,7 @@
 							<div class="ad-status-content">
 								<p>전체</p>
 								<p>
-									<span id="">12 </span><b>건</b>
+									<span id="totalCnt"></span><b>건</b>
 								</p>
 							</div>
 						</div>
@@ -44,7 +44,7 @@
 							<div class="ad-status-content">
 								<p>판매중</p>
 								<p>
-									<span id="">12 </span><b>건</b>
+									<span id="sellCnt"></span><b>건</b>
 								</p>
 							</div>
 						</div>
@@ -53,7 +53,7 @@
 							<div class="ad-status-content">
 								<p>판매 대기</p>
 								<p>
-									<span id="">12 </span><b>건</b>
+									<span id="waitCnt"></span><b>건</b>
 								</p>
 							</div>
 						</div>
@@ -62,7 +62,7 @@
 							<div class="ad-status-content">
 								<p>품절</p>
 								<p>
-									<span id="">12 </span><b>건</b>
+									<span id="outCnt"></span><b>건</b>
 								</p>
 							</div>
 						</div>
@@ -142,16 +142,17 @@
 						style="min-width: 900px; padding-right: 15px;">
 						<caption>제품관리 리스트</caption>
 						<colgroup>
-							<col width="30" />
+								<col width="30" />
 								<col width="80" />
-								<col width="100" />
+								<col width="120" />
 								<col width="80" />
 								<col width="80" />
-								<col width="80" />
+<!-- 								<col width="80" /> -->
 								<col width="100" />
 								<col width="120" />
 								<col width="120" />
 								<col width="100" />
+								<col width="15" />
 						</colgroup>
 						<thead>
 							<tr>
@@ -161,7 +162,7 @@
 								<th scope="cols">상품명</th>
 								<th scope="cols">상태</th>
 								<th scope="cols">재고</th>
-								<th scope="cols">제작의뢰</th>
+<!-- 								<th scope="cols">제작의뢰</th> -->
 								<th scope="cols">판매가</th>
 								<th scope="cols">등록일</th>
 								<th scope="cols">수정일</th>
@@ -178,9 +179,9 @@
 							<colgroup>
 								<col width="30" />
 								<col width="80" />
-								<col width="100" />
+								<col width="120" />
 								<col width="80" />
-								<col width="80" />
+<!-- 								<col width="80" /> -->
 								<col width="80" />
 								<col width="100" />
 								<col width="120" />
@@ -188,24 +189,7 @@
 								<col width="100" />
 							</colgroup>
 							<tbody class="ad-works-data">
-								<tr>
-									<td class="frm"><input type="checkbox" id="chk" name="chk"
-										value="" /></td>
-									<td class="num"><a href="#">1</a></td>
-									<td class="title">홍길동</td>
-									<td class="date">참가</td>
-									<td class="writer">청구</td>
-									<td class="writer">적용</td>
-									<td class="writer">미환급</td>
-									<td class="writer">N</td>
-									<td class="writer">이수</td>
-									<td>
-										<button class="ad-btn-sm ad-btn-color1" 
-											data-toggle="modal" data-target="#worksModal" 
-											style="margin-right:5px;">수정</button>
-										<button class="ad-btn-sm ad-btn-color2">삭제</button>
-									</td>
-								</tr>
+							
 							</tbody>
 						</table>
 					</div>
@@ -245,15 +229,18 @@
 											class="ad-works-modal-inputsm ad-works-modal-content"
 											placeholder="가격을 입력하세요">
 									</div>
-									<div class="ad-modal-contentgap">
+									<div class="ad-modal-contentgap" style="display:flex;">
 										<b>재고수량</b> <input type="text"
 											class="ad-works-modal-inputsm ad-works-modal-content "
-											placeholder="수량을 입력하세요"> <select>
-											<option value="volvo">판매상태</option>
-											<option value="saab">판매대기</option>
-											<option value="opel">판매중</option>
-											<option value="audi">품절</option>
+											placeholder="수량을 입력하세요"> 
+										<div class="ad-cat-select" style="margin-left:10px;">
+										<select class="ad-cat-select-content">
+											<option value="default">판매상태</option>
+											<option value="판매대기">판매대기</option>
+											<option value="판매중">판매중</option>
+											<option value="품절">품절</option>
 										</select>
+										</div>
 									</div>
 								</div>
 								<div class="ad-modal-contentgap">
@@ -296,7 +283,7 @@
 										</div>
 									</div>
 								</div>
-								<b>제품상세</b>
+								<b>제품상세</b><br>
 								<textarea name="content">
 								    <p>Here goes the initial content of the editor.</p>
 								</textarea>
@@ -318,18 +305,17 @@
 <script id ="ad-works-template" type="text/x-handlebars-template">
 {{#each list}}
 <tr>
-	<td class="frm"><input type="checkbox" id="chk" name="chk" value="" /></td>
-	<td class="num"><a href="#">1</a></td>
-	<td class="title">홍길동</td>
-	<td class="date">참가</td>
-	<td class="writer">청구</td>
-	<td class="writer">적용</td>
-	<td class="writer">미환급</td>
-	<td class="writer">N</td>
-	<td class="writer">이수</td>
+	<td class="frm"><input type="checkbox" id="chk" name="chk" value="{{no}}" /></td>
+	<td class="num">{{no}}</a></td>
+	<td class="title">{{title}}</td>
+	<td class="date">{{salesStatus}}</td>
+	<td class="writer">{{capacity}}</td>
+	<td class="writer">{{price}}</td>
+	<td class="writer">{{ryear}}-{{rmonth}}-{{rday}}</td>
+	<td class="writer">{{myear}}-{{mmonth}}-{{mday}}</td>
 	<td>
-		<button class="ad-btn-sm ad-btn-color1 ad-works-update" data-wsano="{{wsano}}" data-toggle="modal" data-target="#worksModal" style="margin-right:5px;">수정</button>
-		<button class="ad-btn-sm ad-btn-color2" onclick="classdel({{wsano}})">삭제</button>
+		<button class="ad-btn-sm ad-btn-color1 ad-works-update" data-wsano="{{no}}" data-toggle="modal" data-target="#worksModal" style="margin-right:5px;">수정</button>
+		<button class="ad-btn-sm ad-btn-color2" onclick="classdel({{no}})">삭제</button>
 	</td>
 </tr>
 {{/each}}

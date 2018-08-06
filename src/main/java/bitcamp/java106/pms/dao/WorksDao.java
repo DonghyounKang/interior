@@ -9,9 +9,10 @@ public interface WorksDao {
     List<Works> selectList();
     int insert(Works works);
     int update(Works works);
-    Works selectOne(int no);
+    Works selectOne(int worksNumber);
     //WorkOption optionName(int no); // 옵션 가져오기
     List<Works> selectAdList(int no);
+    Object getCurrentState(int no);
 }
 
 
