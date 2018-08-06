@@ -22,8 +22,7 @@ public class Works implements Serializable {
     
     
     
-
-
+    
     @Override
     public String toString() {
         return "Works [worksNumber=" + worksNumber + ", workshopNumber=" + workshopNumber + ", title=" + title
@@ -31,146 +30,80 @@ public class Works implements Serializable {
                 + ", capacity=" + capacity + ", salesStatus=" + salesStatus + ", productDetail=" + productDetail
                 + ", deliveryPrice=" + deliveryPrice + ", photo=" + photo + ", option=" + option + "]";
     }
-    
-  
-
     public int getWorksNumber() {
         return worksNumber;
     }
-
-
-
     public void setWorksNumber(int worksNumber) {
         this.worksNumber = worksNumber;
     }
-
-
-
     public int getWorkshopNumber() {
         return workshopNumber;
     }
-
-
-
     public void setWorkshopNumber(int workshopNumber) {
         this.workshopNumber = workshopNumber;
     }
-
-
-
-    public String getDeliveryPrice() {
-        return deliveryPrice;
-    }
-
-
-
     public String getTitle() {
         return title;
     }
-
-
     public void setTitle(String title) {
         this.title = title;
     }
-
-
     public int getPrice() {
         return price;
     }
-
-
     public void setPrice(int price) {
         this.price = price;
     }
-
-
     public Date getRegisteredDate() {
         return registeredDate;
     }
-
-
     public void setRegisteredDate(Date registeredDate) {
         this.registeredDate = registeredDate;
     }
-
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-
-    public String getSalesStatus() {
-        return salesStatus;
-    }
-
-
-    public void setSalesStatus(String salesStatus) {
-        this.salesStatus = salesStatus;
-    }
-
-
-    public String getProductDetail() {
-        return productDetail;
-    }
-
-
-    public void setProductDetail(String productDetail) {
-        this.productDetail = productDetail;
-    }
-
-
-    public String isDeliveryPrice() {
-        return deliveryPrice;
-    }
-
-
-    public void setDeliveryPrice(String deliveryPrice) {
-        this.deliveryPrice = deliveryPrice;
-    }
-
-
     public Date getModifiedDate() {
         return modifiedDate;
     }
-
-
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
-
-
+    public int getCapacity() {
+        return capacity;
+    }
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+    public String getSalesStatus() {
+        return salesStatus;
+    }
+    public void setSalesStatus(String salesStatus) {
+        this.salesStatus = salesStatus;
+    }
+    public String getProductDetail() {
+        return productDetail;
+    }
+    public void setProductDetail(String productDetail) {
+        this.productDetail = productDetail;
+    }
+    public String getDeliveryPrice() {
+        return deliveryPrice;
+    }
+    public void setDeliveryPrice(String deliveryPrice) {
+        this.deliveryPrice = deliveryPrice;
+    }
     public WorksPhoto getPhoto() {
         return photo;
     }
-
-
     public void setPhoto(WorksPhoto photo) {
         this.photo = photo;
     }
-
-
     public WorksOption getOption() {
         return option;
     }
-
-
     public void setOption(WorksOption option) {
         this.option = option;
     }
-
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
-    
-    
-    
-    
     
     
 }
+  
+

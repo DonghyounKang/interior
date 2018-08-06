@@ -305,8 +305,8 @@
 <script id ="ad-works-template" type="text/x-handlebars-template">
 {{#each list}}
 <tr>
-	<td class="frm"><input type="checkbox" id="chk" name="chk" value="{{no}}" /></td>
-	<td class="num">{{no}}</a></td>
+	<td class="frm"><input type="checkbox" id="chk" name="chk" value="{{worksNumber}}" /></td>
+	<td class="num">{{worksNumber}}</a></td>
 	<td class="title">{{title}}</td>
 	<td class="date">{{salesStatus}}</td>
 	<td class="writer">{{capacity}}</td>
@@ -314,8 +314,8 @@
 	<td class="writer">{{ryear}}-{{rmonth}}-{{rday}}</td>
 	<td class="writer">{{myear}}-{{mmonth}}-{{mday}}</td>
 	<td>
-		<button class="ad-btn-sm ad-btn-color1 ad-works-update" data-wsano="{{no}}" data-toggle="modal" data-target="#worksModal" style="margin-right:5px;">수정</button>
-		<button class="ad-btn-sm ad-btn-color2" onclick="classdel({{no}})">삭제</button>
+		<button class="ad-btn-sm ad-btn-color1 ad-works-update" data-workshopNo="{{workshopNumber}}" data-toggle="modal" data-target="#worksModal" style="margin-right:5px;">수정</button>
+		<button class="ad-btn-sm ad-btn-color2" onclick="classdel({{workshopNumber}})">삭제</button>
 	</td>
 </tr>
 {{/each}}

@@ -2,9 +2,18 @@
 "use strict"
 var userNo;
 var adWorksData = $('.ad-works-data');
-var adWorksEnrollBtn = $('.ad-class-enroll');
+var adWorksEnrollBtn = $('.ad-works-enroll');
 var adWorksWrapperTemplateSrc = $('#ad-works-template').html();
 var adWorksWrapperTemplate = Handlebars.compile(adWorksWrapperTemplateSrc);
+
+/*button 클릭시 파일 첨부 */	
+$(function () {
+	$('#imgUpload').click(function (e) {
+		e.preventDefault();
+		$('#fileupload').click();
+	});
+});
+
 
 $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 	//공방번호(사용자번호(PK))
@@ -31,6 +40,27 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 			}
 		}
 		$(adWorksWrapperTemplate({list: data})).appendTo(adWorksData);
+		
+		/* view */
+		adClassData.on('click', '.ad-works-update', function(e) {
+			var no = $(e.target).attr('data-workshopNo');
+			$.getJSON(serverRoot + "/json/works/" + no, (data) => {
+				console.log(data);
+				$(acnm).val(data.title);
+		        $(minno).val(data.minPerson);
+		        $(maxno).val(data.maxPerson);
+		        $(actdt).val(data.experDate);
+		        $(avst).val(data.startTime);
+		        $(avet).val(data.endTime);
+		        $(mtrls).val(data.prepareCont);
+		        $(apric).val(data.price);
+		        $(accnt).val(data.content);
+		        $(wsano).val(data.no);
+			});
+			
+			adClassEnrollBtn.trigger('click', ['update']);
+		
+		
 	});
 	
 	$.getJSON(serverRoot + "/json/works/currentState",{"no":userNo}, (data) => {
