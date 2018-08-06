@@ -58,7 +58,7 @@ public class WorksController {
     public void addBuscket(@RequestParam("worksNumber") int worksNumber,
             @RequestParam("memberNumber") int memberNumber) throws Exception {
         worksService.addBuscket(worksNumber, memberNumber);
-    }
+    } 
     
     //관리자 판매작품List 
     @RequestMapping("adminList") 
