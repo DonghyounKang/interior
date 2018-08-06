@@ -38,7 +38,7 @@
       <result column="abvl" property="attributeValue" /> <!-- 속성 값 -->
       <result column="abnm" property="attributeName" /> <!-- 속성 명-->
     </association>
-  </resultMap>
+  </resultMap> 
   
   <!-- 제품 리스트별로 출력하는 내용들  -->
   <select id="selectList" 

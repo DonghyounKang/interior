@@ -4,7 +4,7 @@ import java.util.List;
 
 import bitcamp.java106.pms.domain.Works;
 
-public interface WorksDao {
+public interface WorksDao { 
     int delete(int no) ;
     List<Works> selectList();
     int insert(Works works);

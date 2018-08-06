@@ -17,7 +17,7 @@ public interface WorksService {
     List<Works> listWithHashtag(String hashtag);
     Object getWorksPhotoOption(int worksNumber); // 작품, 옵션, 사진 가져오는 메소드
     List<Works> adminList(int no);
-    Object getCurrentState(int no);
+    Object getCurrentState(int no); 
 }
 
 //ver 53 - 인터페이스 추가

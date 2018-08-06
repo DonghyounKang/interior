@@ -53,7 +53,7 @@ public class WorksController {
         return worksService.getWorksPhotoOption(worksNumber);
     }
     
-    //관리자 판매작품List
+    //관리자 판매작품List 
     @RequestMapping("adminList") 
     public Object adminList(int no) {
         return worksService.adminList(no);
