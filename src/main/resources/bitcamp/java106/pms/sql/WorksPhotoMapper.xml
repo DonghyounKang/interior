@@ -12,7 +12,7 @@
 <mapper namespace="bitcamp.java106.pms.dao.WorksPhotoDao">
 
   <resultMap type="WorksPhoto" id="WorksPhotoMap">
-    <id column="wpno" property="pno"/>
+    <id column="wpno" property="photoNumber"/>
     <result column="wno" property="worksNumber"/>
     <result column="mipt" property="mainPhoto" />
     <result column="path" property="path"/>

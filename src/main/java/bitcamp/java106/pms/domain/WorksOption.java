@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class WorksOption implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    private int opno; // 옵션번호
+    private int optionNumber; // 옵션번호
     private int worksNumber;  // 작품번호
     private String optionYn; // 옵션 여부
     private String attributeValue; // 속성값
@@ -15,8 +15,8 @@ public class WorksOption implements Serializable {
     
     @Override
     public String toString() {
-        return "WorkOption [opno=" + opno + ", worksNumber=" + worksNumber
-                + ", optionYn=" + optionYn + ", attributeValue="
+        return "WorksOption [optionNumber=" + optionNumber + ", worksNumber="
+                + worksNumber + ", optionYn=" + optionYn + ", attributeValue="
                 + attributeValue + ", attributeName=" + attributeName + "]";
     }
 
@@ -36,13 +36,12 @@ public class WorksOption implements Serializable {
         this.optionYn = optionYn;
     }
 
-    
-    public int getOpno() {
-        return opno;
+    public int getOptionNumber() {
+        return optionNumber;
     }
 
-    public void setOpno(int opno) {
-        this.opno = opno;
+    public void setOptionNumber(int optionNumber) {
+        this.optionNumber = optionNumber;
     }
 
     public String getAttributeValue() {

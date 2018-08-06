@@ -63,20 +63,20 @@ public class WorksServiceImpl implements WorksService {
     }
     
     @Override
-    public Object getWorksPhotoOption(int no) {
+    public Object getWorksPhotoOption(int worksNumber) {
         // 해당 번호를 이용하여 작품, 옵션, 사진 가져오기
         // 1) 작품
-        Works works = worksDao.selectOne(no);
+        Works works = worksDao.selectOne(worksNumber);
         // 2) 작품옵션
-        List<WorksOption> worksOption = worksOptionDao.selectList(no);
+        List<WorksOption> worksOption = worksOptionDao.selectList(worksNumber);
         // 3) 사진
-        List<WorksPhoto> worksPhoto = worksPhotoDao.selectList(no);
+        List<WorksPhoto> worksPhoto = worksPhotoDao.selectList(worksNumber);
         
         // hash를 이용하여 값을 저장
         HashMap<String, Object> params = new HashMap<>();
         
-        params.put("no", works.getNo());
-        params.put("wno", works.getWno());
+        params.put("worksNumber", works.getWorksNumber());
+        params.put("workshopNumber", works.getWorkshopNumber());
         params.put("title", works.getTitle());
         params.put("works", works.getPrice());
         params.put("registeredDate", works.getRegisteredDate());

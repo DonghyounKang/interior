@@ -7,8 +7,8 @@ import java.util.List;
 public class Works implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    private int no;  // 작품번호
-    private int wno;  // 공방번호
+    private int worksNumber;  // 작품번호
+    private int workshopNumber;  // 공방번호
     private String title; //작품명
     private int price; // 가격  
     private Date registeredDate; // 등록 날짜
@@ -23,33 +23,39 @@ public class Works implements Serializable {
     
     @Override
     public String toString() {
-        return "Works [no=" + no + ", wno=" + wno + ", title=" + title
-                + ", price=" + price + ", registeredDate=" + registeredDate
-                + ", capacity=" + capacity + ", salesStatus=" + salesStatus
-                + ", productDetail=" + productDetail + ", deliveryPrice="
-                + deliveryPrice + ", requestDetail=" + requestDetail
-                + ", photo=" + photo + ", option=" + option + "]";
+        return "Works [worksNumber=" + worksNumber + ", workshopNumber="
+                + workshopNumber + ", title=" + title + ", price=" + price
+                + ", registeredDate=" + registeredDate + ", capacity="
+                + capacity + ", salesStatus=" + salesStatus + ", productDetail="
+                + productDetail + ", deliveryPrice=" + deliveryPrice
+                + ", requestDetail=" + requestDetail + ", photo=" + photo
+                + ", option=" + option + "]";
     }
 
 
-    public int getNo() {
-        return no;
+
+    public int getWorksNumber() {
+        return worksNumber;
     }
 
 
-    public void setNo(int no) {
-        this.no = no;
+
+    public void setWorkNumber(int worksNumber) {
+        this.worksNumber = worksNumber;
     }
 
 
-    public int getWno() {
-        return wno;
+
+    public int getWorkshopNumber() {
+        return workshopNumber;
     }
 
 
-    public void setWno(int wno) {
-        this.wno = wno;
+
+    public void setWorkshopNumber(int workshopNumber) {
+        this.workshopNumber = workshopNumber;
     }
+
 
 
     public String getTitle() {

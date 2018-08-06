@@ -12,8 +12,8 @@
 <mapper namespace="bitcamp.java106.pms.dao.WorksDao">
 
   <resultMap type="Works" id="WorksMap">
-    <id column="wno" property="no"/> <!-- 작품번호 -->
-    <result column="memno" property="wno"/> <!-- 공방번호 -->
+    <id column="wno" property="worksNumber"/> <!-- 작품번호 -->
+    <result column="memno" property="workshopNumber"/> <!-- 공방번호 -->
     <result column="wtitl" property="title"/> <!-- 작품명 -->
     <result column="price" property="price"/> <!-- 가격 -->
     <result column="wrtdt" property="registeredDate"/> <!-- 등록날짜 -->
@@ -26,7 +26,7 @@
     <!-- 제품 사진  => 작품번호는 어차피 작품DB의 있는 작품번호로 이용하여 대입할 것이다. -->
     <!-- 여기의 사진은 그냥 main 화면만 출력용으로 -->
     <association property="photo" javaType="WorksPhoto"> 
-      <id column="wpno" property="pno"/>
+      <id column="wpno" property="photoNumber"/>
       <result column="mipt" property="mainPhoto"/>
       <result column="path" property="path"/> 
     </association>
@@ -34,7 +34,7 @@
      <!-- 제품 옵션 => 정의 사항 -->
      <!-- 아직까지 생각해봄 -->
     <association property="option" javaType="WorksOption"> 
-      <id column="opno" property="opno"/> <!-- 옵션번호 -->
+      <id column="opno" property="optionNumber"/> <!-- 옵션번호 -->
       <result column="optyn" property="optionYn"/> <!-- 옵션여부 -->
       <result column="abvl" property="attributeValue" /> <!-- 속성 값 -->
       <result column="abnm" property="attributeName" /> <!-- 속성 명-->
@@ -66,7 +66,7 @@
         
   -->
   <select id="selectOne" parameterType="int" resultMap="WorksMap">
-    select * from INTR_WORKS where wno = #{no}
+    select * from INTR_WORKS where wno = #{worksNumber}
   </select>
   
   <!-- 옵션 내용 보기 -->

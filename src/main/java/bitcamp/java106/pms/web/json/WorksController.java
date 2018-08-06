@@ -48,9 +48,9 @@ public class WorksController {
     }
     
     // 여기는 상세 보기용
-    @RequestMapping("{no}")
-    public Object view(@PathVariable int no) throws Exception {
-        return worksService.getWorksPhotoOption(no);
+    @RequestMapping("{worksNumber}")
+    public Object view(@PathVariable int worksNumber) throws Exception {
+        return worksService.getWorksPhotoOption(worksNumber);
     }
     
     // 옵션보기
