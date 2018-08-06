@@ -107,7 +107,7 @@
     sum(if(SLST ='품절',1,0)) AS outCnt 
     from INTR_WORKS where MEMNO = #{value}
   </select>
-</mapper>
+</mapper> 
 
 
 
