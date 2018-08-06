@@ -78,7 +78,7 @@ public class WorksServiceImpl implements WorksService {
         params.put("worksNumber", works.getWorksNumber());
         params.put("workshopNumber", works.getWorkshopNumber());
         params.put("title", works.getTitle());
-        params.put("works", works.getPrice());
+        params.put("price", works.getPrice());
         params.put("registeredDate", works.getRegisteredDate());
         params.put("capacity", works.getCapacity());
         params.put("salesStatus", works.getSalesStatus());
