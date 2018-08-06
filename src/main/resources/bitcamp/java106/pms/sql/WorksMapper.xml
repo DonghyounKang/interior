@@ -38,7 +38,7 @@
       <result column="abvl" property="attributeValue" /> <!-- 속성 값 -->
       <result column="abnm" property="attributeName" /> <!-- 속성 명-->
     </association>
-  </resultMap> 
+  </resultMap>
   
   <!-- 제품 리스트별로 출력하는 내용들  -->
   <select id="selectList" 
@@ -88,7 +88,7 @@
 <!--     delete from pms2_board where bno=#{value} -->
   </delete>
   
- <!-- 관리자페이지 제품 리스트별로 출력하는 내용들  -->
+   <!-- 관리자페이지 제품 리스트별로 출력하는 내용들  -->
   <select id="selectAdList" 
           resultMap="WorksMap" 
           parameterType="int">
@@ -107,7 +107,14 @@
     sum(if(SLST ='품절',1,0)) AS outCnt 
     from INTR_WORKS where MEMNO = #{value}
   </select>
-</mapper> 
+  
+  
+  <!-- 장바구니 담기 -->
+  <insert id="insertBuscket" parameterType="map">
+    insert into INTR_SPBK(wno, memno) 
+    values(#{worksNumber},#{memberNumber})
+  </insert>
+</mapper>
 
 
 
