@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import bitcamp.java106.pms.dao.MainDao;
 import bitcamp.java106.pms.dao.WorkshopDao;
+import bitcamp.java106.pms.dao.WsphoDao;
 import bitcamp.java106.pms.domain.Workshop;
+import bitcamp.java106.pms.domain.Wspho;
 import bitcamp.java106.pms.service.WorkshopService;
 
 @Service
@@ -16,10 +18,12 @@ public class WorkshopServiceImpl implements WorkshopService {
     // 해당 메소드의 대해 알고 싶으면 자세한건 인터페이스 참조
     WorkshopDao workshopDao;
     MainDao mainDao;
+    WsphoDao wsphoDao;
     
-    public WorkshopServiceImpl(WorkshopDao workshopDao, MainDao mainDao) {
+    public WorkshopServiceImpl(WorkshopDao workshopDao, MainDao mainDao, WsphoDao wsphoDao) {
         this.workshopDao = workshopDao;
         this.mainDao = mainDao;
+        this.wsphoDao = wsphoDao;
     }
 
     // 판매자 추가 관련 메소드
@@ -27,7 +31,12 @@ public class WorkshopServiceImpl implements WorkshopService {
     public int add(Workshop workshop) {
         return workshopDao.insert(workshop);
     }
-
+    
+    @Override
+    public int add(Wspho wspho) {
+        return wsphoDao.insert(wspho);
+    }
+    
     // 판매자 등록 되어있는지 검사!
     @Override
     public boolean isExist(int no) {

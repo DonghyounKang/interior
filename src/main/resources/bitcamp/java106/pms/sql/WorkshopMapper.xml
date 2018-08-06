@@ -59,6 +59,13 @@
     order by wrk.WSNM desc
     limit #{startRowNo}, #{pageSize}
   </select>
+  
+  <update id="update" parameterType="Workshop">
+    update INTR_WRKSHP set 
+        wsnm=#{studioName}, 
+        itrod=#{introduction}
+    where memno=#{wno}
+  </update>
   <!-- 회원 전체 리스트 출력 -->
  <!--  <select id="selectList" 
           resultMap="MemberMap" parameterType="map">
