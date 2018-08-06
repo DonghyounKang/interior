@@ -16,6 +16,7 @@ public interface WorksService {
     int delete(int no);
     List<Works> listWithHashtag(String hashtag);
     Object getWorksPhotoOption(int no); // 작품, 옵션, 사진 가져오는 메소드
+    List<Works> adminList(int no);
 }
 
 //ver 53 - 인터페이스 추가

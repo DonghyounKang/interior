@@ -11,6 +11,7 @@ public interface WorksDao {
     int update(Works works);
     Works selectOne(int no);
     //WorkOption optionName(int no); // 옵션 가져오기
+    List<Works> selectAdList(int no);
 }
 
 

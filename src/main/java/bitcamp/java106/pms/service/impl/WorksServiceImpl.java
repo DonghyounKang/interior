@@ -84,7 +84,7 @@ public class WorksServiceImpl implements WorksService {
         params.put("salesStatus", works.getSalesStatus());
         params.put("productDetail", works.getProductDetail());
         params.put("deliveryPrice", works.isDeliveryPrice());
-        params.put("requestDetail", works.getRequestDetail());
+        params.put("modifiedDate", works.getModifiedDate());
         
         params.put("worksOption", worksOption);
         params.put("worksPhoto", worksPhoto);
@@ -92,6 +92,11 @@ public class WorksServiceImpl implements WorksService {
         System.out.println(worksOption);
         System.out.println(worksPhoto);
         return params;
+    }
+    
+    @Override
+    public List<Works> adminList(int no) {
+        return worksDao.selectAdList(no);
     }
     
 }

@@ -21,7 +21,6 @@
     <result column="slst" property="salesStatus" /> <!-- 판매 상태 -->
     <result column="pddt" property="productDetail" /> <!-- 제품 상세 -->
     <result column="spcs" property="deliveryPrice" /> <!-- 배송비 여부 -->
-    <result column="pdrd" property="requestDetail" /> <!-- 의뢰내용 -->
     
     <!-- 제품 사진  => 작품번호는 어차피 작품DB의 있는 작품번호로 이용하여 대입할 것이다. -->
     <!-- 여기의 사진은 그냥 main 화면만 출력용으로 -->
@@ -53,6 +52,7 @@
     where wp.mipt = "y" <!-- 메인 사진일 경우 -->
     order by w.WNO desc
   </select>
+  
   
   <!-- 제품 등록 -->
   <insert id="insert" parameterType="Works"
@@ -88,6 +88,15 @@
   <delete id="delete" parameterType="int">
 <!--     delete from pms2_board where bno=#{value} -->
   </delete>
+  
+    <!-- 제품 리스트별로 출력하는 내용들  -->
+  <select id="selectAdList" 
+          resultMap="WorksMap" 
+          parameterType="int">
+    select *
+    from INTR_WORKS
+    where memno=#{value}
+  </select>
 </mapper>
 
 
