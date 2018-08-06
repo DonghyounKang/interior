@@ -89,11 +89,22 @@ $.getJSON(serverRoot + "/json/works/" + no, (result) => {
 
 	// 장바구니 담기 구현
 	$("#btn-basket").click(() => {
-		
+		$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+			window.alert("해당 제품을 장바구니에 담았습니다.")
+			$.post(serverRoot + "/json/works/add/buscket", {
+				worksNumber : result.worksNumber,
+				memberNumber : data.no
+			}, () => { 
+				location.href = serverRoot + "/interia/html/works/sp_bascket.html" 
+				}, 'json');
+		}).fail(() => {
+			location.href = serverRoot + "/interia/html/auth/login.html";
+		}); 
 	});
 	
 	// 구매하기 버튼 구현
 	$("#btn-purchased").click(() => {
+	
 	});
 	
 });

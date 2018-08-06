@@ -53,6 +53,13 @@ public class WorksController {
         return worksService.getWorksPhotoOption(worksNumber);
     }
     
+    // 장바구니 담기
+    @RequestMapping("add/buscket")
+    public void addBuscket(@RequestParam("worksNumber") int worksNumber,
+            @RequestParam("memberNumber") int memberNumber) throws Exception {
+        worksService.addBuscket(worksNumber, memberNumber);
+    }
+    
     //관리자 판매작품List 
     @RequestMapping("adminList") 
     public Object adminList(int no) {
@@ -64,13 +71,6 @@ public class WorksController {
         return worksService.getCurrentState(no);
     }
     
-    // 옵션보기
-//    @RequestMapping("option/{no}")
-//    public WorkOption viewOption(
-//            @PathVariable int no) {
-//        System.out.println("worksControllor() 정상처리");
-//        return worksService.OptionValue(no);
-//    }
 
 }
 

@@ -94,6 +94,15 @@ public class WorksServiceImpl implements WorksService {
         return params; 
     }
     
+    // 장바구니 담기
+    @Override
+    public int addBuscket(int worksNumber, int memberNumber) {
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("worksNumber", worksNumber);
+        params.put("memberNumber", memberNumber);
+        return worksDao.insertBuscket(params);
+    }
+    
     @Override
     public List<Works> adminList(int no) {
         return worksDao.selectAdList(no);
