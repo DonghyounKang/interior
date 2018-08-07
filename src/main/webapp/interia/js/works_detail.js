@@ -85,19 +85,38 @@ $.getJSON(serverRoot + "/json/works/" + no, (result) => {
 	templateFn = Handlebars.compile($('#AttributeName-template').html())
 	$(fAttributeName).html(templateFn({select:result.worksOption}))
 	
-	
 
+	
 	// 장바구니 담기 구현
 	$("#btn-basket").click(() => {
 		$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+			// 해당 선택에 맞는 옵션값을 추출한다. (만일 optionNumber 값이 주어지지 않았을 때 값은 0)
+			var fOptionNumber = 0;
+			
+			
+			for (var key of result.worksOption) {
+				if (key.attributeValue == $(fAttributeValue).val()
+			    		&& key.attributeName == $(fAttributeName).val()) {
+					// 해당 옵션값 추출
+			    	fOptionNumber = key.optionNumber;
+			    	break;
+			    } else if (key.optionYn == "n" || key.optionYn =="N" ) {
+					// 여기서 옵션 설정을 안할 경우
+			    	fOptionNumber = key.optionNumber;
+			    	break;
+				}
+			}
+			
+			console.log(fOptionNumber);
 			window.alert("해당 제품을 장바구니에 담았습니다.")
 			$.post(serverRoot + "/json/works/add/buscket", {
 				worksNumber : result.worksNumber,
-				memberNumber : data.no
-			}, () => { 
-				location.href = serverRoot + "/interia/html/works/sp_bascket.html" 
+				memberNumber : data.no,
+				optionNumber : fOptionNumber
 				}, 'json');
+			location.href = serverRoot + "/interia/html/works/sp_bascket.html"; 
 		}).fail(() => {
+			window.alert("로그인 하시기 바랍니다.");
 			location.href = serverRoot + "/interia/html/auth/login.html";
 		}); 
 	});

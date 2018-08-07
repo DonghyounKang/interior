@@ -56,9 +56,17 @@ public class WorksController {
     // 장바구니 담기
     @RequestMapping("add/buscket")
     public void addBuscket(@RequestParam("worksNumber") int worksNumber,
-            @RequestParam("memberNumber") int memberNumber) throws Exception {
-        worksService.addBuscket(worksNumber, memberNumber);
-    } 
+            @RequestParam("memberNumber") int memberNumber,
+            @RequestParam("optionNumber") int optionNumber) throws Exception {
+        worksService.addBuscket(worksNumber, memberNumber, optionNumber);
+    }
+    
+    // 장바구니 리스트 출력
+    @RequestMapping("buscketList/{workshopNumber}/{memberNumber}")
+    public Object buscketList(@PathVariable int workshopNumber,
+            @PathVariable int memberNumber) throws Exception {
+        return worksService.getBusketList(workshopNumber, memberNumber);
+    }
     
     //관리자 판매작품List 
     @RequestMapping("adminList") 

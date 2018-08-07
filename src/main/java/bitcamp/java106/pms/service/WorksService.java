@@ -18,7 +18,8 @@ public interface WorksService {
     Object getWorksPhotoOption(int worksNumber); // 작품, 옵션, 사진 가져오는 메소드
     List<Works> adminList(int no);
     Object getCurrentState(int no); 
-    int addBuscket(int worksNumber, int memberNumber); // 여기는 장바구니 담는 용도
+    int addBuscket(int worksNumber, int memberNumber, int optionNumber); // 여기는 장바구니 담는 용도
+    Object getBusketList(int workshopNumber, int memberNumber); // 여기는 장바구니를 해당 조건에 맞는 리스트 출력
 }
 
 //ver 53 - 인터페이스 추가

@@ -111,8 +111,8 @@
   
   <!-- 장바구니 담기 -->
   <insert id="insertBuscket" parameterType="map">
-    insert into INTR_SPBK(wno, memno) 
-    values(#{worksNumber},#{memberNumber})
+    insert into INTR_SPBK(wno, memno, opno) 
+    values(#{worksNumber},#{memberNumber},#{optionNumber})
   </insert>
 </mapper>
 
