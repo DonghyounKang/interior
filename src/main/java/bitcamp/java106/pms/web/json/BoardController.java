@@ -40,4 +40,9 @@ public class BoardController {
     public Object hashtagList(@PathVariable int no) throws Exception {
         return boardService.hashtagList(no);
     }
+    
+    @RequestMapping("islike{no}")
+    public Object isLike(@PathVariable int no) throws Exception {
+        return boardService.isLike(no);
+    }
 }

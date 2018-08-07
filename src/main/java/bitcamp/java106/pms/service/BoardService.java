@@ -10,4 +10,5 @@ public interface BoardService {
     List<Board> commentList(int no);
     List<Board> hashtagList(int no);
     List<Board> selectListInMain();
+    List<Board> isLike(int no);
 }

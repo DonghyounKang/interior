@@ -12,17 +12,17 @@ public class Board implements Serializable {
     private String content;
     private String path;
     private int count;
+    private int like;
     
     private String hashtag;
     private String nickname;
     private String comments;
     
-    
     @Override
     public String toString() {
         return "Board [no=" + no + ", memno=" + memno + ", createDate=" + createDate + ", content=" + content
-                + ", path=" + path + ", count=" + count + ", hashtag=" + hashtag + ", nickname=" + nickname
-                + ", comments=" + comments + "]";
+                + ", path=" + path + ", count=" + count + ", like=" + like + ", hashtag=" + hashtag + ", nickname="
+                + nickname + ", comments=" + comments + "]";
     }
     public int getNo() {
         return no;
@@ -77,6 +77,12 @@ public class Board implements Serializable {
     }
     public void setComments(String comments) {
         this.comments = comments;
+    }
+    public int getLike() {
+        return like;
+    }
+    public void setLike(int like) {
+        this.like = like;
     }
     
     

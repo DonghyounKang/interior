@@ -10,4 +10,5 @@ public interface BoardDao {
     Board selectOne(int no);
     List<Board> commentList(int no);
     List<Board> hashtagList(int no);
+    List<Board> isLike(int no);
 }

@@ -53,5 +53,10 @@ public class BoardServiceImpl implements BoardService {
         System.out.println("Service.selectListInMain");
         return mainDao.selectListInMain();
     }
+
+    @Override
+    public List<Board> isLike(int no) {
+        return boardDao.isLike(no);
+    }
     
 }

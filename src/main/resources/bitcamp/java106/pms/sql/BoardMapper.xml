@@ -72,6 +72,13 @@
     WHERE bo.BNO = #{value}
   </select>
   
+  <select id="isLike" parameterType="int" resultType="Map">
+    SELECT m.MEMNO, l.BNO 
+    FROM INTR_MEMBER m 
+    INNER JOIN INTR_LKMB l 
+    ON m.MEMNO = l.MEMNO 
+    WHERE m.MEMNO = #{value}
+  </select>
 </mapper>
 
 
