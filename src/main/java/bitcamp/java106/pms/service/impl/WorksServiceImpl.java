@@ -96,11 +96,20 @@ public class WorksServiceImpl implements WorksService {
     
     // 장바구니 담기
     @Override
-    public int addBuscket(int worksNumber, int memberNumber) {
+    public int addBuscket(int worksNumber, int memberNumber, int optionNumber) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("worksNumber", worksNumber);
         params.put("memberNumber", memberNumber);
+        params.put("optionNumber", optionNumber);
         return worksDao.insertBuscket(params);
+    }
+    
+    // 장바구니 리스트를 출력하는 메서드
+    @Override
+    public Object getBusketList(int workshopNumber, int memberNumber) {
+        // 
+        
+        return null;
     }
     
     @Override
