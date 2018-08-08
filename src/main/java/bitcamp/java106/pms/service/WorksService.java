@@ -22,7 +22,8 @@ public interface WorksService {
     List<Works> adminList(int no);
     Object getCurrentState(int no); 
     int addBuscket(int worksNumber, int memberNumber, int optionNumber); // 여기는 장바구니 담는 용도
-    Object getBusketList(int workshopNumber, int memberNumber); // 여기는 장바구니를 해당 조건에 맞는 리스트 출력
+    List<Object> getBuscketList(int buyerNumber); // 여기는 해당 공방 안에 있는 각 장바구니의 제품을 출력
+    List<String> viewBuscketWorkshopList(int buyerNumber); // 장바구니안에 있는 공방명 출력
 }
 
 //ver 53 - 인터페이스 추가

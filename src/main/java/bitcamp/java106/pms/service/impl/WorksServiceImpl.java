@@ -107,12 +107,16 @@ public class WorksServiceImpl implements WorksService {
         return worksDao.insertBuscket(params);
     }
     
-    // 장바구니 리스트를 출력하는 메서드
+    // 장바구니 리스트 - 해당 공방 안에 담긴 제품을 출력하는 메서드
     @Override
-    public Object getBusketList(int workshopNumber, int memberNumber) {
-        // 
-        
-        return null;
+    public List<Object> getBuscketList(int buyerNumber) {
+        return worksDao.selectBuscketList(buyerNumber);
+    }
+    
+    // 장바구니 리스트 - 해당 회원이 공방을 찾는 메서드
+    @Override
+    public List<String> viewBuscketWorkshopList(int buyerNumber) {
+        return worksDao.searchBuscketWorkshop(buyerNumber);
     }
     
     @Override

@@ -38,6 +38,11 @@ public class WorkshopServiceImpl implements WorkshopService {
         return wsphoDao.insert(wspho);
     }
     
+    @Override
+    public int addIntroduce(Wspho wspho) {
+        return wsphoDao.insertIntroduce(wspho);
+    }
+    
     // 판매자 등록 되어있는지 검사!
     @Override
     public boolean isExist(int no) {
@@ -69,6 +74,11 @@ public class WorkshopServiceImpl implements WorkshopService {
     }
     
     @Override
+    public List<Workshop> listIntroduce() {
+        return workshopDao.selectListIntroduce();
+    }
+    
+    @Override
     public Workshop get(int no) {
         return workshopDao.selectOne(no);
     }
@@ -76,6 +86,11 @@ public class WorkshopServiceImpl implements WorkshopService {
     @Override
     public int update(Workshop workshop) {
         return workshopDao.update(workshop);
+    }
+    
+    @Override
+    public int updateIntroduce(Workshop workshop) {
+        return workshopDao.updateIntroduce(workshop);
     }
     
     @Override

@@ -67,10 +67,23 @@
     where ws.pclsf = 'profile'
   </select>
   
+  <select id="selectListIntroduce" resultType="Map" parameterType="map">
+    select wsctt, path
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'introduce'
+  </select>
+  
   <update id="update" parameterType="Workshop">
     update INTR_WRKSHP set 
         wsnm=#{studioName}, 
         itrod=#{introduction}
+    where memno=#{wno}
+  </update>
+  
+  <update id="updateIntroduce" parameterType="Workshop">
+    update INTR_WRKSHP set 
+        wsctt=#{wsContent}
     where memno=#{wno}
   </update>
   <!-- 회원 전체 리스트 출력 -->

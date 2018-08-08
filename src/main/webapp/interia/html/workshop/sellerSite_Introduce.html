@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/header_move.css">
     <link rel="stylesheet" type="text/css" href="../../css/workshop/workshop_sellerSite.css">
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -45,16 +46,16 @@
 	                    <button type="button" onClick="location.href='./workshop_sellerSite.html'">홈</button>
 	                </div>
 	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_Introduce.html'">공방소개</button>
+	                    <button  type="button" onClick="location.href='./sellerSite_Introduce.html'" style="background-color: #ffc001; border: 1px solid #ffc001;">공방소개</button>
 	                </div>
 	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button  type="button" onClick="location.href='./sellerSite_product.html'">공방작품</button>
+	                    <button type="button" onClick="location.href='./sellerSite_product.html'">공방작품</button>
 	                </div>
 	                <div class="workshop_sellerSite_sidemenu_btn00">
 	                    <button type="button" onClick="location.href='./sellerSite_News.html'">공방소식</button>
 	                </div>
 	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_ex.html'" style="background-color: #ffc001; border: 1px solid #ffc001;">공방체험</button>
+	                    <button type="button" onClick="location.href='./sellerSite_ex.html'">공방체험</button>
 	                </div>
 	                <div class="workshop_sellerSite_sidemenu_btn00">
 	                    <button type="button" onClick="location.href='./sellerSite_Review.html'">구매후기</button>
@@ -82,65 +83,71 @@
 	            </div>
 	        </div>
 	        <div class="workshop_sellerSite_content">
-	            <div class="sellerSite_ex_title">
-	                <p>체험 신청하기</p>
+	            <div class="sellerSite_intro_title">
+	                <p>공방소개</p>
+	                <a href="./sellerSite_IntroduceChange.html"><p>Edit ></p></a>
 	            </div>
-	            <div class="sellerSite_ex_contentMain">
-	                <div class="sellerSite_ex_content00">
-	                    <p>체험 스토어 : 비트 공방</p>
+	            <div class="sellerSite_intro_Change">
+	                <div class="sellerSite_intro_box1">
+	                    
 	                </div>
-	                <div class="sellerSite_ex_content01">
-	                    <a href="#"><img src="../../images/workshop/seller_ex_detail_sub00.png"></a>
-	                    <p>(건대) 일상탈출 정신수양 카드지갑 만들기</p>
-	                    <p>인원:1명</p>
-	                </div>
-	                <div class="sellerSite_ex_title">
-	                    <p>체험자 정보</p>
-	                </div>
-	                <div class="sellerSite_ex_subcontent">
-	                    <div class="sellerSite_ex_subcontent_name">
-	                        <p>이름</p>
-	                        <input type="text" placeholder="이름을 입력해주세요.">
-	                    </div>
-	                </div>
-	                <div class="sellerSite_ex_subcontent">
-	                    <div class="sellerSite_ex_subcontent_name">
-	                        <p>이메일</p>
-	                        <input type="email" placeholder="sung@test.com">
-	                    </div>
-	                </div>
-	                <div class="sellerSite_ex_subcontent">
-	                    <div class="sellerSite_ex_subcontent_name01">
-	                        <p>휴대전화</p>
-	                        <select>
-	                            <option>010</option>
-	                            <option>010</option>
-	                            <option>010</option>
-	                            <option>010</option>
-	                        </select>
-	                        <input type="text">
-	                        <input type="text">
-	                    </div>
-	                </div>
-	                <div class="sellerSite_ex_subcontent_btn">
-	                    <button type="button" onClick="location.href='./workshop_sellerSite.html'">신청하기</button>
+	                <div class="sellerSite_intro_box2">
+	                    <!-- <form id="introduce_text" name="insertFrm"> 
+	                    </form> -->
 	                </div>
 	            </div>
-	
 	        </div>
-	
-	
-	
 	    </div><!--************-->
+	    
+	    
+	    
 	</section>
 
 
     <footer id="footer">
     </footer>
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+
     <script src="../../js/common.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
+    <script src="../../js/sellerSite_IntroduceChange.js"></script>
+    
+    <script>
+    $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+    	console.log(data);
+	    $.getJSON(serverRoot + "/json/workshop/listIntro", (data) => {
+	        console.log(data);
+	        $("<img src='../../../files/" + data[0].path + "'>"
+            ).appendTo(".sellerSite_intro_box1");
+	        $("<p>" + data[0].wsctt + "</p>"
+            ).appendTo(".sellerSite_intro_box2");
+	            /* $("<div/>").html(
+	            		"<p>" + data[0].wsctt + "</p>").appendTo("#introduce_text");
+	            $("<div/>").html(
+                    "<img src='" + data[0].path + "'>").appendTo(".sellerSite_intro_box1"); */
+	    });
+    });
+    
+    /* $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+        $.getJSON(serverRoot + "/json/workshop/listSellerSite", (data) => {
+            console.log(data);
+            console.log(data[0].lpath);
+              $("<img src='../../../files/" + data[0].lpath + "'>"
+                ).appendTo(".workshop_sellerSite_sidemenu_img");
+              $("<a href='../admin/store_admin_index.html'>" +
+                    "<h1>" + data[0].wsnm + "</h1>" +
+                "</a>" +
+                "<p>" + data[0].itrod + "</p>"
+                ).appendTo(".workshop_sellerSite_sidemenu_imgtext");
+              $("<img src='../../../files/" + data[0].path + "'>"
+              ).appendTo(".workshop_sellerSite_content_visual");
+              $("<img src='../../../files/" + data[0].lpath + "' style='width: 50px;'>"
+              ).appendTo(".snsbanner00_title_00");
+              $("<p>" + data[0].wsnm + "</p>"
+              ).appendTo(".snsbanner00_title_01");
+        });
+    }); */
+    </script>
 </body>
 
 </html>
