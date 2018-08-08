@@ -1,15 +1,20 @@
 package bitcamp.java106.pms.web.json;
 
+import java.io.File;
 import java.util.HashMap;
+import java.util.UUID;
 
+import javax.servlet.ServletContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
-import bitcamp.java106.pms.domain.WorksOption;
 import bitcamp.java106.pms.domain.Works;
 import bitcamp.java106.pms.service.WorksService;
 
@@ -19,13 +24,16 @@ public class WorksController {
     
     WorksService worksService;
     
+    @Autowired ServletContext sc;
+    
     public WorksController(WorksService worksService) {
         this.worksService = worksService;
     }
 
     @RequestMapping("add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void add(Works works) throws Exception {
+    public void add(Works works, MultipartFile[] files) throws Exception {
+       
         worksService.add(works);
     }
     
@@ -74,9 +82,33 @@ public class WorksController {
         return worksService.adminList(no);
     }
     
+    //관리자 판매작품 현황
     @RequestMapping("currentState") 
     public Object getCurrentState(@RequestParam("no") int no) {
         return worksService.getCurrentState(no);
+    }
+    
+    //관리자 작품 등록(제품상세)
+    @RequestMapping("addWorksDetail") 
+    public Object addWorksDetail(MultipartFile files) {
+        
+        HashMap<String,Object> jsonData = new HashMap<>();
+        
+        String filesDir = sc.getRealPath("/files");
+        
+        String filename = UUID.randomUUID().toString();
+        jsonData.put("filename", filename);
+        jsonData.put("filesize", files.getSize());
+        jsonData.put("originname", files.getOriginalFilename());
+        try {
+            File path = new File(filesDir + "/" + filename);
+            System.out.println(path);
+            files.transferTo(path);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return jsonData;
+    
     }
     
 

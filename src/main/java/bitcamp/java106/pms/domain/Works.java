@@ -2,7 +2,10 @@ package bitcamp.java106.pms.domain;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Works implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -11,7 +14,9 @@ public class Works implements Serializable {
     private int workshopNumber;  // 공방번호
     private String title; //작품명
     private int price; // 가격  
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date registeredDate; // 등록 날짜
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date modifiedDate;//수정일자
     private int capacity; // 재고수량
     private String salesStatus; // 판매 상태
@@ -21,7 +26,17 @@ public class Works implements Serializable {
     private WorksOption option; // 제품 옵션 관련
     
     
+    ArrayList<WorksPhoto> worksPhotos;//사진관련(add)
+    ArrayList<Tag> worksTags;//태그관련(add)
     
+    
+    
+    public ArrayList<WorksPhoto> getWorksPhoto() {
+        return worksPhotos;
+    }
+    public void setWorkshopPhoto(ArrayList<WorksPhoto> worksPhoto) {
+        this.worksPhotos = worksPhoto;
+    }
     
     @Override
     public String toString() {

@@ -14,6 +14,8 @@
 	href="../../node_modules/blueimp-file-upload/css/jquery.fileupload.css">
 <link rel="stylesheet"
 	href="../../node_modules/blueimp-file-upload/css/jquery.fileupload-ui.css">
+<link rel="stylesheet"
+	href="../../css/jquery.tag-editor.css">
 <link rel="shortcut icon" href="../favicon.ico">
 
 </head>
@@ -134,7 +136,7 @@
 				<div class="ad-card-body">
 					<div class="ad-table-btn">
 						<button type="button" class="ad-btn ad-btn-color2">선택삭제</button>
-						<button type="button" class="ad-btn ad-btn-color1 ad-works-enroll"
+						<button type="button" id="ad-wors-addForm"class="ad-btn ad-btn-color1 ad-works-enroll"
 							data-toggle="modal" data-target="#worksModal">새작품등록</button>
 					</div>
 					<table cellspacing="0" border="1" summary="명단관리  리스트"
@@ -157,7 +159,9 @@
 						<thead>
 							<tr>
 								<th scope="col"><input type="checkbox" name="" id='chk_all'
-									value="" onclick="" /><label for="chk_all">선택</label></th>
+									value="" onclick="" />
+									<label for="chk_all">선택</label>
+								</th>
 								<th scope="cols">상품번호</th>
 								<th scope="cols">상품명</th>
 								<th scope="cols">상태</th>
@@ -216,25 +220,29 @@
 								<div class="ad-modal-contentgap">
 									<b>카테고리</b> <input type="text"
 										class="ad-works-modal-inputlg ad-works-modal-content"
-										placeholder="'#'을 이용하여 태그를 추가하세요">
+										id="tname">
 								</div>
 								<div class="ad-modal-contentgap">
 									<b>상품명</b> <input type="text"
 										class="ad-works-modal-inputlg ad-works-modal-content"
-										placeholder="상품명을 입력하세요">
+										placeholder="상품명을 입력하세요"
+										id="wtitl">
 								</div>
 								<div class="ad-modal-content-collapse">
-									<div class="ad-modal-contentgap">
+									<div class="ad-modal-contentgap" style="display:flex;">
 										<b>판매가</b> <input type="text"
 											class="ad-works-modal-inputsm ad-works-modal-content"
-											placeholder="가격을 입력하세요">
+											placeholder="가격을 입력하세요"
+											id="price">
 									</div>
 									<div class="ad-modal-contentgap" style="display:flex;">
 										<b>재고수량</b> <input type="text"
 											class="ad-works-modal-inputsm ad-works-modal-content "
-											placeholder="수량을 입력하세요"> 
+											placeholder="수량을 입력하세요"
+											id="alstk"> 
 										<div class="ad-cat-select" style="margin-left:10px;">
-										<select class="ad-cat-select-content">
+										<select class="ad-cat-select-content"
+										id="slst">
 											<option value="default">판매상태</option>
 											<option value="판매대기">판매대기</option>
 											<option value="판매중">판매중</option>
@@ -245,8 +253,8 @@
 								</div>
 								<div class="ad-modal-contentgap">
 									<b>상품이미지</b>                         	
-									<button class="ad-btn ad-btn-color3" id='imgUpload' type='button'>파일첨부</button>
-									<input id="fileupload" type="file" name="files"
+									<button class="ad-btn ad-btn-color3" id='imgUpload1' type='button'>파일첨부</button>
+									<input id="fileupload1" type="file" name="files"
 										multiple>
 									<div id="ad-images-div"></div>
 								</div>
@@ -267,32 +275,36 @@
 												<div class="ad-works-opt-name">
 													<p>옵션이름</p>
 													<input type="text"
-														class="ad-works-modal-inputsm ad-works-modal-content">
+														id="abnm"
+														class="ad-works-modal-inputsm ad-works-modal-content" placeholder="ex) 컬러, 커버재질">
 												</div>
 												<div class="ad-works-opt-content">
 													<p>옵션조합</p>
 													<input type="text"
-														class="ad-works-modal-inputsm ad-works-modal-content">
+														id="abvls"
+														class="ad-works-modal-inputsm ad-works-modal-content" placeholder="ex) 빨강,노랑,파랑">
 												</div>
 											</div>
-											<div class="ad-works-opt-add">
+											<!-- <div class="ad-works-opt-add">
 												<p>
 													<i class="far fa-plus-square"></i>옵션 추가하기
 												</p> 
-											</div>
+											</div> -->
 										</div>
 									</div>
 								</div>
-								<b>제품상세</b><br>
-								<textarea name="content">
-								    <p>Here goes the initial content of the editor.</p>
-								</textarea>
+								<div class="ad-modal-contentgap" id="ad-works-detail">
+								<b>제품상세</b>
+									<button class="ad-btn ad-btn-color3" id='imgUpload2' type='button'>파일첨부</button>
+									<input id="fileupload2" type="file" name="files">
+									<input type="text" id="pddt" style="display:none;">
+								</div>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="ad-btn ad-btn-color3">초기화</button>
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">닫기</button>
-								<button type="button" id="upload-btn" class="ad-btn ad-btn-color1">등록하기</button>
+								<button type="button" id="addBtn" class="ad-btn ad-btn-color1">등록하기</button>
 							</div>
 						</form>
 					</div>
@@ -314,40 +326,42 @@
 	<td class="writer">{{ryear}}-{{rmonth}}-{{rday}}</td>
 	<td class="writer">{{myear}}-{{mmonth}}-{{mday}}</td>
 	<td>
-		<button class="ad-btn-sm ad-btn-color1 ad-works-update" data-workshopNo="{{workshopNumber}}" data-toggle="modal" data-target="#worksModal" style="margin-right:5px;">수정</button>
-		<button class="ad-btn-sm ad-btn-color2" onclick="classdel({{workshopNumber}})">삭제</button>
+		<button class="ad-btn-sm ad-btn-color1 ad-works-update" data-worksNo="{{worksNumber}}" data-toggle="modal" data-target="#worksModal" style="margin-right:5px;">수정</button>
+		<button class="ad-btn-sm ad-btn-color2" onclick="worksdel({{worksNumber}})">삭제</button>
 	</td>
 </tr>
 {{/each}}
 
 </script>
-	<!--ad-main-wrapper-->
-	<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
-	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-	<script
-		src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
-	<script
-		src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
-	<script
-		src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
-	<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
-	<script
-		src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
-	<script
-		src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
-	<script
-		src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
-	<script
-		src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
-			<!-- <script
-		src="../../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-	<script
-		src="../../node_modules/@ckeditor/ckeditor5-build-classic/build/translations/ko.js"></script> -->
-    <script src="../../js/common.js"></script>
-	<script src="../../js/ad_header.js"></script>
-	<script src="../../js/ad_admin.js"></script>
-	<script src="../../js/ad_works.js"></script>
+<!--ad-main-wrapper-->
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script
+	src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script
+	src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script
+	src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script
+	src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script
+	src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script
+	src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script
+	src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+		<!-- <script
+	src="../../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+<script
+	src="../../node_modules/@ckeditor/ckeditor5-build-classic/build/translations/ko.js"></script> -->
+   <script src="../../js/common.js"></script>
+<script src="../../js/ad_header.js"></script>
+<script src="../../js/ad_admin.js"></script>
+<script src="../../js/jquery.caret.min.js"></script>
+<script src="../../js/jquery.tag-editor.min.js"></script>
+<script src="../../js/ad_works.js"></script>
 
 
 

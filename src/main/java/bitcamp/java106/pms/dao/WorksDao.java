@@ -3,6 +3,7 @@ package bitcamp.java106.pms.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import bitcamp.java106.pms.domain.Wkacp;
 import bitcamp.java106.pms.domain.Works;
 
 public interface WorksDao {

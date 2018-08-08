@@ -56,8 +56,9 @@
   <!-- 제품 등록 -->
   <insert id="insert" parameterType="Works"
           useGeneratedKeys="true" keyColumn="wno" keyProperty="no">
-<!--     insert into pms2_board(titl,cont,cdt) 
-    values(#{title},#{content},now()) -->
+		INSERT INTO `INTR_WORKS`
+		(`MEMNO`, `WTITL`, `PRICE`, `WRTDT`, `ALSTK`, `SLST`, `PDDT`, `SPCS`) 
+		VALUES (#{workshopNumber},#{title},#{price},now(),#{capacity},#{salesStatus},#{productDetail},#{deliveryPrice})
   </insert>
   
   

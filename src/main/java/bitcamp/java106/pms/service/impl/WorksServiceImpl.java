@@ -43,8 +43,11 @@ public class WorksServiceImpl implements WorksService {
     }
     
     @Override
-    public int add(Works works) {
-        return worksDao.insert(works);
+    public void add(Works works) {
+       
+        
+        
+        
     }
     
     @Override

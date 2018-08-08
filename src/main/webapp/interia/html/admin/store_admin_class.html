@@ -294,6 +294,7 @@ $('#ad-class-addForm').click(function(e, action) {
 	} else {
 		$('#fileupload').fileupload('option', 'url', '../../../json/wsav/add');
 		$('.modal-title').text("체험등록");
+		$('#updBtn').attr("id","addBtn");
 		$('#addBtn').text("등록하기");
 		
 	}
