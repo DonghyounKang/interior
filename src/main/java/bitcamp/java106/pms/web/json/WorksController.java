@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import bitcamp.java106.pms.domain.Member;
 import bitcamp.java106.pms.domain.Works;
 import bitcamp.java106.pms.service.WorksService;
 
@@ -64,16 +65,27 @@ public class WorksController {
     // 장바구니 담기
     @RequestMapping("add/buscket")
     public void addBuscket(@RequestParam("worksNumber") int worksNumber,
-            @RequestParam("memberNumber") int memberNumber,
-            @RequestParam("optionNumber") int optionNumber) throws Exception {
-        worksService.addBuscket(worksNumber, memberNumber, optionNumber);
+            @RequestParam("optionNumber") int optionNumber,
+            HttpSession session) throws Exception {
+        Member member = (Member)session.getAttribute("loginUser");
+        worksService.addBuscket(worksNumber, member.getNo(), optionNumber);
     }
     
-    // 장바구니 리스트 출력
-    @RequestMapping("buscketList/{workshopNumber}/{memberNumber}")
-    public Object buscketList(@PathVariable int workshopNumber, 
-            @PathVariable int memberNumber) throws Exception {
-        return worksService.getBusketList(workshopNumber, memberNumber);
+    // 장바구니 리스트 출력 1 - 공통 공방명 추출
+    @RequestMapping("buscketWorkshop")
+    public Object buscketWorkshop(HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        return worksService.viewBuscketWorkshopList(member.getNo());
+    }
+    
+    // 장바구니 리스트 출력 2 - 해당 공방 안의 제품 관련 추출
+    @RequestMapping("buscketList")
+    public Object buscketList(HttpSession session) throws Exception {
+        Member member = (Member) session.getAttribute("loginUser");
+        List<Object> buscket = worksService.getBuscketList(member.getNo());
+
+        System.out.println(buscket);
+        return buscket;
     }
     
     //관리자 판매작품List 
