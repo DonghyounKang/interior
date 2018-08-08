@@ -161,7 +161,7 @@ $('#fileupload1').fileupload({
 				capacity: $(alstk).val(),
 				salesStatus: $('#slst option:selected').val(),
 				productDetail: $(pddt).val(),
-				deliveryPrice: $(wtitl).val(),
+/*				deliveryPrice: $(wtitl).val(),*/
 				option.attributeValue: $(abnm).val(),
 				option.attributeName: $(abvls).val()
 				
