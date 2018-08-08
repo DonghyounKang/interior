@@ -518,8 +518,6 @@ dl,ul,ol,menu,li {list-style:none}
 }
 .sellerSite_intro_box1 {
     display: flex;
-    align-items: center;
-    justify-content: center;
     width: 430px;
     height: 800px;
     float: left;
