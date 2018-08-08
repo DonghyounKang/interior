@@ -104,33 +104,18 @@
 	                    <div class="workshop_sellerSite_content_subContent_snsbanner00">
 	                        <div class="workshop_sellerSite_content_subContent_snsbanner00_title">
 	                            <div class="snsbanner00_title_00">
-	                                <img src="../../images/workshop/storeLogo03.png">
+
 	                            </div>
 	                            <div class="snsbanner00_title_01">
-	                                <p>INTERIA</p>
-	                                <p>2018년 6월 17일</p>
-	                            </div>
-	                            <div class="snsbanner00_title_02">
-	                                <a href="#"><img src="../../images/workshop/like.png"></a>      
+	                            
 	                            </div>
 	                        </div>
 	                    </div>
-	
-	                    <div class="snsbanner00_content">
-	                        <span>
-	                            “라면드실래요?’<br>
-	                            부회장과 김비서가 함께 사랑을 속삭인 바로 그 공간!<br>
-	                            #일룸 #로테이블 과 #세타플러스의자 로 완성된<br>
-	                            아늑한 다이닝룸입니다.<br><br>
-	
-	                            ‘김비서가 왜 그럴까’의 감각적인 생활공간<br><br>
-	                            <span style="color: #003569;">
-	                            #iloom#인스타일룸#instailoom#인테리어#interior#인테리어디자인#interiordesign#인테리어그램
-	                            </span>
-	                        </span>
-	                    </div>
-	                    <div class="snsbanner00_img">
-	                        <img src="../../images/workshop/storeSnsImg.png">
+	                    
+	                    <div id="snsbanner00_img">
+		                    <div id="instafeed">
+		                        <!-- <img src="../../images/workshop/storeSnsImg.png"> -->
+		                    </div>
 	                    </div>
 	                </div>
 	
@@ -279,6 +264,7 @@
     <script src="../../js/footer.js"></script>
     <script src="../../js/workshop_sellerSite_slider.js"></script>
     <script src="../../js/workshop_sellerSite_Map.js"></script>
+    <script src="../../js/instafeed.min.js"></script>
     <script>
     $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
     	$.getJSON(serverRoot + "/json/workshop/listSellerSite", (data) => {
@@ -293,8 +279,35 @@
     			).appendTo(".workshop_sellerSite_sidemenu_imgtext");
     		  $("<img src='../../../files/" + data[0].path + "'>"
               ).appendTo(".workshop_sellerSite_content_visual");
+    		  $("<img src='../../../files/" + data[0].lpath + "' style='width: 50px;'>"
+              ).appendTo(".snsbanner00_title_00");
+    		  $("<p>" + data[0].wsnm + "</p>"
+              ).appendTo(".snsbanner00_title_01");
     	});
     });
+    </script>
+    <script>
+    var userFeed = new Instafeed({
+    	get:'user',
+    	userId:3147081812,
+    	sortBy:"most-recent",
+    	limit:1,
+    	resolution: "standard_resolution",
+    	template:'<a href="{{link}}" target="_blank"><img width="280" height="410" src="{{image}}"/></a>',
+    	//template:'<a href="'+post.link+'" target="_blank"><img width="280" height="410" src="'+highResThumb+'"/></a>',
+    	accessToken:'3147081812.e0aace9.29cf97fc9eb749cd9360760c8720af8c'
+	    /* success: function(images) {
+	        $.each(images.data, function(imageID, post) {
+	          console.table(post);  // 이렇게 콘솔에 찍어서 받아오는 post 
+	          var highResThumb = post.images.thumbnail.url.replace('s150x150/', 's640x640/');
+	          console.log(highResThumb);
+	          $('#instafeed').append('<a href="'+post.link+'" class="standard_resolution" target="_blank"><img class="instaFeed" src="'+highResThumb+'"/></a>');
+	        });
+	    } */
+    });
+    userFeed.run();
+    
+    
     </script>
 </body>
 
