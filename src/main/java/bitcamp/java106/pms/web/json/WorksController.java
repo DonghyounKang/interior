@@ -1,6 +1,7 @@
 package bitcamp.java106.pms.web.json;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -19,7 +20,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import bitcamp.java106.pms.domain.Member;
 import bitcamp.java106.pms.domain.Works;
+import bitcamp.java106.pms.domain.WorksPhoto;
 import bitcamp.java106.pms.service.WorksService;
+import net.coobird.thumbnailator.Thumbnails;
 
 @RestController
 @RequestMapping("/works")
@@ -36,8 +39,47 @@ public class WorksController {
     @RequestMapping("add")
     @ResponseStatus(HttpStatus.CREATED)
     public void add(Works works, MultipartFile[] files) throws Exception {
-       
-        worksService.add(works);
+
+        String filesDir = sc.getRealPath("/files");
+//        Wsav activity= new Wsav();
+        
+        
+        ArrayList<WorksPhoto> worksPhotos = new ArrayList<>();
+        
+        for (int i = 0; i < files.length; i++) {
+            WorksPhoto photo = new WorksPhoto();
+            String filename = UUID.randomUUID().toString();
+            try {
+                File path = new File(filesDir + "/" +  filename);
+                files[i].transferTo(path);
+                photo.setPath(filename);
+                worksPhotos.add(photo);
+                
+                Thumbnails.of(path)
+                .size(50, 50)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_50x50");
+                
+                Thumbnails.of(path)
+                .size(100, 100)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_100x100");
+                
+                Thumbnails.of(path)
+                .size(150, 150)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_150x150");
+                
+                Thumbnails.of(path)
+                .size(200, 200)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_200x200");
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        worksService.add(works, worksPhotos);
     }
     
     @RequestMapping("delete")
@@ -124,8 +166,6 @@ public class WorksController {
         return jsonData;
     
     }
-    
-
 }
 
 

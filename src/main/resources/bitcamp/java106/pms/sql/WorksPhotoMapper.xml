@@ -22,8 +22,8 @@
   <!-- 사진 삽입 -->
   <insert id="insert" parameterType="WorksPhoto"
           useGeneratedKeys="true" keyColumn="wpno" keyProperty="no">
-<!-- 	    insert into INTR_WKACP(wsano, path) 
-	    values(#{workshopActivityNo},#{filename}); -->
+	    insert into INTR_WPHO(wno, path) 
+	    values(#{worksNumber},#{path});
   </insert>
   
   <!-- 사진 전체 출력 -->

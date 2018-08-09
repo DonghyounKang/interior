@@ -15,7 +15,8 @@ public interface WorksDao {
     Object getCurrentState(int no);
     int insertBuscket(HashMap<String, Object> params);
     List<Object> selectBuscketList(int buyerNumber); // 장바구니에 담긴 공방별제품 목록
-    List<String> searchBuscketWorkshop(int buyerNumber); // 장바구니에 담긴 공방이름 목록
+    List<Object> searchBuscketWorkshop(int buyerNumber); // 장바구니에 담긴 공방이름 목록
+    Works selectRecent();
 }
 
 
