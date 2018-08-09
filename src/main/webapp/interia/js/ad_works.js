@@ -1,12 +1,5 @@
 "use strict"
 
-$('#tname').tagEditor({
-	initialTags: ['공방', '가구', '기타태그'],
-    delimiter: ', ', /* space and comma */
-    placeholder: 'Enter tags ...'
-})
-
-
 var userNo;
 var adWorksData = $('.ad-works-data');
 var adWorksEnrollBtn = $('.ad-works-enroll');
@@ -70,7 +63,7 @@ adWorksData.on('click', '.ad-works-update', function(e) {
 	var no = $(e.target).attr('data-worksNo');
 	$.getJSON(serverRoot + "/json/works/adView/" + no, (data) => {
 		console.log(data);
-		$(acnm).val(data.title);
+/*		$(acnm).val(data.title);
         $(minno).val(data.minPerson);
         $(maxno).val(data.maxPerson);
         $(actdt).val(data.experDate);
@@ -79,7 +72,7 @@ adWorksData.on('click', '.ad-works-update', function(e) {
         $(mtrls).val(data.prepareCont);
         $(apric).val(data.price);
         $(accnt).val(data.content);
-        $(wsano).val(data.no);
+        $(wsano).val(data.no);*/
 	});
 	
 	adWorksEnrollBtn.trigger('click', ['update']);
@@ -161,9 +154,9 @@ $('#fileupload1').fileupload({
 				capacity: $(alstk).val(),
 				salesStatus: $('#slst option:selected').val(),
 				productDetail: $(pddt).val(),
-/*				deliveryPrice: $(wtitl).val(),*/
-				option.attributeValue: $(abnm).val(),
-				option.attributeName: $(abvls).val()
+				deliveryPrice: 'Y'
+/*				"option.attributeValue": $(abnm).val(),
+				"option.attributeName": $(abvls).val()*/
 				
 			};
 			data.submit();
