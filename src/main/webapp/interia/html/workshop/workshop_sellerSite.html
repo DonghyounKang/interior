@@ -43,9 +43,9 @@
 	                <div class="workshop_sellerSite_sidemenu_line"></div>
 	            </div>
 	            <div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
+	                <!-- <div class="workshop_sellerSite_sidemenu_btn00">
 	                    <button style="color: #e67e22;">♥ 스토어 찜하기</button>
-	                </div>
+	                </div> -->
 	                <div class="workshop_sellerSite_sidemenu_btn00">
 	                    <button type="button" onClick="location.href='./workshop_sellerSite.html'">홈</button>
 	                </div>
@@ -65,10 +65,10 @@
 	                    <button type="button" onClick="location.href='./sellerSite_Review.html'">구매후기</button>
 	                </div>
 	            </div>
-	            <div class="workshop_sellerSite_sidemenu_line_bg">
+	            <!-- <div class="workshop_sellerSite_sidemenu_line_bg">
 	                <div class="workshop_sellerSite_sidemenu_line"></div>
-	            </div>
-	            <div class="workshop_sellerSite_sidemenu_info">
+	            </div> -->
+	            <!-- <div class="workshop_sellerSite_sidemenu_info">
 	                <div class="workshop_sellerSite_sidemenu_info_title">
 	                    <p>활동정보</p>
 	                </div>
@@ -84,7 +84,7 @@
 	                    <p>구매후기</p>
 	                    <p>0개</p>
 	                </div>
-	            </div>
+	            </div> -->
 	        </div>
 	
 	        <div class="workshop_sellerSite_content">
@@ -265,50 +265,8 @@
     <script src="../../js/workshop_sellerSite_slider.js"></script>
     <script src="../../js/workshop_sellerSite_Map.js"></script>
     <script src="../../js/instafeed.min.js"></script>
-    <script>
-    $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
-    	$.getJSON(serverRoot + "/json/workshop/listSellerSite", (data) => {
-    		console.log(data);
-    		console.log(data[0].lpath);
-    		  $("<img src='../../../files/" + data[0].lpath + "'>"
-                ).appendTo(".workshop_sellerSite_sidemenu_img");
-    		  $("<a href='../admin/store_admin_index.html'>" +
-    				"<h1>" + data[0].wsnm + "</h1>" +
-    			"</a>" +
-    			"<p>" + data[0].itrod + "</p>"
-    			).appendTo(".workshop_sellerSite_sidemenu_imgtext");
-    		  $("<img src='../../../files/" + data[0].path + "'>"
-              ).appendTo(".workshop_sellerSite_content_visual");
-    		  $("<img src='../../../files/" + data[0].lpath + "' style='width: 50px;'>"
-              ).appendTo(".snsbanner00_title_00");
-    		  $("<p>" + data[0].wsnm + "</p>"
-              ).appendTo(".snsbanner00_title_01");
-    	});
-    });
-    </script>
-    <script>
-    var userFeed = new Instafeed({
-    	get:'user',
-    	userId:3147081812,
-    	sortBy:"most-recent",
-    	limit:1,
-    	resolution: "standard_resolution",
-    	template:'<a href="{{link}}" target="_blank"><img width="280" height="410" src="{{image}}"/></a>',
-    	//template:'<a href="'+post.link+'" target="_blank"><img width="280" height="410" src="'+highResThumb+'"/></a>',
-    	accessToken:'3147081812.e0aace9.29cf97fc9eb749cd9360760c8720af8c'
-	    /* success: function(images) {
-	        $.each(images.data, function(imageID, post) {
-	          console.table(post);  // 이렇게 콘솔에 찍어서 받아오는 post 
-	          var highResThumb = post.images.thumbnail.url.replace('s150x150/', 's640x640/');
-	          console.log(highResThumb);
-	          $('#instafeed').append('<a href="'+post.link+'" class="standard_resolution" target="_blank"><img class="instaFeed" src="'+highResThumb+'"/></a>');
-	        });
-	    } */
-    });
-    userFeed.run();
-    
-    
-    </script>
+    <script src="../../js/workshop_sellerSite_sidemenu.js"></script>
+    <script src="../../js/workshop_sellerSite_instagram.js"></script>
 </body>
 
 </html>
