@@ -44,10 +44,7 @@ public class WorksServiceImpl implements WorksService {
     
     @Override
     public void add(Works works) {
-       
-        
-        
-        
+        //return worksDao.insert(works);
     }
     
     @Override
@@ -115,7 +112,7 @@ public class WorksServiceImpl implements WorksService {
     
     // 장바구니 리스트 - 해당 회원이 공방을 찾는 메서드
     @Override
-    public List<String> viewBuscketWorkshopList(int buyerNumber) {
+    public List<Object> viewBuscketWorkshopList(int buyerNumber) {
         return worksDao.searchBuscketWorkshop(buyerNumber);
     }
     
