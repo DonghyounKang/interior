@@ -1034,6 +1034,9 @@ textarea {
     margin-right: 5px;
 }
 
+.tag-editor{
+	width:80%;
+}
 /***** 작품관리 End*****/
 
 /***** 판매관리 *****/

@@ -24,6 +24,7 @@ public class Works implements Serializable {
     private String deliveryPrice; // 배송비 여부
     private WorksPhoto photo;  // 사진 관련
     private WorksOption option; // 제품 옵션 관련
+    private String[] worksCategory; // 카테고리 (해시태그)
     
     
     ArrayList<WorksPhoto> worksPhotos;//사진관련(add)
@@ -38,12 +39,11 @@ public class Works implements Serializable {
         this.worksPhotos = worksPhoto;
     }
     
-    @Override
-    public String toString() {
-        return "Works [worksNumber=" + worksNumber + ", workshopNumber=" + workshopNumber + ", title=" + title
-                + ", price=" + price + ", registeredDate=" + registeredDate + ", modifiedDate=" + modifiedDate
-                + ", capacity=" + capacity + ", salesStatus=" + salesStatus + ", productDetail=" + productDetail
-                + ", deliveryPrice=" + deliveryPrice + ", photo=" + photo + ", option=" + option + "]";
+    public String[] getWorksCategory() {
+        return worksCategory;
+    }
+    public void setWorksCategory(String[] worksCategory) {
+        this.worksCategory = worksCategory;
     }
     public int getWorksNumber() {
         return worksNumber;

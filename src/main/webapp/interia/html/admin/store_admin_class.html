@@ -336,6 +336,10 @@ $('#fileupload').fileupload({
 			} catch (err) { }
 		}
 		
+		$('#addBtn').off('click');
+		
+		$('#updBtn').off('click');
+		
 		$('#updBtn').click(function () {
 			data.formData = {
 				workshopNo: userNo,
@@ -350,6 +354,8 @@ $('#fileupload').fileupload({
 				content: $(accnt).val(),
 				no:$(wsano).val()
 			};
+			console.log(data);
+			
 			data.submit();
 		});
 		
@@ -365,11 +371,13 @@ $('#fileupload').fileupload({
 				prepareCont: $(mtrls).val(),
 				price: $(apric).val(),
 				content: $(accnt).val()
-
-			};
+			};    
+			console.log(data);
 			data.submit();
 		});
+		
 	},
+	
 	done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
 		console.log('done()...');
 		console.log(data.result);

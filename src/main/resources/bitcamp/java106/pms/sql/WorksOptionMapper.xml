@@ -22,8 +22,8 @@
   <!-- 옵션 삽입 -->
   <insert id="insert" parameterType="WorksOption"
           useGeneratedKeys="true" keyColumn="opno" keyProperty="no">
-	    <!-- insert into INTR_WKACP(wsano, path) 
-	    values(#{workshopActivityNo},#{filename}); -->
+	    insert into INTR_WKOT(wno, abvl) 
+	    values(#{worksNumber},#{attributeValue});
   </insert>
   
   <!-- 옵션 전체 출력 -->

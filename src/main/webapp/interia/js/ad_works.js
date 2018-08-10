@@ -1,5 +1,11 @@
 "use strict"
 
+$('#tname').tagEditor({
+    delimiter: ', ', /* space and comma */
+    maxLength: 10,
+	placeholder: 'Enter tags ...'
+});
+
 var userNo;
 var adWorksData = $('.ad-works-data');
 var adWorksEnrollBtn = $('.ad-works-enroll');
@@ -63,7 +69,7 @@ adWorksData.on('click', '.ad-works-update', function(e) {
 	var no = $(e.target).attr('data-worksNo');
 	$.getJSON(serverRoot + "/json/works/adView/" + no, (data) => {
 		console.log(data);
-/*		$(acnm).val(data.title);
+		/*$(acnm).val(data.title);
         $(minno).val(data.minPerson);
         $(maxno).val(data.maxPerson);
         $(actdt).val(data.experDate);
@@ -145,19 +151,24 @@ $('#fileupload1').fileupload({
 			} catch (err) { }
 		}
 		
+		$('#addBtn').off('click');
+		
+		$('#updBtn').off('click');
+		
 		$('#addBtn').click(function () {
+			var tags = $('#tname').tagEditor('getTags')[0].tags;
+			console.log(tags);
 			
 			data.formData = {
+				worksCategory: tags,
 				workshopNumber: userNo,
 				title: $(wtitl).val(),
 				price: $(price).val(),
 				capacity: $(alstk).val(),
 				salesStatus: $('#slst option:selected').val(),
 				productDetail: $(pddt).val(),
-				deliveryPrice: 'Y'
-/*				"option.attributeValue": $(abnm).val(),
-				"option.attributeName": $(abvls).val()*/
-				
+				deliveryPrice: 'Y',
+				"option.attributeValue": $(abvl).val()
 			};
 			data.submit();
 		});
@@ -191,5 +202,4 @@ function delImg(event) {
 	var fileIndex = wrapperDiv.attr('data-file-index');
 	imgFiles.splice(fileIndex, 1);
 }
-
 

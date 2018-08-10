@@ -217,10 +217,10 @@
 						</div>
 						<form>
 							<div class="modal-body">
-								<div class="ad-modal-contentgap">
+								<div class="ad-modal-contentgap" style="display:flex;">
 									<b>카테고리</b> <input type="text"
 										class="ad-works-modal-inputlg ad-works-modal-content"
-										id="tname">
+										id=tname>
 								</div>
 								<div class="ad-modal-contentgap">
 									<b>상품명</b> <input type="text"
@@ -271,20 +271,9 @@
 										onclick="openOption('.ad-works-options', this)"><span>사용하기</span>
 									<div class="ad-works-options">
 										<div class="ad-works-opt-wrapper">
-											<div class="ad-works-opt">
-												<div class="ad-works-opt-name">
-													<p>옵션이름</p>
-													<input type="text"
-														id="abnm"
-														class="ad-works-modal-inputsm ad-works-modal-content" placeholder="ex) 컬러, 커버재질">
-												</div>
-												<div class="ad-works-opt-content">
-													<p>옵션조합</p>
-													<input type="text"
-														id="abvls"
-														class="ad-works-modal-inputsm ad-works-modal-content" placeholder="ex) 빨강,노랑,파랑">
-												</div>
-											</div>
+											<textarea class="form-control form-rounded ad-class-discrpt" 
+													name="content" 
+													id="abvl" cols='87'></textarea>
 											<!-- <div class="ad-works-opt-add">
 												<p>
 													<i class="far fa-plus-square"></i>옵션 추가하기
@@ -357,9 +346,12 @@
 	src="../../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
 <script
 	src="../../node_modules/@ckeditor/ckeditor5-build-classic/build/translations/ko.js"></script> -->
+<script src="../../js/jquery.caret.min.js"></script>
+<script src="../../js/jquery.tag-editor.min.js"></script>
 <script src="../../js/common.js"></script>
-<script src="../../js/ad_header.js"></script>
+<script src="../../js/ad_header.js"></script>s
 <script src="../../js/ad_admin.js"></script>
+
 <script src="../../js/ad_works.js"></script>
 
 

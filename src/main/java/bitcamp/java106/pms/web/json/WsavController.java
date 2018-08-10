@@ -38,6 +38,8 @@ public class WsavController {
         String filesDir = sc.getRealPath("/files");
 //        Wsav activity= new Wsav();
         
+        for(MultipartFile file : files) 
+            System.out.println(file.getOriginalFilename());
         
         ArrayList<Wkacp> activityPhotos = new ArrayList<>();
         

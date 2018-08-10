@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import bitcamp.java106.pms.domain.Member;
 import bitcamp.java106.pms.domain.Works;
 import bitcamp.java106.pms.domain.WorksPhoto;
+import bitcamp.java106.pms.domain.Wsav;
 import bitcamp.java106.pms.service.WorksService;
 import net.coobird.thumbnailator.Thumbnails;
 
@@ -41,7 +42,6 @@ public class WorksController {
     public void add(Works works, MultipartFile[] files) throws Exception {
 
         String filesDir = sc.getRealPath("/files");
-//        Wsav activity= new Wsav();
         
         
         ArrayList<WorksPhoto> worksPhotos = new ArrayList<>();
@@ -79,6 +79,7 @@ public class WorksController {
                 e.printStackTrace();
             }
         }
+        
         worksService.add(works, worksPhotos);
     }
     
@@ -165,6 +166,11 @@ public class WorksController {
         }
         return jsonData;
     
+    }
+    //작품수정
+    @RequestMapping("adView/{no}")
+    public Works adView(@PathVariable int no) throws Exception {
+        return worksService.get(no);
     }
 }
 
