@@ -14,4 +14,16 @@ $.getJSON(serverRoot + "/json/workshop/listSellerSite", (data) => {
 	).appendTo(".snsbanner00_title_00");
 	$("<p>" + data[0].wsnm + "</p>"
 	).appendTo(".snsbanner00_title_01");
+	$("<a href=" + data[0].fcbk + ">" +
+			"<img src='../../images/workshop/facebook.png'>" +
+	  "</a>"
+	).appendTo(".workshop_sellerSite_sidemenu_snsbtn_bg");
+	$("<a href=" + data[0].twit + ">" +
+			"<img src='../../images/workshop/instagram.png'>" +
+	  "</a>"
+	).appendTo(".workshop_sellerSite_sidemenu_snsbtn_bg");
+	$("<a href=" + data[0].istag + ">" +
+			"<img src='../../images/workshop/twitter.png'>" +
+	  "</a>"
+	).appendTo(".workshop_sellerSite_sidemenu_snsbtn_bg");
 });

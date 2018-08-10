@@ -391,14 +391,14 @@ dl,ul,ol,menu,li {list-style:none}
 .sellerSite_review_bg_content_text p:nth-child(2){
     font-size: 0.8rem;
     margin-top: 0.5em;
-    color: #666;
+    color: #000;
 }
 .sellerSite_review_bg_content_text p:nth-child(3){
     position: absolute;
     bottom: 0;
     font-size: 0.9rem;
     margin-top: 5.5em;
-    color: #666;
+    color: #888;
 }
 .sellerSite_notice {
     width: 440px;
