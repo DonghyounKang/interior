@@ -14,15 +14,13 @@
   <resultMap type="WorksOption" id="WorksOptionMap">
     <id column="opno" property="optionNumber"/>
     <result column="wno" property="worksNumber"/>
-    <result column="optyn" property="optionYn" />
-    <result column="abnm" property="attributeName"/>
     <result column="abvl" property="attributeValue"/>
   </resultMap>
   
   <!-- 옵션 삽입 -->
   <insert id="insert" parameterType="WorksOption"
           useGeneratedKeys="true" keyColumn="opno" keyProperty="no">
-	    insert into INTR_WKOT(wno, abvl) 
+	    insert into INTR_WKOT(wno, abvl)  
 	    values(#{worksNumber},#{attributeValue});
   </insert>
   

@@ -11,11 +11,10 @@ public class WorksOption implements Serializable {
     
     
     
-    public int getOptionNumber() {
-        return optionNumber;
-    }
-    public void setOptionNumber(int optionNumber) {
-        this.optionNumber = optionNumber;
+    @Override
+    public String toString() {
+        return "WorksOption [optionNumber=" + optionNumber + ", worksNumber="
+                + worksNumber + ", attributeValue=" + attributeValue + "]";
     }
     public int getWorksNumber() {
         return worksNumber;
@@ -23,9 +22,20 @@ public class WorksOption implements Serializable {
     public void setWorksNumber(int worksNumber) {
         this.worksNumber = worksNumber;
     }
+
+
+    public int getOptionNumber() {
+        return optionNumber;
+    }
+
+    public void setOptionNumber(int optionNumber) {
+        this.optionNumber = optionNumber;
+    }
+
     public String getAttributeValue() {
         return attributeValue;
     }
+
     public void setAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
     }
