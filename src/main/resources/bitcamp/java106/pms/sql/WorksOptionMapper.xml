@@ -14,8 +14,6 @@
   <resultMap type="WorksOption" id="WorksOptionMap">
     <id column="opno" property="optionNumber"/>
     <result column="wno" property="worksNumber"/>
-    <result column="optyn" property="optionYn" />
-    <result column="abnm" property="attributeName"/>
     <result column="abvl" property="attributeValue"/>
   </resultMap>
   

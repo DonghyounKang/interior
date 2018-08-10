@@ -4,9 +4,8 @@ package bitcamp.java106.pms.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import bitcamp.java106.pms.domain.WorksPhoto;
-
 import bitcamp.java106.pms.domain.Works;
+import bitcamp.java106.pms.domain.WorksPhoto;
 
 public interface WorksService {
     // 서비스 컴포넌트에서 메서드명을 지을 때는 

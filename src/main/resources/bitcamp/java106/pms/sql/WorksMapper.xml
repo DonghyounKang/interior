@@ -35,8 +35,7 @@
     <association property="option" javaType="WorksOption"> 
       <id column="opno" property="optionNumber"/> <!-- 옵션번호 -->
       <result column="optyn" property="optionYn"/> <!-- 옵션여부 -->
-      <result column="abvl" property="attributeValue" /> <!-- 속성 값 -->
-      <result column="abnm" property="attributeName" /> <!-- 속성 명-->
+      <result column="abvl" property="attributeValue" /> <!-- 속성 명-->
     </association>
   </resultMap>
   
@@ -112,14 +111,15 @@
   
   <!-- 장바구니 담기 -->
   <insert id="insertBuscket" parameterType="map">
-    insert into INTR_SPBK(wno, memno, opno) 
-    values(#{worksNumber},#{memberNumber},#{optionNumber})
+    insert into INTR_SPBK(wno, memno, BKOPT) 
+    values(#{worksNumber},#{memberNumber},
+    (select abvl from INTR_WKOT where opno=#{optionNumber}))
   </insert>
   
   <!-- 장바구니 리스트 - 공방안에 담긴 제품 목록 -->
   <select id="selectBuscketList" resultType="map" parameterType="int">
     select sb.memno as buyerNumber, w.wno as worksNumber, ws.wsnm as studioName,
-           wp.path as path, w.wtitl as title, wo.optyn as optionYn, 
+           w.memno as workshopNumber, wp.path as path, w.wtitl as title, 
            wo.abvl as attributeValue, w.spcs as deliveryPrice, 
            w.alstk as capacity, w.price as price
     from INTR_SPBK sb 
@@ -138,9 +138,8 @@
     where sb.memno=#{buyerNumber}
   </select>
   
-    <select id="selectRecent" resultMap="WorksMap">
-  	select wno from INTR_WORKS order by wno desc limit 1 
-  
+  <select id="selectRecent" resultMap="WorksMap">
+    select wno from INTR_WORKS order by wno desc limit 1 
   </select>
 </mapper>
 
