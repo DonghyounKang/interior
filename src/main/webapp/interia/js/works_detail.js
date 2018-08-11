@@ -61,31 +61,37 @@ $.getJSON(serverRoot + "/json/works/" + no, (result) => {
 		}
 	});
 	
-	// 메인만 이미지 표시
+	// 9) 전체 제품의 대한 이미지 표시 
 	var mainPhoto = "";
+	var subIndex = 0;
 	for (var index in result.worksPhoto) {
 		//console.log(result.worksPhoto[index].mainPhoto);
 		if(result.worksPhoto[index].mainPhoto == "y" 
 			|| result.worksPhoto[index].mainPhoto == "Y") {
-			mainPhoto = result.worksPhoto[index].path;
-			break;
+			// 메인 이미지 표시
+			$("#main-image").attr("src","../../images/works/works_list/" + result.worksPhoto[index].path);
+		} else {
+			// 서브 이미지 표시
+			$("#sub-image" + (++subIndex)).attr("src","../../images/works/works_list/" + result.worksPhoto[index].path);
 		}
 	}
-	$("#main-image").attr("src","../../images/works/works_list/" + mainPhoto);
 	
 	
-	// 나머지 이미지
+	// 10) 옵션 관련
+	var worksOptions = "";
+	var i = 0;
+	for (var worksOption of result.worksOption) {
+		if (i == 0) {
+			i++;
+		} else {
+			worksOptions += ", ";
+		}
+		worksOptions += worksOption.attributeValue;
+	}
+	if (worksOptions != "null") {
+		$("#fOptionValue").val(worksOptions);
+	}
 	
-	
-	// 핸들러 제어 - 옵션 속성 값
-	var templateFn = Handlebars.compile($('#AttributeValue-template').html())
-	$(fAttributeValue).html(templateFn({select:result.worksOption}))
-	
-	// 핸들러 제어 - 옵션 속성 이름
-	templateFn = Handlebars.compile($('#AttributeName-template').html())
-	$(fAttributeName).html(templateFn({select:result.worksOption}))
-	
-
 	
 	// 장바구니 담기 구현
 	$("#btn-basket").click(() => {
@@ -93,25 +99,13 @@ $.getJSON(serverRoot + "/json/works/" + no, (result) => {
 			// 해당 선택에 맞는 옵션값을 추출한다. (만일 optionNumber 값이 주어지지 않았을 때 값은 0)
 			var fOptionNumber = 0;
 			
-			
-			for (var key of result.worksOption) {
-				if (key.attributeValue == $(fAttributeValue).val()
-			    		&& key.attributeName == $(fAttributeName).val()) {
-					// 해당 옵션값 추출
-			    	fOptionNumber = key.optionNumber;
-			    	break;
-			    } else if (key.optionYn == "n" || key.optionYn =="N" ) {
-					// 여기서 옵션 설정을 안할 경우
-			    	fOptionNumber = key.optionNumber;
-			    	break;
-				}
+			if (result.optionNumber > 0) {
+				fOptionNumber = result.optionNumber;
 			}
 			
-			console.log(fOptionNumber);
 			window.alert("해당 제품을 장바구니에 담았습니다.")
 			$.post(serverRoot + "/json/works/add/buscket", {
 				worksNumber : result.worksNumber,
-				memberNumber : data.no,
 				optionNumber : fOptionNumber
 				}, 'json');
 			location.href = serverRoot + "/interia/html/works/sp_bascket.html"; 
