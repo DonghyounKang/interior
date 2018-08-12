@@ -69,7 +69,7 @@ public class AuthController {
             if (member == null) { // 등록된 회원이 아니면,
                 // 페이스북에서 받은 정보로 회원을 자동 등록한다.
                 member = new Member();
-                member.setId((String)userInfo.get("id"));
+                member.setId((String)userInfo.get("id") + "@facebook.com");
                 member.setName((String)userInfo.get("name"));
                 member.setPassword("1111");
                 member.setNickname((String)userInfo.get("name"));
@@ -274,10 +274,14 @@ public class AuthController {
     
     @RequestMapping("/searchPassword")
     public int searchPassword(
-            @RequestParam("id") String id) throws Exception {
+            @RequestParam("id") String id,
+            HttpSession session) throws Exception {
         // 아이디가 일치하면?
-        if (memberService.isSearchPassword(id))
-            return memberService.memberNumber(id);
+        if (memberService.isSearchPassword(id)) {
+            int no = memberService.memberNumber(id);
+            session.setAttribute("no", no);
+            return no;
+        }
         
         // 아이디가 일치하지 않으면?
         return -1;
@@ -286,9 +290,10 @@ public class AuthController {
     @RequestMapping("/searchPasswordChange")
     @ResponseStatus(HttpStatus.OK)
     public void changePassword(
-            @RequestParam("no") int no,
-            @RequestParam("password") String password) {
-        
+            @RequestParam("password") String password,
+            HttpSession session) {
+        int no = (int) session.getAttribute("no");
+        session.invalidate(); // 여기는 세션 종료 시킨다 (찾은 회원정보의 대해 세션이 남으면 안되기 때문에)
         memberService.changePassword(no, password);
     }
     
