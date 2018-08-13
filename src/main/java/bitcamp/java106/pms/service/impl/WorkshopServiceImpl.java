@@ -74,6 +74,11 @@ public class WorkshopServiceImpl implements WorkshopService {
     }
     
     @Override
+    public List<Workshop> listSellerSiteBanner() {
+        return workshopDao.selectListSellerSiteBanner();
+    }
+    
+    @Override
     public List<Workshop> listIntroduce() {
         return workshopDao.selectListIntroduce();
     }

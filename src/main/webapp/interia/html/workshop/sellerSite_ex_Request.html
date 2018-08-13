@@ -87,41 +87,14 @@
 	            </div>
 	            <div class="sellerSite_ex_contentMain">
 	                <div class="sellerSite_ex_content00">
-	                    <p>체험 스토어 : 비트 공방</p>
+	                    
 	                </div>
 	                <div class="sellerSite_ex_content01">
-	                    <a href="#"><img src="../../images/workshop/seller_ex_detail_sub00.png"></a>
-	                    <p>(건대) 일상탈출 정신수양 카드지갑 만들기</p>
-	                    <p>인원:1명</p>
+	                    
+	                    
+	                    
 	                </div>
-	                <div class="sellerSite_ex_title">
-	                    <p>체험자 정보</p>
-	                </div>
-	                <div class="sellerSite_ex_subcontent">
-	                    <div class="sellerSite_ex_subcontent_name">
-	                        <p>이름</p>
-	                        <input type="text" placeholder="이름을 입력해주세요.">
-	                    </div>
-	                </div>
-	                <div class="sellerSite_ex_subcontent">
-	                    <div class="sellerSite_ex_subcontent_name">
-	                        <p>이메일</p>
-	                        <input type="email" placeholder="sung@test.com">
-	                    </div>
-	                </div>
-	                <div class="sellerSite_ex_subcontent">
-	                    <div class="sellerSite_ex_subcontent_name01">
-	                        <p>휴대전화</p>
-	                        <select>
-	                            <option>010</option>
-	                            <option>010</option>
-	                            <option>010</option>
-	                            <option>010</option>
-	                        </select>
-	                        <input type="text">
-	                        <input type="text">
-	                    </div>
-	                </div>
+	                
 	                <div class="sellerSite_ex_subcontent_btn">
 	                    <button type="button" onClick="location.href='./workshop_sellerSite.html'">신청하기</button>
 	                </div>
@@ -142,6 +115,21 @@
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
     <script src="../../js/workshop_sellerSite_sidemenu.js"></script>
+    
+    <script>
+    $.getJSON(serverRoot + "/json/workshop/listSellerSite", (data) => {
+        $("<p>체험 스토어 : " + data[0].wsnm + "</p>"
+        ).appendTo(".sellerSite_ex_content00");
+    });
+    $.getJSON(serverRoot + "/json/wsav/sellerSiteList", (data) => {
+        $("<a href='#'>" +
+              "<img src='../../images/workshop/" + data[0].path + "' style='width: 120px; height:95px;'>" +
+          "</a>" +
+          "<p>" + data[0].acnm + "</p>" +
+          "<p>인원:1명</p>"
+        ).appendTo(".sellerSite_ex_content01");
+    });
+    </script>
 </body>
 
 </html>

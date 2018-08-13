@@ -61,10 +61,17 @@
   </select>
   
   <select id="selectListSellerSite" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, fcbk, twit, istag, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = 'profile'
+  </select>
+  
+  <select id="selectListSellerSiteBanner" resultType="Map" parameterType="map">
+    select path
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'banner'
   </select>
   
   <select id="selectListIntroduce" resultType="Map" parameterType="map">

@@ -105,6 +105,11 @@ public class WorkshopController {
         return workshopService.listSellerSite();
     }
     
+    @RequestMapping("listSellerSiteBanner")
+    public Object listSellerSiteBanner() {        
+        return workshopService.listSellerSiteBanner();
+    }
+    
     @RequestMapping("listIntro")
     public Object listIntro() {        
         return workshopService.listIntroduce();
