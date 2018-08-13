@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../css/mypage/mp_post.css">
     <link rel="stylesheet" href="../../css/mypage/mp_follow_popup.css">
     <link rel="stylesheet" href="../../css/mypage/mp_postwrite_popup.css">
+    <link rel="stylesheet" href="../../css/jquery.tag-editor.css">
     
     
 </head>
@@ -81,7 +82,7 @@
 		                    <span class="mp-min-box"></span>
 		                    <input type="range" class="cropit-image-zoom-input"/>
 		                    <span class="mp-max-box"></span>
-	     <!-- fileUpload --><input id="fileupload" type="file" class="cropit-image-input">
+	     <!-- fileUpload --><input id="fileupload-banner" type="file" class="cropit-image-input">
 		                </div>    
 	                    <div class="mp-crop-btns">
 		                    <button type="button" class="mp-cropit-cancel">취소</button>
@@ -115,10 +116,9 @@
                         </nav>
                     </li>
                     <li id="promenus">
-                        <a href="mp-myactive.html">나의 활동</a>
+                        <a href="mp-exstore.html">나의 활동</a>
                   <nav class="mp-bar3" id="submenus">
                      <ul>
-                        <li><a href="mp-myactive.html">알림</a></li>
                         <li><a href="mp-exstore.html">공방체험</a></li>
                         <li><a href="mp-qna.html">문의 내역</a></li>
                         <li><a href="mp-purchase.html">구매 후기</a></li>
@@ -130,7 +130,7 @@
                   <nav class="mp-bar3" id="submenus">
                      <ul>
                         <li><a href="mp-myinfo.html">회원 정보 관리</a></li>
-                        <li><a href="#">스토어 신청</a></li>
+                        <li><a href="../workshop/workshop_request.html">스토어 신청</a></li>
                      </ul>
                   </nav>
                </li>
@@ -159,8 +159,7 @@
                         <img src="../../images/mypage/sero.jpg" alt="게시물">
                         <div class="ib-mp-icons">
                             <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>&nbsp;&nbsp;&nbsp;
-                            <div><span>조회수 0</span></div>
+                            <div><i class="fas fa-comment-dots"></i> 0</div>
                         </div><!--아이콘-->
                     </div>  
                 </a>
@@ -170,8 +169,7 @@
                         <img src="../../images/mypage/sero.jpg" alt="게시물">
                         <div class="ib-mp-icons">
                             <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>&nbsp;&nbsp;&nbsp;
-                            <div><span>조회수 0</span></div>
+                            <div><i class="fas fa-comment-dots"></i> 0</div>
                         </div><!--아이콘-->
                     </div>  
                 </a>
@@ -181,8 +179,7 @@
                         <img src="../../images/mypage/sero.jpg" alt="게시물">
                         <div class="ib-mp-icons">
                             <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>&nbsp;&nbsp;&nbsp;
-                            <div><span>조회수 0</span></div>
+                            <div><i class="fas fa-comment-dots"></i> 0</div>
                         </div><!--아이콘-->
                     </div>  
                 </a>
@@ -192,8 +189,7 @@
                         <img src="../../images/mypage/sero.jpg" alt="게시물">
                         <div class="ib-mp-icons">
                             <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>&nbsp;&nbsp;&nbsp;
-                            <div><span>조회수 0</span></div>
+                            <div><i class="fas fa-comment-dots"></i> 0</div>
                         </div><!--아이콘-->
                     </div>  
                 </a>
@@ -203,8 +199,7 @@
                         <img src="../../images/mypage/sero.jpg" alt="게시물">
                         <div class="ib-mp-icons">
                             <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>&nbsp;&nbsp;&nbsp;
-                            <div><span>조회수 0</span></div>
+                            <div><i class="fas fa-comment-dots"></i> 0</div>
                         </div><!--아이콘-->
                     </div>  
                 </a>
@@ -214,8 +209,7 @@
                         <img src="../../images/mypage/sero.jpg" alt="게시물">
                         <div class="ib-mp-icons">
                             <div><i class="fas fa-heart"></i> 0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div><i class="fas fa-comment-dots"></i> 0</div>&nbsp;&nbsp;&nbsp;
-                            <div><span>조회수 0</span></div>
+                            <div><i class="fas fa-comment-dots"></i> 0</div>
                         </div><!--아이콘-->
                     </div>  
                 </a>
@@ -234,24 +228,24 @@
             <div class="mp-postwrite-popup">
                 <h4>새로운 게시물 작성</h4>
                 <div class="mp-postwrite-box">
-                    <form>
-                        <div class="mp-select-pic">
-                            <div>
-                                <i class="far fa-image"></i>
-                                <p>사진 업로드</p>
-                            </div>
+                    <div class="mp-select-pic" id="fileSelect-post">
+                        <div class="mp-inner-icon">
+                            <i class="far fa-image"></i>
+                            <p>사진 업로드</p>
+                            <input id="fileupload-post" type="file">
                         </div>
-                        <div>
-                            <textarea class="form-control" placeholder="이미지에 대한 설명을 입력해 주세요." style="border: none; box-shadow: none;" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
-                        </div>
-                        <div>
-                            <div id="mp-post-hashtag" class="mp-post-put" placeholder="태그입력" contenteditable="true" data-text="#"></div>
-                        </div>
-                        <input type="hidden" id="mp-hashtag-input" name="mp-post-hash" value="" onkeyup="onChange()">
-                        <div class="mp-post-regist">
-                            <input type="submit" value="등록하기" class="btn btn-primary mp-post-btn">
-                        </div>
-                    </form>
+                    </div>
+                    <div>
+                        <textarea class="form-control" placeholder="이미지에 대한 설명을 입력해 주세요." style="border: none; box-shadow: none;" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+                    </div>
+                    <div>
+                        <textarea id="demo1"></textarea>
+                        <!-- <div id="mp-post-hashtag" class="mp-post-put" placeholder="태그입력" contenteditable="true" data-text="#"></div> -->
+                    </div>
+                    <!-- <input type="hidden" id="mp-hashtag-input" name="mp-post-hash" value="" onkeyup="onChange()"> -->
+                    <div class="mp-post-regist">
+                        <button class="btn btn-primary mp-post-btn">등록하기</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -263,16 +257,23 @@
     </footer>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+	<script src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+	<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
 	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script> 
+	<script src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
     <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/cropit/dist/jquery.cropit.js"></script>
-    <script type="text/javascript" src="../../js/mp_post.js"></script>
+    <script src="../../js/jquery.caret.min.js"></script>
+    <script src="../../js/jquery.tag-editor.min.js"></script>
     <script src="../../js/common.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
     <script src="../../js/mp_pfHead.js"></script>
     <script src="../../js/mp_banner.js"></script>
+    <script src="../../js/mp_profile.js"></script>
+    <script src="../../js/mp_postwrite.js"></script>
 </body>
 </html>

@@ -19,7 +19,11 @@ a:hover {
 
 /**** 커버 ****/
 .mp-banner {
-    background: #ffc001;
+    background-color: #ffc001;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: center center;
     height: 180px;
     width: 100%;
     transition: box-shadow 0.5s ease;
@@ -105,6 +109,7 @@ a:hover {
     background: white;
     text-align: center;
     border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
 }
 .mp-triangle { 
     margin-left: 5.7em;
@@ -243,7 +248,7 @@ input[type=range]::-moz-range-thumb {
     margin-left: 1em;
     margin-right: 1.6em;
 }
-#fileupload {
+#fileupload-banner {
 	display: none;
 }
 .mp-crop-btns {
@@ -304,12 +309,11 @@ input[type=range]::-moz-range-thumb {
 .mp-profile-setting:hover {
     box-shadow: inset 0 0 0 4px #1c2036;
 }
-
 .mp-profile-setting > a {
-    position: relative;
+    position: absolute;
     height: 100%;
+    width: 100%;
     border-radius: 50%;
-    z-index: 4;
     text-decoration: none;
 } 
 .mp-profile-div {
@@ -328,6 +332,56 @@ input[type=range]::-moz-range-thumb {
 .mp-profile-div .fas {
     font-size: 2em;
     color: white;
+}
+#fileupload-profile {
+	display: none;
+}
+
+
+/**** 프로필 사진 올리기 팝업 ****/
+.mp-cover-popup2 {
+    position: absolute;
+    font-size: .8em;
+    display: none;
+    margin-top: 11em;
+    margin-left: 7.3em;
+    z-index: 100;
+}
+.mp-inner-ul2 {
+    white-space: nowrap;
+    list-style: none;
+    margin-bottom: 0;
+    padding: .4em 0;
+    background: white;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+.mp-triangle2 { 
+    margin-left: 5.7em;
+    width: 8px; height: 8px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+}
+.mp-popup-list2 {
+    padding: .35em 3.5em;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.mp-popup-list2:hover {
+    background: #343855;
+    color: #fff;
+}
+.mp-popup-list2:hover a {
+    color: #fff;
+}
+.mp-popup-list2:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
 

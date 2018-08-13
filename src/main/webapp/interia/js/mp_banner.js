@@ -25,19 +25,13 @@ $(document).ready(function() {
 		    });
 		}
 	});
-	console.log(document.body.offsetWidth); 
-	console.log(document.body.scrollWidth); // (문서 전체의 크기)
-	console.log(document.body.clientWidth); // (창의 크기)
-
-	console.log(window.innerWidth); // 브라우저 윈도우 두께를 제외한 실질적 가로 길이
-	console.log(window.outerWidth); // 브라우저 윈도우 두께를 포함한 브라우저 전체 가로 길이
 });
 
 
 //Input을 버튼으로 클릭
 $(document).ready(function() {
 	var fileSelect = document.getElementById("fileSelect"),
-		fileElem = document.getElementById("fileupload");
+		fileElem = document.getElementById("fileupload-banner");
 	
 	fileSelect.addEventListener("click", function (e) {
 	  if (fileElem) {
@@ -117,40 +111,39 @@ $(function() {
 				originalSize: false,
 		});
 		
-		$('#imgsrc').text(imageData);
-		window.open(imageData);
 		console.log(imageData);
+		//w.document.write(image.outerHTML);
+		//console.log(image.outerHTML);
+		
+		
+		if ($imagePreview.hasClass('cropit-image-loaded')){
+        	
+        	$imagePreview.removeClass('cropit-image-loaded'); 
+            $('input.cropit-image-input').val(''); 
+//            $('.cropit-preview-image').removeAttr('style'); 
+            $('.cropit-preview-image').attr('src','');
+            $(".mp-banner-image")
+	        	.css({
+	        		"z-index": "-100",
+	        		"opacity": "0",
+	        	});
+	        $(".cropit-preview")
+	        	.css({
+	        		"opacity": "0",
+	        	});
+	        $(".mp-slider")
+	        	.css({
+	        		"opacity": "0",
+	        	});
+        }
+		
+		$.post('../../../json/mpfile/banner', {imageData: imageData}, (result) => {
+			console.log(result);
+			console.log(result.filename);
+//			$('.mp-banner').css({
+//				background-image: "url(../../files/#{$result.filename})"});
+		}, 'json');
 		
 	});
 	
 });
-
-//파일 업로드
-
-//$('#fileupload').fileupload({
-//	url: '../../../json/mpfile/upload',        // 서버에 요청할 URL
-//	dataType: 'json',         // 서버가 보낸 응답이 JSON임을 지정하기
-//	sequentialUploads: true,  // 여러 개의 파일을 업로드 할 때 순서대로 요청하기.
-//	singleFileUploads: false, // 한 요청에 여러 개의 파일을 전송시키기.
-//	autoUpload: false,
-//	add: function (e, data) {// 각 파일에 대해 호출된다.
-//		console.log('add()...');
-//		console.log(data.files);
-//		
-///*		$('<img>')
-//		.attr('src', '../files/' + data.result.filename)
-//		.appendTo($("#mp-images-div"));
-//		$('.mp-cropit-apply').click(function() {
-//			data.submit(); // submit()을 호출하면, 서버에 데이터를 보내기 전에 submit 이벤트가 발생한다. // 해당 파일의 서버 전송을 시작한다.
-//		});*/
-//	},
-//	
-//	done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
-//		console.log('done()...');
-//		console.log(data.result);
-//		$.each(data.result.files, function(index, file) {
-//			$('<p/>').text(file.filename + " : " + file.filesize).appendTo(document.body);
-//		});
-//	}
-//});  
-
