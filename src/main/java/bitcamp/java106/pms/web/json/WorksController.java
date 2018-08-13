@@ -185,7 +185,6 @@ public class WorksController {
         return worksService.getCurrentState(no);
     }
     
-    //관리자 작품 등록(제품상세)
     @RequestMapping("addWorksDetail") 
     public Object addWorksDetail(MultipartFile files) {
         
