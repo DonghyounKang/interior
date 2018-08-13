@@ -85,7 +85,7 @@ public class WorksController {
     
     @RequestMapping("delete")
     //@ResponseStatus(HttpStatus.OK) // 응답 상태 코드 값의 기본은 "200(OK)" 이다.
-    public void delete(@RequestParam("no") int no) throws Exception {
+    public void delete(@RequestParam("wno") int no) throws Exception {
         worksService.delete(no);
     }
     
@@ -106,7 +106,7 @@ public class WorksController {
         
         String filesDir = sc.getRealPath("/files");
         
-        
+        System.out.println(works.getWorkshopNumber());
         ArrayList<WorksPhoto> worksPhotos = new ArrayList<>();
         
         for (int i = 0; i < files.length; i++) {

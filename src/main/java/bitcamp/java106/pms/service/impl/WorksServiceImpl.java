@@ -132,6 +132,8 @@ public class WorksServiceImpl implements WorksService {
         option.setWorksNumber(worksNo);
         worksOptionDao.update(option);
         
+        System.out.println("serviceimpl:" + works.getWorkshopNumber());
+        
         String tagResult = Arrays.toString(works.getWorksCategory());
         String[] urlArr = (tagResult.substring(1, tagResult.length()-1)).split(", ");
         
@@ -158,6 +160,7 @@ public class WorksServiceImpl implements WorksService {
     
     @Override
     public int delete(int no) {
+        worksPhotoDao.delete(no);
         worksOptionDao.delete(no);
         tagDao.deleteRelation(no);
         return worksDao.delete(no);
