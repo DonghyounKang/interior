@@ -1,11 +1,4 @@
 "use strict"
-
-$('#tname').tagEditor({
-    delimiter: ', ', /* space and comma */
-    maxLength: 10,
-	placeholder: 'Enter tags ...'
-});
-
 var userNo;
 var adWorksData = $('.ad-works-data');
 var adWorksEnrollBtn = $('.ad-works-enroll');
@@ -69,16 +62,21 @@ adWorksData.on('click', '.ad-works-update', function(e) {
 	var no = $(e.target).attr('data-worksNo');
 	$.getJSON(serverRoot + "/json/works/adView/" + no, (data) => {
 		console.log(data);
-		/*$(acnm).val(data.title);
-        $(minno).val(data.minPerson);
-        $(maxno).val(data.maxPerson);
-        $(actdt).val(data.experDate);
-        $(avst).val(data.startTime);
-        $(avet).val(data.endTime);
-        $(mtrls).val(data.prepareCont);
-        $(apric).val(data.price);
-        $(accnt).val(data.content);
-        $(wsano).val(data.no);*/
+		$(wno).val(data.worksNumber);
+		$('#tname').tagEditor({
+			initialTags: data.worksCategory,
+		    delimiter: ', ', /* space and comma */
+		    maxLength: 10,
+			placeholder: 'Enter tags ...'
+		});
+		$(tname).val(data.worksCategory);
+		$(wtitl).val(data.title);
+		$(wrtdt).val(data.regitsterdDate);
+		$(price).val(data.price);
+		$(alstk).val(data.capacity);
+		$(slst).val(data.salesStatus).prop("selected", true);
+		$(abvl).val(data.option.attributeValue);
+		$(pddt).val(data.productDetail);
 	});
 	
 	adWorksEnrollBtn.trigger('click', ['update']);
@@ -93,11 +91,17 @@ $('#ad-wors-addForm').click(function(e, action) {
 		$('.modal-title').text("작품정보수정");
 		$('#addBtn').attr("id","updBtn");
 		$('#updBtn').text("수정하기");
+		
 	} else {
 		$('#fileupload1').fileupload('option', 'url', '../../../json/works/add');
 		$('.modal-title').text("작품등록");
 		$('#updBtn').attr("id","addBtn");
 		$('#addBtn').text("등록하기");
+		$('#tname').tagEditor({
+		    delimiter: ', ', /* space and comma */
+		    maxLength: 10,
+			placeholder: 'Enter tags ...'
+		});
 		
 	}
 })
@@ -158,7 +162,6 @@ $('#fileupload1').fileupload({
 		$('#addBtn').click(function () {
 			var tags = $('#tname').tagEditor('getTags')[0].tags;
 			console.log(tags);
-			
 			data.formData = {
 				worksCategory: tags,
 				workshopNumber: userNo,
@@ -175,16 +178,16 @@ $('#fileupload1').fileupload({
 		
 		$('#updBtn').click(function () {
 			data.formData = {
-				workshopNo: userNo,
-				/*title: $(acnm).val(),
-				minPerson: $(minno).val(),
-				maxPerson: $(maxno).val(),
-				experDate: $(actdt).val(),
-				startTime: $(avst).val() + ":00",
-				endTime: $(avet).val() + ":00",
-				prepareCont: $(mtrls).val(),
-				price: $(apric).val(),
-				content: $(accnt).val()*/
+				worksNo: userNo,
+				worksCategory: tags,
+				workshopNumber: userNo,
+				title: $(wtitl).val(),
+				price: $(price).val(),
+				capacity: $(alstk).val(),
+				salesStatus: $('#slst option:selected').val(),
+				productDetail: $(pddt).val(),
+				deliveryPrice: 'Y',
+				"option.attributeValue": $(abvl).val()
 			};
 			data.submit();
 		});

@@ -7,13 +7,14 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
- 
+
 import bitcamp.java106.pms.dao.MainDao;
 import bitcamp.java106.pms.dao.TagDao;
 import bitcamp.java106.pms.dao.WorksDao;
 import bitcamp.java106.pms.dao.WorksOptionDao;
 import bitcamp.java106.pms.dao.WorksPhotoDao;
 import bitcamp.java106.pms.domain.Tag;
+import bitcamp.java106.pms.domain.Wkacp;
 import bitcamp.java106.pms.domain.Works;
 import bitcamp.java106.pms.domain.WorksOption;
 import bitcamp.java106.pms.domain.WorksPhoto;
@@ -40,13 +41,33 @@ public class WorksServiceImpl implements WorksService {
     
     @Override
     public List<Works> list() {
-        
         return worksDao.selectList();
     }
     
     @Override
     public Works get(int no) {
         return worksDao.selectOne(no);
+    }
+    
+    @Override
+    public Works adGet(int no) {
+        Works selectWorks = worksDao.selectOne(no);
+        
+        //옵션 설정
+        WorksOption selectOption = worksOptionDao.selectOne(no);
+        selectWorks.setOption(selectOption);
+        
+        int count = tagDao.countTags(no);
+        List<Tag> tagList = tagDao.selectMatchTags(no);
+        String[] arr = new String[count];
+        
+        for(int i = 0; i < count; i++) {
+            Tag tag = tagList.get(i);
+            arr[i] = tag.getTagName();
+        }
+        selectWorks.setWorksCategory(arr);
+        
+        return selectWorks;
     }
     
     @Override
@@ -72,13 +93,14 @@ public class WorksServiceImpl implements WorksService {
         option.setWorksNumber(worksNo);
         
         worksOptionDao.insert(option);
-
         
         for(int i = 0; i < urlArr.length; i++) {
             Tag tag = new Tag();
-            tag.setTagName(urlArr[i]);
+            String tagValue = urlArr[i];
+            tag.setTagName(tagValue);
+            
             tagDao.insert(tag);
-            int tagNo = tagDao.getRecent().getHashTagNo();
+            int tagNo = tagDao.getTag(tagValue).getHashTagNo();
             
             Tag match = new Tag();
             match.setWorksMatchNo(worksNo);
@@ -87,19 +109,52 @@ public class WorksServiceImpl implements WorksService {
             System.out.println(match.getWorksMatchNo());
             System.out.println();
             tagDao.matchInsert(match);
-
         }
-        
-     
     }
     
     @Override
-    public int update(Works works) {
+    public int update(Works works, ArrayList<WorksPhoto> worksPhotos) {
+        int worksNo = works.getWorksNumber();
+        worksPhotoDao.delete(worksNo);
+        for(int i = 0; i < worksPhotos.size(); i++) {
+            WorksPhoto worksPhoto = worksPhotos.get(i);
+            worksPhoto.setWorksNumber(worksNo);
+            worksPhotoDao.insert(worksPhoto);
+        }
+        
+        WorksOption option = new WorksOption();
+        option.setAttributeValue(works.getOption().getAttributeValue());
+        option.setWorksNumber(worksNo);
+        worksOptionDao.update(option);
+        
+        String tagResult = Arrays.toString(works.getWorksCategory());
+        String[] urlArr = (tagResult.substring(1, tagResult.length()-1)).split(", ");
+        
+        tagDao.deletRelation(worksNo);
+        
+        for(int i = 0; i < urlArr.length; i++) {
+            Tag tag = new Tag();
+            String tagValue = urlArr[i];
+            tag.setTagName(tagValue);
+            
+            tagDao.insert(tag);
+            int tagNo = tagDao.getTag(tagValue).getHashTagNo();
+            
+            Tag match = new Tag();
+            match.setWorksMatchNo(worksNo);
+            match.setHashTagNo(tagNo);
+            System.out.println(match.getHashTagNo());
+            System.out.println(match.getWorksMatchNo());
+            System.out.println();
+            tagDao.matchInsert(match);
+        }
        return worksDao.update(works);
     }
     
     @Override
     public int delete(int no) {
+        worksOptionDao.delete(no);
+        tagDao.deletRelation(no);
         return worksDao.delete(no);
     }
 

@@ -97,8 +97,48 @@ public class WorksController {
     
     @RequestMapping("update")
     @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
-    public void update(Works works) throws Exception {
-        worksService.update(works);
+    public void update(Works works, MultipartFile[] files) throws Exception {
+        
+        String filesDir = sc.getRealPath("/files");
+        
+        
+        ArrayList<WorksPhoto> worksPhotos = new ArrayList<>();
+        
+        for (int i = 0; i < files.length; i++) {
+            WorksPhoto photo = new WorksPhoto();
+            String filename = UUID.randomUUID().toString();
+            try {
+                File path = new File(filesDir + "/" +  filename);
+                files[i].transferTo(path);
+                photo.setPath(filename);
+                worksPhotos.add(photo);
+                
+                Thumbnails.of(path)
+                .size(50, 50)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_50x50");
+                
+                Thumbnails.of(path)
+                .size(100, 100)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_100x100");
+                
+                Thumbnails.of(path)
+                .size(150, 150)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_150x150");
+                
+                Thumbnails.of(path)
+                .size(200, 200)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_200x200");
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        
+        worksService.update(works, worksPhotos);
     }
     
     // 여기는 상세 보기용
@@ -170,7 +210,7 @@ public class WorksController {
     //작품수정
     @RequestMapping("adView/{no}")
     public Works adView(@PathVariable int no) throws Exception {
-        return worksService.get(no);
+        return worksService.adGet(no);
     }
 }
 

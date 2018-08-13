@@ -28,7 +28,7 @@
   
   <!-- 사진 전체 출력 -->
   <select id="selectList" parameterType="int" resultMap="WorksPhotoMap">
-        select * from INTR_WPHO where wno=#{no}
+        select * from INTR_WPHO where wno=#{no};
   </select>
   
   <!-- 사진 수정 -->
@@ -36,8 +36,8 @@
   </update>
   
   <!-- 사진 삭제 -->
-  <delete id="delete" parameterType="map">
-   <!--  delete from INTR_ACRGTT WHERE memno=#{memno} and wsano=#{wsano} -->
+  <delete id="delete" parameterType="int">
+     delete from INTR_WPHO WHERE wno=#{value};
   </delete>
 </mapper>
 

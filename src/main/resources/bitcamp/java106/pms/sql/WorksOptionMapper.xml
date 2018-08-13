@@ -29,6 +29,10 @@
         select * from INTR_WKOT where wno=#{no}
   </select>
   
+  <select id="selectOne" parameterType="int" resultMap="WorksOptionMap">
+        select * from INTR_WKOT where wno=#{no}
+  </select>
+  
   <!-- 옵션 수정 -->
   <update id="update" parameterType="WorksOption">
   </update>

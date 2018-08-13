@@ -16,17 +16,30 @@
     <result column="tname" property="tagName"/>
   </resultMap>
   
-  <!-- 태그 삽입 -->
+  <!-- 태그 삽입(중복방지) -->
   <insert id="insert" parameterType="Tag"
           useGeneratedKeys="true" keyColumn="htno" keyProperty="htno">
-	    insert into INTR_HASHTAG(tname) 
-	    values(#{tagName});
+          INSERT INTO INTR_HASHTAG (tname)  
+			SELECT #{tagName} FROM DUAL  
+			WHERE NOT EXISTS (SELECT * FROM INTR_HASHTAG WHERE tname=#{tagName});
   </insert>
   
-  <!-- 삽입한 최신태그 가져오기 -->
-    <select id="getRecent" resultMap="TagMap">
-  	select htno from INTR_HASHTAG order by htno desc limit 1 
+    <!-- 매치된 태그 개수 구하기 -->
+  <select id="countTags" parameterType="int" resultType="int">
+  	SELECT COUNT(*) FROM INTR_WTMACH where wno=#{value};
+  </select>
   
+   <select id="selectMatchTags" parameterType="int" resultMap="TagMap">
+  	SELECT hs.htno, hs.tname 
+  	from INTR_HASHTAG hs 
+  	inner join INTR_WTMACH wt 
+  	on hs.HTNO = wt.HTNO 
+  	where wt.wno=#{value};
+  </select>
+  
+  <!-- 삽입된 태그중 일치하는 태그 가져오기 -->
+  <select id="getTag" parameterType="String" resultMap="TagMap">
+  	select * from INTR_HASHTAG where tname= #{value};
   </select>
   
 <!--     작품번호 및 해시 태그 매칭 -->
@@ -35,6 +48,7 @@
 	    insert into INTR_WTMACH(htno, wno) 
 	    values(#{hashTagNo},#{worksMatchNo});
   </insert>
+  
 <!--   
   옵션 전체 출력
   <select id="selectList" parameterType="int" resultMap="WorksOptionMap">
