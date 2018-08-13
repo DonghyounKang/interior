@@ -135,7 +135,7 @@ public class WorksServiceImpl implements WorksService {
         String tagResult = Arrays.toString(works.getWorksCategory());
         String[] urlArr = (tagResult.substring(1, tagResult.length()-1)).split(", ");
         
-        tagDao.deletRelation(worksNo);
+        tagDao.deleteRelation(worksNo);
         
         for(int i = 0; i < urlArr.length; i++) {
             Tag tag = new Tag();
@@ -159,7 +159,7 @@ public class WorksServiceImpl implements WorksService {
     @Override
     public int delete(int no) {
         worksOptionDao.delete(no);
-        tagDao.deletRelation(no);
+        tagDao.deleteRelation(no);
         return worksDao.delete(no);
     }
 
