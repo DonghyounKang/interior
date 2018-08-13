@@ -72,7 +72,7 @@ a,a:hover {color: #000; text-decoration: none}
 }
 
 .ib-mp-pur-bbox-left {
-	flex: 2;
+	flex: 1;
 	padding-right: 3em; 
 }
 
@@ -154,4 +154,9 @@ a,a:hover {color: #000; text-decoration: none}
 
 #purchaseList, #pur_content {
 	padding-bottom: 3em;
+}
+
+.mp-pur-link {
+	flex: 6;
+	display: flex;
 }

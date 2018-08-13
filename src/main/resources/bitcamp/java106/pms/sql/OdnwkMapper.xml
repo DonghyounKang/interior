@@ -34,7 +34,7 @@
   <select id="selectList" 
           resultType="Map" 
           parameterType="map">
-SELECT onk.wono, qctt, odr.odno, odr.memno, wtitl, abnm, abvl, path FROM INTR_ODNWK onk
+SELECT onk.wono, qctt, wks.wno, odr.odno, odr.memno, wtitl, abvl, path FROM INTR_ODNWK onk
 inner join INTR_WORKS wks on onk.wno = wks.wno
 inner join INTR_WKOT wkt on wks.wno = wkt.wno
 inner join INTR_WPHO wpho on wks.wno = wpho.wno
@@ -45,7 +45,7 @@ where odr.memno = #{value}
   <select id="selectRevList" 
           resultType="Map" 
           parameterType="map">
-SELECT onk.wono, qctt, odr.odno, odr.memno, wtitl, abnm, abvl, path, repath FROM INTR_ODNWK onk
+SELECT onk.wono, qctt, wks.wno, odr.odno, odr.memno, wtitl, abvl, path, repath FROM INTR_ODNWK onk
 inner join INTR_WORKS wks on onk.wno = wks.wno
 inner join INTR_WKOT wkt on wks.wno = wkt.wno
 inner join INTR_WPHO wpho on wks.wno = wpho.wno
