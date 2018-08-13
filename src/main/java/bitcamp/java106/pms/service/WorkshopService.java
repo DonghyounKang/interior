@@ -15,6 +15,7 @@ public interface WorkshopService {
     List<Workshop> listtwo(int pageNo, int pageSize);
     List<Workshop> listSellerSite();
     List<Workshop> listIntroduce();
+    List<Workshop> listSellerSiteBanner();
     Workshop get(int no);
     int update(Workshop workshop);
     int updateIntroduce(Workshop workshop);

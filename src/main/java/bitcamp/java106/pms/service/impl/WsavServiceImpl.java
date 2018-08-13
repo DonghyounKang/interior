@@ -31,6 +31,11 @@ public class WsavServiceImpl implements WsavService {
     }
     
     @Override
+    public List<Wsav> sellerSiteList() {
+        return wsavDao.selectSellerSiteList();
+    }
+    
+    @Override
     public List<Wsav> adminList(int no) {
         return wsavDao.selectAdminList(no);
     }

@@ -3,18 +3,15 @@ package bitcamp.java106.pms.dao;
 import java.util.List;
 import java.util.Map;
 
-import bitcamp.java106.pms.domain.Wsav;
+import bitcamp.java106.pms.domain.Wrkshp;
 
-public interface WsavDao {
-    int delete(Map<String,Object> params) ;
-    int adminDelete(int wsano);
-    List<Wsav> selectList(int no);
-    List<Wsav> selectSellerSiteList();
-    List<Wsav> selectAdminList(int no);
-    int insert(Wsav wsav);
-    int update(Wsav wsav);
-    Wsav selectOne(int no);
-    Wsav selectRecent();
+public interface WrkshpDao {
+    int delete(int no) ;
+    List<Wrkshp> selectList(int no);
+    List<Wrkshp> selectListtwo(Map<String,Object> params);
+    int insert(Wrkshp wrkshp);
+    int update(Wrkshp wrkshp);
+    Wrkshp selectOne(int no);
 }
 
 //ver 52 - 페이지 단위로 데이터 가져오기

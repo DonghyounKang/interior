@@ -38,8 +38,6 @@ public class WsavController {
         String filesDir = sc.getRealPath("/files");
 //        Wsav activity= new Wsav();
         
-        for(MultipartFile file : files) 
-            System.out.println(file.getOriginalFilename());
         
         ArrayList<Wkacp> activityPhotos = new ArrayList<>();
         
@@ -95,6 +93,11 @@ public class WsavController {
     @RequestMapping("list")
     public Object list(int no) {        
         return wsavService.list(no);
+    }
+    
+    @RequestMapping("sellerSiteList")
+    public Object sellerSiteList() {        
+        return wsavService.sellerSiteList();
     }
     
     @RequestMapping("adminList")
