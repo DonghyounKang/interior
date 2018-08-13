@@ -6,7 +6,6 @@ $(window).scroll(function(){
     let documentHeight = $(document).height();
 
     if( scrollTop >= documentHeight - windowHeight){
-            console.log("끝!");
             snslist();
     }
 });
@@ -20,19 +19,15 @@ var $grid = $(grid).masonry({
 var myList = null;
 var flag = false;
 
-$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
-	console.log("로그인:"+ data.no);
-	uno = data.no;
-	$.getJSON("../../../json/board/islike"+uno,(data) => {
-		console.log(data);
-		myList = data;
-	});
+$.getJSON("../../../json/board/islike",(data) => {
+	console.log(data);
+	myList = data;
 });
 
+
 setTimeout(function() {
-$.getJSON("../../../json/board/list",{"pageNo":1, "pageSize":40},(data) => {
+$.getJSON("../../../json/board/list",{"pageNo":1, "pageSize":40},(data) => {	
 	for (var item of data) {
-		console.log("myList: " + myList);
 		if (myList != null) {
 			for(let list of myList) {
 			
@@ -44,11 +39,11 @@ $.getJSON("../../../json/board/list",{"pageNo":1, "pageSize":40},(data) => {
 							'</div>'+
 							'</a>'+
 							'<div class="grid-photo-cont">'+
-							'<a class="grid-photo-like likeoff'+ i +'" id="like_off" onclick=\"likeon('+ i +')\" style="display:none;">'+ 
+							'<a class="grid-photo-like likeoff'+ item.no +'" id="like_off" onclick=\"likeon('+ item.no +')\" style="display:none;">'+ 
 							'<i class="material-icons">favorite_border</i>'+
 							'<span>'+ item.count +'</span>'+
 							'</a>' +
-							'<a class="grid-photo-like likeon'+ i +'" id="like_on" onclick=\"likeoff('+ i +')\" style="display:flex; color:#ffc001">'+ 
+							'<a class="grid-photo-like likeon'+ item.no +'" id="like_on" onclick=\"likeoff('+ item.no +')\" style="display:flex; color:#ffc001">'+ 
 							'<i class="material-icons" >favorite</i>'+
 							'<span>'+ item.count +'</span>'+
 							'</a>' +
@@ -67,11 +62,11 @@ $.getJSON("../../../json/board/list",{"pageNo":1, "pageSize":40},(data) => {
 					'</div>'+
 					'</a>'+
 					'<div class="grid-photo-cont">'+
-					'<a class="grid-photo-like likeoff'+ i +'" id="like_off" onclick=\"likeon('+ i +')\">'+ 
+					'<a class="grid-photo-like likeoff'+ item.no +'" id="like_off" onclick=\"likeon('+ item.no +')\">'+ 
 					'<i class="material-icons">favorite_border</i>'+
 					'<span>'+ item.count +'</span>'+
 					'</a>' +
-					'<a class="grid-photo-like likeon'+ i +'" id="like_on" onclick=\"likeoff('+ i +')\" style="display:none">'+ 
+					'<a class="grid-photo-like likeon'+ item.no +'" id="like_on" onclick=\"likeoff('+ item.no +')\" style="display:none">'+ 
 					'<i class="material-icons" >favorite</i>'+
 					'<span>'+ item.count +'</span>'+
 					'</a>' +
@@ -103,7 +98,6 @@ function snslist() {
 if(isEnd == true){
     return;
 }
-console.log("addNo: " + addNo);
 $.getJSON("../../../json/board/list",{"pageNo":addNo, "pageSize":addPage},(data) => {
 	for (var item of data) {
 		if (myList != null) {
@@ -116,11 +110,11 @@ $.getJSON("../../../json/board/list",{"pageNo":addNo, "pageSize":addPage},(data)
 							'</div>'+
 							'</a>'+
 							'<div class="grid-photo-cont">'+
-							'<a class="grid-photo-like likeoff'+ i +'" id="like_off" onclick=\"likeon('+ i +')\" style="display:none;">'+ 
+							'<a class="grid-photo-like likeoff'+ item.no +'" id="like_off" onclick=\"likeon('+ item.no +')\" style="display:none;">'+ 
 							'<i class="material-icons">favorite_border</i>'+
 							'<span>'+ item.count +'</span>'+
 							'</a>' +
-							'<a class="grid-photo-like likeon'+ i +'" id="like_on" onclick=\"likeoff('+ i +')\" style="display:flex; color:#ffc001">'+ 
+							'<a class="grid-photo-like likeon'+ item.no +'" id="like_on" onclick=\"likeoff('+ item.no +')\" style="display:flex; color:#ffc001">'+ 
 							'<i class="material-icons" >favorite</i>'+
 							'<span>'+ item.count +'</span>'+
 							'</a>' +
@@ -139,11 +133,11 @@ $.getJSON("../../../json/board/list",{"pageNo":addNo, "pageSize":addPage},(data)
 					'</div>'+
 					'</a>'+
 					'<div class="grid-photo-cont">'+
-					'<a class="grid-photo-like likeoff'+ i +'" id="like_off" onclick=\"likeon('+ i +')\">'+ 
+					'<a class="grid-photo-like likeoff'+ item.no +'" id="like_off" onclick=\"likeon('+ item.no +')\">'+ 
 					'<i class="material-icons">favorite_border</i>'+
 					'<span>'+ item.count +'</span>'+
 					'</a>' +
-					'<a class="grid-photo-like likeon'+ i +'" id="like_on" onclick=\"likeoff('+ i +')\" style="display:none">'+ 
+					'<a class="grid-photo-like likeon'+ item.no +'" id="like_on" onclick=\"likeoff('+ item.no +')\" style="display:none">'+ 
 					'<i class="material-icons" >favorite</i>'+
 					'<span>'+ item.count +'</span>'+
 					'</a>' +
@@ -161,8 +155,6 @@ $.getJSON("../../../json/board/list",{"pageNo":addNo, "pageSize":addPage},(data)
 		if(flag)
 			flag = false;
 	}
-	
-	console.log("data.length: "+data.length);
 	if( data.length == 0 ){
         isEnd = true;
 	}
@@ -171,14 +163,37 @@ $.getJSON("../../../json/board/list",{"pageNo":addNo, "pageSize":addPage},(data)
 addNo++; 
 
 }
-
-function likeon(i) {
-	$(".likeoff"+ i).css("display","none");
-	$(".likeon"+i).css({"display":"flex","color":"#ffc001"});
+function likeon(no) {	
+	$.getJSON("../../../json/board/addlike"+no, (data) => {
+		
+		let offval = parseInt($(".likeoff"+no).children()[1].textContent);
+		let onval = parseInt($(".likeon"+no).children()[1].textContent);
+		
+		if(offval >= onval)
+			$(".likeon"+no).children()[1].textContent = offval +1;
+		else
+			$(".likeoff"+no).children()[1].textContent = onval +1;
+		
+		$(".likeoff"+ no).css("display","none");
+		$(".likeon"+no).css({"display":"flex","color":"#ffc001"});
+	})
+	.fail(function(){
+		alert("로그인이 필요합니다.");
+	});
 }
-function likeoff(i) {
-	$(".likeon"+ i).css("display","none");
-	$(".likeoff"+ i).css("display","flex");
+function likeoff(no) {
+	$.getJSON("../../../json/board/deletelike"+no, (data) => {
+		let offval = parseInt($(".likeoff"+no).children()[1].textContent);
+		let onval = parseInt($(".likeon"+no).children()[1].textContent);
+		
+		if(offval >= onval)
+			$(".likeoff"+no).children()[1].textContent = onval -1;
+		else
+			$(".likeon"+no).children()[1].textContent = offval -1;
+		
+		$(".likeon"+ no).css("display","none");
+		$(".likeoff"+ no).css("display","flex");
+	});
 }
 
 
