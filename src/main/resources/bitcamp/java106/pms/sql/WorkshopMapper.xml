@@ -40,14 +40,15 @@
           #{zcode}, #{baddr}, #{daddr})
   </insert>
   
+  <!-- workshop_main tap menu -->
   <select id="selectList" 
           resultType="Map" 
           parameterType="map">
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    order by wrk.WSNM desc
-    limit 1, #{value}
+    where ws.pclsf = 'main'
+    limit 0, #{value}
   </select>
   
   <select id="selectListtwo" 
@@ -56,9 +57,133 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    order by wrk.WSNM desc
+    where ws.pclsf = 'main'
     limit #{startRowNo}, #{pageSize}
   </select>
+  
+  <!-- workshop_main tap menu -->
+  <select id="selectfur" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'fur'
+    limit 0, #{value}
+  </select>
+  
+  <select id="selectfurtwo" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'fur'
+    limit #{startRowNo}, #{pageSize}
+  </select>
+
+  <!-- workshop_main tap menu -->
+  <select id="selectfab" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'fab'
+    limit 0, #{value}
+  </select>
+
+  <select id="selectfabtwo" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'fab'
+    limit #{startRowNo}, #{pageSize}
+  </select>
+  
+  <!-- workshop_main tap menu -->
+  <select id="selectdeco" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'deco'
+    limit 0, #{value}
+  </select>
+
+  <select id="selectdecotwo" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'deco'
+    limit #{startRowNo}, #{pageSize}
+  </select>
+  
+  <!-- workshop_main tap menu -->
+  <select id="selectapp" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'app'
+    limit 0, #{value}
+  </select>
+
+  <select id="selectapptwo" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'app'
+    limit #{startRowNo}, #{pageSize}
+  </select>
+  
+  <!-- workshop_main tap menu -->
+  <select id="selectlife" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'life'
+    limit 0, #{value}
+  </select>
+
+  <select id="selectlifetwo" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'life'
+    limit #{startRowNo}, #{pageSize}
+  </select>
+  
+  <!-- workshop_main tap menu -->
+  <select id="selectkit" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'kit'
+    limit 0, #{value}
+  </select>
+
+  <select id="selectkittwo" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'kit'
+    limit #{startRowNo}, #{pageSize}
+  </select>
+  
+  <!-- workshop_main tap menu -->
+  <select id="selectbath" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'bath'
+    limit 0, #{value}
+  </select>
+
+  <select id="selectbathtwo" resultType="Map" parameterType="map">
+    select wsnm, itrod, path, lpath
+    from INTR_WRKSHP wrk
+    inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.pclsf = 'bath'
+    limit #{startRowNo}, #{pageSize}
+  </select>
+  
+  
+  
+  
+  
   
   <select id="selectListSellerSite" resultType="Map" parameterType="map">
     select wsnm, itrod, fcbk, twit, istag, path, lpath

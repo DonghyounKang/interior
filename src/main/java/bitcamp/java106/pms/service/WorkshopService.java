@@ -13,6 +13,22 @@ public interface WorkshopService {
     List<Workshop> selectPopularList();
     List<Workshop> list(int no);
     List<Workshop> listtwo(int pageNo, int pageSize);
+    List<Workshop> listfur(int no);
+    List<Workshop> listfurtwo(int pageNo, int pageSize);
+    List<Workshop> listfab(int no);
+    List<Workshop> listfabtwo(int pageNo, int pageSize);
+    List<Workshop> listdeco(int no);
+    List<Workshop> listdecotwo(int pageNo, int pageSize);
+    List<Workshop> listapp(int no);
+    List<Workshop> listapptwo(int pageNo, int pageSize);
+    List<Workshop> listlife(int no);
+    List<Workshop> listlifetwo(int pageNo, int pageSize);
+    List<Workshop> listkit(int no);
+    List<Workshop> listkittwo(int pageNo, int pageSize);
+    List<Workshop> listbath(int no);
+    List<Workshop> listbathtwo(int pageNo, int pageSize);
+    
+    
     List<Workshop> listSellerSite();
     List<Workshop> listIntroduce();
     List<Workshop> listSellerSiteBanner();

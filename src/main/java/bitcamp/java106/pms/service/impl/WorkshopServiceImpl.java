@@ -69,6 +69,102 @@ public class WorkshopServiceImpl implements WorkshopService {
     }
     
     @Override
+    public List<Workshop> listfur(int no) {
+        return workshopDao.selectfur(no);
+    }
+    
+    @Override
+    public List<Workshop> listfurtwo(int pageNo, int pageSize) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("startRowNo", pageNo);
+        params.put("pageSize", pageSize);
+        
+        return workshopDao.selectfurtwo(params);
+    }
+    @Override
+    public List<Workshop> listfab(int no) {
+        return workshopDao.selectfab(no);
+    }
+    
+    @Override
+    public List<Workshop> listfabtwo(int pageNo, int pageSize) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("startRowNo", pageNo);
+        params.put("pageSize", pageSize);
+        
+        return workshopDao.selectfabtwo(params);
+    }
+    @Override
+    public List<Workshop> listdeco(int no) {
+        return workshopDao.selectdeco(no);
+    }
+    
+    @Override
+    public List<Workshop> listdecotwo(int pageNo, int pageSize) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("startRowNo", pageNo);
+        params.put("pageSize", pageSize);
+        
+        return workshopDao.selectdecotwo(params);
+    }
+    @Override
+    public List<Workshop> listapp(int no) {
+        return workshopDao.selectapp(no);
+    }
+    
+    @Override
+    public List<Workshop> listapptwo(int pageNo, int pageSize) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("startRowNo", pageNo);
+        params.put("pageSize", pageSize);
+        
+        return workshopDao.selectapptwo(params);
+    }
+    @Override
+    public List<Workshop> listlife(int no) {
+        return workshopDao.selectlife(no);
+    }
+    
+    @Override
+    public List<Workshop> listlifetwo(int pageNo, int pageSize) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("startRowNo", pageNo);
+        params.put("pageSize", pageSize);
+        
+        return workshopDao.selectlifetwo(params);
+    }
+    @Override
+    public List<Workshop> listkit(int no) {
+        return workshopDao.selectkit(no);
+    }
+    
+    @Override
+    public List<Workshop> listkittwo(int pageNo, int pageSize) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("startRowNo", pageNo);
+        params.put("pageSize", pageSize);
+        
+        return workshopDao.selectkittwo(params);
+    }
+    @Override
+    public List<Workshop> listbath(int no) {
+        return workshopDao.selectbath(no);
+    }
+    
+    @Override
+    public List<Workshop> listbathtwo(int pageNo, int pageSize) {
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("startRowNo", pageNo);
+        params.put("pageSize", pageSize);
+        
+        return workshopDao.selectbathtwo(params);
+    }
+    
+    
+    
+    
+    
+    @Override
     public List<Workshop> listSellerSite() {
         return workshopDao.selectListSellerSite();
     }

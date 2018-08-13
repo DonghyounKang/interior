@@ -100,6 +100,90 @@ public class WorkshopController {
         return workshopService.listtwo(pageNo, pageSize);
     }
     
+    @RequestMapping("listfur")
+    public Object listfur(int no) {        
+        return workshopService.listfur(no);
+    }
+    
+    @RequestMapping("listfurtwo")
+    public Object listfurtwo(
+            @RequestParam("pageNo") int pageNo,
+            @RequestParam("pageSize") int pageSize) {        
+        return workshopService.listfurtwo(pageNo, pageSize);
+    }
+    
+    @RequestMapping("listfab")
+    public Object listfab(int no) {        
+        return workshopService.listfab(no);
+    }
+    
+    @RequestMapping("listfabtwo")
+    public Object listfabtwo(
+            @RequestParam("pageNo") int pageNo,
+            @RequestParam("pageSize") int pageSize) {        
+        return workshopService.listfabtwo(pageNo, pageSize);
+    }
+    
+    @RequestMapping("listdeco")
+    public Object listdeco(int no) {        
+        return workshopService.listdeco(no);
+    }
+    
+    @RequestMapping("listdecotwo")
+    public Object listdecotwo(
+            @RequestParam("pageNo") int pageNo,
+            @RequestParam("pageSize") int pageSize) {        
+        return workshopService.listdecotwo(pageNo, pageSize);
+    }
+    
+    @RequestMapping("listapp")
+    public Object listapp(int no) {        
+        return workshopService.listapp(no);
+    }
+    
+    @RequestMapping("listapptwo")
+    public Object listapptwo(
+            @RequestParam("pageNo") int pageNo,
+            @RequestParam("pageSize") int pageSize) {        
+        return workshopService.listapptwo(pageNo, pageSize);
+    }
+    
+    @RequestMapping("listlife")
+    public Object listlife(int no) {        
+        return workshopService.listlife(no);
+    }
+    
+    @RequestMapping("listlifetwo")
+    public Object listlifetwo(
+            @RequestParam("pageNo") int pageNo,
+            @RequestParam("pageSize") int pageSize) {        
+        return workshopService.listlifetwo(pageNo, pageSize);
+    }
+    
+    @RequestMapping("listkit")
+    public Object listkit(int no) {        
+        return workshopService.listkit(no);
+    }
+    
+    @RequestMapping("listkittwo")
+    public Object listkittwo(
+            @RequestParam("pageNo") int pageNo,
+            @RequestParam("pageSize") int pageSize) {        
+        return workshopService.listkittwo(pageNo, pageSize);
+    }
+    
+    @RequestMapping("listbath")
+    public Object listbath(int no) {        
+        return workshopService.listbath(no);
+    }
+    
+    @RequestMapping("listbathtwo")
+    public Object listbathtwo(
+            @RequestParam("pageNo") int pageNo,
+            @RequestParam("pageSize") int pageSize) {        
+        return workshopService.listbathtwo(pageNo, pageSize);
+    }
+    
     @RequestMapping("listSellerSite")
     public Object listSellerSite() {        
         return workshopService.listSellerSite();
