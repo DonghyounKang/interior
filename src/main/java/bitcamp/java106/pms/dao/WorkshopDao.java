@@ -11,6 +11,22 @@ public interface WorkshopDao {
     int delete(int no) ;
     List<Workshop> selectList(int no);
     List<Workshop> selectListtwo(Map<String,Object> params);
+    List<Workshop> selectfur(int no);
+    List<Workshop> selectfurtwo(Map<String,Object> params);
+    List<Workshop> selectfab(int no);
+    List<Workshop> selectfabtwo(Map<String,Object> params);
+    List<Workshop> selectdeco(int no);
+    List<Workshop> selectdecotwo(Map<String,Object> params);
+    List<Workshop> selectapp(int no);
+    List<Workshop> selectapptwo(Map<String,Object> params);
+    List<Workshop> selectlife(int no);
+    List<Workshop> selectlifetwo(Map<String,Object> params);
+    List<Workshop> selectkit(int no);
+    List<Workshop> selectkittwo(Map<String,Object> params);
+    List<Workshop> selectbath(int no);
+    List<Workshop> selectbathtwo(Map<String,Object> params);
+    
+    
     List<Workshop> selectListSellerSite();
     List<Workshop> selectListIntroduce();
     List<Workshop> selectListSellerSiteBanner();

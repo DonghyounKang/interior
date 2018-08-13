@@ -5,5 +5,8 @@ $.getJSON(serverRoot + "/json/works/listSellerSite", (data) => {
 				"<img src='../../images/workshop/" + data[i].path + "'>" +
 				"</a>"
 		).appendTo(".sellerSite_product_img_00");
+		if (i == 11) {
+        	break;
+        }
 	}
 });
