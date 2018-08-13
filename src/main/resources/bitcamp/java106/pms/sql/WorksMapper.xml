@@ -27,7 +27,7 @@
     <!-- 여기의 사진은 그냥 main 화면만 출력용으로 -->
     <association property="photo" javaType="WorksPhoto"> 
       <id column="wpno" property="photoNumber"/>
-      <result column="mipt" property="mainPhoto"/>
+      <result column="mipt" property="mainPhoto"/> 
       <result column="path" property="path"/> 
     </association>
     
