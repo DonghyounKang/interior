@@ -42,12 +42,16 @@
   	select * from INTR_HASHTAG where tname= #{value};
   </select>
   
-<!--     작품번호 및 해시 태그 매칭 -->
+<!-- 작품번호 및 해시 태그 매칭 -->
   <insert id="matchInsert" parameterType="Tag"
           useGeneratedKeys="true" keyColumn="htno" keyProperty="htno">
 	    insert into INTR_WTMACH(htno, wno) 
 	    values(#{hashTagNo},#{worksMatchNo});
   </insert>
+<!-- 매칭 테이블에서 row 삭제 -->
+<delete id="deleteRelation" parameterType="int">
+    delete from INTR_WTMACH WHERE wno=#{value};
+ </delete>
   
 <!--   
   옵션 전체 출력

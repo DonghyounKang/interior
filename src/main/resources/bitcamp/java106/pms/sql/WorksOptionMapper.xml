@@ -35,11 +35,13 @@
   
   <!-- 옵션 수정 -->
   <update id="update" parameterType="WorksOption">
+  UPDATE `INTR_WKOT` 
+  SET `ABVL`= #{attributeValue} WHERE wno = #{worksNumber}
   </update>
   
   <!-- 옵션 삭제 -->
-  <delete id="delete" parameterType="map">
-    <!-- delete from INTR_ACRGTT WHERE memno=#{memno} and wsano=#{wsano} -->
+  <delete id="delete" parameterType="int">
+    DELETE FROM `INTR_WKOT` WHERE wno = #{worksNumber}
   </delete>
 </mapper>
 

@@ -14,7 +14,7 @@ public interface TagDao {
     void matchInsert(Tag match);
     int countTags(int no);
     List<Tag> selectMatchTags(int no);
-    void deletRelation(int worksNo);
+    void deleteRelation(int worksNo);
 
 
 

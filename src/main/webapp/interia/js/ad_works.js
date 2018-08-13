@@ -71,7 +71,7 @@ adWorksData.on('click', '.ad-works-update', function(e) {
 		});
 		$(tname).val(data.worksCategory);
 		$(wtitl).val(data.title);
-		$(wrtdt).val(data.regitsterdDate);
+		$(wrtdt).val(data.registeredDate);
 		$(price).val(data.price);
 		$(alstk).val(data.capacity);
 		$(slst).val(data.salesStatus).prop("selected", true);
@@ -177,11 +177,14 @@ $('#fileupload1').fileupload({
 		});
 		
 		$('#updBtn').click(function () {
+			var tags = $('#tname').tagEditor('getTags')[0].tags;
+			console.log(tags);
 			data.formData = {
-				worksNo: userNo,
+				worksNumber: $(wno).val(),
 				worksCategory: tags,
 				workshopNumber: userNo,
 				title: $(wtitl).val(),
+				registeredDate: $(wrtdt).val(),
 				price: $(price).val(),
 				capacity: $(alstk).val(),
 				salesStatus: $('#slst option:selected').val(),
@@ -197,6 +200,15 @@ $('#fileupload1').fileupload({
 		console.log(data.result);
 	}
 });
+/*delete*/
+function worksdel(no) {
+    if (window.confirm("삭제하시겠습니까?") == false) 
+    	return;
+    $.get("../../../json/works/delete", {"wno": no}, () => {
+   	 
+    });
+/*      location.reload(); */  
+}
 
 /*미리보기 삭제 이벤트*/
 function delImg(event) {
