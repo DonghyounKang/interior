@@ -10,7 +10,7 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 	userNo = data.no;
 	
 	/* list */
-	$.getJSON(serverRoot + "/json/order/adminList",{"no":userNo}, (data) => {
+	$.getJSON(serverRoot + "/json/order/adList",{"no":userNo}, (data) => {
 		console.log(userNo);
 		console.log(data);
 		for (var item of data) {

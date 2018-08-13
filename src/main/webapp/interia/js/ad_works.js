@@ -34,14 +34,16 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 			var rdate = new Date(item.registeredDate);
 			item.ryear = rdate.getFullYear();
 			item.rmonth = rdate.getMonth() + 1;
-			item.rday = rdate.getDate();
+			item.rday = rdate.getDate() +1;
 			
-			var modifiedDate = item.modifiedDate;
+			var modifiedDate =  item.modifiedDate;
+			console.log(modifiedDate);
+			
 			if(modifiedDate !== null && modifiedDate !== '') {
 				var mdate = new Date(modifiedDate);
 				item.myear = mdate.getFullYear();
-				item.mmonth= mdate.getMonth() + 1
-				item.mdate= mdate.getDate();
+				item.mmonth= mdate.getMonth() + 1;
+				item.mday= mdate.getDate() +1;
 				}
 			else {
 			}

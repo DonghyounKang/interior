@@ -17,6 +17,7 @@
     <result column="wtitl" property="title"/> <!-- 작품명 -->
     <result column="price" property="price"/> <!-- 가격 -->
     <result column="wrtdt" property="registeredDate"/> <!-- 등록날짜 -->
+    <result column="wrmdt" property="modifiedDate"/> <!-- 등록날짜 -->
     <result column="alstk" property="capacity" /> <!-- 재고수량 -->
     <result column="slst" property="salesStatus" /> <!-- 판매 상태 -->
     <result column="pddt" property="productDetail" /> <!-- 제품 상세 -->
