@@ -161,38 +161,14 @@
 	                            <p>구매후기</p>
 	                            <a href="./sellerSite_Review.html"><p>+더보기</p></a>
 	                        </div>
-	                        <div class="sellerSite_review_bg_content">
-	                            <div class="sellerSite_review_bg_content_img">
-	                                <a href="./sellerSite_Review.html"><img src="../../images/workshop/storeReview00.png"></a>
-	                            </div>
-	                            <div class="sellerSite_review_bg_content_text">
-	                                <p>타이틀입니다.</p>
-	                                <p>부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용</p>
-	                                <p>hyeondong</p>
-	                            </div>
-	                        </div>
-	                        <div class="sellerSite_review_bg_content">
-	                            <div class="sellerSite_review_bg_content_img">
-	                                <a href="#"><img src="../../images/workshop/storeReview00.png"></a>
-	                            </div>
-	                            <div class="sellerSite_review_bg_content_text">
-	                                <p>타이틀입니다.</p>
-	                                <p>부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.</p>
-	                                <p>hyeondong</p>
-	                            </div>
-	                        </div>
-	                        <div class="sellerSite_review_bg_content">
-	                            <div class="sellerSite_review_bg_content_img">
-	                                <a href="#"><img src="../../images/workshop/storeReview00.png"></a>
-	                            </div>
-	                            <div class="sellerSite_review_bg_content_text">
-	                                <p>타이틀입니다.</p>
-	                                <p>부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.부가 내용입니다.</p>
-	                                <p>hyeondong</p>
-	                            </div>
-	                        </div>
+	                        
+	                        
+	                        
+	                        
 	                    </div>
 	                </div>
+	                
+	                
 	                <div class="sellerSite_notice">
 	                    <div class="sellerSite_notice_bg">
 	                        <div class="sellerSite_notice_content">
@@ -254,7 +230,30 @@
     <script src="../../js/workshop_sellerSite_ex.js"></script>
     <script src="../../js/workshop_sellerSite_product_main.js"></script>
     
-    
+    <script>
+    $.getJSON(serverRoot + "/json/odnwk/listSellerSite", (data) => {
+        console.log(data);
+        for (var i = 0; i < data.length; i++) {
+            console.log(i);
+            $("<div class='sellerSite_review_bg_content'>" +
+                  "<div class='sellerSite_review_bg_content_img'>" +
+                      "<a href='./sellerSite_Review.html'>" +
+                          "<img src='../../images/workshop/" + data[i].path + "' style='width: 100%; height:100%;'>" +
+                      "</a>" +
+                  "</div>" +
+                  "<div class='sellerSite_review_bg_content_text'>" +
+                      "<p>" + data[i].wtitl + "<p>" +
+                      "<p>" + data[i].nknm + "<p>" +
+                      "<p>" + data[i].qctt + "<p>" +
+                  "</div>" +
+              "</div>"
+            ).appendTo(".sellerSite_review_bg");
+            if (i == 3) {
+            	break;
+            }
+        }
+    });
+    </script>
     
 </body>
 

@@ -29,6 +29,11 @@ public class OdnwkServiceImpl implements OdnwkService {
     }
     
     @Override
+    public List<Odnwk> listSellerSite() {
+        return odnwkDao.selectSellerSite();
+    }
+    
+    @Override
     public List<Odnwk> revList(int no) {
         return odnwkDao.selectRevList(no);
     }

@@ -49,6 +49,11 @@ public class OdnwkController {
         return odnwkService.list(no);
     }
     
+    @RequestMapping("listSellerSite")
+    public Object listSellerSite() {        
+        return odnwkService.listSellerSite();
+    }
+    
     @RequestMapping("revList")
     public Object revList(int no) {        
         return odnwkService.revList(no);
