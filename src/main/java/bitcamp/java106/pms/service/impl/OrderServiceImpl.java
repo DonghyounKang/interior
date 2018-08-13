@@ -61,7 +61,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Object adList(int no) {
-        return orderDao.adList(no);
+        return orderDao.adList(no); 
     }
     
     
