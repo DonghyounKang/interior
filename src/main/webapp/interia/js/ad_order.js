@@ -9,7 +9,7 @@ var adOrderWrapperTemplate = Handlebars.compile(adOrderWrapperTemplateSrc);
 		console.log(data);
 		for (var item of data) {
 			var orderDate = new Date(item.odate); 
-			var date = new Date(orderDate);
+			var date = new Date(orderDate); 
 			var year = date.getFullYear();
 			var month =(1+date.getMonth());
 			month = month >= 10 ? month:'0' + month;
