@@ -8,7 +8,7 @@ var adOrderWrapperTemplate = Handlebars.compile(adOrderWrapperTemplateSrc);
 	$.getJSON(serverRoot + "/json/order/adList", (data) => {
 		console.log(data);
 		for (var item of data) {
-			var orderDate = new Date(item.odate);
+			var orderDate = new Date(item.odate); 
 			var date = new Date(orderDate);
 			var year = date.getFullYear();
 			var month =(1+date.getMonth());
