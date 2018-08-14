@@ -47,24 +47,19 @@ public class BoardController {
             System.out.println(path);
             
             Thumbnails.of(path)
-            .size(50, 50)
+            .size(400, 400)
             .outputFormat("jpg")
-            .toFile(path.getCanonicalPath()+"_50x50");
+            .toFile(path.getCanonicalPath()+"_400x400");
             
             Thumbnails.of(path)
-            .size(100, 100)
+            .size(800, 800)
             .outputFormat("jpg")
-            .toFile(path.getCanonicalPath()+"_100x100");
+            .toFile(path.getCanonicalPath()+"_800x800");
             
             Thumbnails.of(path)
-            .size(150, 150)
+            .size(1000, 1000)
             .outputFormat("jpg")
-            .toFile(path.getCanonicalPath()+"_150x150");
-            
-            Thumbnails.of(path)
-            .size(200, 200)
-            .outputFormat("jpg")
-            .toFile(path.getCanonicalPath()+"_200x200");
+            .toFile(path.getCanonicalPath()+"_1000x1000");
             
         } catch (Exception e) {
             e.printStackTrace();
