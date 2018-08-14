@@ -16,7 +16,6 @@ $.getJSON(serverRoot + "/json/board/mpboard", (data) => {
 	         '</div>'+
 	      '</div>'+
 		'</a>').appendTo(".ib-mp-pgroup");
-		
 	}
 });
 
