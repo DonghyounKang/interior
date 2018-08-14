@@ -1,25 +1,87 @@
 package bitcamp.java106.pms.web.json;
 
+import java.io.File;
+import java.util.List;
+import java.util.UUID;
+
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import bitcamp.java106.pms.domain.Board;
 import bitcamp.java106.pms.domain.Member;
 import bitcamp.java106.pms.service.BoardService;
+import net.coobird.thumbnailator.Thumbnails;
 
 @RestController
 @RequestMapping("/board")
 public class BoardController {
+    
+    @Autowired ServletContext sc;
     
     BoardService boardService;
     
     public BoardController(BoardService boardService) {
         this.boardService = boardService;
     }
+    
+    @RequestMapping("add")
+    public void add(Board board, MultipartFile[] files, HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        int userNo = member.getNo();
+        
+        board.setMemno(userNo);
+        
+        String filesDir = sc.getRealPath("/files/board");
+        String filename = UUID.randomUUID().toString();
+        
+        try {
+            File path = new File(filesDir + "/" + filename);
+            files[0].transferTo(path);
+            System.out.println(path);
+            
+            Thumbnails.of(path)
+            .size(50, 50)
+            .outputFormat("jpg")
+            .toFile(path.getCanonicalPath()+"_50x50");
+            
+            Thumbnails.of(path)
+            .size(100, 100)
+            .outputFormat("jpg")
+            .toFile(path.getCanonicalPath()+"_100x100");
+            
+            Thumbnails.of(path)
+            .size(150, 150)
+            .outputFormat("jpg")
+            .toFile(path.getCanonicalPath()+"_150x150");
+            
+            Thumbnails.of(path)
+            .size(200, 200)
+            .outputFormat("jpg")
+            .toFile(path.getCanonicalPath()+"_200x200");
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        board.setPath(filename);
+        
+        boardService.add(board);
+    }
+    
+    @RequestMapping("mpboard")
+    public List<Board> mpboard(HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        int userNo = member.getNo();
+        return boardService.mpboard(userNo);
+    }
+    
     
     @RequestMapping("list")
     public Object list(

@@ -21,6 +21,7 @@
     <result column="nknm" property="nickname"/>
     <result column="tname" property="hashtag"/>
     <result column="crtdt" property="comments"/>
+    <result column="cmtCnt" property="commtCnt"/>
     
     <result column="pox" property="poX"/>
     <result column="poy" property="poY"/>
@@ -123,6 +124,36 @@
   <select id="selectLinkOne" resultMap="BoardMap">
     SELECT * FROM `INTR_BRLK` ORDER BY LNO DESC LIMIT 1
   </select>
+  
+   <insert id="insert" parameterType="Board">
+    INSERT INTO `INTR_BOARD`
+    (`MEMNO`, `BRTDT`, `BOCTT`, `PATH`) 
+    VALUES (#{memno},now(),#{content},#{path});
+  </insert>
+  
+  <select id="selectRecent" resultMap="BoardMap">
+    select bno from INTR_BOARD order by bno desc limit 1 
+  </select>
+  
+  <select id="selectMyBoard" resultMap="BoardMap">
+    SELECT b.BNO, COUNT(l.LNO) cnt, COUNT(c.CNO) cmtCnt, b.PATH
+    FROM INTR_BOARD b 
+        LEFT OUTER JOIN INTR_LKMB l 
+        ON b.BNO = l.BNO 
+        LEFT OUTER JOIN INTR_BCMMT c 
+        ON b.BNO = c.BNO 
+    WHERE b.memno = #{bno}
+    GROUP BY b.BNO
+    ORDER BY b.BNO DESC
+  </select>
+  
+ <!--  <select id="selectMyBoard" parameterType ="int" resultMap="Map">
+    SELECT bno, path 
+    FROM INTR_BOARD  
+    WHERE memno = #{value};
+  </select> -->
+  
+  
 </mapper>
 
 
