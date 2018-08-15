@@ -37,37 +37,56 @@
                 <!-- sp-sb-header2 -->
 
                 <!-- id 부분은 나중에 DB 용으로 남겨두었다. -->
-                <div class="form-group">
-                    <table class="table sp-table-sub">
-                        <thead id="workshop-list" style="background:#eee;">
-				            <th class="sp-table-left" style="width:80%;border-bottom: 1px solid gray;border-top:1px solid gray">주문 스토어 : <span id="studioName" style="color:#ffc001"></span></th>
-				            <th class="sp-table-right sp-table-center" style="border-bottom: 1px solid gray;">배송비</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-				               <td class="sp-table-left ">
-				                   <div class="col-sm-10 row" style="vertical-align: middle">
-				                       <div class="sp-product-image col-sm-1">
-				                           <img id="mainPhoto" src="../../images/works/works_list/{{path}}" width="100px" height="100px">
-				                       </div>
-				                       <div class="sp-product-store col-sm-7">
-				                           <!--차후에 조건문 추가할 것! width 길이의 따라 줄바꿈 실행 하도록!! -->
-				                           [<span class="studioName">가구명</span>] <span id="title">제품</span><br> <span id="optionValue">옵션</span>
-				                       </div>
-				                       <div class="sp-price-store col-sm-4">
-				                           <span id="allPrice">0</span> 원 | 수량 : <span id="buyValue">1</span>
-				                       </div>
-				                   </div>
-				               </td>
-				               <td class="sp-table-right" style="vertical-align: middle; text-align: center">선결제<br>
-				                   <span id="allDeliveryPrice">0</span>원
-				               </td>
-			              </tr>
-                        </tbody>
-                    </table>
+                <div class="form-group" id="workshop-list">
+                    
+                            <!-- 핸들바 처리 - 공방부분 -->
+                    
                 </div>
             </div>
             
+    <script id="workshop-template" type="text/x-handlebars-template">
+        {{#each studioNames}}
+                    <table class="table sp-table-sub" >
+                        <thead  style="background:#eee;">
+                            <th class="sp-table-left" style="width:80%;border-bottom: 1px solid gray;border-top:1px solid gray">주문 스토어 : <span id="studioName{{workshopNumber}}" style="color:#ffc001">{{studioName}}</span></th>
+                            <th class="sp-table-right sp-table-center" style="border-bottom: 1px solid gray;">배송비</th>
+                        </thead>
+
+                        {{!-- 장바구니 제품 목록 --}}
+                        <tbody id="works-list{{workshopNumber}}">
+
+                        </tbody>
+                    </table>
+        {{/each}}
+    </script>
+
+    <script id="works-template" type="text/x-handlebars-template">
+        {{#each worksPurchase}}
+        
+            <tr>
+                <td class="sp-table-left">
+                    <div class="col-sm-10 row" style="vertical-align: middle">
+                        <div class="sp-product-image col-sm-1">
+                            <img src="../../images/works/works_list/{{path}}" width="100px" height="100px">
+                        </div>
+                        <div class="sp-product-store col-sm-7">
+                            <!--차후에 조건문 추가할 것! width 길이의 따라 줄바꿈 실행 하도록!! -->
+                            [{{studioName}}] {{title}}<br> {{attributeValue}}
+                        </div>
+                        <div class="sp-price-store col-sm-4">
+                            <span id="allPrice{{worksNumber}}">{{priceValue}}</span> 원 | 수량 : <span id="buyValue{{worksNumber}}">{{buyValue}}</span>
+                        </div>
+                    </div>
+                </td>
+                <td class="sp-table-right" style="vertical-align: middle; text-align: center">선결제<br>
+                    {{!-- 배송비 --}}
+                    <span id="allDeliveryPrice{{worksNumber}}">{{resultDelivery}}</span>원
+                </td>
+            </tr>
+        
+        {{/each}}
+    </script>
+
             <!-- 여기는 배송지 정보 폼 -->
             <h5 class="sp-title sp-title-sub sp-margin-top">배송지 정보</h5>
 
@@ -206,11 +225,12 @@
         
     </footer>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
     <script src="../../js/common.js"></script>
     <script src="../../js/header.js"></script>
     <script src="../../js/footer.js"></script>
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-    <script src="../../js/sp_purchase.js"></script>
+    <script src="../../js/sp_purchase_buscket.js"></script>
     
 </body>
 

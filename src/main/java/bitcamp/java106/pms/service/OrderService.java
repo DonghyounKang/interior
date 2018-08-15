@@ -13,11 +13,12 @@ public interface OrderService {
     // 업무 용어를 사용하라!
     List<Order> list(int no);
     Order get(int no);
-    int add(Order order);
     int update(Order order);
     
     //관리자 전용
     int adUpdate(Order order);
     Object adGet(int no);
     List<Object> adList(int no);
+    void add(Order order); // 주문
+    List<Integer> AllOrderNumber();
 }

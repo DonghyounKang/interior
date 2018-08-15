@@ -24,4 +24,5 @@ public interface OrderDao {
 
     List<Object> adList(int no);
 
+    List<Integer> selectOrderNumberList();
 }

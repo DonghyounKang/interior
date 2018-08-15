@@ -84,6 +84,32 @@ where odn.wono = #{value}
    	WHERE odno = #{no}
   </update>
   
+  
+  <select id="selectOne" parameterType="int" resultMap="OrderMap">
+    select *
+    from INTR_ORDER 
+    where odno=#{value}
+  </select>
+  
+  <insert id="insert" parameterType="Order"
+          useGeneratedKeys="true" keyColumn="odno" keyProperty="no">
+    insert into INTR_ORDER(odno, memno, mopay, dcost, tamnt,
+            odate, odstt, dlmemo, zcode, baddr, daddr) 
+    values(#{no}, #{memberNo}, #{methodPay}, #{devCost}, #{totalCost},
+            now(), #{orderState}, #{devMemo}, #{post}, #{baseAddr}, #{detailAddr})
+  </insert>
+  
+  <select id="selectList" resultMap="OrderMap" parameterType="int">
+        SELECT * FROM INTR_ORDER where no = #{value}
+  </select>
+  
+  <!-- 여기는 주문번호만 전체 조회하는 용도 
+       <물론 이건 insert 작업 전 주문번호가 중복 되지 않기를 방지를 하기 위해>
+  -->
+  <select id="selectOrderNumberList" resultType="int">
+        SELECT odno FROM INTR_ORDER
+  </select>
+  
  <!--  <select id="selectList" 
           resultType="Map" 
           parameterType="map">

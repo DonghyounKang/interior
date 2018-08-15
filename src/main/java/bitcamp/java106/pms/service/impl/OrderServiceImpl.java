@@ -1,7 +1,6 @@
 // 업무로직 구현체 - 고객사 마다 다른 구현을 할 수 있다.
 package bitcamp.java106.pms.service.impl;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -37,8 +36,8 @@ public class OrderServiceImpl implements OrderService {
     
     
     @Override
-    public int add(Order order) {
-        return orderDao.insert(order);
+    public void add(Order order) {
+        orderDao.insert(order);
     }
     
     @Override
@@ -58,10 +57,16 @@ public class OrderServiceImpl implements OrderService {
     public Object adGet(int no) {
         return orderDao.adGet(no);
     }
-
+    
     @Override
     public List<Object> adList(int no) {
         return orderDao.adList(no); 
+    }
+
+    // 전체 주문번호 조회
+    @Override
+    public List<Integer> AllOrderNumber() {
+        return orderDao.selectOrderNumberList();
     }
     
     
