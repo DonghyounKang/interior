@@ -1,5 +1,6 @@
 package bitcamp.java106.pms.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -20,4 +21,11 @@ public interface OrderService {
     int adUpdate(Order order);
     Object adGet(int no);
     List<Object> adList(int no);
+    Object returnList(int no);
+    Object getReturnState(int no);
+    
+    int finClaim(String qs);
+    int chngExchange(String qs);
+    int chngReturn(String qs);
+    List<Object> rejSelectList(int no, int userNo);
 }

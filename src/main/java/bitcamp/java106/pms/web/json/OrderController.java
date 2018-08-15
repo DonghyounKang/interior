@@ -1,11 +1,14 @@
 package bitcamp.java106.pms.web.json;
 
+import java.util.HashMap;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,6 +49,50 @@ public class OrderController {
     public Object adView(@PathVariable int no) throws Exception {
         return orderService.adGet(no);
     }
+    
+    //관리자 클레임 list
+    @RequestMapping("returnList")
+    public Object returnList(HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        int no = member.getNo();
+        return orderService.returnList(no);
+    }
+    
+    @RequestMapping("getReturnState") 
+    public Object getCurrentState(HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        int no = member.getNo();
+        return orderService.getReturnState(no);
+    }
+    
+    //관리자 update
+    @RequestMapping("finClaim")
+    @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
+    public int finClaim(@RequestBody String qs) throws Exception {
+        return orderService.finClaim(qs);
+    }
+    //관리자 update
+    @RequestMapping("chngExchange")
+    @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
+    public int chngExchange(@RequestBody String qs) throws Exception {
+        return orderService.chngExchange(qs);
+    }
+    //관리자 update
+    @RequestMapping("chngReturn")
+    @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
+    public int chngReturn(@RequestBody String qs) throws Exception {
+        return orderService.chngReturn(qs);
+    }
+    
+    @RequestMapping("rejSelectList")
+    public Object adList(int no, HttpSession session) {
+        System.out.println(no);
+        Member member = (Member)session.getAttribute("loginUser");
+        int userNo = member.getNo();
+        System.out.println(userNo);
+        return orderService.rejSelectList(no, userNo);
+    }
+    
     
     
     
