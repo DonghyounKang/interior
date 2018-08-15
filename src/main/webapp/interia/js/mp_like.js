@@ -2,7 +2,7 @@ $.getJSON("../../../json/mylike/list", (data) => {
 	for (let item of data) {
 		$('<a onclick="mkmodal('+ item.BNO +')" href="#myModal" data-toggle="modal">'+
 			'<div class="ib-mp-post">'+
-				'<img src="../../images/sns/'+ item.PATH +'" class="ib-mp-postimage" alt="게시물">'+
+				'<img src="../../../files/board/'+ item.path +'_1000x1000.jpg" class="ib-mp-postimage" alt="게시물">'+
 				'<div class="ib-mp-icons post_like_count'+ item.BNO +'"></div>'+
 			'</div>'+	
 		  '</a>').appendTo('.ib-mp-pgroup');
