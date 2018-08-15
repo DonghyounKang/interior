@@ -15,6 +15,8 @@ public class Board implements Serializable {
     private int count;
     private int like;
     private int commtCnt;
+    private String[] boardhashtag;
+    private int totalCnt;
     
     private String hashtag;
     private String nickname;
@@ -25,16 +27,21 @@ public class Board implements Serializable {
     private int poX;
     private int poY;
     private int lno;
-    private String[] boardhashtag;
     
     
     @Override
     public String toString() {
         return "Board [no=" + no + ", memno=" + memno + ", createDate=" + createDate + ", content=" + content
-                + ", path=" + path + ", count=" + count + ", like=" + like + ", commtCnt=" + commtCnt + ", hashtag="
-                + hashtag + ", nickname=" + nickname + ", comments=" + comments + ", product=" + product + ", address="
-                + address + ", poX=" + poX + ", poY=" + poY + ", lno=" + lno + ", boardhashtag="
-                + Arrays.toString(boardhashtag) + "]";
+                + ", path=" + path + ", count=" + count + ", like=" + like + ", commtCnt=" + commtCnt
+                + ", boardhashtag=" + Arrays.toString(boardhashtag) + ", totalCnt=" + totalCnt + ", hashtag=" + hashtag
+                + ", nickname=" + nickname + ", comments=" + comments + ", product=" + product + ", address=" + address
+                + ", poX=" + poX + ", poY=" + poY + ", lno=" + lno + "]";
+    }
+    public int getTotalCnt() {
+        return totalCnt;
+    }
+    public void setTotalCnt(int totalCnt) {
+        this.totalCnt = totalCnt;
     }
     public int getCommtCnt() {
         return commtCnt;

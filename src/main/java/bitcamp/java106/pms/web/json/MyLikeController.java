@@ -35,4 +35,11 @@ public class MyLikeController {
     public Object commentCount(@PathVariable int no) throws Exception {
         return myLikeService.commentCount(no);
     }
+    
+    @RequestMapping("mpLikeCnt")
+    public int mpLikeCnt(HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        int userNo = member.getNo();
+        return myLikeService.mpLikeCnt(userNo);
+    }
 }

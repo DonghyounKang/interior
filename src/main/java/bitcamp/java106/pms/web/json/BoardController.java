@@ -77,6 +77,13 @@ public class BoardController {
         return boardService.mpboard(userNo);
     }
     
+    @RequestMapping("mpBoardCnt")
+    public int mpBoardCnt(HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        int userNo = member.getNo();
+        return boardService.mpBoardCnt(userNo);
+    }
+    
     
     @RequestMapping("list")
     public Object list(

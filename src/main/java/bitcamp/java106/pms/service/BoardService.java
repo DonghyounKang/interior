@@ -22,4 +22,5 @@ public interface BoardService {
     Board selectLinkOne();
     void add(Board board);
     List<Board> mpboard(int userNo);
+    int mpBoardCnt(int userNo);
 }

@@ -17,6 +17,13 @@ $.getJSON("../../../json/mylike/list", (data) => {
 });
 
 
+// 좋아요한 개수
+$.getJSON(serverRoot + "/json/mylike/mpLikeCnt", (data) => {
+	console.log(data);
+	$('<span class="ib-mp-pnum">' + data + '<span>').appendTo(".ib-mp-titl > p");
+});
+
+
 
 
 
