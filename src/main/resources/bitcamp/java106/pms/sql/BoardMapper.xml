@@ -136,7 +136,7 @@
   </select>
   
   <select id="selectMyBoard" resultMap="BoardMap">
-    SELECT b.BNO, COUNT(l.LNO) cnt, COUNT(c.CNO) cmtCnt, b.PATH
+    SELECT b.BNO, COUNT(DISTINCT l.LNO) cnt, COUNT(DISTINCT c.CNO) cmtCnt, b.PATH
     FROM INTR_BOARD b 
         LEFT OUTER JOIN INTR_LKMB l 
         ON b.BNO = l.BNO 
