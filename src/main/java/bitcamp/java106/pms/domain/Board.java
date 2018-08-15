@@ -18,6 +18,8 @@ public class Board implements Serializable {
     private String[] boardhashtag;
     private int totalCnt;
     
+    private String profile;
+    
     private String hashtag;
     private String nickname;
     private String comments;
@@ -28,14 +30,13 @@ public class Board implements Serializable {
     private int poY;
     private int lno;
     
-    
     @Override
     public String toString() {
         return "Board [no=" + no + ", memno=" + memno + ", createDate=" + createDate + ", content=" + content
                 + ", path=" + path + ", count=" + count + ", like=" + like + ", commtCnt=" + commtCnt
-                + ", boardhashtag=" + Arrays.toString(boardhashtag) + ", totalCnt=" + totalCnt + ", hashtag=" + hashtag
-                + ", nickname=" + nickname + ", comments=" + comments + ", product=" + product + ", address=" + address
-                + ", poX=" + poX + ", poY=" + poY + ", lno=" + lno + "]";
+                + ", boardhashtag=" + Arrays.toString(boardhashtag) + ", totalCnt=" + totalCnt + ", profile=" + profile
+                + ", hashtag=" + hashtag + ", nickname=" + nickname + ", comments=" + comments + ", product=" + product
+                + ", address=" + address + ", poX=" + poX + ", poY=" + poY + ", lno=" + lno + "]";
     }
     public int getTotalCnt() {
         return totalCnt;
@@ -144,6 +145,12 @@ public class Board implements Serializable {
     }
     public void setLike(int like) {
         this.like = like;
+    }
+    public String getProfile() {
+        return profile;
+    }
+    public void setProfile(String profile) {
+        this.profile = profile;
     }
     
     
