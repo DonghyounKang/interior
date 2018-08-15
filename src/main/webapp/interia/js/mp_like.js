@@ -41,10 +41,7 @@ window.onload = function() {
 }
 
 
-// 좋아요한 게시물 개수
-$.getJSON(serverRoot + "/json/mylike/mpLikeCnt", (data) => {
-	$('<span class="ib-mp-pnum">' + data + '<span>').appendTo(".ib-mp-titl > p");
-});
+
 
 
 
