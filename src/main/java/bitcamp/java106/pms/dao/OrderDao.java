@@ -39,4 +39,5 @@ public interface OrderDao {
 
     List<Object> rejSelectList(HashMap<String, Object> param);
 
+    List<Integer> selectOrderNumberList();
 }

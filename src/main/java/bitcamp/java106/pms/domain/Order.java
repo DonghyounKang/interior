@@ -60,11 +60,16 @@ public class Order implements Serializable {
     }
     @Override
     public String toString() {
-        return "Order [no=" + no + ", memberNo=" + memberNo + ", methodPay=" + methodPay + ", devCost=" + devCost
-                + ", totalCost=" + totalCost + ", orderDate=" + orderDate + ", orderState=" + orderState + ", devMemo="
-                + devMemo + ", curir=" + curir + ", post=" + post + ", baseAddr=" + baseAddr + ", detailAddr="
-                + detailAddr + ", ivno=" + ivno + ", claimDate=" + claimDate + ", claimRequest=" + claimRequest
-                + ", claimContext=" + claimContext + ", proState=" + proState + ", proContext=" + proContext + "]";
+        return "Order [no=" + no + ", memberNo=" + memberNo + ", methodPay="
+                + methodPay + ", devCost=" + devCost + ", totalCost="
+                + totalCost + ", orderDate=" + orderDate + ", orderState="
+                + orderState + ", receiver=" + receiver + ", devMemo=" + devMemo
+                + ", curir=" + curir + ", deliDate=" + deliDate + ", post="
+                + post + ", baseAddr=" + baseAddr + ", detailAddr=" + detailAddr
+                + ", ivno=" + ivno + ", claimDate=" + claimDate
+                + ", claimRequest=" + claimRequest + ", claimContext="
+                + claimContext + ", proState=" + proState + ", proContext="
+                + proContext + ", odnwk=" + odnwk + ", works=" + works + "]";
     }
     
     

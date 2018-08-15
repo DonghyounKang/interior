@@ -156,5 +156,11 @@ public class BoardServiceImpl implements BoardService {
         return boardDao.selectMyBoard(no);
     }
 
+    @Override
+    public int mpBoardCnt(int no) {
+        return boardDao.totalBoardCount(no);
+    }
+    
+
 
 }

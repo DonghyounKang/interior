@@ -1,8 +1,10 @@
+// 게시물 개수
+$.getJSON(serverRoot + "/json/board/mpBoardCnt", (data) => {
+	$('<span class="ib-mp-pnum">' + data + '<span>').appendTo(".ib-mp-titl > p");
+});
 
-//var mpPostTemplateSrc = $('#post-template').html();
-//var mpPostCompile = Handlebars.compile(mpPostTemplateSrc);
 
-
+// 내가 쓴 게시물
 $.getJSON(serverRoot + "/json/board/mpboard", (data) => {
 	console.log(data);
 	
@@ -20,7 +22,7 @@ $.getJSON(serverRoot + "/json/board/mpboard", (data) => {
 });
 
 
-
+// 이미지 가로세로 정렬
 window.onload = function() {
 	var divs = document.querySelectorAll('.ib-mp-post');
 	for (var i = 0; i < divs.length; ++i) {
