@@ -11,7 +11,7 @@ $("#loginBtn").click(() => {
     // 코드2 등
     $.post(serverRoot + "/json/auth/login", data, (result) => {
         if (result.state == "success") {
-        	location.replace(history.go(-1)); 
+        	location.href = '../main/index.html';
         }
         else 
             window.alert("로그인 실패!");
