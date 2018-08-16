@@ -18,7 +18,7 @@ function mkmodal(no) {
 				'<div class="photo-container-box">'+
 					'<div class="photo-detail-header">'+
 						'<div class="photo-header-profile">'+
-							'<img src="../../images/sns/'+ data.profile +'" class="profile-img-tag" alt="">'+
+							'<img src="../../../files/profile/'+ data.profile +'" class="profile-img-tag" alt="">'+
 						'</div>'+
 						'<div class="photo-header-userId">'+
 							'<a href="#"><span>'+ data.nickname +'</span></a>'+

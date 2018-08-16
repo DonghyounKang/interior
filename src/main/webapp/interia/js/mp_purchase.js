@@ -12,7 +12,7 @@ function fnPurch(num) {
 					<h5><b>리뷰쓰기</b></h5>
 					<div class="sp-rev-top">
 						<div class="sp-rev-imgBox">
-							<img src="../../images/works/works_list/`+ data[0].path +`">
+							<img src="../../../files/works/`+ data[0].path +`">
 						</div>
 						<div>
 							<p id='mp_purTitl'>`+ data[0].mutua +`</p>
@@ -120,7 +120,7 @@ function fnMod(num) {
 						<h5><b>리뷰쓰기</b></h5>
 						<div class="sp-rev-top">
 							<div class="sp-rev-imgBox">
-								<img src="../../images/works/works_list/`+ data[0].path +`">
+								<img src="../../../files/works/`+ data[0].path +`">
 							</div>
 							<div>
 								<p id='mp_purTitl'>`+ data[0].mutua +`</p>
