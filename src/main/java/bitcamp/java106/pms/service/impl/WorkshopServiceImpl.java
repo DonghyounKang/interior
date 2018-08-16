@@ -224,6 +224,11 @@ public class WorkshopServiceImpl implements WorkshopService {
         }
         return 1;
     }
+
+    @Override
+    public Object getInfo(int memno) {
+        return workshopDao.getInfo(memno);
+    }
 }
 
 

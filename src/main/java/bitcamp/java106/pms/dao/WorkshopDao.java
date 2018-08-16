@@ -36,5 +36,6 @@ public interface WorkshopDao {
     void updTwit(Workshop workshop);
     void updFacbook(Workshop workshop);
     void updInsta(Workshop workshop);
+    Object getInfo(int memno);
 
 }

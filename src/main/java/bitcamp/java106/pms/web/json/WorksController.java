@@ -41,7 +41,7 @@ public class WorksController {
     @ResponseStatus(HttpStatus.CREATED)
     public void add(Works works, MultipartFile[] files) throws Exception {
 
-        String filesDir = sc.getRealPath("/files");
+        String filesDir = sc.getRealPath("/files/works");
         
         
         ArrayList<WorksPhoto> worksPhotos = new ArrayList<>();
@@ -106,7 +106,7 @@ public class WorksController {
     @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
     public void update(Works works, MultipartFile[] files) throws Exception {
         
-        String filesDir = sc.getRealPath("/files");
+        String filesDir = sc.getRealPath("/files/works");
         
         System.out.println(works.getWorkshopNumber());
         ArrayList<WorksPhoto> worksPhotos = new ArrayList<>();
@@ -214,7 +214,7 @@ public class WorksController {
         
         HashMap<String,Object> jsonData = new HashMap<>();
         
-        String filesDir = sc.getRealPath("/files");
+        String filesDir = sc.getRealPath("/files/works");
         
         String filename = UUID.randomUUID().toString();
         jsonData.put("filename", filename);

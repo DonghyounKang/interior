@@ -67,7 +67,7 @@ public class RvphoController {
         
         HashMap<String,Object> jsonData = new HashMap<>();
         
-        String filesDir = sc.getRealPath("/files");
+        String filesDir = sc.getRealPath("/files/review");
         
         String filename = UUID.randomUUID().toString();
         jsonData.put("filename", filename);
