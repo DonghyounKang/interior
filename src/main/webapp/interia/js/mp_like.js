@@ -2,7 +2,7 @@ $.getJSON("../../../json/mylike/list", (data) => {
 	for (let item of data) {
 		$('<a onclick="mkmodal('+ item.BNO +')" href="#myModal" data-toggle="modal">'+
 			'<div class="ib-mp-post">'+
-				'<img src="../../../files/board/'+ item.path +'_1000x1000.jpg" class="ib-mp-postimage" alt="게시물">'+
+				'<img src="../../../files/board/'+ item.PATH +'_1000x1000.jpg" class="ib-mp-postimage" alt="게시물">'+
 				'<div class="ib-mp-icons post_like_count'+ item.BNO +'"></div>'+
 			'</div>'+	
 		  '</a>').appendTo('.ib-mp-pgroup');
@@ -38,6 +38,7 @@ window.onload = function() {
 			img.style.cssText = 'width: 100%; height: auto; margin-left: 0;';
 		}
 	}
+	
 }
 
 
