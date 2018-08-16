@@ -5,6 +5,7 @@ $.get(serverRoot + "/interia/html/admin/store_admin_header.html", (data) => {
 });
 
 
+
 function loadLoginUser() {
 	$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 		
@@ -88,15 +89,14 @@ function loadLoginUser() {
 		location.href = serverRoot + "/interia/html/auth/login.html";
 	}); 
 }
-
-
-
-
-/*$.getJSON(serverRoot + "/json/workshop/getInfo", (data) => {
-	console.log(data);
-		#(wsnm).text(data.)
-	
-});*/
+$.getJSON(serverRoot + "/json/workshop/getInfo", (data) => {
+    console.log(data);
+    $("<div class='ad-navbar-img'>" +
+          "<img src='../../../files/" + data.lpath + "'>" +
+      "</div>" +
+      "<p>" + data.wsnm + "</p>"
+    ).appendTo(".ad-navbar-storename");
+});
 
 
 
