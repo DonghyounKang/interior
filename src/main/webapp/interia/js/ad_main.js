@@ -11,7 +11,7 @@ $(function () {
 
 
 $('#fileupload').fileupload({
-	url: '../../../json/workshop/addAdpic',
+	url: serverRoot+ '/json/workshop/addAdpic',
 	dataType: 'json',
 	sequentialUploads: true,
 	singleFileUploads: false,

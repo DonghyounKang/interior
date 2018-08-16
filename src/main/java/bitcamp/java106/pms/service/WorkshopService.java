@@ -40,4 +40,5 @@ public interface WorkshopService {
     int delete(int no);
     int addAdpic(int no, ArrayList<Wspho> workshopPhotos);
     int adSns(String kind, Workshop workshop);
+    Object getInfo(int no);
 }

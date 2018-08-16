@@ -4,6 +4,7 @@ $.get(serverRoot + "/interia/html/admin/store_admin_header.html", (data) => {
     loadLoginUser();
 });
 
+
 function loadLoginUser() {
 	$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 		
@@ -41,7 +42,8 @@ function loadLoginUser() {
 			location.href = serverRoot + "/interia/html/mypage/mp_post.html";
 		});
 
-		
+
+
 		
 //		// 마이페이지 관련 기능에서의 드롭다운의 대한 내용들 수정!
 //		$("#mypageName").text(data.nickname + "(마이페이지)");
@@ -86,6 +88,17 @@ function loadLoginUser() {
 		location.href = serverRoot + "/interia/html/auth/login.html";
 	}); 
 }
+
+
+
+
+/*$.getJSON(serverRoot + "/json/workshop/getInfo", (data) => {
+	console.log(data);
+		#(wsnm).text(data.)
+	
+});*/
+
+
 
 //function fntt() {
 //	$(".ad-nav-second").slideToggle("slow");

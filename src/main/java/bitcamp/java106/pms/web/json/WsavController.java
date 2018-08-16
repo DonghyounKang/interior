@@ -35,7 +35,7 @@ public class WsavController {
     @ResponseStatus(HttpStatus.CREATED)
     public void add(Wsav wsav, MultipartFile[] files) throws Exception {
         
-        String filesDir = sc.getRealPath("/files");
+        String filesDir = sc.getRealPath("/files/workshop/activity");
 //        Wsav activity= new Wsav();
         
         
@@ -109,7 +109,7 @@ public class WsavController {
     @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
     public void update(Wsav wsav, MultipartFile[] files) throws Exception {
 
-        String filesDir = sc.getRealPath("/files");
+        String filesDir = sc.getRealPath("/files/workshop/activity");
 //        Wsav activity= new Wsav();
         
         ArrayList<Wkacp> activityPhotos = new ArrayList<>();

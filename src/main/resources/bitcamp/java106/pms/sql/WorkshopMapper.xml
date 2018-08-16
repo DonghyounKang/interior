@@ -236,6 +236,15 @@
         istag=#{instagram}
     where memno=#{wno}
   </update>
+  
+    <select id="getInfo" resultType="map" parameterType="int">
+select wsnm, lpath 
+from INTR_WRKSHP wrk 
+inner join INTR_WSPHO ws 
+on wrk.memno = ws.memno 
+where wrk.memno=#{value}
+AND ws.PCLSF='main'
+  </select>
   <!-- 회원 전체 리스트 출력 -->
  <!--  <select id="selectList" 
           resultMap="MemberMap" parameterType="map">

@@ -65,6 +65,7 @@ public class MemberController {
     public Member memberInfo(HttpSession session) {
         Member member = (Member) session.getAttribute("loginUser");
         int userNo = member.getNo();
+        System.out.println(userNo);
         
         return memberService.memberInfo(userNo);
     }

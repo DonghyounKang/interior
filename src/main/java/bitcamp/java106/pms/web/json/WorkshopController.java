@@ -64,7 +64,7 @@ public class WorkshopController {
             
         HashMap<String,Object> jsonData = new HashMap<>();
         
-        String filesDir = sc.getRealPath("/files");
+        String filesDir = sc.getRealPath("/files/workshop");
         
         String filename = UUID.randomUUID().toString();
         jsonData.put("filename", filename);
@@ -227,7 +227,7 @@ public class WorkshopController {
         Member member = (Member)session.getAttribute("loginUser");
         int no = member.getNo();
         
-        String filesDir = sc.getRealPath("/files");
+        String filesDir = sc.getRealPath("/files/workshop");
         ArrayList<Wspho> workshopPhotos = new ArrayList<>();
         
         for (int i = 0; i < files.length; i++) {
@@ -274,6 +274,13 @@ public class WorkshopController {
         int no = member.getNo();
         workshop.setWno(no);
         return workshopService.adSns(kind, workshop);
+    }
+    
+    @RequestMapping("getInfo")
+    public Object getInfo(HttpSession session) throws Exception {
+        Member member = (Member)session.getAttribute("loginUser");
+        int no = member.getNo();
+        return workshopService.getInfo(no);
     }
     
     
