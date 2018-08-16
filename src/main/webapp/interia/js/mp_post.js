@@ -9,7 +9,7 @@ $.getJSON(serverRoot + "/json/board/mpboard", (data) => {
 	console.log(data);
 	
 	for (let item of data) {
-		$('<a href="#">'+
+		$('<a onclick="mkmodal('+ item.no +')" href="#myModal" data-toggle="modal">'+
 	      '<div class="ib-mp-post">'+
 	         '<img src="../../../files/board/'+ item.path +'_1000x1000.jpg" class="ib-mp-postimage" alt="게시물">' +
 	         '<div class="ib-mp-icons">'+
