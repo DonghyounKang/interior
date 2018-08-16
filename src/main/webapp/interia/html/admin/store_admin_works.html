@@ -219,9 +219,11 @@
 							<div class="modal-body">
 							<input type="text" 
 								id="wno" 
+								style="display:none;"
 								>
 							<input type="date" 
 								id="wrtdt" 
+								style="display:none;"
 								>
 								<div class="ad-modal-contentgap" style="display:flex;">
 									<b>카테고리</b> <input type="text"
@@ -277,7 +279,6 @@
 										id="ad-opt-chk"
 										onclick="openOption('.ad-works-options', this)"><span>사용하기</span>
 									<div class="ad-works-options">
-										<div class="ad-works-opt-wrapper">
 											<textarea class="form-control form-rounded ad-class-discrpt" 
 													name="content" 
 													id="abvl" cols='87'></textarea>
@@ -286,14 +287,13 @@
 													<i class="far fa-plus-square"></i>옵션 추가하기
 												</p> 
 											</div> -->
-										</div>
 									</div>
 								</div>
 								<div class="ad-modal-contentgap" id="ad-works-detail">
 								<b>제품상세</b>
 									<button class="ad-btn ad-btn-color3" id='imgUpload2' type='button'>파일첨부</button>
 									<input id="fileupload2" type="file" name="files">
-									<input type="text" id="pddt">
+									<input type="text" id="pddt"style="display:none;">
 								</div>
 							</div>
 							<div class="modal-footer">
