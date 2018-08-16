@@ -90,6 +90,17 @@ public class MemberServiceImpl implements MemberService {
         // TODO Auto-generated method stub
         return memberDao.updateBphoto(member);
     }
+
+    @Override
+    public Member memberInfo(int no) {
+        return memberDao.selectMemInfo(no);
+    }
+
+    @Override
+    public void updatePphoto(Member member) {
+        memberDao.updatePphoto(member);
+    }
+
 }
 
 

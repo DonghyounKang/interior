@@ -1,6 +1,6 @@
 package bitcamp.java106.pms.web.json;
 
-import java.util.Map;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.MatrixVariable;
@@ -59,6 +59,14 @@ public class MemberController {
     public int searchNoOfId(@PathVariable String id) throws Exception {
         System.out.println(id);
         return memberService.memberNumber(id);
+    }
+    
+    @RequestMapping("memberInfo")
+    public Member memberInfo(HttpSession session) {
+        Member member = (Member) session.getAttribute("loginUser");
+        int userNo = member.getNo();
+        
+        return memberService.memberInfo(userNo);
     }
     
 }

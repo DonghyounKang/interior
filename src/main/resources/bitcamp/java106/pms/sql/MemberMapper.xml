@@ -101,10 +101,22 @@
     select memno from INTR_MEMBER where id=#{id}
   </select>
   
-    <!-- 비밀번호 변경 관련 문법 -->
+    <!-- 마이페이지 배너 사진 업데이트 -->
   <update id="updateBphoto" parameterType="Member">
     update INTR_MEMBER set 
         mbpho=#{bannerPhoto}
+    where memno=#{no}
+  </update>
+  
+  <!-- 마이페이지 사용자 정보 가져오기 -->
+  <select id="selectMemInfo" resultMap="MemberMap">
+    SELECT ID, MPPHO, MBPHO FROM INTR_MEMBER WHERE MEMNO = #{no}
+  </select>
+  
+  <!-- 프로필 사진 업데이트 -->
+  <update id="updatePphoto" parameterType="Member">
+    update INTR_MEMBER set 
+        mppho=#{profilePhoto}
     where memno=#{no}
   </update>
   

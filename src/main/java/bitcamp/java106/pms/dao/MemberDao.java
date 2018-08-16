@@ -18,6 +18,8 @@ public interface MemberDao {
     int updatePassword(Map<String, Object> params); // 비밀번호 변경 버튼 클릭
     int selectOneNumber(String id); // 아이디를 통해 회원번호 값 추출
     int updateBphoto(Member member);
+    Member selectMemInfo(int no);
+    void updatePphoto(Member member);
 }
 
 

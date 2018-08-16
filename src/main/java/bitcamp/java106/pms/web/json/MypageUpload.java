@@ -4,7 +4,6 @@ package bitcamp.java106.pms.web.json;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Base64.Decoder;
 import java.util.HashMap;
@@ -20,8 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import bitcamp.java106.pms.domain.Member;
-import bitcamp.java106.pms.domain.Wkacp;
 import bitcamp.java106.pms.service.MemberService;
+import net.coobird.thumbnailator.Thumbnails;
 
 @RestController 
 @RequestMapping("/mpfile") 
@@ -60,6 +59,21 @@ public class MypageUpload {
              jsonData.put("status", "success");
              jsonData.put("filename", filename);
              
+             Thumbnails.of(path)
+             .size(400, 400)
+             .outputFormat("jpg")
+             .toFile(path.getCanonicalPath()+"_400x400");
+             
+             Thumbnails.of(path)
+             .size(800, 800)
+             .outputFormat("jpg")
+             .toFile(path.getCanonicalPath()+"_800x800");
+             
+             Thumbnails.of(path)
+             .size(1000, 1000)
+             .outputFormat("jpg")
+             .toFile(path.getCanonicalPath()+"_1000x1000");
+             
          } catch (Exception e) {
              jsonData.put("status", "fail");
              e.printStackTrace();
@@ -76,24 +90,52 @@ public class MypageUpload {
      }
      
      @PostMapping("profile")
-     public Object profile(
-             MultipartFile files) {
+     public Object profile(MultipartFile files, HttpSession session) {
+         System.out.println(files);
          
          HashMap<String,Object> jsonData = new HashMap<>();
          
+         Member member = (Member)session.getAttribute("loginUser");
+         int userNo = member.getNo();
+         
          String filesDir = sc.getRealPath("/files/mypage/profile");
-     
+         
          String filename = UUID.randomUUID().toString();
          jsonData.put("filename", filename);
          jsonData.put("filesize", files.getSize());
          jsonData.put("originname", files.getOriginalFilename());
+         
+         System.out.println(files);
          try {
              File path = new File(filesDir + "/" + filename);
-             System.out.println(path);
              files.transferTo(path);
+             
+             Thumbnails.of(path)
+             .size(400, 400)
+             .outputFormat("jpg")
+             .toFile(path.getCanonicalPath()+"_400x400");
+             
+             Thumbnails.of(path)
+             .size(800, 800)
+             .outputFormat("jpg")
+             .toFile(path.getCanonicalPath()+"_800x800");
+             
+             Thumbnails.of(path)
+             .size(1000, 1000)
+             .outputFormat("jpg")
+             .toFile(path.getCanonicalPath()+"_1000x1000");
+             
          } catch (Exception e) {
              e.printStackTrace();
          }
+         
+         Member updMember = new Member();
+         updMember.setNo(userNo);
+         updMember.setProfilePhoto(filename);
+         
+         memberService.updatePphoto(updMember);
+         
+         jsonData.put("status", "success");
          return jsonData;
      }
 }
