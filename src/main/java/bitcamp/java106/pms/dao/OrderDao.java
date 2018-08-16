@@ -26,6 +26,8 @@ public interface OrderDao {
     List<Object> adList(int no);
 
     List<Object> returnList(int no);
+    
+    List<Object> cancelList(int no);
 
     Object getReturnState(int no);
 
@@ -40,4 +42,16 @@ public interface OrderDao {
     List<Object> rejSelectList(HashMap<String, Object> param);
 
     List<Integer> selectOrderNumberList();
+
+    int updateClaimReject(HashMap<String, Object> param);
+
+    Object getCancelState(int no);
+
+    void finCancel(HashMap<String, Object> param);
+
+    int updateCancelReject(HashMap<String, Object> param);
+
+    int getOrderNo(int wono);
+
+
 }

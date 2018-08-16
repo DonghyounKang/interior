@@ -7,7 +7,7 @@ var adReturnWrapperTemplate = Handlebars.compile(adReturnWrapperTemplateSrc);
 
 var adClaimRejectData = $('.ad-claimReject-data');
 var adClaimRejectWrapperTemplateSrc = $('#ad-claimReject-template').html();
-var adClaimWrapperTemplate = Handlebars.compile(adClaimRejectWrapperTemplateSrc);
+var adClaimRejectWrapperTemplate = Handlebars.compile(adClaimRejectWrapperTemplateSrc);
 
 
 /* Return State */
@@ -21,6 +21,7 @@ $.getJSON(serverRoot + "/json/order/getReturnState", (data) => {
 /* Return List */
 $.getJSON(serverRoot + "/json/order/returnList", (data) => {
 console.log(data);
+
 	for (var item of data) {
 		var orderDate = new Date(item.odate); 
 		var date = new Date(orderDate); 
@@ -164,8 +165,8 @@ adReturnData.on('click', '.ad-order-update', function(e) {
 			orderNo = td.eq(2).text();
 		});
 		
-		console.log(orderNo);
-		
+	    $('#odno').text(orderNo);
+	    
 	    var selected_value = []; // initialize empty array 
 	    $("input[name=chk]:checked").each(function(){
 	        selected_value.push($(this).val());
@@ -174,14 +175,12 @@ adReturnData.on('click', '.ad-order-update', function(e) {
 	    
 	    $.getJSON(serverRoot + "/json/order/rejSelectList",{"no":orderNo}, (data) => {
 	    	console.log(data);
-
 	    	$(adClaimRejectWrapperTemplate({list: data})).appendTo(adClaimRejectData);
 	    	});
-
 	});
 		
 	$('#chngToExchangeBtn').click(function () {
-	    var selected_value = []; // initialize empty array 
+	    var selected_value = new Array(); // initialize empty array 
 	    $("input[name=chk]:checked").each(function(){
 	        selected_value.push($(this).val());
 	    });
@@ -190,9 +189,6 @@ adReturnData.on('click', '.ad-order-update', function(e) {
 	    var param = {
 	    		chkArr : selected_value
 	    }
-	    
-
-	    
 	    $.ajax({
 	    	url: serverRoot + "/json/order/chngExchange",
 	    	type: "post",
@@ -204,7 +200,7 @@ adReturnData.on('click', '.ad-order-update', function(e) {
 	});
 		
 	$('#chngToReturnBtn').click(function () {
-	    var selected_value = []; // initialize empty array 
+	    var selected_value = new Array(); // initialize empty array 
 	    $("input[name=chk]:checked").each(function(){
 	        selected_value.push($(this).val());
 	    });
@@ -243,6 +239,30 @@ adReturnData.on('click', '.ad-order-update', function(e) {
 		        }
 		});
 		});
+	
+	$('#updRejectBtn').click(function () {
+		console.log(selected_value);
+	    var selected_value = new Array(); // initialize empty array 
+	    console.log(selected_value);
+	    $("input[name=mchk]:checked").each(function(){
+	        selected_value.push($(this).val());
+	    });
+	    console.log(selected_value); //Press F12 to see all selected values
+	
+	    var param = {
+	    		arr: selected_value,
+	    		prdtl: $(prdtl).val()
+	    }
+	    console.log(param);
+	    $.ajax({
+	    	url: serverRoot + "/json/order/updClaimReject",
+	    	type: "post",
+	    	data: param,
+	    	success: function(data){
+	    		console.log(data);
+	    	}
+	    });
+	});
 	
 	
 /*

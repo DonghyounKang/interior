@@ -32,6 +32,7 @@ public class Order implements Serializable {
     private String claimContext;//클레임 사유
     private String proState;//처리상태
     private String proContext;//처리사유
+    
     private String[] chkArr; // 주문리스트에서 체크박스 선택
     
     //데이터 컨트롤

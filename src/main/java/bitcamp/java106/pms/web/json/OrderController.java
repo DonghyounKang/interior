@@ -1,6 +1,5 @@
 package bitcamp.java106.pms.web.json;
 
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -11,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -59,30 +59,55 @@ public class OrderController {
         return orderService.returnList(no);
     }
     
+    @RequestMapping("cancelList")
+    public Object cancelList(HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        int no = member.getNo();
+        return orderService.cancelList(no);
+    }
+    
     @RequestMapping("getReturnState") 
-    public Object getCurrentState(HttpSession session) {
+    public Object getReturnState(HttpSession session) {
         Member member = (Member)session.getAttribute("loginUser");
         int no = member.getNo();
         return orderService.getReturnState(no);
+    }
+    @RequestMapping("getCancelState") 
+    public Object getCancelState(HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        int no = member.getNo();
+        return orderService.getCancelState(no);
     }
     
     //관리자 update
     @RequestMapping("finClaim")
     @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
-    public int finClaim(@RequestBody String qs) throws Exception {
-        return orderService.finClaim(qs);
+    public int finClaim(@RequestParam("chkArr[]") int[] chkArr) throws Exception {
+        System.out.println(chkArr);
+        for(int i : chkArr ) {
+            System.out.println("i : " + i);
+        }
+        return orderService.finClaim(chkArr);
+
     }
+    
+    @RequestMapping("finCancel")
+    @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
+    public int finCancel(@RequestParam("chkArr[]") int[] chkArr) throws Exception {
+        return orderService.finCancel(chkArr);
+    }
+    
     //관리자 update
     @RequestMapping("chngExchange")
     @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
-    public int chngExchange(@RequestBody String qs) throws Exception {
-        return orderService.chngExchange(qs);
+    public int chngExchange(@RequestParam("chkArr[]") int[] chkArr) throws Exception {
+        return orderService.chngExchange(chkArr);
     }
     //관리자 update
     @RequestMapping("chngReturn")
     @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
-    public int chngReturn(@RequestBody String qs) throws Exception {
-        return orderService.chngReturn(qs);
+    public int chngReturn(@RequestParam("chkArr[]") int[] chkArr) throws Exception {
+        return orderService.chngReturn(chkArr);
     }
     
     @RequestMapping("rejSelectList")
@@ -93,6 +118,22 @@ public class OrderController {
         System.out.println(userNo);
         return orderService.rejSelectList(no, userNo);
     }
+    @RequestMapping("updClaimReject")
+    @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
+    public Object updClaimReject(@RequestParam("arr[]") int[] arr, String prdtl) throws Exception {
+        System.out.println(arr);
+        System.out.println(prdtl);
+        return orderService.updateClaimReject(arr, prdtl);
+    }
+    
+    @RequestMapping("updCancelReject")
+    @ResponseStatus(HttpStatus.OK) // 기본 값이 OK 이다. 
+    public int updCancelReject(String worksOrderNo, Order order) throws Exception {
+        System.out.println(worksOrderNo);
+        System.out.println(order);
+        return orderService.updateCancelReject(worksOrderNo, order);
+    }
+    
     
     
     // 전체 주문번호

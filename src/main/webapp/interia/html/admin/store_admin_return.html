@@ -201,16 +201,17 @@
 						<form>
 							<div class="modal-body">
 								<div class="ad-modal-contentgap">
-									<b>상품주문 선택</b><span>(주문번호: XXXXXX)</span>
+									<b>상품주문 선택</b>(주문번호: <span id="odno"></span>)
 								</div>
 								<table cellspacing="0" border="1" summary="명단관리  리스트"
 									class="frt_tbl_type" style="padding-right: 15px;">
 									<caption>명단관리 리스트</caption>
 									<colgroup>
 										<col width="30" />
-										<col width="*" />
-										<col width="*" />
-										<col width="*" />
+										<col width="60" />
+										<col width="60" />
+										<col width="60" />
+										<col width="10" />
 									</colgroup>
 									<thead>
 										<tr>
@@ -236,19 +237,6 @@
 											<col width="*" />
 										</colgroup>
 										<tbody class="ad-claimReject-data">
-											<tr>
-												<td class="frm"><input type="checkbox" class="chk"
-													name="chk" value="" /></td>
-												<td class="num"><a href="#">1</a></td>
-												<td class="title">홍길동</td>
-												<td class="date">참가</td>
-											</tr>	
-											
-											
-											
-											
-											
-											
 														
 										</tbody>	
 									</table>
@@ -256,13 +244,13 @@
 								<div class="ad-modal-contentgap">
 									<b>클레임 철회 사유 상세</b>
 								</div>
-								<textarea cols="50" rows="8"></textarea>
+								<textarea cols="50" rows="8" id="prdtl"></textarea>
 
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">닫기</button>
-								<button type="button" class="ad-btn ad-btn-color1">클레임철회</button>
+								<button type="button" id="updRejectBtn" class="ad-btn ad-btn-color1">클레임철회</button>
 							</div>
 						</form>
 					</div>
@@ -443,18 +431,13 @@
 
 	<script id="ad-claimReject-template" type="text/x-handlebars-template">
 {{#each list}}
- <tr>
-     <td class="frm"><input type="checkbox" id="chk{wono}}" name="chk" value="{{wono}}" /></td>
-      <td class="num ad-order-update" data-wono="{{wono}}" data-toggle="modal"
-		data-target="#orderDetailModal">{{wono}}</td>
-      <td class="title">{{odno}}</td>
-      <td class="date">{{oyear}}-{{omonth}}-{{oday}}</td>
-      <td class="writer">{{odstt}}</td>
-      <td class="writer">{{prstt}}</td>
-      <td class="writer">{{cyear}}-{{cmonth}}-{{cday}}</td>
-      <td class="writer">{{wtitl}}</td>
-      <td class="writer">{{nknm}}</td>
-</tr>
+<tr>
+	<td class="frm"><input type="checkbox" class="chk"
+		name="mchk" value="{{wono}}" /></td>
+	<td class="num">{{wono}}</td>
+	<td class="title">{{wtitl}}</td>
+	<td class="date">{{ptPrice}}</td>
+</tr>	
 {{/each}}
 </script>
 
