@@ -4,10 +4,10 @@ $.getJSON("../../../json/workshop/listkit",{"no":7}, (data) => {
                     $("<div class='fc_category_storeList00_1_bg'>" +
                             "<div class='fc_category_storeList00_1'>" +
                                 "<div class='fc_category_storeList00_2'>" +
-                                    "<img src='../../images/workshop/" + data[i].path + "' style='width: 100%;'>" +
+                                    "<img src='../../../files/workshop/" + data[i].path + "' style='width: 100%;'>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_circle'>" +
-                                    "<a href='#'><img src='../../images/workshop/" + data[i].lpath + "'></a>" +
+                                    "<a href='#'><img src='../../../files/workshop/" + data[i].lpath + "'></a>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_title'>" +
                                     "<h1>" + data[i].wsnm + "</h1>" +
@@ -42,10 +42,10 @@ $.getJSON("../../../json/workshop/listkit",{"no":7}, (data) => {
                     $("<div class='fc_category_storeList00_1_bg'>" +
                             "<div class='fc_category_storeList00_1'>" +
                                 "<div class='fc_category_storeList00_2'>" +
-                                    "<img src='../../images/workshop/" + data[i].path + "' style='width: 100%;'>" +
+                                    "<img src='../../../files/workshop/" + data[i].path + "' style='width: 100%;'>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_circle'>" +
-                                    "<a href='#'><img src='../../images/workshop/" + data[i].lpath + "'></a>" +
+                                    "<a href='#'><img src='../../../files/workshop/" + data[i].lpath + "'></a>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_title'>" +
                                     "<h1>" + data[i].wsnm + "</h1>" +

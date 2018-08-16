@@ -69,10 +69,10 @@ $.getJSON(serverRoot + "/json/works/" + no, (result) => {
 		if(result.worksPhoto[index].mainPhoto == "y" 
 			|| result.worksPhoto[index].mainPhoto == "Y") {
 			// 메인 이미지 표시
-			$("#main-image").attr("src","../../images/works/works_list/" + result.worksPhoto[index].path);
+			$("#main-image").attr("src","../../../files/works/" + result.worksPhoto[index].path);
 		} else {
 			// 서브 이미지 표시
-			$("#sub-image" + (++subIndex)).attr("src","../../images/works/works_list/" + result.worksPhoto[index].path);
+			$("#sub-image" + (++subIndex)).attr("src","../../../files/works/" + result.worksPhoto[index].path);
 		}
 	}
 	

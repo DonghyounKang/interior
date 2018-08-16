@@ -37,7 +37,7 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 				|| productData.worksPhoto[index].mainPhoto == "Y") {
 				// 메인 이미지 표시
 				mainPhoto = productData.worksPhoto[index].path;
-				$("#mainPhoto").attr("src","../../images/works/works_list/" + productData.worksPhoto[index].path);
+				$("#mainPhoto").attr("src","../../../files/works/" + productData.worksPhoto[index].path);
 				break;
 			}
 		}

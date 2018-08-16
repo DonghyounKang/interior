@@ -21,7 +21,7 @@ $('#works_seBtn').click(function() {
 			for (var i = 0; i < data.length; i++) {
 				$(`<a class="card" href="works_detail.html?`+ data[i].wno +`">
 			                <div class="sp-card-img">
-			                    <img src="../../images/works/works_list/`+ data[i].path +`" style="width:100%;">
+			                    <img src="../../../files/works/`+ data[i].path +`" style="width:100%;">
 			                </div>
 			                <div class="sp-card-content">
 			                    <div class="sp-cc1">
@@ -51,7 +51,7 @@ $('#works_seBtn').click(function() {
 				for (var i = 0; i < data.length; i++) {
 					$(`<a class="card" href="works_detail.html?`+ data[i].wno +`">
 				                <div class="sp-card-img">
-				                    <img src="../../images/works/works_list/`+ data[i].path +`" style="width:100%;">
+				                    <img src="../../../files/works/`+ data[i].path +`" style="width:100%;">
 				                </div>
 				                <div class="sp-card-content">
 				                    <div class="sp-cc1">
