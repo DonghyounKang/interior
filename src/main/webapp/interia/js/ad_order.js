@@ -110,7 +110,9 @@ $.ajax({
     	data: param,
     	success: function(data){
     		console.log(data);
+    		location.href="store_admin_order.html";
         }
+
 });
 });
 

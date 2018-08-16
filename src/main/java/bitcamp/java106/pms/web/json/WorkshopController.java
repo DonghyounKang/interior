@@ -1,10 +1,12 @@
 package bitcamp.java106.pms.web.json;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,11 +17,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import bitcamp.java106.pms.domain.Member;
+import bitcamp.java106.pms.domain.WorksPhoto;
 import bitcamp.java106.pms.domain.Workshop;
 import bitcamp.java106.pms.domain.Wspho;
 import bitcamp.java106.pms.service.MemberService;
 import bitcamp.java106.pms.service.WorkshopService;
 import bitcamp.java106.pms.service.WsphoService;
+import net.coobird.thumbnailator.Thumbnails;
 
 @RestController
 @RequestMapping("/workshop")
@@ -215,6 +220,62 @@ public class WorkshopController {
     public Workshop view(@PathVariable int no) throws Exception {
         return workshopService.get(no);
     }
+    
+    @RequestMapping("addAdpic")
+    public Object addAdpic(HttpSession session, MultipartFile[] files) throws Exception {
+        
+        Member member = (Member)session.getAttribute("loginUser");
+        int no = member.getNo();
+        
+        String filesDir = sc.getRealPath("/files");
+        ArrayList<Wspho> workshopPhotos = new ArrayList<>();
+        
+        for (int i = 0; i < files.length; i++) {
+            Wspho photo = new Wspho();
+            String filename = UUID.randomUUID().toString();
+            try {
+                File path = new File(filesDir + "/" +  filename);
+                files[i].transferTo(path);
+                photo.setFilenametwo(filename);
+                workshopPhotos.add(photo);
+                
+                Thumbnails.of(path)
+                .size(50, 50)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_50x50");
+                
+                Thumbnails.of(path)
+                .size(100, 100)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_100x100");
+                
+                Thumbnails.of(path)
+                .size(150, 150)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_150x150");
+                
+                Thumbnails.of(path)
+                .size(200, 200)
+                .outputFormat("jpg")
+                .toFile(path.getCanonicalPath()+"_200x200");
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        
+        
+        return workshopService.addAdpic(no, workshopPhotos);
+    }
+    
+    @RequestMapping("adSNS")
+    public int adSns(String kind, Workshop workshop, HttpSession session) throws Exception {
+        Member member = (Member)session.getAttribute("loginUser");
+        int no = member.getNo();
+        workshop.setWno(no);
+        return workshopService.adSns(kind, workshop);
+    }
+    
     
     
     

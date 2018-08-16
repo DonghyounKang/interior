@@ -121,11 +121,14 @@
 								<div class="ad-sns">
 									<div class="ad-sns-img ad-sns01"></div>
 									<div class="ad-input">
-										<input type="text" class="form-control" placeholder="URL"
+										<input
+											id="twit" 
+											type="text" class="form-control" placeholder="URL"
 											aria-label="Recipient's username"
 											aria-describedby="basic-addon2">
 										<div class="input-group-append">
-											<button class="btn btn-outline-warning" type="button">저장</button>
+											<button 
+											id="snsTwiter" class="btn btn-outline-warning" type="button">저장</button>
 										</div>
 									</div>
 									<!--                             <label class="switch switch-flat"> <input
@@ -137,11 +140,15 @@
 								<div class="ad-sns">
 									<div class="ad-sns-img ad-sns02"></div>
 									<div class="ad-input">
-										<input type="text" class="form-control" placeholder="URL"
+										<input 
+											id="fcbk"
+											type="text" class="form-control" placeholder="URL"
 											aria-label="Recipient's username"
 											aria-describedby="basic-addon2">
 										<div class="input-group-append">
-											<button class="btn btn-outline-warning" type="button">저장</button>
+											<button 
+											id="snsFacebook" 
+											class="btn btn-outline-warning" type="button">저장</button>
 										</div>
 									</div>
 									<!--                             <label class="switch switch-flat"> <input
@@ -153,11 +160,15 @@
 								<div class="ad-sns">
 									<div class="ad-sns-img ad-sns03"></div>
 									<div class="ad-input">
-										<input type="text" class="form-control" placeholder="URL"
+										<input
+											id="istag" 
+											type="text" class="form-control" placeholder="URL"
 											aria-label="Recipient's username"
 											aria-describedby="basic-addon2">
 										<div class="input-group-append">
-											<button class="btn btn-outline-warning" type="button">저장</button>
+											<button 
+											id="snsInsta" 
+											class="btn btn-outline-warning" type="button">저장</button>
 										</div>
 									</div>
 									<!--                             <label class="switch switch-flat"> <input
@@ -181,7 +192,7 @@
 							<input id="fileupload" type="file" name="files" multiple>
 							<div id="ad-images-div"></div>
 							<button class="ad-btn ad-btn-color3" id='imgUpload' type='button'>파일첨부</button>
-							<button class="ad-btn ad-btn-color1" id='upload-btn'
+							<button class="ad-btn ad-btn-color1" id='addBtn'
 								type='button'>등록</button>
 						</div>
 					</div>
@@ -214,9 +225,25 @@
 	</div>
 	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+	<script
+	src="../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script
+	src="../../node_modules/blueimp-load-image/js/load-image.all.min.js"></script>
+<script
+	src="../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script
+	src="../../node_modules/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script
+	src="../../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script
+	src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<script
+	src="../../node_modules/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
 	<script src="../../js/common.js"></script>
 	<script src="../../js/ad_header.js"></script>
+	<script src="../../js/ad_main.js"></script>
 
 </body>
 </html>

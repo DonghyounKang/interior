@@ -214,7 +214,8 @@ $('#fileupload1').fileupload({
 	done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
 		console.log('done()...');
 		console.log(data.result);
-	}
+		location.reload(true);
+    }
 });
 /*delete*/
 function worksdel(no) {
@@ -223,7 +224,7 @@ function worksdel(no) {
     $.get("../../../json/works/delete", {"wno": no}, () => {
    	 
     });
-/*      location.reload(); */  
+    location.reload(); 
 }
 
 /*미리보기 삭제 이벤트*/

@@ -1,6 +1,7 @@
 // 업무로직 구현체 - 고객사 마다 다른 구현을 할 수 있다.
 package bitcamp.java106.pms.service.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import bitcamp.java106.pms.dao.MainDao;
 import bitcamp.java106.pms.dao.WorkshopDao;
 import bitcamp.java106.pms.dao.WsphoDao;
 import bitcamp.java106.pms.domain.Works;
+import bitcamp.java106.pms.domain.WorksPhoto;
 import bitcamp.java106.pms.domain.Workshop;
 import bitcamp.java106.pms.domain.Wspho;
 import bitcamp.java106.pms.service.WorkshopService;
@@ -160,10 +162,6 @@ public class WorkshopServiceImpl implements WorkshopService {
         return workshopDao.selectbathtwo(params);
     }
     
-    
-    
-    
-    
     @Override
     public List<Workshop> listSellerSite() {
         return workshopDao.selectListSellerSite();
@@ -197,6 +195,34 @@ public class WorkshopServiceImpl implements WorkshopService {
     @Override
     public int delete(int no) {
         return workshopDao.delete(no);
+    }
+
+    @Override
+    public int addAdpic(int no, ArrayList<Wspho> workshopPhotos) {
+        String pclsf = "홍보이미지";
+        HashMap<String, Object> param = new HashMap<>();
+        param.put("memno", no);
+        param.put("pclsf",pclsf);
+        wsphoDao.delete(param);
+        for(int i = 0; i < workshopPhotos.size(); i++) {
+            Wspho wspho = workshopPhotos.get(i);
+            wspho.setWno(no);
+            wspho.setWsPclsf(pclsf);
+            wsphoDao.insertAd(wspho);
+        }
+        return 1;
+    }
+
+    @Override
+    public int adSns(String kind, Workshop workshop) {
+        if(kind.equals("twitter")) {
+            workshopDao.updTwit(workshop);
+        } else if(kind.equals("facebook")) {
+            workshopDao.updFacbook(workshop);
+        } else if(kind.equals("insta")){
+            workshopDao.updInsta(workshop);
+        }
+        return 1;
     }
 }
 

@@ -32,6 +32,17 @@
     values(#{wsno}, #{wno}, 'introduce', #{filenametwo}, #{filename});
   </insert>
   
+    <delete id="delete" parameterType="map">
+	DELETE FROM `INTR_WSPHO` WHERE memno=#{memno} AND pclsf=#{pclsf};
+  </delete>
+  
+    <insert id="insertAd" parameterType="Wspho">
+    insert into INTR_WSPHO(memno, pclsf, path, lpath)
+    values(#{wno}, #{wsPclsf}, #{filenametwo}, #{filename});
+  </insert>
+  
+
+  
 </mapper>
 
 

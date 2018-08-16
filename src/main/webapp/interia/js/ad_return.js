@@ -128,6 +128,7 @@ adReturnData.on('click', '.ad-order-update', function(e) {
 	    	data: param,
 	    	success: function(data){
 	    		console.log(data);
+				location.href="store_admin_return.html"
 	    	}
 	    });
 	    
@@ -195,6 +196,7 @@ adReturnData.on('click', '.ad-order-update', function(e) {
 	    	data: param,
 	    	success: function(data){
 	    		console.log(data);
+	    		location.href="store_admin_return.html"
 	    	}
 	    });
 	});
@@ -215,7 +217,9 @@ adReturnData.on('click', '.ad-order-update', function(e) {
 	    	data: param,
 	    	success: function(data){
 	    		console.log(data);
+	    		location.href="store_admin_return.html"
 	    	}
+
 	    });
 	    
 	
@@ -236,7 +240,9 @@ adReturnData.on('click', '.ad-order-update', function(e) {
 		    	data: param,
 		    	success: function(data){
 		    		console.log(data);
+		    		location.href="store_admin_return.html"
 		        }
+
 		});
 		});
 	
@@ -260,7 +266,9 @@ adReturnData.on('click', '.ad-order-update', function(e) {
 	    	data: param,
 	    	success: function(data){
 	    		console.log(data);
+	    		location.href="store_admin_return.html"
 	    	}
+
 	    });
 	});
 	
