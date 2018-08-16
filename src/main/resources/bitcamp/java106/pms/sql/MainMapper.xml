@@ -15,12 +15,13 @@
     <result column="nknm" property="nickname"/>
     <result column="tname" property="hashtag"/>
     <result column="crtdt" property="comments"/>
+    <result column="memph" property="profile"/>
   </resultMap>
   
   <select id="selectListInMain" 
           resultMap="BoardMap"
           parameterType="map">
-    SELECT b.BNO, b.PATH, COUNT(l.bno) AS cnt, m.NKNM, b.BOCTT
+    SELECT b.BNO, m.MEMPH, b.PATH, COUNT(l.bno) AS cnt, m.NKNM, b.BOCTT
     FROM INTR_BOARD b 
     LEFT OUTER JOIN INTR_LKMB l 
     ON b.BNO = l.BNO 
