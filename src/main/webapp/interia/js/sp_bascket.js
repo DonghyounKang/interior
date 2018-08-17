@@ -24,7 +24,6 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 				for (var j = 0; j < workshopData.length; j++) {
 					var workshopTitle = $("#studioName" + workshopData[j].workshopNumber).text();
 					var products = new Array();
-					
 					var x = 0;
 					for (var i = 0; i < productData.length; i++) {
 						if (workshopTitle == productData[i].studioName) {
@@ -39,6 +38,7 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 							x++;
 						}
 					}
+					console.log(products)
 					$("#bascket-list-detail" + workshopData[j].workshopNumber).html(templateFnProduct({product:products}));
 					
 					// 체크박스 모두 선택
