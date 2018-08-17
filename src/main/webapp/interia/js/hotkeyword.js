@@ -6,7 +6,7 @@ var euro = $(".bt-hashtag-euro");
 for(var item of data) {
 	$('<li>' +
         '<a class="bt-tag-prod-box" href="#">' +
-          '<img src="../../images/main/keyword/euro/'+ item.path +'">' +
+          '<img src="../../../files/works/'+ item.path +'">' +
           '<div class="bt-tag-prod-black bt-over">' +
             '<span>상세 보기 +</span>' +
           '</div>' +
@@ -21,7 +21,7 @@ var summer = $(".bt-hashtag-summer");
 for(var item of data) {
 	$('<li>' +
         '<a class="bt-tag-prod-box" href="#">' +
-          '<img src="../../images/main/keyword/summer/'+ item.path +'">' +
+          '<img src="../../../files/works/'+ item.path +'">' +
           '<div class="bt-tag-prod-black bt-over">' +
             '<span>상세 보기 +</span>' +
           '</div>' +
@@ -37,7 +37,7 @@ var modern = $(".bt-hashtag-modern");
 for(var item of data) {
 	$('<li>' +
         '<a class="bt-tag-prod-box" href="#">' +
-          '<img src="../../images/main/keyword/modern/'+ item.path +'">' +
+          '<img src="../../../files/works/'+ item.path +'">' +
           '<div class="bt-tag-prod-black bt-over">' +
             '<span>상세 보기 +</span>' +
           '</div>' +
@@ -52,7 +52,7 @@ var flowerpot = $(".bt-hashtag-flowerpot");
 for(var item of data) {
 	$('<li>' +
         '<a class="bt-tag-prod-box" href="#">' +
-          '<img src="../../images/main/keyword/pot/'+ item.path +'">' +
+          '<img src="../../../files/works/'+ item.path +'">' +
           '<div class="bt-tag-prod-black bt-over">' +
             '<span>상세 보기 +</span>' +
           '</div>' +
@@ -68,7 +68,7 @@ var simple = $(".bt-hashtag-simple");
 for(var item of data) {
 	$('<li>' +
         '<a class="bt-tag-prod-box" href="#">' +
-          '<img src="../../images/main/keyword/simple/'+ item.path +'">' +
+          '<img src="../../../files/works/'+ item.path +'">' +
           '<div class="bt-tag-prod-black bt-over">' +
             '<span>상세 보기 +</span>' +
           '</div>' +
