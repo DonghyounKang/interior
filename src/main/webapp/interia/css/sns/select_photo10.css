@@ -136,6 +136,7 @@
   height: 50px;
   border-radius:25px;
   overflow: hidden;
+  border: solid #D5D5D5 1px;
 }
 .photo-header-profile img{
   width:120%;

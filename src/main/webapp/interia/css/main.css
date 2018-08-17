@@ -498,6 +498,7 @@ a.bt-key-hashtag-click {
   height: 30px;
   border-radius: 40px;
   overflow: hidden;
+  border: solid #D5D5D5 1px;
 }
 .sns-cont-profile img {
   width: 150%;
