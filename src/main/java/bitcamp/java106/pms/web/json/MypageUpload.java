@@ -59,20 +59,6 @@ public class MypageUpload {
              jsonData.put("status", "success");
              jsonData.put("filename", filename);
              
-             Thumbnails.of(path)
-             .size(400, 400)
-             .outputFormat("jpg")
-             .toFile(path.getCanonicalPath()+"_400x400");
-             
-             Thumbnails.of(path)
-             .size(800, 800)
-             .outputFormat("jpg")
-             .toFile(path.getCanonicalPath()+"_800x800");
-             
-             Thumbnails.of(path)
-             .size(1000, 1000)
-             .outputFormat("jpg")
-             .toFile(path.getCanonicalPath()+"_1000x1000");
              
          } catch (Exception e) {
              jsonData.put("status", "fail");
