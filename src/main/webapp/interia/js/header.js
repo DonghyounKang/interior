@@ -54,7 +54,13 @@ function loadLoginUser() {
 		// 마이페이지 관련 기능에서의 드롭다운의 대한 내용들 수정!
 		$("#mypageName").text(data.nickname + "(마이페이지)");
 		
-		// 마이페이지 드롭바 글쓰기 기능
+		// 마이페이지 연결
+		$("#mypageName").click(e => {
+			e.preventDefault();
+			location.href = serverRoot + "/interia/html/mypage/mp_post.html";
+		});
+		
+		/*// 마이페이지 드롭바 글쓰기 기능
 		$("#write").click(e => {
 			e.preventDefault();
 		});
@@ -67,11 +73,18 @@ function loadLoginUser() {
 		// 마이페이지 드롭바 주문 제작상태 기능
 		$("#state-order").click(e => {
 			e.preventDefault();
-		});
+		});*/
 		
 		// 마이페이지 드롭바 공방신청 or 관리자 기능
 		$("#state-apply-works").click(e => {
 			e.preventDefault();
+			$.getJSON(serverRoot + "/json/workshop/isExist/" + data.no, (result) => {
+				if (result) {  // 판매자 회원 신청 완료시
+					location.href = "../workshop/workshop_sellerSite.html";
+				} else { // 판매자 회원이 아닐 경우
+					location.href = "../workshop/workshop_sellerRequest.html";
+				}
+			});
 		});
 		
 		// 마이페이지 드롭바 설정 및 개인정보 기능
