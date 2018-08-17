@@ -49,7 +49,7 @@
   </select>
   
   <select id="selectOne" parameterType="int" resultMap="BoardMap">
-    SELECT b.BNO, mem.NKNM,mem.MPPHO, b.PATH, b.BOCTT, COUNT(l.bno) AS cnt, b.BRTDT 
+    SELECT b.BNO, mem.NKNM,mem.MPPHO, b.PATH, b.BOCTT, COUNT(DISTINCT l.lno) AS cnt, b.BRTDT 
     FROM INTR_BOARD b 
     LEFT OUTER JOIN INTR_MEMBER mem 
     ON b.MEMNO = mem.MEMNO 

@@ -152,9 +152,13 @@ $(function() {
 // 사용자 정보 가져오기(배너,프로필,아이디)
 $.getJSON(serverRoot + "/json/member/memberInfo", (data) => {
 	console.log(data);
-	$(".mp-banner").css("background-image", 'url("../../../files/mypage/banner/' +data.bannerPhoto+ '")');
+	if (data.bannerPhoto != null) {
+		$(".mp-banner").css("background-image", 'url("../../../files/mypage/banner/' +data.bannerPhoto+ '")');
+	}
 	$('<p class="mp-user-name">' +data.id+ '</p>').prependTo(".mp-user-info");
-	$(".mp-profile-setting>a").css("background-image", 'url("../../../files/mypage/profile/' +data.profilePhoto+ '_1000x1000.jpg")');
+	if (data.profilePhoto != null) {
+		$(".mp-profile-setting>a").css("background-image", 'url("../../../files/mypage/profile/' +data.profilePhoto+ '_1000x1000.jpg")');
+	}
 	if (data.profilePhoto != null) {
 		$(".mp-profile-div").addClass("mp-hover-btn");
 	}

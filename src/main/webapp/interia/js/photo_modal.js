@@ -7,6 +7,12 @@ function mkmodal(no) {
 	bno = no;
 	$.getJSON("../../../json/board/"+no, (data) => {
 
+	var tsp = data.createDate;
+    var acDate = new Date(tsp);
+    var year = acDate.getFullYear();
+    var month = acDate.getMonth() + 1;
+    var date = acDate.getDate();
+		
 	$('<div class="modal fade multi-step" id="myModal" role="dialog">'+
 		'<div class="photo-detail modal-dialog">'+
 			'<div class="modal-body photo-modal-body step-1" data-step="1">'+
@@ -40,7 +46,7 @@ function mkmodal(no) {
 						'<span>좋아요</span><span>'+ data.count +'</span><span>개</span>'+
 					'</div>'+
 					'<div class="photo-box-date">'+
-						'<span>'+ data.createDate +'</span>'+
+						'<span>'+ year +'년'+ month +'월 '+ date +'일'+'</span>'+
 					'</div>'+
 					'<div class="photo-box-write">'+
 						'<form class="photo-write-form" id="photo-sns-comment-form" action="" method="">'+
