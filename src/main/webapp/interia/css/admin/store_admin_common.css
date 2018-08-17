@@ -127,10 +127,11 @@ input[type="time"] {
 /* sidenavbar 가게이미지 */
 
 .ad-navbar-img {
-    height: 100px;
+/*     height: 100px;
     width: 100px;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 50px; */
+        padding-bottom: 20px;
 }
 
 .ad-navbar-storename > a {
@@ -789,6 +790,8 @@ th label {
     border-radius: 5px;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
 }
 .ad-image-notice {
 	display:table-cell; 

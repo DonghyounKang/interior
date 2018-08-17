@@ -40,14 +40,13 @@
           #{zcode}, #{baddr}, #{daddr})
   </insert>
   
-  <!-- workshop_main tap menu -->
+    <!-- workshop_main tap menu -->
   <select id="selectList" 
           resultType="Map" 
           parameterType="map">
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'main'
     limit 0, #{value}
   </select>
   
@@ -57,7 +56,6 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'main'
     limit #{startRowNo}, #{pageSize}
   </select>
   
@@ -66,7 +64,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'fur'
+    where ws.pclsf = '가구'
     limit 0, #{value}
   </select>
   
@@ -74,7 +72,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'fur'
+    where ws.pclsf = '가구'
     limit #{startRowNo}, #{pageSize}
   </select>
 
@@ -83,7 +81,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'fab'
+    where ws.pclsf = '패브릭'
     limit 0, #{value}
   </select>
 
@@ -91,7 +89,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'fab'
+    where ws.pclsf = '패브릭'
     limit #{startRowNo}, #{pageSize}
   </select>
   
@@ -100,7 +98,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'deco'
+    where ws.pclsf = '데코'
     limit 0, #{value}
   </select>
 
@@ -108,7 +106,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'deco'
+    where ws.pclsf = '데코'
     limit #{startRowNo}, #{pageSize}
   </select>
   
@@ -117,7 +115,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'app'
+    where ws.pclsf = '가전'
     limit 0, #{value}
   </select>
 
@@ -125,7 +123,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'app'
+    where ws.pclsf = '가전'
     limit #{startRowNo}, #{pageSize}
   </select>
   
@@ -134,7 +132,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'life'
+    where ws.pclsf = '생활'
     limit 0, #{value}
   </select>
 
@@ -142,7 +140,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'life'
+    where ws.pclsf = '생활'
     limit #{startRowNo}, #{pageSize}
   </select>
   
@@ -151,7 +149,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'kit'
+    where ws.pclsf = '주방'
     limit 0, #{value}
   </select>
 
@@ -159,7 +157,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'kit'
+    where ws.pclsf = '주방'
     limit #{startRowNo}, #{pageSize}
   </select>
   
@@ -168,7 +166,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'bath'
+    where ws.pclsf = '욕실'
     limit 0, #{value}
   </select>
 
@@ -176,7 +174,7 @@
     select wsnm, itrod, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'bath'
+    where ws.pclsf = '욕실'
     limit #{startRowNo}, #{pageSize}
   </select>
   

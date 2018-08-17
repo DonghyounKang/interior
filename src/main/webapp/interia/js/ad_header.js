@@ -92,7 +92,7 @@ function loadLoginUser() {
 $.getJSON(serverRoot + "/json/workshop/getInfo", (data) => {
     console.log(data);
     $("<div class='ad-navbar-img'>" +
-          "<img src='../../../files/" + data.lpath + "'>" +
+          "<img src='../../../files/workshop/" + data.lpath + "'>" +
       "</div>" +
       "<p>" + data.wsnm + "</p>"
     ).appendTo(".ad-navbar-storename");

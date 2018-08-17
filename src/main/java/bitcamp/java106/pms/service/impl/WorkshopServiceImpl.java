@@ -199,7 +199,7 @@ public class WorkshopServiceImpl implements WorkshopService {
 
     @Override
     public int addAdpic(int no, ArrayList<Wspho> workshopPhotos) {
-        String pclsf = "홍보이미지";
+        String pclsf = "banner";
         HashMap<String, Object> param = new HashMap<>();
         param.put("memno", no);
         param.put("pclsf",pclsf);

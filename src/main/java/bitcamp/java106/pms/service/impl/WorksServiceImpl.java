@@ -91,7 +91,7 @@ public class WorksServiceImpl implements WorksService {
         for(int i = 0; i < worksPhotos.size(); i++) {
            WorksPhoto worksPhoto = worksPhotos.get(i);
            if(i == 1) {
-               worksPhoto.setMainPhoto("Y");
+               worksPhoto.setMainPhoto("y");
            }
            worksPhoto.setWorksNumber(worksNo);
            worksPhotoDao.insert(worksPhoto);
