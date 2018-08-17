@@ -163,13 +163,13 @@ public class WorkshopServiceImpl implements WorkshopService {
     }
     
     @Override
-    public List<Workshop> listSellerSite() {
-        return workshopDao.selectListSellerSite();
+    public List<Workshop> listSellerSite(int no) {
+        return workshopDao.selectListSellerSite(no);
     }
     
     @Override
-    public List<Workshop> listSellerSiteBanner() {
-        return workshopDao.selectListSellerSiteBanner();
+    public List<Workshop> listSellerSiteBanner(int no) {
+        return workshopDao.selectListSellerSiteBanner(no);
     }
     
     @Override
@@ -199,7 +199,7 @@ public class WorkshopServiceImpl implements WorkshopService {
 
     @Override
     public int addAdpic(int no, ArrayList<Wspho> workshopPhotos) {
-        String pclsf = "banner";
+        String pclsf = "홍보이미지";
         HashMap<String, Object> param = new HashMap<>();
         param.put("memno", no);
         param.put("pclsf",pclsf);

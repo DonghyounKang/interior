@@ -9,7 +9,8 @@ public interface WsavDao {
     int delete(Map<String,Object> params) ;
     int adminDelete(int wsano);
     List<Wsav> selectList(int no);
-    List<Wsav> selectSellerSiteList();
+    List<Wsav> selectSellerSiteList(int no);
+    List<Wsav> selectSellerSiteListWsa(Map<String,Object> params);
     List<Wsav> selectAdminList(int no);
     int insert(Wsav wsav);
     int update(Wsav wsav);

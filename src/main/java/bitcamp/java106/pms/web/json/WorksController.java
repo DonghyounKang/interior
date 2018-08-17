@@ -85,7 +85,7 @@ public class WorksController {
     
     @RequestMapping("delete")
     //@ResponseStatus(HttpStatus.OK) // 응답 상태 코드 값의 기본은 "200(OK)" 이다.
-    public void delete(@RequestParam("wno") int no) throws Exception {
+    public void delete(@RequestParam("no") int no) throws Exception {
         worksService.delete(no);
     }
     
@@ -98,8 +98,8 @@ public class WorksController {
     }
     
     @RequestMapping("listSellerSite")
-    public Object listSellerSite() {       
-        return worksService.listSellerSite();
+    public Object listSellerSite(int no) {       
+        return worksService.listSellerSite(no);
     }
     
     @RequestMapping("update")
@@ -163,7 +163,6 @@ public class WorksController {
         worksService.addBuscket(worksNumber, member.getNo(), optionValue);
     }
     
-    // 장바구니 리스트 출력 1 - 공통 공방명 추출
     @RequestMapping("buscketWorkshop")
     public Object buscketWorkshop(HttpSession session) {
         Member member = (Member)session.getAttribute("loginUser");

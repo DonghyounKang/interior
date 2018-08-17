@@ -48,8 +48,8 @@ public class WorksServiceImpl implements WorksService {
     }
     
     @Override
-    public List<Works> listSellerSite() {
-        return worksDao.selectListSellerSite();
+    public List<Works> listSellerSite(int no) {
+        return worksDao.selectListSellerSite(no);
     }
     
     @Override
@@ -91,7 +91,7 @@ public class WorksServiceImpl implements WorksService {
         for(int i = 0; i < worksPhotos.size(); i++) {
            WorksPhoto worksPhoto = worksPhotos.get(i);
            if(i == 1) {
-               worksPhoto.setMainPhoto("y");
+               worksPhoto.setMainPhoto("Y");
            }
            worksPhoto.setWorksNumber(worksNo);
            worksPhotoDao.insert(worksPhoto);
@@ -208,11 +208,11 @@ public class WorksServiceImpl implements WorksService {
     
     // 장바구니 담기
     @Override
-    public int addBuscket(int worksNumber, int memberNumber, String optionValue) {
+    public int addBuscket(int worksNumber, int memberNumber, int optionNumber) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("worksNumber", worksNumber);
         params.put("memberNumber", memberNumber);
-        params.put("optionValue", optionValue);
+        params.put("optionNumber", optionNumber);
         return worksDao.insertBuscket(params);
     }
     
@@ -228,7 +228,7 @@ public class WorksServiceImpl implements WorksService {
         return worksDao.searchBuscketWorkshop(buyerNumber);
     }
     
-    // 해당 회원 장바구니 전체제거(구매시)
+ // 해당 회원 장바구니 전체제거(구매시)
     @Override
     public int buscketAllDelete(int buyerNumber) {
         return worksDao.buscketAllRemove(buyerNumber);
@@ -242,8 +242,6 @@ public class WorksServiceImpl implements WorksService {
         params.put("worksNumber", worksNumber);
         return worksDao.buscketRemove(params);
     }
-    
-    
     @Override
     public List<Works> adminList(int no) {
         return worksDao.selectAdList(no);
@@ -253,7 +251,6 @@ public class WorksServiceImpl implements WorksService {
     public Object getCurrentState(int no) {
         return worksDao.getCurrentState(no);
     }
-    
     
 }
 

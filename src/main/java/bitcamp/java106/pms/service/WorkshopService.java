@@ -31,9 +31,9 @@ public interface WorkshopService {
     List<Workshop> listbathtwo(int pageNo, int pageSize);
     
     
-    List<Workshop> listSellerSite();
+    List<Workshop> listSellerSite(int no);
     List<Workshop> listIntroduce();
-    List<Workshop> listSellerSiteBanner();
+    List<Workshop> listSellerSiteBanner(int no);
     Workshop get(int no);
     int update(Workshop workshop);
     int updateIntroduce(Workshop workshop);

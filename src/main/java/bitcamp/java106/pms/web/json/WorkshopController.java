@@ -190,13 +190,13 @@ public class WorkshopController {
     }
     
     @RequestMapping("listSellerSite")
-    public Object listSellerSite() {        
-        return workshopService.listSellerSite();
+    public Object listSellerSite(int no) {        
+        return workshopService.listSellerSite(no);
     }
     
     @RequestMapping("listSellerSiteBanner")
-    public Object listSellerSiteBanner() {        
-        return workshopService.listSellerSiteBanner();
+    public Object listSellerSiteBanner(int no) {        
+        return workshopService.listSellerSiteBanner(no);
     }
     
     @RequestMapping("listIntro")

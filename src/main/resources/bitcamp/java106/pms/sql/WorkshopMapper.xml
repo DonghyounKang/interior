@@ -40,11 +40,11 @@
           #{zcode}, #{baddr}, #{daddr})
   </insert>
   
-    <!-- workshop_main tap menu -->
+  <!-- workshop_main tap menu -->
   <select id="selectList" 
           resultType="Map" 
           parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     limit 0, #{value}
@@ -53,7 +53,7 @@
   <select id="selectListtwo" 
           resultType="Map" 
           parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     limit #{startRowNo}, #{pageSize}
@@ -61,7 +61,7 @@
   
   <!-- workshop_main tap menu -->
   <select id="selectfur" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '가구'
@@ -69,7 +69,7 @@
   </select>
   
   <select id="selectfurtwo" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '가구'
@@ -78,7 +78,7 @@
 
   <!-- workshop_main tap menu -->
   <select id="selectfab" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '패브릭'
@@ -86,7 +86,7 @@
   </select>
 
   <select id="selectfabtwo" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '패브릭'
@@ -95,7 +95,7 @@
   
   <!-- workshop_main tap menu -->
   <select id="selectdeco" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '데코'
@@ -103,7 +103,7 @@
   </select>
 
   <select id="selectdecotwo" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '데코'
@@ -112,7 +112,7 @@
   
   <!-- workshop_main tap menu -->
   <select id="selectapp" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '가전'
@@ -120,7 +120,7 @@
   </select>
 
   <select id="selectapptwo" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '가전'
@@ -129,7 +129,7 @@
   
   <!-- workshop_main tap menu -->
   <select id="selectlife" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '생활'
@@ -137,7 +137,7 @@
   </select>
 
   <select id="selectlifetwo" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '생활'
@@ -146,7 +146,7 @@
   
   <!-- workshop_main tap menu -->
   <select id="selectkit" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '주방'
@@ -154,7 +154,7 @@
   </select>
 
   <select id="selectkittwo" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '주방'
@@ -163,7 +163,7 @@
   
   <!-- workshop_main tap menu -->
   <select id="selectbath" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '욕실'
@@ -171,7 +171,7 @@
   </select>
 
   <select id="selectbathtwo" resultType="Map" parameterType="map">
-    select wsnm, itrod, path, lpath
+    select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
     where ws.pclsf = '욕실'
@@ -187,15 +187,17 @@
     select wsnm, itrod, fcbk, twit, istag, path, lpath
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'profile'
+    where ws.pclsf = 'profile' and wrk.memno = #{value}
   </select>
   
   <select id="selectListSellerSiteBanner" resultType="Map" parameterType="map">
     select path
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
-    where ws.pclsf = 'banner'
+    where ws.pclsf = 'banner' and wrk.memno = #{value}
   </select>
+  
+  
   
   <select id="selectListIntroduce" resultType="Map" parameterType="map">
     select wsctt, path

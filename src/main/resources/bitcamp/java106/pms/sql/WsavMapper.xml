@@ -46,18 +46,26 @@ WHERE mem.MEMNO = #{value}
   </select>
   
   
-  <!-- 공방 판매자 사이트 메인부분의 체험 -->
-    <select id="selectSellerSiteList" resultType="Map" parameterType="map">
-    select wsa.wsano, acnm, minno, maxno, TIMESTAMPDIFF(minute, avst, avet) as time, apric, accnt, path
+  <select id="selectSellerSiteList" resultType="Map" parameterType="map">
+    select wsa.wsano, acnm, minno, maxno, TIMESTAMPDIFF(minute, avst, avet) as time, apric, accnt, path, wrk.memno as wkmem
     from INTR_WSAV wsa
     inner join INTR_WRKSHP wrk on wsa.memno = wrk.memno
     inner join INTR_WKACP wka on wsa.wsano = wka.wsano
+    where wsa.memno = #{value}
+  </select>
+  
+  <select id="selectSellerSiteListWsa" resultType="Map" parameterType="map">
+    select wsa.wsano, acnm, minno, maxno, TIMESTAMPDIFF(minute, avst, avet) as time, apric, accnt, path, wrk.memno as wkmem
+    from INTR_WSAV wsa
+    inner join INTR_WRKSHP wrk on wsa.memno = wrk.memno
+    inner join INTR_WKACP wka on wsa.wsano = wka.wsano
+    where wsa.memno = #{memno} and wsa.wsano = #{wsano}
   </select>
   
   <!-- 공방관리자 공방체험 list -->
   <select id="selectAdminList"
-  		  resultType="Map"
-  		  parameterType="map">
+          resultType="Map"
+          parameterType="map">
   SELECT wa.wsano, wa.acnm, wa.maxno, wa.actdt, timediff(wa.avet, wa.avst) as time, wa.apric, wa.accnt, wp.path 
 FROM INTR_WSAV wa
 INNER JOIN INTR_WKACP wp
@@ -70,43 +78,43 @@ GROUP BY wp.WSANO
   <!-- 공방관리자 공방체험 생성 -->
   <insert id="insert" parameterType="Wsav"
           useGeneratedKeys="true" keyColumn="wsano" keyProperty="no">
-		insert into INTR_WSAV(memno,acnm,minno,
-						maxno,actdt,avst,avet,mtrls,apric,accnt) 
-	    values(#{workshopNo},
-	    		#{title},#{minPerson},
-				#{maxPerson},#{experDate},
-				#{startTime},#{endTime},
-				#{prepareCont},
-				#{price},#{content});
+        insert into INTR_WSAV(memno,acnm,minno,
+                        maxno,actdt,avst,avet,mtrls,apric,accnt) 
+        values(#{workshopNo},
+                #{title},#{minPerson},
+                #{maxPerson},#{experDate},
+                #{startTime},#{endTime},
+                #{prepareCont},
+                #{price},#{content});
   </insert>
   
   <!-- 파라미터의 타입이 primitive type이나 wrapper 클래스, String 클래스인 경우
        값을 꺼낼 때 프로퍼티 이름을 마음대로 해도 된다.
   -->
   <select id="selectOne" parameterType="int" resultMap="WsavMap">
- 	select * 
- 	from INTR_WSAV 
- 	where wsano=#{value}
+    select * 
+    from INTR_WSAV 
+    where wsano=#{value}
   </select>
   
   <select id="selectRecent" resultMap="WsavMap">
-  	select wsano from INTR_WSAV order by wsano desc limit 1 
+    select wsano from INTR_WSAV order by wsano desc limit 1 
   
   </select>
   
   <update id="update" parameterType="Wsav">
-  	update INTR_WSAV set
-  		memno = #{workshopNo},
-  		acnm = #{title},
-  		minno = #{minPerson},
-		maxno = #{maxPerson},
-		actdt = #{experDate},
-		avst = #{startTime},
-		avet = #{endTime},
-		mtrls = #{prepareCont},
-		apric = #{price},
-		accnt =#{content}
-	where wsano=#{no}
+    update INTR_WSAV set
+        memno = #{workshopNo},
+        acnm = #{title},
+        minno = #{minPerson},
+        maxno = #{maxPerson},
+        actdt = #{experDate},
+        avst = #{startTime},
+        avet = #{endTime},
+        mtrls = #{prepareCont},
+        apric = #{price},
+        accnt =#{content}
+    where wsano=#{no}
   </update>
   
   <delete id="delete" parameterType="map">

@@ -10,7 +10,7 @@ public interface OdnwkService {
     // 서비스 컴포넌트에서 메서드명을 지을 때는 
     // 업무 용어를 사용하라!
     List<Odnwk> list(int no);
-    List<Odnwk> listSellerSite();
+    List<Odnwk> listSellerSite(int no);
     List<Odnwk> revList(int no);
     List<Odnwk> revCount(int no);
     List<Odnwk> revDetail(int wno, int startNo, int pageNo);

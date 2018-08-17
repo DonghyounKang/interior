@@ -63,8 +63,8 @@ public class OdnwkController {
     }
     
     @RequestMapping("listSellerSite")
-    public Object listSellerSite() {        
-        return odnwkService.listSellerSite();
+    public Object listSellerSite(int no) {        
+        return odnwkService.listSellerSite(no);
     }
     
     @RequestMapping("revList")
