@@ -25,27 +25,27 @@ $.getJSON(serverRoot + "/json/works/" + no, (result) => {
 	
 	// 4) 구매 개수 설정 (초기화 : 1)
 	var maxCapacity = result.capacity; // 최대 재고량
-	var sellerValue = 1;  // 판매갯수 (초기값 : 1)
-	$("#seller-value").text(sellerValue);
-	$("#seller-value").val(sellerValue);
+	var buyValue = 1;  // 판매갯수 (초기값 : 1)
+	$("#buy-Value").text(buyValue);
+	$("#buy-Value").val(buyValue);
 	
 	
 	// 5) 판매갯수의 따른 가격 설정
-	$("#price-value").text(result.price * sellerValue);
+	$("#price-value").text(result.price * buyValue);
 	
 	// 6) 총 상품 금액
-	$("#All-Price").text((sellerValue * result.price) + deliveryPrice);
-	$("#All-Price").val((sellerValue * result.price) + deliveryPrice);
+	$("#All-Price").text((buyValue * result.price) + deliveryPrice);
+	$("#All-Price").val((buyValue * result.price) + deliveryPrice);
 	
 	// 7) 구매 갯수 증가 이벤트
 	$("#plus-value").click(() => {
 		if (sellerValue == maxCapacity) {
 			window.alert("더이상의 재고 수량이 존재하지 않습니다.");
 		} else {
-			$("#seller-value").text(++sellerValue);
-			$("#price-value").text(result.price * sellerValue);
-			$("#All-Price").text((sellerValue * result.price) + deliveryPrice);
-			$("#All-Price").val((sellerValue * result.price) + deliveryPrice);
+			$("#buy-Value").text(++buyValue);
+			$("#price-value").text(result.price * buyValue);
+			$("#All-Price").text((buyValue * result.price) + deliveryPrice);
+			$("#All-Price").val((buyValue * result.price) + deliveryPrice);
 		}
 	});
 	
@@ -54,10 +54,10 @@ $.getJSON(serverRoot + "/json/works/" + no, (result) => {
 		if (sellerValue == 1) {
 			window.alert("최소 1개 이상을 지정해야합니다.");
 		} else {
-			$("#seller-value").text(--sellerValue);
-			$("#price-value").text(result.price * sellerValue);
-			$("#All-Price").text((sellerValue * result.price) + deliveryPrice);
-			$("#All-Price").val((sellerValue * result.price) + deliveryPrice);
+			$("#buy-value").text(--buyValue);
+			$("#price-value").text(result.price * buyValue);
+			$("#All-Price").text((buyValue * result.price) + deliveryPrice);
+			$("#All-Price").val((buyValue * result.price) + deliveryPrice);
 		}
 	});
 	
@@ -106,7 +106,7 @@ $.getJSON(serverRoot + "/json/works/" + no, (result) => {
 			window.alert("해당 제품을 장바구니에 담았습니다.")
 			$.post(serverRoot + "/json/works/add/buscket", {
 				worksNumber : result.worksNumber,
-				optionNumber : fOptionNumber
+				optionValue : $("#fOptionValue").val()
 				}, 'json');
 			location.href = serverRoot + "/interia/html/works/sp_bascket.html"; 
 		}).fail(() => {
@@ -117,7 +117,15 @@ $.getJSON(serverRoot + "/json/works/" + no, (result) => {
 	
 	// 구매하기 버튼 구현
 	$("#btn-purchased").click(() => {
-	
+		$.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
+			var buyValues = "buyValue" + result.worksNumber 
+					+ "=" + $("#buy-Value").val();
+			
+			location.href='sp_purchase.html?' + buyValues;
+		}).fail(() => {
+			window.alert("로그인 하여 주시기 바랍니다.")
+			location.href = serverRoot + "/interia/html/auth/login.html";
+		}); 
 	});
 	
 });

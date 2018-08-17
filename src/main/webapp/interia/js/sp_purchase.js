@@ -1,7 +1,6 @@
 // 수량용 검사
 var buyValue = location.href.split("?")[1];
-
-// 제품 상세용 구매 폼 관련
+ // 제품 상세용 구매 폼 관련
 $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 	
 	// 결제정보
@@ -21,8 +20,13 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 			
 		// 제품 정보
 		$("#title").text(productData.title);
-		$("#optionValue").text(productData.optionValue);
-		$("#optionValue").val(productData.optionValue);
+		
+		for (var index in productData.worksOption) {
+			$("#optionValue").text(productData.worksOption[index].attributeValue);
+			$("#optionValue").val(productData.worksOption[index].attributeValue);
+		}
+		
+		
 		$("#allPrice").text(productData.price * buyValue.split("=")[1]);
 		$("#allPrice").val(productData.price * buyValue.split("=")[1]);
 		// 총 상품금액
