@@ -11,7 +11,7 @@ for (var item of data) {
 			'<div class="sns-cont-piece">' +
 			'<div class="sns-cont-profile">' +
 			'<div class="sns-cont-profile-img">' +
-			'<img src="../../images/sns/'+ item.profile +'" class="profile-img-tag" alt="">' +
+			'<img src="../../../files/mypage/profile/'+ item.profile +'_1000x1000.jpg" class="profile-img-tag" alt="">' +
 			'</div>'+
 			'<a href="#"><span class="bt-sns-userId">'+ item.nickname +'</span></a>' +
 			'</div>' +
