@@ -2,7 +2,7 @@ $.getJSON(serverRoot + "/json/workshop/listSellerSiteBanner", (data) => {
 	console.log(data);
 	for (var i = 0; i < data.length; i++) {
 		$("<li>" +
-				"<img src='../../images/workshop/" + data[i].path + "'>" +
+				"<img src='../../../files/workshop/" + data[i].path + "'>" +
 				"</li>"
 		).appendTo(".subContent_banner_bg");
 	}

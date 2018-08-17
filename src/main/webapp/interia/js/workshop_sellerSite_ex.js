@@ -1,7 +1,7 @@
 $.getJSON(serverRoot + "/json/wsav/sellerSiteList", (data) => {
 	console.log(data);
 	$("<a href='./sellerSite_ex.html'>" +
-			"<img src='../../images/workshop/" + data[0].path + "'>" +
+			"<img src='../../../files/workshop/" + data[0].path + "'>" +
 			"</a>"
 	).appendTo(".sellerSite_ex_img");
 	$("<p>" + data[0].acnm + "</p>" +

@@ -58,4 +58,3 @@ $.getJSON(serverRoot + "/json/workshop/listSellerSite", (data) => {
 	  "</a>"
 	).appendTo(".workshop_sellerSite_sidemenu_snsbtn_bg");
 });
->>>>>>> branch 'master' of https://github.com/DonghyounKang/interior.git
