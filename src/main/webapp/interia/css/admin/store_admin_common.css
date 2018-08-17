@@ -1162,6 +1162,7 @@ textarea {
     margin-left: 15px;
     margin-right: 15px;
     flex-grow: 5;
+    max-width:800px;
 }
 
 .ad-class-card-title {

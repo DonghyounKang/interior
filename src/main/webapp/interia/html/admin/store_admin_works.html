@@ -352,12 +352,31 @@
 <script src="../../js/jquery.caret.min.js"></script>
 <script src="../../js/jquery.tag-editor.min.js"></script>
 <script src="../../js/common.js"></script>
-<script src="../../js/ad_header.js"></script>s
+<script src="../../js/ad_header.js"></script>
 <script src="../../js/ad_admin.js"></script>
 <script src="../../js/ad_works.js"></script>
 
 
+<script>
+/*모달 초기화*/
+	$('.modal').on('hidden.bs.modal', function (e) { 
+		
+		$(this).find('form')[0].reset();
+		
+		if ( $('#tname') > 0 ) {
+			$('#tname').tagEditor('destroy');
+		} 
+		
+		if( $('#ad-claimRejectForm') > 0) {
+			var template = $('#ad-claimRejectForm');
+			var children = $('#ad-claimRejectForm').children();
+			if(template.children().length > 0) {
+				children.remove();
+			}
+		}
+	});
 
+</script>
 
 
 </body>
