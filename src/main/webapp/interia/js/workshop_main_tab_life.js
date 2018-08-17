@@ -4,10 +4,10 @@ $.getJSON("../../../json/workshop/listlife",{"no":7}, (data) => {
                     $("<div class='fc_category_storeList00_1_bg'>" +
                             "<div class='fc_category_storeList00_1'>" +
                                 "<div class='fc_category_storeList00_2'>" +
-                                    "<img src='../../../files/workshop/" + data[i].path + "' style='width: 100%;'>" +
+                                    "<img src='../../images/workshop/" + data[i].path + "' style='width: 100%;'>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_circle'>" +
-                                    "<a href='#'><img src='../../../files/workshop/" + data[i].lpath + "'></a>" +
+                                    "<a href='#'><img src='../../images/workshop/" + data[i].lpath + "'></a>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_title'>" +
                                     "<h1>" + data[i].wsnm + "</h1>" +
@@ -15,7 +15,7 @@ $.getJSON("../../../json/workshop/listlife",{"no":7}, (data) => {
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_btn'>" +
                                     "<div class='fc_category_storeList00_2_btn02'>" +
-                                        "<a href='./workshop_sellerSite.html'>방문하기</a>" +
+                                        "<a href='./workshop_sellerSite.html?no="+ data[i].wkmem +"'>방문하기</a>" +
                                     "</div>" +
                                 "</div>" +
                             "</div>" +
@@ -42,10 +42,10 @@ $.getJSON("../../../json/workshop/listlife",{"no":7}, (data) => {
                     $("<div class='fc_category_storeList00_1_bg'>" +
                             "<div class='fc_category_storeList00_1'>" +
                                 "<div class='fc_category_storeList00_2'>" +
-                                    "<img src='../../../files/workshop/" + data[i].path + "' style='width: 100%;'>" +
+                                    "<img src='../../images/workshop/" + data[i].path + "' style='width: 100%;'>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_circle'>" +
-                                    "<a href='#'><img src='../../../files/workshop/" + data[i].lpath + "'></a>" +
+                                    "<a href='#'><img src='../../images/workshop/" + data[i].lpath + "'></a>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_title'>" +
                                     "<h1>" + data[i].wsnm + "</h1>" +
@@ -53,7 +53,7 @@ $.getJSON("../../../json/workshop/listlife",{"no":7}, (data) => {
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_btn'>" +
                                     "<div class='fc_category_storeList00_2_btn02'>" +
-                                        "<a href='./workshop_sellerSite.html'>방문하기</a>" +
+                                        "<a href='./workshop_sellerSite.html?no="+ data[i].wkmem +"'>방문하기</a>" +
                                     "</div>" +
                                 "</div>" +
                             "</div>" +

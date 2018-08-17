@@ -1,6 +1,7 @@
 var no = location.href.split("=")[1];
-console.log(no);
-$.getJSON(serverRoot + "/json/workshop/listSellerSite",{"no":no}, (data) => {
+var no2 = no.split("&")[0];
+console.log(no2);
+$.getJSON(serverRoot + "/json/workshop/listSellerSite",{"no":no2}, (data) => {
 	console.log(data);
 	console.log(data[0].lpath);
 	$("<img src='../../../files/" + data[0].lpath + "'>"

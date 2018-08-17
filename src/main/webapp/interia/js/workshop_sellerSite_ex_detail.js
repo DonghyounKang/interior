@@ -1,4 +1,9 @@
-$.getJSON(serverRoot + "/json/wsav/sellerSiteList", (data) => {
+var no = location.href.split("=")[1];
+var no2 = no.split("&")[0];
+var noa = location.href.split("=")[2];
+console.log(no2);
+console.log(noa);
+$.getJSON(serverRoot + "/json/wsav/sellerSiteListWsa",{"memno":no2, "wsano":noa}, (data) => {
 	console.log(data);
 	$("<h1>" + data[0].acnm + "</h1>" +
 			"<input id='ex_detail_hidden' type='hidden'>" +

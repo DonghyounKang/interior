@@ -42,29 +42,29 @@
 	            <div class="workshop_sellerSite_sidemenu_line_bg">
 	                <div class="workshop_sellerSite_sidemenu_line"></div>
 	            </div>
-	            <div>
-	                <!-- <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button style="color: #e67e22;">♥ 스토어 찜하기</button>
-	                </div> -->
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./workshop_sellerSite.html'">홈</button>
-	                </div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_Introduce.html'">공방소개</button>
-	                </div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button  type="button" onClick="location.href='./sellerSite_product.html'">공방작품</button>
-	                </div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_News.html'">공방소식</button>
-	                </div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_ex.html'" style="background-color: #ffc001; border: 1px solid #ffc001;">공방체험</button>
-	                </div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_Review.html'">구매후기</button>
-	                </div>
-	            </div>
+	            <div id="ib_wrk_btn">
+                    <!-- <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button style="color: #e67e22;">♥ 스토어 찜하기</button>
+                    </div> -->
+                    <!-- <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./workshop_sellerSite.html'">홈</button>
+                    </div>
+                    <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./sellerSite_Introduce.html'">공방소개</button>
+                    </div>
+                    <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./sellerSite_product.html'">공방작품</button>
+                    </div>
+                    <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./sellerSite_News.html'">공방소식</button>
+                    </div>
+                    <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./sellerSite_ex.html'">공방체험</button>
+                    </div>
+                    <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./sellerSite_Review.html'">구매후기</button>
+                    </div> -->
+                </div>
 	            <!-- <div class="workshop_sellerSite_sidemenu_line_bg">
 	                <div class="workshop_sellerSite_sidemenu_line"></div>
 	            </div>
@@ -184,10 +184,12 @@
     <script src="../../js/footer.js"></script>
     <script src="../../js/sellerSite_ex_Map.js"></script>
     <script src="../../js/sellerSite_ex_detail_slider.js"></script>
-    <script src="../../js/workshop_sellerSite_sidemenu.js"></script>
+    <script src="../../js/workshop_sellerSite_sidemenu2.js"></script>
     <script src="../../js/workshop_sellerSite_ex_detail.js"></script>
     
     <script>
+    var no = location.href.split("=")[1];
+    var no2 = no.split("&")[0];
     $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
         console.log(data.no);
         $("#sellerSite_ex_detail_submitBtn").click(() => {
@@ -196,11 +198,31 @@
             	wsno: $("#ex_detail_hidden").val(),
                 personnel : $("#detailCountText").text()
             }, () => {
-                location.href = "workshop_sellerSite.html";
+                location.href = 'workshop_sellerSite.html?no='+ no2 +'';
             });
         });
     });
     
+    
+    
+    $('#ib_wrk_btn').html(`<div class="workshop_sellerSite_sidemenu_btn00">
+            <button type="button" onClick="location.href='./workshop_sellerSite.html?no=`+ no +`'">홈</button>
+            </div>
+            <div class="workshop_sellerSite_sidemenu_btn00">
+                <button type="button" onClick="location.href='./sellerSite_Introduce.html?no=`+ no +`'">공방소개</button>
+            </div>
+            <div class="workshop_sellerSite_sidemenu_btn00">
+                <button type="button" onClick="location.href='./sellerSite_product.html?no=`+ no +`'" >공방작품</button>
+            </div>
+            <div class="workshop_sellerSite_sidemenu_btn00">
+                <button type="button" onClick="location.href='./sellerSite_News.html?no=`+ no +`'">공방소식</button>
+            </div>
+            <div class="workshop_sellerSite_sidemenu_btn00">
+                <button type="button" onClick="location.href='./sellerSite_ex.html?no=`+ no +`'" style="background-color: #ffc001; border: 1px solid #ffc001;">공방체험</button>
+            </div>
+            <div class="workshop_sellerSite_sidemenu_btn00">
+                <button type="button" onClick="location.href='./sellerSite_Review.html?no=`+ no +`'">구매후기</button>
+            </div>`);
     </script>
 </body>
 

@@ -38,29 +38,29 @@
 	            <div class="workshop_sellerSite_sidemenu_line_bg">
 	                <div class="workshop_sellerSite_sidemenu_line"></div>
 	            </div>
-	            <div>
-	                <!-- <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button style="color: #e67e22;">♥ 스토어 찜하기</button>
-	                </div> -->
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./workshop_sellerSite.html'">홈</button>
-	                </div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_Introduce.html'">공방소개</button>
-	                </div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button  type="button" onClick="location.href='./sellerSite_product.html'" style="background-color: #ffc001; border: 1px solid #ffc001;">공방작품</button>
-	                </div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_News.html'">공방소식</button>
-	                </div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_ex.html'">공방체험</button>
-	                </div>
-	                <div class="workshop_sellerSite_sidemenu_btn00">
-	                    <button type="button" onClick="location.href='./sellerSite_Review.html'">구매후기</button>
-	                </div>
-	            </div>
+	            <div id="ib_wrk_btn">
+                    <!-- <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button style="color: #e67e22;">♥ 스토어 찜하기</button>
+                    </div> -->
+                    <!-- <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./workshop_sellerSite.html'">홈</button>
+                    </div>
+                    <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./sellerSite_Introduce.html'">공방소개</button>
+                    </div>
+                    <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./sellerSite_product.html'">공방작품</button>
+                    </div>
+                    <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./sellerSite_News.html'">공방소식</button>
+                    </div>
+                    <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./sellerSite_ex.html'">공방체험</button>
+                    </div>
+                    <div class="workshop_sellerSite_sidemenu_btn00">
+                        <button type="button" onClick="location.href='./sellerSite_Review.html'">구매후기</button>
+                    </div> -->
+                </div>
 	            <!-- <div class="workshop_sellerSite_sidemenu_line_bg">
 	                <div class="workshop_sellerSite_sidemenu_line"></div>
 	            </div>
@@ -108,14 +108,15 @@
     <script src="../../js/workshop_sellerSite_sidemenu.js"></script>
     
     <script>
-    $.getJSON(serverRoot + "/json/works/listSellerSite", (data) => {
+    var no = location.href.split("=")[1];
+    $.getJSON(serverRoot + "/json/works/listSellerSite",{"no":no}, (data) => {
         console.log(data);
         for (var i = 0; i < data.length; i++) {
             $("<div class='sellerSite_product_list01_con00_bg'>" +
                   "<div class='sellerSite_product_list01_con00'>" +
                       "<div class='sellerSite_product_list01_con00_img'>" +
             		      "<a href='./product.html'>" +
-                              "<img src='../../../files/workshop/" + data[i].path + "' style='width: 100%; height:100%;'>" +
+                              "<img src='../../images/workshop/" + data[i].path + "' style='width: 100%; height:100%;'>" +
                           "</a>" +
                       "</div>" +
                       "<div class='sellerSite_product_list01_con00_text'>" +
@@ -128,6 +129,27 @@
             ).appendTo(".sellerSite_product_bg");
         }
     });
+    
+    
+    
+    $('#ib_wrk_btn').html(`<div class="workshop_sellerSite_sidemenu_btn00">
+            <button type="button" onClick="location.href='./workshop_sellerSite.html?no=`+ no +`'">홈</button>
+            </div>
+            <div class="workshop_sellerSite_sidemenu_btn00">
+                <button type="button" onClick="location.href='./sellerSite_Introduce.html?no=`+ no +`'">공방소개</button>
+            </div>
+            <div class="workshop_sellerSite_sidemenu_btn00">
+                <button type="button" onClick="location.href='./sellerSite_product.html?no=`+ no +`'" style="background-color: #ffc001; border: 1px solid #ffc001;">공방작품</button>
+            </div>
+            <div class="workshop_sellerSite_sidemenu_btn00">
+                <button type="button" onClick="location.href='./sellerSite_News.html?no=`+ no +`'">공방소식</button>
+            </div>
+            <div class="workshop_sellerSite_sidemenu_btn00">
+                <button type="button" onClick="location.href='./sellerSite_ex.html?no=`+ no +`'">공방체험</button>
+            </div>
+            <div class="workshop_sellerSite_sidemenu_btn00">
+                <button type="button" onClick="location.href='./sellerSite_Review.html?no=`+ no +`'">구매후기</button>
+            </div>`);
     </script>
     
 	
