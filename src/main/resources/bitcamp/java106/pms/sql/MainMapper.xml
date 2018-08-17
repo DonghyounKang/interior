@@ -16,6 +16,7 @@
     <result column="tname" property="hashtag"/>
     <result column="crtdt" property="comments"/>
     <result column="mppho" property="profile"/>
+    <result column="wno" property="lno"/>
   </resultMap>
   
   <select id="selectListInMain" 

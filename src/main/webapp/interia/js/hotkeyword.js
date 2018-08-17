@@ -5,8 +5,8 @@ var euro = $(".bt-hashtag-euro");
 
 for(var item of data) {
 	$('<li>' +
-        '<a class="bt-tag-prod-box" href="#">' +
-          '<img src="../../../files/works/'+ item.path +'_1000x1000.jpg">' +
+        '<a class="bt-tag-prod-box" href="../works/works_detail.html?'+ item.lno +'">' +
+          '<img src="../../../files/works/'+ item.path +'">' +
           '<div class="bt-tag-prod-black bt-over">' +
             '<span>상세 보기 +</span>' +
           '</div>' +
@@ -20,8 +20,8 @@ var summer = $(".bt-hashtag-summer");
 
 for(var item of data) {
 	$('<li>' +
-        '<a class="bt-tag-prod-box" href="#">' +
-          '<img src="../../../files/works/'+ item.path +'_1000x1000.jpg">' +
+        '<a class="bt-tag-prod-box" href="../works/works_detail.html?'+ item.lno +'">' +
+          '<img src="../../../files/works/'+ item.path +'">' +
           '<div class="bt-tag-prod-black bt-over">' +
             '<span>상세 보기 +</span>' +
           '</div>' +
@@ -36,8 +36,8 @@ var modern = $(".bt-hashtag-modern");
 
 for(var item of data) {
 	$('<li>' +
-        '<a class="bt-tag-prod-box" href="#">' +
-          '<img src="../../../files/works/'+ item.path +'_1000x1000.jpg">' +
+        '<a class="bt-tag-prod-box" href="../works/works_detail.html?'+ item.lno +'">' +
+          '<img src="../../../files/works/'+ item.path +'">' +
           '<div class="bt-tag-prod-black bt-over">' +
             '<span>상세 보기 +</span>' +
           '</div>' +
@@ -51,8 +51,8 @@ var flowerpot = $(".bt-hashtag-flowerpot");
 
 for(var item of data) {
 	$('<li>' +
-        '<a class="bt-tag-prod-box" href="#">' +
-          '<img src="../../../files/works/'+ item.path +'_1000x1000.jpg">' +
+        '<a class="bt-tag-prod-box" href="../works/works_detail.html?'+ item.lno +'">' +
+          '<img src="../../../files/works/'+ item.path +'">' +
           '<div class="bt-tag-prod-black bt-over">' +
             '<span>상세 보기 +</span>' +
           '</div>' +
@@ -64,11 +64,11 @@ for(var item of data) {
 
 $.getJSON("../../../json/main/listkeyword",{hashtag:"심플한"}, (data) => {
 var simple = $(".bt-hashtag-simple");
-
+console.log(data);
 for(var item of data) {
 	$('<li>' +
-        '<a class="bt-tag-prod-box" href="#">' +
-          '<img src="../../../files/works/'+ item.path +'_1000x1000.jpg">' +
+        '<a class="bt-tag-prod-box" href="../works/works_detail.html?'+ item.lno +'">' +
+          '<img src="../../../files/works/'+ item.path +'">' +
           '<div class="bt-tag-prod-black bt-over">' +
             '<span>상세 보기 +</span>' +
           '</div>' +
