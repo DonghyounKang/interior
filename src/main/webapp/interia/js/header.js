@@ -21,7 +21,7 @@ function loadLoginUser() {
 		// 글쓰기 관련 이벤트 구현
 		$("#nav-link-1").click(e => {
 			e.preventDefault();
-			location.href="#";
+			location.href="/interia/html/mypage/mp_post.html";
 		});
 		
 		// 장바구니 관련 이벤트 구현
