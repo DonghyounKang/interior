@@ -18,7 +18,7 @@ $(document).ready(function(){
 		$(this).find('form')[0].reset();
 		if ( $("#tname") > 0 ) {
 			$('#tname').tagEditor('destroy');
-		}
+		} 
 		
 		if( $('#ad-claimRejectForm') > 0) {
 			var template = $('#ad-claimRejectForm');
