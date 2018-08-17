@@ -35,15 +35,15 @@
   <select id="selectListWithHashtag" 
           resultMap="BoardMap"
           parameterType="String">
-    SELECT w.WNO, wp.PATH 
-    FROM INTR_WORKS w 
+    SELECT w.WNO, wp.PATH FROM INTR_WORKS w 
     LEFT OUTER JOIN INTR_WPHO wp 
     ON w.WNO = wp.WNO 
     INNER JOIN INTR_WTMACH wt 
     ON w.WNO = wt.WNO 
     INNER JOIN INTR_HASHTAG h 
     ON wt.HTNO = h.HTNO 
-    WHERE h.TNAME = #{value} 
+    WHERE h.TNAME = #{value}
+    GROUP BY wno 
     order by w.wno desc 
     limit 0, 8
   </select>
