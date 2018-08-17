@@ -15,7 +15,7 @@
     <result column="nknm" property="nickname"/>
     <result column="tname" property="hashtag"/>
     <result column="crtdt" property="comments"/>
-    <result column="memph" property="profile"/>
+    <result column="mppho" property="profile"/>
   </resultMap>
   
   <select id="selectListInMain" 
