@@ -115,7 +115,7 @@ public class WsavController {
     public void update(Wsav wsav, MultipartFile[] files) throws Exception {
 
         String filesDir = sc.getRealPath("/files/workshop/activity");
-//        Wsav activity= new Wsav();
+
         
         ArrayList<Wkacp> activityPhotos = new ArrayList<>();
         
