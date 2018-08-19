@@ -40,7 +40,7 @@ inner join INTR_WORKS wks on onk.wno = wks.wno
 inner join INTR_WKOT wkt on wks.wno = wkt.wno
 inner join INTR_WPHO wpho on wks.wno = wpho.wno
 inner join INTR_ORDER odr on onk.odno = odr.odno
-where odr.memno = #{value}
+where odr.memno = #{value} and (wpho.mipt = "y" or wpho.mipt = "Y")
   </select>
   
   <select id="selectRevList" 
@@ -52,7 +52,7 @@ inner join INTR_WKOT wkt on wks.wno = wkt.wno
 inner join INTR_WPHO wpho on wks.wno = wpho.wno
 inner join INTR_ORDER odr on onk.odno = odr.odno
 inner join INTR_RVPHO rpho on onk.wono = rpho.wono
-where odr.memno = #{value}
+where odr.memno = #{value} and (wpho.mipt = "y" or wpho.mipt = "Y")
   </select>
   
   <select id="selectRevOne"
@@ -63,7 +63,7 @@ inner join INTR_WORKS wks on onk.wno = wks.wno
 inner join INTR_WRKSHP wkp on wks.memno = wkp.memno
 inner join INTR_WPHO wpho on wks.wno = wpho.wno
 inner join INTR_ORDER odr on onk.odno = odr.odno
-where onk.wono = #{value}
+where onk.wono = #{value} and (wpho.mipt = "y" or wpho.mipt = "Y")
   </select>
   
   <select id="selectRevListOne"
@@ -75,7 +75,7 @@ inner join INTR_WRKSHP wkp on wks.memno = wkp.memno
 inner join INTR_WPHO wpho on wks.wno = wpho.wno
 inner join INTR_ORDER odr on onk.odno = odr.odno
 inner join INTR_RVPHO rpho on onk.wono = rpho.wono
-where onk.wono = #{value}
+where onk.wono = #{value} and (wpho.mipt = "y" or wpho.mipt = "Y")
   </select>
   
   <select id="selectRevCount" 
