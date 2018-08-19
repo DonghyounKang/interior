@@ -1154,6 +1154,7 @@ textarea {
 .ad-class-card-img {
     margin-right: 20px;
     flex-grow: 1;
+    min-height: 200px;
 }
 
 .ad-class-card-content {
@@ -1162,7 +1163,7 @@ textarea {
     margin-left: 15px;
     margin-right: 15px;
     flex-grow: 5;
-    max-width:800px;
+    max-width:500px;
 }
 
 .ad-class-card-title {
