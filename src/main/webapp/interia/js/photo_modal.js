@@ -19,13 +19,13 @@ function mkmodal(no) {
 			'<div class="modal-body photo-modal-body step-1" data-step="1">'+
 				'<div class="photo-img-box">'+
 					'<div id="linkadded">'+
-					   '<img src="../../../files/board/'+ data.path +'" alt="">'+
+					   '<img src="../../../files/board/'+ data.path +'_1000x1000.jpg" alt="">'+
 					'</div>'+
 				'</div>'+
 				'<div class="photo-container-box">'+
 					'<div class="photo-detail-header">'+
 						'<div class="photo-header-profile">'+
-							'<img src="../../../files/mypage/profile/'+ data.profile +'_1000x1000.jpg" class="profile-img-tag" alt="">'+
+							'<img src="../../../files/mypage/profile/'+ data.profile +'_400x400.jpg" class="profile-img-tag" alt="">'+
 						'</div>'+
 						'<div class="photo-header-userId">'+
 							'<a href="#"><span>'+ data.nickname +'</span></a>'+
@@ -60,13 +60,13 @@ function mkmodal(no) {
 			'<div class="modal-body photo-modal-body step-2" data-step="2">'+
 				'<div class="photo-img-box">'+
 				    '<div id="linkadd">'+
-					   '<img src="../../../files/board/'+ data.path +'" alt="">'+
+					   '<img src="../../../files/board/'+ data.path +'_1000x1000.jpg" alt="">'+
 					'</div>'+
 				'</div>'+
 				'<div class="photo-container-box">'+
 					'<div class="photo-detail-header">'+
 						'<div class="photo-header-profile">'+
-							'<img src="../../../files/mypage/profile/'+ data.profile +'_1000x1000.jpg" class="profile-img-tag" alt="">'+
+							'<img src="../../../files/mypage/profile/'+ data.profile +'_400x400.jpg" class="profile-img-tag" alt="">'+
 						'</div>'+
 						'<div class="photo-header-userId">'+
 							'<a href="#"> <span>'+ data.nickname +'</span>'+
