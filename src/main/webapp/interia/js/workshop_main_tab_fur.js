@@ -7,7 +7,7 @@ $.getJSON("../../../json/workshop/listfur",{"no":7}, (data) => {
                                     "<img src='../../../files/workshop/" + data[i].path + "' style='width: 100%;'>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_circle'>" +
-                                    "<a href='#'><img src='../../../files/workshop/" + data[i].lpath + "'></a>" +
+                                    "<a href='./workshop_sellerSite.html?no="+ data[i].wkmem +"'><img src='../../../files/workshop/" + data[i].lpath + "'></a>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_title'>" +
                                     "<h1>" + data[i].wsnm + "</h1>" +
@@ -45,7 +45,7 @@ $.getJSON("../../../json/workshop/listfur",{"no":7}, (data) => {
                                     "<img src='../../../files/workshop/" + data[i].path + "' style='width: 100%;'>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_circle'>" +
-                                    "<a href='#'><img src='../../../files/workshop/" + data[i].lpath + "'></a>" +
+                                    "<a href='./workshop_sellerSite.html?no="+ data[i].wkmem +"'><img src='../../../files/workshop/" + data[i].lpath + "'></a>" +
                                 "</div>" +
                                 "<div class='fc_category_storeList00_2_title'>" +
                                     "<h1>" + data[i].wsnm + "</h1>" +
