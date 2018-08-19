@@ -80,7 +80,7 @@ function loadLoginUser() {
 			e.preventDefault();
 			$.getJSON(serverRoot + "/json/workshop/isExist/" + data.no, (result) => {
 				if (result) {  // 판매자 회원 신청 완료시
-					location.href = "../workshop/workshop_sellerSite.html";
+					location.href = "../admin/store_admin_index.html";
 				} else { // 판매자 회원이 아닐 경우
 					location.href = "../workshop/workshop_sellerRequest.html";
 				}

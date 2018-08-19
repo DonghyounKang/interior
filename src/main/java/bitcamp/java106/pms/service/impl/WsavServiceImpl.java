@@ -63,6 +63,7 @@ public class WsavServiceImpl implements WsavService {
     
     @Override
     public void add(Wsav wsav, ArrayList<Wkacp> activityphotos) {
+        System.out.println(activityphotos);
         wsavDao.insert(wsav);
         
        int workshopActivityNo =  wsavDao.selectRecent().getNo();
