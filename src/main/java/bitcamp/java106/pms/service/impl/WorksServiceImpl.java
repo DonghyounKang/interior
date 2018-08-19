@@ -208,11 +208,11 @@ public class WorksServiceImpl implements WorksService {
     
     // 장바구니 담기
     @Override
-    public int addBuscket(int worksNumber, int memberNumber, int optionNumber) {
+    public int addBuscket(int worksNumber, int memberNumber, String optionValue) {
         HashMap<String, Object> params = new HashMap<>();
         params.put("worksNumber", worksNumber);
         params.put("memberNumber", memberNumber);
-        params.put("optionNumber", optionNumber);
+        params.put("optionValue", optionValue);
         return worksDao.insertBuscket(params);
     }
     
@@ -228,7 +228,7 @@ public class WorksServiceImpl implements WorksService {
         return worksDao.searchBuscketWorkshop(buyerNumber);
     }
     
- // 해당 회원 장바구니 전체제거(구매시)
+    // 해당 회원 장바구니 전체제거(구매시)
     @Override
     public int buscketAllDelete(int buyerNumber) {
         return worksDao.buscketAllRemove(buyerNumber);
@@ -242,6 +242,8 @@ public class WorksServiceImpl implements WorksService {
         params.put("worksNumber", worksNumber);
         return worksDao.buscketRemove(params);
     }
+    
+    
     @Override
     public List<Works> adminList(int no) {
         return worksDao.selectAdList(no);
@@ -251,6 +253,7 @@ public class WorksServiceImpl implements WorksService {
     public Object getCurrentState(int no) {
         return worksDao.getCurrentState(no);
     }
+    
     
 }
 
