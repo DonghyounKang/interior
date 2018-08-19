@@ -76,7 +76,7 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 		$("#fZcode").val(data.zipCode);
 		$("#fBaddr").val(data.baseAdd);
 		$("#fDaddr").val(data.detailAdd);
-		
+		console.log(productData);
 		$("#btnPay").click(() => {
 			if ($("#sp-recipient").val() == "") {
 				window.alert("배송지 정보의 받는 분 입력");
@@ -123,7 +123,6 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 						
 						var ramdonOrderNo = Math.floor(Math.random() * 1000000000) + 1;
 						
-						console.log(ramdonOrderNo);
 						$.getJSON(serverRoot + "/json/order/allOrderNumber/", (orderNumberData) => {
 							var index = 0;
 							while (index < orderNumberData.length) {
@@ -133,7 +132,6 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 							}
 						});
 						
-						console.log(ramdonOrderNo);
 						
 						// 여기서 주문 건수 삽입
 						$.post(serverRoot + "/json/order/add", {
@@ -152,11 +150,13 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 							
 						}, "json");
 						
+						
+						
 						$.post(serverRoot + "/json/odnwk/add/", {
 							oderNo : ramdonOrderNo,
-							worksNo : productData[index].worksNumber,
-							oderStore : parseInt($("#buyValue" + productData[index].worksNumber).text()),
-							worksOption : productData[index].attributeValue,
+							worksNo : productData.worksNumber,
+							oderStore : parseInt($("#buyValue").text()),
+							worksOption : $("#optionValue").text()
 							//"order.oderNo" : ramdonOrderNo,
 							//"works.no" : productData[index].worksNumber
 						},"json");
