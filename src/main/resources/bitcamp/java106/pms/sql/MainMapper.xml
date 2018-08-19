@@ -60,9 +60,10 @@
     ON ws.MEMNO = wo.MEMNO 
     LEFT OUTER JOIN INTR_ODNWK od 
     ON wo.WNO = od.WNO 
-    WHERE wp.PCLSF = '홍보이미지' 
+    WHERE wp.PCLSF = 'profile' 
     GROUP BY ws.MEMNO 
     ORDER BY cnt DESC
+    limit 0, 8
   </select>
 </mapper>
 
