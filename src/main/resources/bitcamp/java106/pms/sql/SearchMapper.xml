@@ -34,7 +34,7 @@
   <select id="selectList" 
           resultType="Map" 
           parameterType="map">
-select wks.wtitl, wks.price, wph.path from INTR_WTMACH wtch
+select wks.wno, wks.wtitl, wks.price, wph.path from INTR_WTMACH wtch
 inner join INTR_HASHTAG htag on wtch.htno = htag.htno
 inner join INTR_WORKS wks on wtch.wno = wks.wno
 inner join INTR_WPHO wph on wks.wno = wph.wno
