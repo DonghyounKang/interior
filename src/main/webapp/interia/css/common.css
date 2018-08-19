@@ -121,6 +121,13 @@ a {color: #333;}
 	display: block;
 }
 
+.dropdown-header {
+    cursor: pointer;
+}
+.dropdown-item {
+    cursor: pointer;
+}
+
 .header_hr_style_mypage {
 	border: 0.5px;
 	background: #333;
