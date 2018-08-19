@@ -211,7 +211,7 @@ $('#fileupload1').fileupload({
 			data.submit();
 		});
 	},
-	done: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
+	success: function (e, data) { // 서버에서 응답이 오면 호출된다. 각 파일 별로 호출된다.
 		console.log('done()...');
 		console.log(data.result);
 		location.reload(true);
