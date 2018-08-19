@@ -4,6 +4,11 @@
     vertical-align: middle;
 }
 
+/* 우편번호 찾기 */
+#layer {
+	z-index: 9999 !important;
+}
+
 /* 임의의 태그를 작성 */
 .sp-product-image {
     position: relative;
