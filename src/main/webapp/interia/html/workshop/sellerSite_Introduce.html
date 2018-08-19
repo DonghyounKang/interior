@@ -117,7 +117,7 @@
     var no = location.href.split("=")[1];
 	    $.getJSON(serverRoot + "/json/workshop/listIntro",{"no":no}, (data) => {
 	        console.log(data);
-	        $("<img src='../../../files/" + data[0].path + "'>"
+	        $("<img src='../../../files/workshop/" + data[0].path + "'>"
             ).appendTo(".sellerSite_intro_box1");
 	        $("<p>" + data[0].wsctt + "</p>"
             ).appendTo(".sellerSite_intro_box2");

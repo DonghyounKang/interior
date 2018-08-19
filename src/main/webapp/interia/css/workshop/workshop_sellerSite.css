@@ -149,7 +149,14 @@ dl,ul,ol,menu,li {list-style:none}
 .workshop_sellerSite_content_visual {
     width: 100%;
     height: 300px;
+    overflow: hidden;
 }
+.workshop_sellerSite_content_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .workshop_sellerSite_content_subContent {
     width: 880px;
     height: 2650px;
