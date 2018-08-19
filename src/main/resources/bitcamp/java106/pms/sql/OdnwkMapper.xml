@@ -17,6 +17,7 @@
     <result column="qctt" property="purchEpilo"/>
     <result column="pchrv" property="reqContext"/>
     <result column="path" property="revPhoto"/>
+    <result column="odopt" property="worksOption" />
     <association property="order" javaType="Order">
         <result column="odno" property="oderNo"/>
     </association>
@@ -115,7 +116,7 @@ where wor.memno = #{value}
   </select>
   
   <insert id="insert" parameterType="Odnwk">
-    insert into INTR_ODNWK(ostor, wno, odno, owopt) 
+    insert into INTR_ODNWK(ostor, wno, odno, odopt) 
     values(#{oderStore}, #{worksNo}, #{oderNo}, #{worksOption})
   </insert>
   
