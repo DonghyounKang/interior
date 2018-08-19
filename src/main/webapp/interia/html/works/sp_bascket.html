@@ -53,7 +53,9 @@ function selectPurchaseCheckbox(checkbox, worksNumber, workshopNumber, deliveryP
 		
 		// 2) 배송비 여부 -> 여기서 배송비가 하나 존재하면, 2500원으로 고정
 		// allPrice => 여기는 배송비 모두 합친 값입니다.
-		var allDeliveryPrice = parseInt($("#temp-all-delivery-price" + workshopNumber).val());
+		//var allDeliveryPrice = parseInt($("#temp-all-delivery-price" + workshopNumber).val());
+		var allDeliveryPrice = parseInt($("#all-delivery-price" + workshopNumber).text());
+
 		var fixDeliveryPrice = 0; // 고정 배송비
 		if (deliveryPrice === "y" || deliveryPrice === "Y") {
 			allDeliveryPrice += 2500;
