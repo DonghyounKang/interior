@@ -339,9 +339,12 @@ dl,ul,ol,menu,li {list-style:none}
     height: 660px;
     float: left;
     margin-top: 1em;
+    padding: 0 1.5em;
 }
 .sellerSite_product_img_00 {
-    display: flex;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(5,1fr);
 }
 .sellerSite_review {
     width: 440px;

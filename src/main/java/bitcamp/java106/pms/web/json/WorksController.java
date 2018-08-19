@@ -98,7 +98,9 @@ public class WorksController {
     }
     
     @RequestMapping("listSellerSite")
-    public Object listSellerSite(int no) {       
+    public Object listSellerSite(HttpSession session) {
+        Member member = (Member)session.getAttribute("loginUser");
+        int no = member.getNo();
         return worksService.listSellerSite(no);
     }
     

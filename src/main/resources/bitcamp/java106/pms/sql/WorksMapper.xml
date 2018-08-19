@@ -155,6 +155,8 @@ SET MEMNO= #{workshopNumber},
     inner join INTR_WRKSHP wrk on wor.memno = wrk.memno
     inner join INTR_WPHO wp on wor.wno = wp.wno
     where wrk.memno = #{value}
+    group by wtitl
+    order by wrtdt desc
   </select>
 
   <!-- 장바구니 선택 제거 -->
