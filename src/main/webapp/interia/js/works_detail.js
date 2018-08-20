@@ -54,7 +54,7 @@ $.getJSON(serverRoot + "/json/works/" + no, (result) => {
 		if (buyValue == 1) {
 			window.alert("최소 1개 이상을 지정해야합니다.");
 		} else {
-			$("#buy-value").text(--buyValue);
+			$("#buy-Value").text(--buyValue);
 			$("#price-value").text(result.price * buyValue);
 			$("#All-Price").text((buyValue * result.price) + deliveryPrice);
 			$("#All-Price").val((buyValue * result.price) + deliveryPrice);
