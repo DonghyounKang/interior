@@ -34,11 +34,12 @@
   <select id="selectList" 
           resultType="Map" 
           parameterType="map">
-select wks.wno, wks.wtitl, wks.price, wph.path from INTR_WTMACH wtch
+select distinct wks.wno, wks.wtitl, wks.price, wph.path from INTR_WTMACH wtch
 inner join INTR_HASHTAG htag on wtch.htno = htag.htno
 inner join INTR_WORKS wks on wtch.wno = wks.wno
 inner join INTR_WPHO wph on wks.wno = wph.wno
 where wtitl like concat('%',#{title},'%') or tname like concat('%',#{title},'%')
+GROUP BY wtitl, tname
   </select>
   
   <select id="storeList" 
@@ -54,12 +55,13 @@ where wsnm like concat('%',#{title},'%') or tname like concat('%',#{title},'%')
   <select id="worksList" 
           resultType="Map" 
           parameterType="map">
-select wks.wtitl, wks.price, wph.path, ws.mutua, wks.wno from INTR_WTMACH wtch
+select distinct wks.wtitl, wks.price, wph.path, ws.mutua, wks.wno from INTR_WTMACH wtch
 inner join INTR_HASHTAG htag on wtch.htno = htag.htno
 inner join INTR_WORKS wks on wtch.wno = wks.wno
 inner join INTR_WPHO wph on wks.wno = wph.wno
 inner join INTR_WRKSHP ws on wks.memno = ws.memno
 where wtitl like concat('%',#{title},'%') or tname like concat('%',#{title},'%')
+group by wtitl, tname
 limit #{startNo}, #{pageNo}
   </select>
   
