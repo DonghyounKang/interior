@@ -112,7 +112,7 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 					merchant_uid : 'merchant_' + new Date().getTime(), // 주문 발생시간
 					name : '주문명:결제테스트', // 상풍명
 					amount : $("#all-order-price").text(),  // 총 주문 가격
-					//m_redirect_url : '../main/index.html'
+					m_redirect_url : '../main/index.html'
 				}, function(rsp) {
 					if ( rsp.success ) {
 						var msg = '결제가 완료되었습니다.';
@@ -163,12 +163,12 @@ $.getJSON(serverRoot + "/json/auth/loginUser", (data) => {
 						
 						// 장바구니 전체 삭제
 						$.getJSON(serverRoot + "/json/works/buscketAllDelete", () => {});
-						location.href = "../main/index.html";
 					} else {
 						var msg = '결제에 실패하였습니다.';
 						msg += '에러내용 : ' + rsp.error_msg;
 					}
 					alert(msg);
+					location.href = "../main/index.html";
 				});
 			}
 		});
