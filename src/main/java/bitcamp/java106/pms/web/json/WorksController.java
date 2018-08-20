@@ -85,7 +85,7 @@ public class WorksController {
     
     @RequestMapping("delete")
     //@ResponseStatus(HttpStatus.OK) // 응답 상태 코드 값의 기본은 "200(OK)" 이다.
-    public void delete(@RequestParam("no") int no) throws Exception {
+    public void delete(@RequestParam("wno") int no) throws Exception {
         worksService.delete(no);
     }
     
