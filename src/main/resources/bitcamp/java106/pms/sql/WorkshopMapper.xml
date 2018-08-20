@@ -56,6 +56,7 @@
     select wsnm, itrod, path, lpath, wrk.memno as wkmem
     from INTR_WRKSHP wrk
     inner join INTR_WSPHO ws on wrk.memno = ws.memno
+    where ws.PCLSF = "profile"
     limit #{startRowNo}, #{pageSize}
   </select>
   
